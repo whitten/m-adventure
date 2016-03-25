@@ -1,4 +1,7 @@
-ADV8	;ADVENTURE.  FLH ; 04 FEB 83  4:00 AM
+ADV8	;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:00 AM
+	;;1.0;C1GAMES;****;March 1, 2016
+	;FLH ; 04 FEB 83  4:00 AM
+	; DJW/WV ;March 1, 2016
 CLOSEUP	F O="GRATE","FISSU" S ^ADVG(G,O,"P")=0
 	F O="CHAIN","AXE" S ^ADVG(G,O,"P")=0,^("F")=0
 	F DW=1:1:6 S (DSEEN(DW),LD(DW))=0
@@ -40,11 +43,11 @@ SC2	Q
 	;N=25;I CLOSNG;
 	;N=BONUS;I 1;
 	;N=1;I ^ADVG(G,"MAGAZ","L")=108;
-YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
-	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+YES	S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
+	E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
 	E  S M=N D:M SPK
 	K M Q
-KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SAVE,I+1,99)
 	K I Q
 SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
 	K I Q

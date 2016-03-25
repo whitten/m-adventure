@@ -1,4 +1,8 @@
 ADVDOC	;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
+	;;1.0;C1GAMES;****;March 1, 2016
+	;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
+	; DJW/WV ;March 1, 2016
+	;
 I	; Adventure is the original computer game that has inspired dozens of
 	; descendants of the "Dungeons and Dragons" genre.  First coded in
 	; Fortran for the PDP-10 by Willie Crowther at MIT, it was revised and
@@ -39,7 +43,7 @@ V	; After ^ADV is in place, you may optionally D ^%PROTECT and follow
 	;
 VI	; Adventure may easily be ported to other systems that support 1983
 	; ANSI Standard MUMPS.  The only non-standard features are confined
-	; to the routine AD:  $ZS is the size of the partition in kilobytes.
+	; to the routine ADV:  $ZS is the size of the partition in kilobytes.
 	; $ZE governs trapping of errors and keyboard breaks.  Its code may be
 	; removed without detriment to the game.  The utility routine %ET is
 	; used to log the local variables following an error.
@@ -55,3 +59,9 @@ VII	; For maintenance of Adventure please write, not telephone,
 	; when a printout of the error logged by %ET is included (use the %ER
 	; utility).  On a time-available basis, I will return either a patch
 	; or a new release of the program.
+	;
+VIII	; some changes were made by DLH @ PRX in 1989
+	; unknown details
+	;
+IX	; changes by David Whitten @ WorldVistA in 2016 
+	; to comply with VA SACC & FileMan Compatibility

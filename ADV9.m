@@ -1,4 +1,7 @@
-ADV9	;ADVENTURE.  FLH ; 29 DEC 82  8:52 AM
+ADV9	;ADVENTURE.  FLH, DJW/WV ; 29 DEC 82  8:52 AM
+	;;1.0;C1GAMES;****;March 1, 2016
+	;FLH ; 29 DEC 82  8:52 AM
+	; DJW/WV ;March 1, 2016
 HINT	D @("HINT"_J) E  Q:J=5  G HI1
 	S X=^ADV("h",J),P=$P(X,"/",2),Q=$P(X,"/",3),Y=0,N=54 D YES E  Q
 	W:S ! W !,"I am prepared to give you a hint, but it will cost you ",P," points."
@@ -34,11 +37,11 @@ TRC	S M=$S(LP<8:57,1:58) D SPK Q
 TRL	I DETAIL<3 S M=15 D SPK
 	S DETAIL=DETAIL+1,WZDARK=0,^ADVG(G,LP,"A")=0 Q
 TRN	Q
-YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
-	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+YES	S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
+	E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
 	E  S M=N D:M SPK
 	K M Q
-KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SAVE,I+1,99)
 	K I Q
 SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
 	K I Q
