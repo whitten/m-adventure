@@ -1,4 +1,7 @@
-ADV5	;ADVENTURE.  FLH ; 24 JAN 83  12:58 PM
+ADV5	;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:58 PM
+	;;1.0;C1GAMES;****;March 1, 2016
+	;ADVENTURE. FLH ; 04 FEB 83  4:30 AM
+	; DJW/WV ;March 1, 2016
 AV0	W:S ! W !,"I don't understand ",W1,"." S OBJ="",RET="TU1" Q
 AVA	S J=0 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP S J=1,OBJ="DWARF" Q
 	S O="SNAKE" D HERE,AVAJ
@@ -45,12 +48,12 @@ AVP	I "BOTTL"[OBJ D LIQ S OBJ=O
 	Q
 AVR	S:OBJ'="LAMP" M=76 Q
 AVU	S Q=22,(Y,N)=54 D YES S:$T RET="SCORE^ADV8" S GAVEUP=$T,M=0 Q
-GETIN	D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(U," ",1),1,5),U2=$E($P(U," ",2),1,5) K U Q
-YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
-	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+GETIN	D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(SAVE," ",1),1,5),U2=$E($P(SAVE," ",2),1,5) K SAVE Q
+YES	S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
+	E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
 	E  S M=N D:M SPK
 	K M Q
-KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SAVE,I+1,99)
 	K I Q
 SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
 	K I Q
