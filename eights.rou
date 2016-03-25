@@ -1,0 +1,220 @@
+Saved by %RS from [DEV,VAX] on  4-MAY-1990 23:48:24.95
+Crazy Eights Game
+VEIGHT
+VEIGHT	;MSM;13Jul87; Crazy Eights
+	;PRX;23Mar89 00:46;(c) Copyright 1986,1987 PRx, Inc. Concord, MA
+	;
+	goto Start
+	;
+Num	set Num=Suit-1*13+Rank
+	quit
+	;
+RankSuit	;
+	set Rank=Num-1#13+1
+	set Suit=Num-1\13+1 
+	;
+Card	set Card=$extract(Ranks,2*Rank-1,2*Rank)_$extract(Suits,Suit)
+	quit
+	;
+Add	set Hand=$extract(Hand,1,Num-1)_"1"_$extract(Hand,Num+1,52)
+	quit
+	;
+Del	set Hand=$extract(Hand,1,Num-1)_"0"_$extract(Hand,Num+1,52)
+	quit
+	;
+Display	do RankSuit
+	write " "_Card
+	quit
+	;
+Draw	do Deal
+	write !,"Draw: "
+	do Display
+	quit
+	;
+Deal	for M=1:1:10 set Num=$random(52)+1 if $extract(Deck,Num) goto Deal1
+	if Deck'[1,Pile'[1 write !,"No cards left to deal." quit
+	if Deck'[1 do Shuffle write !,"Shuffling." goto Deal
+	set Num=$find(Deck,"1",Num)
+	if Num=0 S Num=$find(Deck,"1")
+	set Num=Num-1
+	;
+Deal1	set Hand=Deck
+	do Del
+	set Deck=Hand
+	;
+	set Hand=Hand(Player)
+	do Add
+	set Hand(Player)=Hand
+	set Count(Player)=Count(Player)+1
+	quit
+	;
+Shuffle	set Deck=Pile
+	set Pile=None
+	quit
+	;
+Pile	new Num
+	set Num=TopNum
+	set Hand=Pile
+	do Add
+	set Pile=Hand
+	quit
+	;
+PlayCard	if TopNum'=0 do Pile
+	set TopNum=Num
+	do RankSuit
+	set TopCard=Card
+	set TopSuit=Suit
+	set TopRank=Rank
+	set Count(Player)=Count(Player)-1
+	set Hand=Hand(Player)
+	do Del
+	set Hand(Player)=Hand
+	quit
+	;
+Show	write !,"Your hand:",!
+	set Hand=Hand(Player)
+	set Num=-1
+	for I=1:1 set Num=$find(Hand,"1",Num+1)-1 quit:Num=-1  write:$X>60 ! do Display
+	quit
+	;
+	;- - - - Take a Turn - - - -
+Play	write !!,Player(Player),"'s turn.  (",Count(Player)," cards)",!
+	write !,"Top card: ",TopCard
+	if Auto(Player) goto Auto
+	do Show
+	;
+	;
+Ask	write !,"Play: "
+	read X,!
+	if X="-" do Draw goto Ask
+	if X="?" goto Play
+	if X="^"!(X="^Q") goto Exit
+	set XSuit=$extract(X,$length(X))
+	set XRank=$extract(X,1,$L(X)-1)
+	if X'?2.3AN!(Suits'[XSuit)!(Ranks'[XRank) write !,"Please enter one of the cards in your hand, or '-' to draw." goto Ask
+	;
+	set Suit=$find(Suits,XSuit)-1
+	set Rank=$find(Ranks,XRank)\2
+	do Num
+	set Hand=Hand(Player)
+	if '$extract(Hand,Num) write !,"You don't have that card." goto Ask
+	;
+	if Rank=8 do AskSuit goto OK
+	if Suit=TopSuit!(Rank=TopRank) goto OK
+	;
+	write !,"Please play a valid card from your hand." goto Ask
+	;
+OK	do PlayCard
+	if Rank=8 do Eight
+	if Rank=2 do Two
+	;
+NextPlay	if Count(Player)=0 goto Winner
+	set Player=Player#Players+1
+	goto Play
+	;
+AskSuit	write !,"New Suit: "
+	read X
+	I X'?1A!(Suits'[X) W !,"Please enter suit: 'H','C','D', or 'S'" goto AskSuit
+	set NewSuit=$find(Suits,X)-1
+	quit
+	;
+Eight	set TopSuit=NewSuit
+	set TopCard=TopCard_" ("_SuitName(TopSuit)_")"
+	quit
+	;
+Two	set Draw=2
+	if Suit=4 set Draw=4
+	set Me=Player
+	set Player=Player#Players+1
+	write !,Player(Player)," must draw ",Draw," cards!"
+	for I=1:1:Draw do Deal
+	set Player=Me
+	quit
+	;
+Auto	;- - - - Computer's Play - - - -
+	if Debug do Show write !
+	hang 2
+	set Hand=Hand(Player)
+	for Suit=1:1:4 set SuitCnt(Suit)=0
+	set Num=-1
+	write "."
+	for I=1:1 set Num=$find(Hand,"1",Num+1)-1 quit:Num=-1  do RankSuit set SuitCnt(Suit)=SuitCnt(Suit)+$select(Rank=8:0,Rank=2:2,1:1)
+	write "."
+	set BestSuit=1,BestCnt=0,Suit=$random(4)+1
+	for I=1:1:4 set Suit=Suit#4+1 if SuitCnt(Suit)>BestCnt set BestSuit=Suit,BestCnt=SuitCnt(Suit)
+	write "."
+	;
+	;- Play card of same rank
+	set Rank=TopRank,Suit=BestSuit-1
+	for I=1:1:4 set Suit=Suit#4+1 do Num if $extract(Hand,Num) goto AutoPlay
+	write "."
+	;
+	;- Play card of same suit
+	set Suit=TopSuit,Rank=$random(13)+1
+	for I=1:1:13 set Rank=Rank#13+1 do Num if Rank'=8,$extract(Hand,Num) goto AutoPlay
+	write "."
+	;
+	;- Play an eight
+	set Rank=8,Suit=$random(4)+1
+	for I=1:1:4 set Suit=Suit#4+1 do Num if $extract(Hand,Num) goto AutoPlay
+	;- Draw
+	write !,"Drawing a card."
+	do Deal
+	goto Auto
+	;
+AutoPlay	;
+	if Rank=8 set NewSuit=BestSuit
+	write !,"Playing: "
+	do Num,Display
+	if Rank=8 write !,"New Suit: ",SuitName(NewSuit)
+	goto OK
+	;
+Init	;- - - - Initialize Variables - - - -
+	set Suits="HCDS"
+	set SuitName(1)="Heart",SuitName(2)="Club"
+	set SuitName(3)="Diamond",SuitName(4)="Spade"
+	set Ranks=" A 2 3 4 5 6 7 8 910 J Q K"
+	Set TopNum=0
+	set TopCard=""
+	set TopSuit=""
+	set TopRank=""
+	set None="0000000000000000000000000000000000000000000000000000"
+	set All="1111111111111111111111111111111111111111111111111111"
+	set Deck=All
+	set Pile=None
+	set Debug=0
+	quit
+	;
+Welcome	write !,"Welcome to the game of Crazy-Eights."
+	quit
+	;
+Start	Write !!,"Starting a new game.",!
+	do Init,Welcome,Shuffle
+	set Players=2
+	set Auto(1)=0,Auto(2)=1
+	set Count(0)=0,Count(1)=0,Count(2)=0
+	set Player(1)="Michael"
+	set Player(2)="Crazy Eddie"
+	if $data(XID("USER")) set Player(1)=XID("USER")
+	set Hand(0)=None,Hand(1)=None,Hand(2)=None
+	set Deck=All,Pile=None
+	;
+	write !,"Dealing."
+	for I=1:1:8 write "." for Player=1:1:Players do Deal
+	set Player=0 do Deal,PlayCard
+	set Player=1 write ! do Show
+	write !!,"Top card: ",TopCard
+	set Player=$random(Players)+1
+	write !,Player(Player)," will go first."
+	goto Play
+	;
+Winner	write !,Player(Player)," wins! "
+	goto Exit
+	;
+Exit	write !,"Please play again soon.",!
+	kill All,Auto,Count,Debug,Deck,Hand,I,M,None,Pile
+	kill Player,Players,Ranks,Suits
+	kill TopNum,TopCard,TopRank,TopSuit,X
+	quit
+
+

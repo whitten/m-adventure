@@ -1,0 +1,141 @@
+Saved by %RS from [DEV,VAX] on  4-MAY-1990 23:48:52.11
+Hobbit Game
+MCHOBBIT
+MCHOBBIT	;MSM;20Sep86;HOBBIT V1.1; Hobbit Game
+	;PRX;05Dec88 22:54;(c) Copyright 1986,1987 PRx, Inc. Concord, MA
+	S VERSION="V1.1" ;August 19, 1988
+	;
+	;;Written 20-Sep-86 by Michael McIntyre, PRx Inc, Concord MA
+	;
+	;Next version will include multiple monster classes, traps, and
+	;weapons.
+	;
+	D INIT
+	W @FF,"Welcome to Hobbit by Michael McIntyre, ",VERSION
+	D TREES,DISP,ORCS
+	;
+LOOP	D MOVE
+	I 'DONE D ORCMOV
+	I 'DONE G LOOP
+	;
+DONE	S X=1,Y=21 W @XY,%CES,%NORM
+	W $P($TEXT(DONETXT+DONE+3),";;",2)
+	I DONE=-1 W !,"You knocked out ",KNOCKOUT," Orcs and made it out in ",MOVES," moves."
+	G EXIT
+	;
+ORCMOV	F I=1:1:ORCS S O=O(I)+1,OX=OX(I),OY=OY(I) D:O>0 ORC S OX(I)=OX,OY(I)=OY,O(I)=O
+	Q
+	;
+ORC	S X=OX,Y=OY S DX=$S(HX>X:HX-X,1:X-HX),DY=$S(HY>Y:HY-Y,1:Y-HY),D=DX+DY
+	I D>SMELL Q:O(I)#5  I O(I)#4 W @XY," " G ORCRND
+	W @XY," "
+	S RX=$S(HX>X:1,HX<X:-1,1:0),RY=$S(HY>Y:1,HY<Y:-1,1:0)
+	I D<SEE S OX=OX+RX,OY=OY+RY G ORCM
+	I $E(B(Y+RY),X+RX)=" " S OY=Y+RY,OX=X+RX G OSP
+	I $E(B(Y),X+RX)=" " S OY=Y,OX=X+RX G OSP
+	I $E(B(Y+RY),X)=" " S OY=Y+RY,OX=X G OSP
+ORCRND	F J=1:1:10 S C=$R(9)+1,OX=X+H(C),OY=Y+V(C) Q:$E(B(OY),OX)=" "
+	S O=$R(100)
+	I J=10 G ORCQ
+ORCM	S A=$F(" +OX@",$E(B(OY),OX))-2
+	I "12"[A G ORCQ
+	I A=3 G ORCBUMP
+	I A=4 S DONE=4
+OSP	S B(Y)=$E(B(Y),1,X-1)_" "_$E(B(Y),X+1,99)
+	;S $E(B(Y),X)=" "
+	S B(OY)=$E(B(OY),1,OX-1)_"O"_$E(B(OY),OX+1,99)
+	;S $E(B(OY),OX)="O"
+	S X=OX,Y=OY
+ORCQ	S OX=X,OY=Y W @XY,"O"
+	Q
+	;
+ORCBUMP	S O=-(SLEEP+$R(SLEEP)+$R(SLEEP)),OY=Y,OX=X
+	S B(Y)=$E(B(Y),1,X-1)_"+"_$E(B(Y),X+1,99)
+	;S $E(B(Y),X)="+"
+	S OX=X,OY=Y W @XY,"+"
+	S KNOCKOUT=KNOCKOUT+1
+	Q
+	;
+MOVE	S X=HX,Y=HY W @XY,"@",*8
+	S C=""
+	R *R:30 I $T S C=$C(R)
+	R *A:0
+	I R=0 G MOVE
+	S MOVES=MOVES+1
+	I "05"[C S STAY=STAY+1 S:STAY>2 DONE=5 Q
+	S STAY=0
+	I C?1N D MOVEME Q
+	I "^Qq"[C S DONE=-2 Q
+	W *7 G MOVE
+	Q
+MOVEME	W @XY," "
+	S HX=X+H(C),HY=Y+V(C)
+	S DONE=$F(" XO+",$E(B(HY),HX))-2 I DONE W @XY,"@" Q
+	S B(Y)=$E(B(Y),1,X-1)_" "_$E(B(Y),X+1,99)
+	S B(HY)=$E(B(HY),1,HX-1)_"@"_$E(B(HY),HX+1,99)
+	S X=HX,Y=HY W @XY,"@"
+	I HX=1 S DONE=-1
+	Q
+DISP	W %CLS
+	F I=1:1:19 W B(I),!
+	W !,"You are a poor Hobbit who has stayed out to late and must"
+	W !,"cross the Orc infested forest to get home.  Type a number"
+	W !,"from 1-9 to move. 'Q' will quit."
+	S X=70,Y=21 W @XY,"7 8 9"
+	S X=70,Y=22 W @XY,"4 @ 6"
+	S X=70,Y=23 W @XY,"1 2 3"
+	Q
+	;
+INIT	; 
+	;I $D(^%ZIS("C")) D %ZIS G INIT1
+	USE 0:(0::::1)
+	S %CSI=$C(27,91),%CLS=%CSI_"H"_%CSI_"J",%BOLD=%CSI_"1m",%NORM=%CSI_"m"
+	S %CES=%CSI_"J"
+	S XY="$C(27,91)_Y_$C(59)_X_$C(72)"
+	S FF="$C(27,91,50,74,27,91,102),#"
+INIT1	S BLANK="",STARS="" F I=1:1:19 S BLANK=BLANK_"    ",STARS=STARS_"XXXX"
+	F I=2:1:18 S B(I)="X"_$E(BLANK,1,74)_"X"
+	S (B(1),B(19))=STARS,B(10)="  "_$E(B(10),3,99)
+	S (H(0),H(2),H(5),H(8),V(0),V(4),V(5),V(6))=0
+	S (H(1),H(4),H(7),V(7),V(8),V(9))=-1
+	S (H(3),H(6),H(9),V(1),V(2),V(3))=1
+	S TREES=150,ORCS=15
+	S DEAD=0,HY=9,HX=75
+	S STAY=0,DONE=0
+	S SMELL=10,SEE=4,SLEEP=10
+	S MOVES=0,KNOCKOUT=0
+	Q
+	;
+	;
+TREES	F I=1:1:TREES\10 W "." F J=1:1:10 S X=$R(74)+2,Y=$R(18)+2,B(Y)=$E(B(Y),1,X-1)_"X"_$E(B(Y),X+1,99)
+	Q
+	;
+ORCS	W %BOLD
+	F I=1:1:ORCS D PUTORC
+	Q
+PUTORC	S X=$R(74)+2,Y=$R(18)+2 I $E(B(Y),X)'=" " G PUTORC
+	I $S(HY>Y:HY-Y,1:Y-HY)+(HX-X)<6 G PUTORC
+	S B(Y)=$E(B(Y),1,X-1)_"O"_$E(B(Y),X+1,99)
+	S OX(I)=X,OY(I)=Y,O(I)=$R(10)
+	W @XY,"O"
+	Q
+%ZIS	;Setup Variables from ^%ZIS
+	X ^%ZIS("C") ;who are we
+	S X=^%ZIS(2,IOST(0),1)
+	;
+EXIT	;
+	USE 0:(:::::1)
+	;K %CLS,%X,%Y,B,C,H,V,I,HX,HY,O,ORCS,OY,OX,R,TREES,X,Y
+	Q
+	;
+DONETXT	;End of Game Text
+	;;Bye for now.
+	;;You made it out of the forest!
+	;;
+	;;You knocked yourself out on a tree!
+	;;You walked in to the waiting jaws of an Orc!
+	;;You bumped in to a hungry sleeping Orc!
+	;;You were caught by an Orc!
+	;;You fell asleep, a dangerous thing to do in the forest!
+
+

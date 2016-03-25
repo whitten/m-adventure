@@ -1,0 +1,621 @@
+Saved by %RS from [DEV,VAX] on  2-MAY-1990 14:34:09.90
+AD* Adventure Game Routines 
+ADV
+ADV	;ADVENTURE V1.0.  FLH ; 07 FEB 83  3:37 PM
+	;DNL;20May89 13:00;Copyright (c) 1989 PRx, Inc.
+	;K  S:$ZS<6 $ZS=6 S $ZE="ERR1" S GAVEUP=0,S=1
+	S GAME=$P(XID,"^",2),NAME=XID("USER")
+	;NEW (GAME,NAME)
+	I $ZVER["DSM-11" BREAK 2
+	S $ZT="ERR1" S GAVEUP=0,S=1
+	S Q=65,Y=54,N=201 D YES I  D OLDNAM I  D GETGAM I 1
+	E  D NEWNAM,GCOPY,GETGAM
+	S $ZT="ERR^ADV",Q=208,Y=1,N=0 D YES I  I 'HINTED(3) S HINTED(3)=1,LIMIT=LIMIT+670
+	G ^ADV2
+ENDGAM	I '(SAVED&GAVEUP) K ^ADVG(G)
+	E  D PUTGAM
+	S $ZE="ERR1",G="" F Z=0:0 S G=$O(^ADVG(G)) Q:G=""  I $H-10>^(G) K ^(G)
+	S $ZE="" Q
+TIMO	S GAVEUP=1 D ENDGAM H
+	;
+ERR	I $ZE?1"<INRPT".E S $ZE="ERR^ADV",RET="TURN^ADV3" D @$P(^ADV("QUIT"),"/",3) G @RET
+ERR1	D ^%ET Q
+OLDNAM	S M=205 D SPK
+OL1	D GETIN I U1="?"!(U1="HELP") D LIST G OLDNAM
+	I W'?1.5AN S M=203 D SPK G OL1
+	Q:U1="NEW"  S G=U1 I $D(^ADVG(G)) S M=207 D SPK Q
+	S M=206 D SPK G OLDNAM
+LIST	W !! S G="" F X=0:8 S G=$O(^ADVG(G)) Q:G=""  W ?X,G I X>70 W ! S X=0
+	Q
+NEWNAM	S M=202 D SPK
+NE1	D GETIN S G=U1,M=$S(W'?1.5AN:203,G="NEW":210,$D(^ADVG(G)):204,1:207) D SPK G:M-207 NE1 S ^ADVG(G)=$H Q
+GCOPY	F L=1:1:140 S ^ADVG(G,L,"A")=0,^("O")="/"
+	S N=0,F(N)="^ADV(""i"",",T(N)="^ADVG(G,",X=$H D COP K D,F,IN,N,OUT,T,U,X Q
+COP	S U(N)="",IN(N)=F(N)_"U(N))",OUT(N)=T(N)_"U(N))"
+CO1	S U(N)=$O(@IN(N)) I U(N)="" Q
+	S D=$D(@IN(N)) I D#2 S @OUT(N)=@IN(N) I X'=$H S X=$H W "."
+	I D>9 S F(N+1)=F(N)_""""_U(N)_""",",T(N+1)=T(N)_""""_U(N)_""",",N=N+1 D COP S N=N-1
+	G CO1
+GETGAM	S X="" F Z=0:0 S X=$O(^ADVG(G,"i",X)) Q:X=""  S @X=^(X)
+	Q
+PUTGAM	S X="" F Z=0:0 S X=$O(^ADVG(G,"i",X)) Q:X=""  S ^(X)=@X
+	W !!,"This adventure saved with name ",G,"." Q
+GETIN	D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(U," ",1),1,5),U2=$E($P(U," ",2),1,5) K U Q
+YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
+	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+	E  S M=N D:M SPK
+	K M Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+
+ADV2
+ADV2	;ADVENTURE.  FLH ; 07 FEB 83  12:39 PM
+NEWLP	I CLOSNG,LNEW,LNEW<9 S LNEW=LP,M=130 D SPK S:'PANIC CLK2=15,PANIC=1
+	S CONDLP=^ADV(LP,"c") I LNEW-LP,$E(CONDLP,1,2)="00" F DW=1:1:5 I DSEEN(DW),LD1(DW)=LNEW S LNEW=LP,M=2 D SPK Q
+	S LP=LNEW I LP S CONDLP=^ADV(LP,"c") I $E(CONDLP,1,2)="00" D @$S(DFLAG=0:"DW1",DFLAG=1:"DW2",1:"DW3")
+SHOW	G:'LP DEAD^ADV8
+	S DARK=0,L=^ADVG(G,"LAMP","L") I L'<0!'LIT,L-LP!'LIT,'$E(CONDLP,3) S DARK=1
+	D SHOWL G:'LP DEAD^ADV8 I $E(CONDLP) S WD1="FORCED",WD1X=^ADV(WD1) G TRAVEL^ADV3
+	I LP=33,'CLOSNG,$R(10000)<2500 S M=8 D SPK
+	I 'DARK S X=^ADVG(G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D SHOWO
+	S M=0 G TURN^ADV3
+DW1	S:LP>14 DFLAG=1 Q
+DW2	I LP>14,$R(10000)<500 D DW2A,DW2B S DFLAG=2,M=3,O="AXE",L=LP D SPK,DROP
+	Q
+DW2A	F I=1,2 I $R(10000)<5000 S LD($R(10000)\2000+1)=0
+	Q
+DW2B	F DW=1:1:5 I LD(DW)=LP S LD(DW)=18 Q
+	Q
+DW3	S (ND,ATTACK,STICK)=0,K="d" F DW=1:1:5 I LD(DW) D DMOV,DWARF:DSEEN(DW)
+	I LD(6) S K="p",DW=6 D DMOV,PIRAT:DSEEN(DW)
+	Q:'ND  I ND>1 W:S ! W !,"There are ",ND," threatening little dwarves in the room with you."
+	E  S M=4 D SPK
+	Q:'ATTACK  S:DFLAG=2 DFLAG=3 I ATTACK>1 W:S ! W !,ATTACK," of them throw knives at you!" S M=6
+	E  S M=5 D SPK S M=52
+	I STICK>1 W:S ! W !,STICK," of them get you!!"
+	E  S M=M+STICK D SPK Q:'STICK
+	S LP2=LP,LP=0 Q
+DMOV	S Y=^ADV(LD(DW),K),N=0 F I=2:1:Y+1 S L=$P(Y,"/",I) I L-LD1(DW) S LL(N)=L,N=N+1
+	S L=$S(N:LL($R(10000)*N\10000),1:LD1(DW)),LD1(DW)=LD(DW),LD(DW)=L K I,L,LL,N,Y
+	S DSEEN(DW)=DSEEN(DW)&(LP>14)!(LD(DW)=LP)!(LD1(DW)=LP) S:DSEEN(DW) LD(DW)=LP Q
+DWARF	S ND=ND+1 I LD(DW)=LD1(DW) S ATTACK=ATTACK+1 S:KNFL'<0 KNFL=LP S:$R(10000)<(DFLAG-2*950) STICK=STICK+1
+	Q
+PIRAT	Q:LP=114!(^ADVG(G,"CHEST","P")'<0)  S F=0
+	F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=^ADVG(G,O,"L") G:L<0 STEAL S:L=LP F=1
+	I TALLY2+1=TALLY,'F,^ADVG(G,"CHEST","L")=0 S L=^ADVG(G,"LAMP","L") I L<0!(L=LP),LIT G ST2
+	I LD(6)-LD1(6),$R(10000)<2000 S M=127 D SPK
+	Q
+PI1	I O="PLATI",LP=100!(LP=101)
+	Q
+STEAL	S M=128 D SPK I ^ADVG(G,"MESSA","L")=0 S O="CHEST",L=114 D MOVE
+	S O="MESSA",L=140 D MOVE
+	F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=LP D:L=^ADVG(G,O,"L")&'^("F") CARRY I TOTING[("/"_O_"/") S L=114 D DROP
+	G ST3
+ST2	S M=186 D SPK S O="CHEST",L=114 D MOVE S O="MESSA",L=140 D MOVE
+ST3	S (LD(6),LD1(6))=114,DSEEN(6)=0 Q
+SHOWL	I DARK,'$E(CONDLP),WZDARK,$R(10000)<3500 S M=23,LP2=LP,LP=0 D SPK Q
+	I TOTING["/BEAR/" S M=141 D SPK
+	I DARK S M=16 D SPK Q
+	S J=^ADVG(G,LP,"A"),^("A")=J+1#ABB,X=^ADV(LP,0) I J,X["/" W:S ! W !,$P(X,"/",2) Q
+	I X W:S ! F I=1:1:X W !,^(I)
+	Q
+SHOWO	I O="STEPS",TOTING["/GOLD/" Q
+	S P=^ADVG(G,O,"P") I P<0 Q:CLOSED  S (^("P"),P)=O="RUG"!(O="CHAIN"),TALLY=TALLY-1 I TALLY,TALLY=TALLY2,LIMIT>35 S LIMIT=35
+	I O="STEPS",LP=^ADVG(G,O,"F") S P=1
+	D PSPK Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+
+ADV3
+ADV3	;ADVENTURE.  FLH ; 27 JAN 83  12:32 PM
+	;PRX;24Apr89 18:52;Copyright (c) 1989 PRx, Inc.
+TURN	S (VERB,OBJ)="" D:M SPK
+TU1	F J=4:1:9 I 'HINTED(J) S HINTLC(J)=$S($E(CONDLP,5)=J:HINTLC(J)+1,1:0) I HINTLC(J)'<HINTH(J) D HINT^ADV9
+	I CLOSED,TOTING["/OYSTE/" S O="OYSTE",P=1 I ^ADVG(G,O,"P")<0 D PSPK
+	I CLOSED F J=2:1:HOLDNG+1 S O=$P(TOTING,"/",J),P=^ADVG(G,O,"P") I P<0 S ^("P")=-P-1
+	S WZDARK=DARK I KNFL>0,KNFL-LP S KNFL=0
+	D GETIN
+TU3	S FOOBAR=$S(FOOBAR>0:-FOOBAR,1:0),TURNS=TURNS+1,WD1=U1,WD2=U2,(WD1X,WD2X)=""
+G1	I WD1?1.U.E,$D(^ADV(WD1)) S WD1X=^(WD1) I WD1X?1"0".E S WD1=$E(WD1X,2,99) G G1
+G2	I WD2?1.U.E,$D(^ADV(WD2)) S WD2X=^(WD2) I WD2X?1"0".E S WD2=$E(WD2X,2,99) G G2
+	I TALLY=0,LP>14,LP-33 S CLK1=CLK1-1 I CLK1=0 D CLOSEUP^ADV8 G WD1
+	I CLK1<0 S CLK2=CLK2-1 I CLK2=0 D CLOSED^ADV8 G NEWLP^ADV2
+	S LIMIT=LIMIT-LIT I LIMIT<31 D LAMP^ADV8 I GAVEUP G SCORE^ADV8
+WD1	I WD1="ENTER",WD2="WATER"!(WD2="STREA") S M=$S($E(CONDLP,4)=1:70,1:43) G TURN
+	I WD1="WATER"!(WD1="OIL"),WD2="PLANT"!(WD2="DOOR") S WD2="POUR",WD2X=^ADV(WD2)
+	G WD2A
+WD2	S WD1=WD2,W1=W2,U1=U2,WD1X=WD2X,(WD2,W2,U2,WD2X)=""
+WD2A	I WD1X="" S I=$R(10000),M=$S(I<2000:13,I<3600:61,1:60) G TURN
+	I U1="WEST",$R(10000)<2000 S M=17 D SPK
+	G @$P("TRAVEL/OBJECT/ACTION/SPEC","/",$E(WD1X))
+TRAVEL	S LNEW=LP,MOV=WD1,MOX=$E(WD1X,2,99) I MOX?3U.E D @MOX G NEWLP^ADV2
+	S LP2=LP1,LP1=LP
+TR1	I $D(^ADV(LP,MOV,0)) F J=1:1:^(0) S Y=^ADV(LP,MOV,J) X $P(Y,"\",1) I  S RET="NEWLP^ADV2" D @$P(Y,"\",2) G @RET
+	S M=$S(VERB="FIND"!(VERB="INVEN"):59,MOX:MOX,1:12) D SPK G NEWLP^ADV2
+TR2	S LNEW=$P(Y,"\",3) Q
+TR3	S M=$P(Y,"\",3) D SPK Q
+OBJECT	S (O,OBJ)=WD1 D HERE E  I ^ADVG(G,O,"F")-LP G OBJ2
+OBJ1	G WD2:WD2]"",ACT1:VERB]"" W:S ! W !,"What do you want to do with the ",W1,"?" G TU1
+OBJ2	I OBJ="GRATE" S OBJ=$S(LP=1!(LP=4)!(LP=7):"DEPRE",LP>9&(LP<15):"ENTRA",1:OBJ) I OBJ'="GRATE" S WD1=OBJ,WD1X=^ADV(OBJ) G TRAVEL
+	I OBJ="DWARF",DFLAG>1 F DW=1:1:5 I LD(DW)=LP G OBJ1
+	I OBJ=$P("WATER/OIL","/",$E(CONDLP,4)) G OBJ1
+	D LIQ I O=OBJ S O="BOTTL" D HERE I  G OBJ1
+	I OBJ="PLANT" S O="PLANT2" D AT I  I ^ADVG(G,O,"P")=0 S OBJ=O G OBJ1
+	I OBJ="ROD" S O="ROD2" D HERE I  S OBJ=O G OBJ1
+	I OBJ="KNIFE",KNFL=LP S KNFL=-1,M=116 G TURN
+	I OBJ="BRIEF" S:WD2="" WD2="ON",WD2X=^ADV("ON") G OBJ1
+OBNONE	I WD2="",VERB="FIND"!(VERB="INVEN") G OBJ1
+	W:S ! W !,"I don't see any ",W1,"." S M=0 G TURN
+ACTION	S VERB=WD1,VBX=WD1X I VERB="SAY" S OBJ=WD2
+	E  G:WD2]"" WD2
+ACT1	S M=$P(VBX,"/",2),RET="TURN" D @$P(VBX,"/",OBJ]""+3) G @RET
+AVQ	Q
+SPEC	S M=$E(WD1X,2,99) G TURN
+GETIN	D KBD
+	S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(U," ",1),1,5),U2=$E($P(U," ",2),1,5) K U Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV
+	I W="^"!(W="^Q") S W="QUIT" ;MSM;24Apr89
+	S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+AT	I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+	Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADV4
+ADV4	;ADVENTURE.  FLH ; 04 FEB 83  4:30 AM
+AVC	I OBJ="DWARF",CLOSED S M=199 D SPK G RUCKUS
+	Q
+AVD	S I=TOTING[("/"_OBJ_"/") I OBJ="ROD",'I,TOTING["/ROD2/" S OBJ="ROD2",I=1
+	Q:'I  S M=54
+	I OBJ="BIRD" S O="SNAKE" D HERE I  S M=30 D SPK G:CLOSED RUCKUS S M=0,L=0 D MOVE S ^ADVG(G,O,"P")=1 G AVDL
+	I OBJ="COINS" S O="MACHI" D HERE I  S L=0,O="COINS" D MOVE S L=LP,O="BATTE",P=0,M=0 D DROP,PSPK Q
+	I OBJ="BIRD" S O="DRAGO" D AT I  I ^ADVG(G,O,"P")=0 S M=154,L=0,O="BIRD",^ADVG(G,O,"P")=0 D MOVE S:^ADVG(G,"SNAKE","L")=19 TALLY2=TALLY2+1 Q
+	I OBJ="BEAR" S O="TROLL" D AT I  S ^ADVG(G,O,"P")=2,M=163 D TROLLX G AVDL
+AVDV	I OBJ="VASE",LP-96 S O="PILLO" D AT S O="VASE",(P,^ADVG(G,O,"P"))=$S($T:0,1:2),P=P+1,M=0 S:P-1 ^("F")=-1 D PSPK
+AVDL	D LIQ S:O=OBJ OBJ="BOTTL" I OBJ="BOTTL",O]"" S L=0 D DROP
+	E  I OBJ="CAGE",^ADVG(G,"BIRD","P") S O="BIRD",L=LP D DROP I 1
+	E  I OBJ="BIRD" S ^ADVG(G,"BIRD","P")=0
+	S O=OBJ,L=LP D DROP Q
+RUCKUS	S RET="SCORE^ADV8",M=136 D SPK Q
+TROLLX	S O="TROLL",L=0 D MOVE,MOVEF S O="TROLL2",L=117 D MOVE S L=122 D MOVEF S O="CHASM" D JUGGLE Q
+AVJ	S I=TOTING[("/"_OBJ_"/") I OBJ="ROD",'I,TOTING["/ROD2/" S OBJ="ROD2",I=1
+	Q:'I  I TR[("/"_OBJ_"/") S O="TROLL" D AT I  S M=159,L=0,O=OBJ D DROP,TROLLX Q
+	I OBJ="FOOD" S O="BEAR" D HERE I  S OBJ=O G AVK3^ADV6
+	G:OBJ'="AXE" AVD^ADV4 F DW=1:1:5 I LD(DW)=LP G AVJ1
+	S M=152,O="DRAGO" D AT I  I ^ADVG(G,O,"P")=0 G AVJ2
+	S M=158,O="TROLL" D AT I  G AVJ2
+	S O="BEAR" D HERE I  I ^ADVG(G,O,"P")=0 D JUGGLE S M=164,L=LP,O="AXE" D DROP S ^ADVG(G,O,"F")=-1,^("P")=1 Q
+	S OBJ="" G AVA^ADV5
+AVJ1	S M=48 I $R(10000)<6667 S (DSEEN(DW),LD(DW))=0,DKILL=DKILL+1,M=$S(DKILL=1:149,1:47)
+AVJ2	D SPK S O="AXE",(L,LNEW)=LP,RET="NEWLP^ADV2" D DROP Q
+AVW	S I=TOTING[("/"_OBJ_"/"),J=(OBJ="ROD") I 'I,TOTING'["/ROD2/"!'J S M=29
+	I I,J,'CLOSNG S O="FISSU" D AT I  S (P,^("P"))=1-^ADVG(G,O,"P"),P=2-P,M=0 D PSPK
+	Q
+AVX	I OBJ="VASE",^ADVG(G,OBJ,"P")=0 S ^("P")=2,^("F")=-1,M=198,O=OBJ,L=LP D:TOTING["/VASE/" DROP Q
+	I OBJ="MIRRO" S M=148 I CLOSED S M=197 D SPK G RUCKUS
+	Q
+AVY	S M=0 I WD2]"" S WD1=WD2,W1=W2,U1=U2,WD1X=WD2X
+	I "/XYZZY/PLUGH/PLOVE/FEE/"[("/"_WD1_"/") S (WD2,OBJ)="",RET="WD2A"
+	E  W:S ! W !,"Okay, ",W1,"."
+	Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+DROPF	S ^ADVG(G,O,"F")=L G DR1
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVEF	S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+AT	I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+	Q
+JUGGLE	S L=^ADVG(G,O,"L") I L>0 S X=^ADVG(G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X,K,255)
+	K K,L,X Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADV5
+ADV5	;ADVENTURE.  FLH ; 24 JAN 83  12:58 PM
+AV0	W:S ! W !,"I don't understand ",W1,"." S OBJ="",RET="TU1" Q
+AVA	S J=0 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP S J=1,OBJ="DWARF" Q
+	S O="SNAKE" D HERE,AVAJ
+	E  S O="DRAGO" I ^ADVG(G,O,"P")=0 D AT,AVAJ
+	E  S O="TROLL" D AT,AVAJ
+	E  S O="BEAR" I ^ADVG(G,O,"P")=0 D HERE,AVAJ
+	G AV0:$T,AVA1:OBJ]""
+	I VERB'="THROW" S O="BIRD" D HERE I  S OBJ=O
+	F O="CLAM","OYSTE" D HERE,AVAJ G:$T AV0
+AVA1	I OBJ="BIRD" S M=137 Q:CLOSED  S O=OBJ,^ADVG(G,O,"P")=0,L=0,M=45 D MOVE I ^ADVG(G,"SNAKE","L")=19 S TALLY2=TALLY2+1
+	S M=$S(OBJ="DWARF":49,OBJ="SNAKE":46,OBJ="CLAM":150,OBJ="OYSTE":150,OBJ="":44,1:M)
+	I OBJ="DWARF",CLOSED G RUCKUS^ADV4
+	S M=$S(OBJ="DRAGO":167,OBJ="TROLL":157,1:M) I OBJ="BEAR" S M=^ADVG(G,OBJ,"P")+1\2+165
+	Q:OBJ'="DRAGO"!^ADVG(G,"DRAGO","P")
+	S (VERB,OBJ)="",M=49 D SPK,GETIN I U1'?1"Y"."ES" S RET="TU3^ADV3" Q
+	S O="DRAGO",P=1 D PSPK S ^ADVG(G,O,"P")=2,^ADVG(G,"RUG","P")=0
+	S L=-1 D MOVEF S L=120 D MOVE S O="RUG" D MOVE S L=0 D MOVEF
+	S L=120 F LP=119,121 S X=^ADVG(G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D MOVE
+	S (LP,LNEW)=120,RET="NEWLP^ADV2" Q
+AVAJ	I  S OBJ=O,J=J+1 I J>1
+	Q
+AVE	S O="FOOD" D HERE E  G AV0
+AVE1	S L=0,M=72 D MOVE Q
+AVE2	G:OBJ="FOOD" AVE1 I "/BIRD/SNAKE/CLAM/OYSTE/DWARF/DRAGO/TROLL/BEAR/"[("/"_OBJ_"/") S M=71
+	Q
+AVG	D LIQ S I=O="WATER",O="BOTTL" D HERE S J=$T I 'J!'I,OBJ="",$E(CONDLP,4)-1 G AV0
+	I "WATER"'[OBJ S M=110
+	E  I I,J S ^ADVG(G,"BOTTL","P")=1,M=74,O="WATER",L=0 D DROP
+	Q
+AVI	S N=1,M=99 F J=HOLDNG+1:-1:2 S O=$P(TOTING,"/",J) I O'="BEAR" X:N "S N=0 D SPK" W !?5,$E(^ADV(O),2,255)
+	S M=$S(TOTING["/BEAR/":141,N:98,1:0) Q
+AVN	I TOTING[("/"_OBJ_"/") S M=24 Q
+	I CLOSED S M=138 Q
+	S O=OBJ D AT E  S O="BOTTL" D AT I  D LIQ I O=OBJ
+	E  I WD1=$P("WATER/OIL","/",$E(CONDLP,4))
+	E  I DFLAG>1,OBJ="DWARF" F DW=1:1:5 I LD(DW)=LP Q
+	I  S M=94
+	Q
+AVP	I "BOTTL"[OBJ D LIQ S OBJ=O
+	G:OBJ="" AV0 Q:TOTING'[("/"_OBJ_"/")  S M=78 I OBJ'="WATER",OBJ'="OIL" Q
+	S ^ADVG(G,"BOTTL","P")=1,M=77,L=0,O=OBJ D DROP
+	S O="DOOR" D AT I  S (P,^ADVG(G,O,"P"))=OBJ="OIL",M=113+P
+	E  S O="PLANT" D AT I  S M=112 I OBJ="WATER" S P=^ADVG(G,O,"P")+1 D PSPK S (P,^ADVG(G,O,"P"))=P+1#6,^ADVG(G,"PLANT2","P")=P\2,LNEW=LP,RET="NEWLP^ADV2"
+	Q
+AVR	S:OBJ'="LAMP" M=76 Q
+AVU	S Q=22,(Y,N)=54 D YES S:$T RET="SCORE^ADV8" S GAVEUP=$T,M=0 Q
+GETIN	D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(U," ",1),1,5),U2=$E($P(U," ",2),1,5) K U Q
+YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
+	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+	E  S M=N D:M SPK
+	K M Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+DROPF	S ^ADVG(G,O,"F")=L G DR1
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVEF	S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+AT	I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+	Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADV6
+ADV6	;ADVENTURE.  FLH ; 28 DEC 82  9:53 AM
+AVB	I CLOSED,^ADVG(G,"ROD2","P")'<0 S O="ROD2" D HERE S @$S($T:"M=135,BONUS=25",LP=115:"M=134,BONUS=30",1:"M=133,BONUS=45"),RET="SCORE^ADV8" D SPK
+	Q
+AVF	S I=$E(CONDLP,4) I OBJ="VASE" S M=$S('I:144,1:29) Q:TOTING'["/VASE/"!'I  S M=145 D SPK S M=0 G AVDV^ADV4
+	I "BOTTL"[OBJ S O="BOTTL" D HERE G:OBJ=""&'$T AV0^ADV5 D LIQ S M=$S(O]"":105,'I:106,1:107) I M=107 S ^ADVG(G,"BOTTL","P")=$E("102",I+1),L=1 D LIQ,CARRY:TOTING["/BOTTL/" S:O="OIL" M=108
+	Q
+AVK	I OBJ="BIRD" S M=100 Q
+	S J=$S(OBJ="TROLL":182,OBJ="DRAGO":102,1:0) I J=102,^ADVG(G,OBJ,"P") S J=110
+	I J S M=J Q
+	I OBJ="SNAKE" S M=102 Q:CLOSED  S O="BIRD" D HERE Q:'$T  S M=101,L=0,^ADVG(G,O,"P")=0,TALLY2=TALLY2+1 D MOVE Q
+	I OBJ="DWARF" S O="FOOD" D HERE Q:'$T  S M=103 S:DFLAG<3 DFLAG=DFLAG+1 Q
+AVK3	I OBJ="BEAR" S P=^ADVG(G,OBJ,"P"),M=$S(P=0:102,P=3:110,1:M),O="FOOD" D HERE Q:'$T  S M=168,^ADVG(G,"AXE","P")=0,^("F")=0,^ADVG(G,OBJ,"P")=1,L=0 D MOVE Q
+	S M=14 Q
+AVM	S J=$F("FEEFIEFOEFOOFUM",U1)\3,M=42 I FOOBAR-1+J S:FOOBAR M=151 Q
+	I J-4 S FOOBAR=J,M=54 Q
+	S FOOBAR=0,O="EGGS",L=^ADVG(G,O,"L") Q:L=92!(LP=92&(TOTING["/EGGS/"))
+	I L=0,^ADVG(G,"TROLL","L")=0,^("P")=0 S ^("P")=1
+	D HERE S M=0,L=92,P=$S(LP=92:0,$T:1,1:2) D MOVE,PSPK Q
+AVON	G:OBJ="BRIEF" AVONB
+AVON1	I OBJ'="LAMP" S M=13 Q
+AVONL	S O="LAMP" D HERE I  S M=184 I LIMIT'<0 S (LIT,^ADVG(G,O,"P"))=1,DARK=0,M=39 D SPK S M=0 I WZDARK S RET="SHOW^ADV2"
+	Q
+AVONB	S ABB=10000,DETAIL=3,S=0,M=156 Q
+AVOF	G:OBJ="BRIEF" AVOFB
+AVOF1	I OBJ'="LAMP" S M=13 Q
+AVOFL	S O="LAMP" D HERE I  S (LIT,^ADVG(G,O,"P"))=0,M=40 D SPK S DARK='$E(CONDLP,3),M=$S(DARK:16,1:0)
+	Q
+AVOFB	S ABB=5,DETAIL=0,S=1,M=54 Q
+AVS	D SC1^ADV8 W:S ! W !,"If you were to quit now, you would score ",SCORE," out of a possible ",MXSCOR,"."
+	S Q=143,(Y,N)=54 D YES S GAVEUP=$T,M=0 S:$T RET="SCORE^ADV8" Q
+AVV	S J=0 I DARK
+	E  I CLOSED,TOTING["/OYSTE/" S OBJ="OYSTE",J=1
+	E  S O="MAGAZ" D AVVJ
+	E  S O="TABLE" D AVVJ
+	E  S O="MESSA" D AVVJ
+	G:J-1 AV0^ADV5
+AVV1	I DARK S RET="OBNONE^ADV3" Q
+	S J=OBJ="OYSTE"&(TOTING["/OYSTE/")
+	S M=$S(J&HINTED(2):194,OBJ="MESSA":191,OBJ="TABLE":196,OBJ="MAGAZ":190,1:M)
+	I J,'HINTED(2) S Q=192,Y=193,N=54 D YES S HINTED(2)=$T,M=0
+	Q
+AVVJ	D HERE I  S OBJ=O,J=J+1 I J>1
+	Q
+AVZ	S SAVED=1,M=0 D PUTGAM^ADV Q
+YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
+	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+	E  S M=N D:M SPK
+	K M Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADV7
+ADV7	;ADVENTURE.  FLH ; 24 JAN 83  12:16 PM
+AVH	S M=209 Q
+AVL	S M=28 F O="CLAM","OYSTE" D HERE I  S OBJ=O
+	F O="DOOR","GRATE" D AT I  S OBJ=O
+	S O="CHAIN" D HERE I  G:OBJ]"" AVT S OBJ=O
+	Q:OBJ=""
+AVL1	I OBJ="CLAM"!(OBJ="OYSTE") G AVL2
+	I OBJ="DOOR" S M=$S(^ADVG(G,OBJ,"P")=1:54,1:111)
+	E  S M=$S(OBJ="CAGE":32,OBJ="KEYS":55,OBJ="GRATE":31,OBJ="CHAIN":31,1:M)
+	S O="KEYS" D HERE Q:M-31!'$T  G:OBJ="CHAIN" AVL4:VERB="LOCK",AVL3
+	I CLOSNG S:'PANIC CLK2=15 S PANIC=1,M=130 Q
+	S M=^ADVG(G,"GRATE","P")+34,(P,^("P"))=$S(VERB="LOCK":0,1:1),M=2*P+M Q
+AVL2	S J=OBJ="OYSTE",M=$S(TOTING[("/"_OBJ_"/"):120,1:124)+J
+	S:TOTING'["/TRIDE/" M=122+J S:VERB="LOCK" M=61
+	I M=124 S O="CLAM",L=0 D MOVE S O="OYSTE",L=LP D DROP S O="PEARL",L=105 D DROP
+	Q
+AVL3	S P=^ADVG(G,"BEAR","P"),M=$S(^ADVG(G,"CHAIN","P")=0:37,P=0:41,1:171)
+	I M=171 S ^ADVG(G,"CHAIN","P")=0,^("F")=0 S:P-3 (P,^ADVG(G,"BEAR","P"))=2 S ^ADVG(G,"BEAR","F")=2-P
+	Q
+AVL4	S O="CHAIN",L=LP,M=$S(L-130:173,^ADVG(G,O,"P"):34,1:172)
+	I M=172 S ^ADVG(G,O,"P")=2,^("F")=-1 D:TOTING["/CHAIN/" DROP
+	Q
+	;
+AVT	G:$L(^ADVG(G,LP,"O"),"/")-3 AV0^ADV5 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP G AV0^ADV5
+	S OBJ=$P(^("O"),"/",2)
+AVT1	Q:TOTING[("/"_OBJ_"/")  S M=25,F=^ADVG(G,OBJ,"F"),P=^("P")
+	I OBJ="PLANT",P'>0 S M=115
+	E  I OBJ="BEAR",P=1 S M=169
+	E  I OBJ="CHAIN",^ADVG(G,"BEAR","P") S M=170
+	Q:F  I OBJ'="WATER",OBJ'="OIL" G AVT2
+	D LIQ S I=O=OBJ,(O,OBJ)="BOTTL" D HERE G:$T&I AVT2 S I=TOTING["/BOTTL/",P=^ADVG(G,O,"P")
+	G:P=1&I AVF^ADV6 S M=$S('I:104,P-1:105,1:M) Q
+AVT2	I HOLDNG>7 S M=92 Q
+	S L=LP I OBJ'="BIRD",OBJ'="CAGE" G AVT3
+	S P=^ADVG(G,"BIRD","P") I OBJ="BIRD",P=0 S M=26 Q:TOTING["/ROD/"  S M=27 Q:TOTING'["/CAGE/"  S (P,^ADVG(G,"BIRD","P"))=1
+	I P S O=$S(OBJ="BIRD":"CAGE",1:"BIRD") D CARRY
+AVT3	S O=OBJ D CARRY,LIQ I O]"",OBJ="BOTTL" S ^ADVG(G,O,"L")=-1,TOTING="/"_O_TOTING,HOLDNG=HOLDNG+1
+	S M=54 Q
+	;
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+AT	I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+	Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADV8
+ADV8	;ADVENTURE.  FLH ; 04 FEB 83  4:00 AM
+CLOSEUP	F O="GRATE","FISSU" S ^ADVG(G,O,"P")=0
+	F O="CHAIN","AXE" S ^ADVG(G,O,"P")=0,^("F")=0
+	F DW=1:1:6 S (DSEEN(DW),LD(DW))=0
+	D TROLLX^ADV4 S O="BEAR",L=0 I ^ADVG(G,O,"P")-3 D MOVE
+	S CLK1=-1,CLOSNG=1,M=129 D SPK Q
+CLOSED	S (L,LP,LP1,LNEW)=115,P=-2,O="BOTTL" D CL1
+	S P=-1 F O="PLANT","OYSTE","LAMP","ROD","DWARF","MIRRO" D CL1
+	S L=116 F O="CAGE","ROD2","PILLO" D CL1
+	S O="GRATE" D MOVE S P=-2 F O="SNAKE","BIRD" D CL1
+	S ^ADVG(G,"MIRRO","F")=116,CLOSED=1,BONUS=10,M=132 D SPK
+	F L=0:0 S O=$P(TOTING,"/",2) Q:O=""  D DROP
+	Q
+CL1	S ^ADVG(G,O,"P")=P D MOVE Q
+LAMP	S O="LAMP" D HERE S I=$T I  S O="BATTE" D HERE I  I ^ADVG(G,O,"P")=0
+	I  S ^("P")=1,LIMIT=LIMIT+2500,LMWARN=0,L=LP,M=188 D SPK,DROP:TOTING["/BATTE/" Q
+	I LIMIT=0 S (LIT,^ADVG(G,"LAMP","P"))=0,LIMIT=-1,M=184 D:I SPK Q
+	I LIMIT<0,LP<9 S GAVEUP=1,M=185 D SPK Q
+	I I,'LMWARN S LMWARN=1,M=$S(^ADVG(G,"BATTE","P")=1:189,^("L")=0:183,1:187) D SPK
+	Q
+DEAD	I CLOSNG S NUMDIE=NUMDIE+1,M=131 D SPK G SCORE
+	S Q=NUMDIE*2+81,Y=Q+1,N=54,NUMDIE=NUMDIE+1 D YES I NUMDIE=3!'$T G SCORE
+	F O="WATER","OIL" S ^ADVG(G,O,"L")=0
+	I TOTING["/LAMP/" S O="LAMP",L=1,(LIT,^ADVG(G,O,"P"))=0 D DROP
+	S L=LP2 F J=1:1:HOLDNG S O=$P(TOTING,"/",2) D DROP
+	S (LP,LP2,LNEW)=3 G NEWLP^ADV2
+	;
+SCORE	D SC1 W:S ! W !,"You scored ",SCORE," out of a possible ",MXSCOR,", using ",TURNS," turns."
+	S I=$O(^ADV("s",SCORE)) W !,^(I)
+	I I<9999 W !,"To achieve the next higher rating, you need ",I-SCORE," points."
+	G ENDGAM^ADV
+SC1	S (SCORE,MXSCOR)=2
+	F J=2:1:$L(TR,"/")-1 S N=$S(J>7:16,J=7:14,1:12),MXSCOR=MXSCOR+N,O=$P(TR,"/",J),P=^ADVG(G,O,"P"),SCORE=SCORE+$S(^("L")=3&'P:N,P'<0:2,1:0)
+	F I=1:1:6 S Y=$T(SC2+I),@$P(Y,";",2),MXSCOR=MXSCOR+N X $P(Y,";",3) I  S SCORE=SCORE+N
+	F I=2:1:9 I HINTED(I) S SCORE=SCORE-$P(^ADV("h",I),"/",2)
+SC2	Q
+	;N=30;S N=30-(NUMDIE*10) I 1;
+	;N=4;I VERB'="SCORE",'GAVEUP;
+	;N=25;I DFLAG;
+	;N=25;I CLOSNG;
+	;N=BONUS;I 1;
+	;N=1;I ^ADVG(G,"MAGAZ","L")=108;
+YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
+	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+	E  S M=N D:M SPK
+	K M Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+
+ADV9
+ADV9	;ADVENTURE.  FLH ; 29 DEC 82  8:52 AM
+HINT	D @("HINT"_J) E  Q:J=5  G HI1
+	S X=^ADV("h",J),P=$P(X,"/",2),Q=$P(X,"/",3),Y=0,N=54 D YES E  Q
+	W:S ! W !,"I am prepared to give you a hint, but it will cost you ",P," points."
+	S Q=175,Y=$P(X,"/",4) D YES S HINTED(J)=$T I  I LIMIT>30 S LIMIT=30*P+LIMIT
+HI1	S HINTLC(J)=0 Q
+HINT4	I ^ADVG(G,"GRATE","P")=0 S O="KEYS" D HERE I '$T
+	Q
+HINT5	I OBJ="BIRD" S O=OBJ D HERE I  I TOTING["/ROD/"
+	Q
+HINT6	S O="BIRD" D HERE I '$T S O="SNAKE" D HERE
+	Q
+HINT7	S I=HOLDNG>1 F L=LP,LP1,LP2 Q:'I  I L>0 S I=^ADVG(G,L,"O")="/"
+	I I
+	K I Q
+HINT8	I ^ADVG(G,"EMERA","P")=-1,^ADVG(G,"PLATI","P")=-1
+	Q
+HINT9	I 1
+	Q
+TRS1	I "/EMERA/"'[TOTING S M=117 D SPK
+	E  S LNEW=199-LP
+	Q
+TRS2	S O="EMERA",L=LP,RET="TR1" D DROP Q
+TRS3	S O="TROLL" I ^ADVG(G,O,"P")=1 S ^("P")=0,P=1 D PSPK S L=117 D MOVE S L=122 D MOVEF S O="TROLL2",L=0 D MOVE,MOVEF S O="CHASM" D JUGGLE Q
+	S LNEW=239-LP S:^("P")=0 ^("P")=1 Q:TOTING'["/BEAR/"
+	S ^ADVG(G,"CHASM","P")=1,^ADVG(G,"TROLL","P")=2,O="BEAR",L=LNEW,M=162 D DROP,SPK S ^ADVG(G,O,"F")=-1,^("P")=3
+	S:^ADVG(G,"SPICE","P")<0 TALLY2=TALLY2+1 S LP2=LNEW,RET="DEAD^ADV8" Q
+TRB	S L3=$S($E(^ADV(LP1,"c")):LP2,1:LP1),LP2=LP1,LP1=LP I L3=LP S M=91 D SPK
+	E  S MOV="A" F Z=0:0 S MOV=$O(^ADV(LP,MOV)) Q:MOV]"ZZ"  F J=1:1:^(MOV,0) S Y=^(J) I $P(Y,"\",2)="TR2" S L=$P(Y,"\",3),LL(L)="" I L=L3 S LNEW=L3 G TRB1
+	E  S L="" F Z=0:0 S L=$O(LL(L)) Q:L=""  I $D(^ADV(L,"FORCED",1)),$P(^(1),"\",3)=L3 S LNEW=L3 Q
+	E  S M=140 D SPK
+TRB1	K L3,LL,MOV Q
+TRC	S M=$S(LP<8:57,1:58) D SPK Q
+TRL	I DETAIL<3 S M=15 D SPK
+	S DETAIL=DETAIL+1,WZDARK=0,^ADVG(G,LP,"A")=0 Q
+TRN	Q
+YES	S M=Q D SPK,KBD I U?1"Y".1"ES" S M=Y D:M SPK
+	E  I U'?1"N".1"O" W "   Please answer the question." G YES
+	E  S M=N D:M SPK
+	K M Q
+KBD	W:S ! R !,W:600 G:'$T TIMO^ADV S U=W F I=1:1 Q:U?.CNPU  I $E(U,I)?1L S U=$E(U,1,I-1)_$C($A(U,I)-32)_$E(U,I+1,99)
+	K I Q
+SPK	W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+	K I Q
+PSPK	S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+	K I,N Q
+DROPF	S ^ADVG(G,O,"F")=L G DR1
+DROP	F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
+	S ^ADVG(G,O,"L")=L
+DR1	I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+	Q
+CARRY	Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF	S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+	K Y,Z Q
+MOVEF	S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE	S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE	S L=^ADVG(G,O,"L") I L<0!(L=LP)
+	K L Q
+JUGGLE	S L=^ADVG(G,O,"L") I L>0 S X=^ADVG(G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X,K,255)
+	K K,L,X Q
+LIQ	S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+
+ADVDOC
+ADVDOC	;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
+I	; Adventure is the original computer game that has inspired dozens of
+	; descendants of the "Dungeons and Dragons" genre.  First coded in
+	; Fortran for the PDP-10 by Willie Crowther at MIT, it was revised and
+	; extended by Don Woods of the Stanford Artificial Intelligence lab.
+	; Kent Blackett and Bob Supnick of Digital Equipment Corp. rewrote
+	; it in Fortran IV-Plus and then in Fortran IV for the PDP-11.
+	; Fred Hiltz of InterSystems Corp. translated it into ANSI Standard
+	; MUMPS--this program.
+	;
+II	; Any number can play simultaneously:  "D ^ADV" to get started.  Each
+	; player gives a name to his/her game, which can be suspended with a
+	; SUSPEND command at any time and later resumed.  Saved games more than
+	; ten days old are deleted automatically.
+	;
+III	; This program is written to run in InterSystems Corporation's M/11
+	; implementation of 1983 ANSI Standard MUMPS.  There are ten routines:
+	; AD, ADDOC, and AD2-AD9.  They require 40K bytes of disk storage.
+	; One global, ^ADV, contains the geography, text, etc.--it requires
+	; 84K bytes.  The second global, ^ADVG, holds the variables associated
+	; with each game in progress or suspended.  It requires 6K bytes per
+	; game.  Adventure should run in a partition of at least 6K bytes.
+	;
+IV	; Adventure is supplied on a magnetic tape containing a file of
+	; routines followed by a file of the global ^ADV.  Both files are
+	; written with 1024-byte physical records in the DOS format.  To
+	; install the game in M/11, mount the tape, sign in to the UCI in
+	; which the game will run, and D ^%RI.  Give tape parameters:
+	;     ("D3":0:1024)  if the tape is marked 800 bpi, or
+	;     ("D4":0:1024)  if the tape is marked 1600 bpi.
+	; Tell %RI to load all the routines.  The tape does not contain
+	; comments for ^COMMENT.  When %RI has finished, leave the tape in
+	; position and D ^%GI.  Give the same tape parameters.
+	;
+V	; After ^ADV is in place, you may optionally D ^%PROTECT and follow
+	; its instructions to allow read-only access to ^ADV from all UCI's,
+	; thus protecting it from change or deletion.  This completes the
+	; installation of Adventure.
+	;
+VI	; Adventure may easily be ported to other systems that support 1983
+	; ANSI Standard MUMPS.  The only non-standard features are confined
+	; to the routine AD:  $ZS is the size of the partition in kilobytes.
+	; $ZE governs trapping of errors and keyboard breaks.  Its code may be
+	; removed without detriment to the game.  The utility routine %ET is
+	; used to log the local variables following an error.
+	;
+VII	; For maintenance of Adventure please write, not telephone,
+	;          Frederick L. Hiltz, Ph. D.
+	;          Systems Development Engineer
+	;          InterSystems Corporation
+	;          210 Commercial Street, Third Floor
+	;          Boston, MA  02109
+	;
+	; Maintenance will be provided only for the unaltered program, and only
+	; when a printout of the error logged by %ET is included (use the %ER
+	; utility).  On a time-available basis, I will return either a patch
+	; or a new release of the program.
+
+

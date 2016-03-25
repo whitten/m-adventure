@@ -1,0 +1,366 @@
+Saved by %RS from [DEV,VAX] on  4-MAY-1990 23:47:54.85
+Qubic Game
+KUBIC0
+KUBIC0	;MSM;05Aug86; Qubic 3D Tic Tac Toe Game
+	;PRX;29Jul88 19:58;(c) Copyright 1986,1987 PRx, Inc. Concord, MA
+	;Written in August 1986 by Michael McIntyre
+	;Adapted from "QUBIC" in 101 Basic Games
+	;Original author is unknown
+	;This version has been Split into 3 Routines KUBIC0-2
+START	D INIT
+	D RESET
+	D BOARD
+FIRST	S C=35,R=9 W @POS,"Do you want to move first? ",CEL
+	R %S:300 E  S %S="^Q"
+	S:%S="" %S="?"
+	I $L(%S),"^Q"[%S G EXIT
+	S C=35,R=11 W @POS,CEL
+	I "NOno"[%S G THINK
+	I "YESyes"[%S G MOVE
+	S C=35,R=11 W @POS,"Type 'YES' or 'NO' or '^' to exit."
+	G FIRST
+ANOTHER	;
+	S C=35,R=17 W @POS,"Would you like to play again? "
+	R %S:300 E  S %S="^"
+	I "YESyes"[%S G START
+	;
+EXIT	W CLS
+	K %S,A,B,BLD,BTXT,C,CLS,CEL,DBL,ESC,I,J,J1,K,K1,K2,K3
+	K M,MARK,NOR,P,POS,R,REV,S,SM,UND,X,Z
+	Q
+	;
+RESET	F I=1:1:64 S X(I)=0
+	Q
+	;
+INIT	S I=0
+	F J=1,49,52,4,13,61,64,16,22,39,23,38,26,42,27,43 S I=I+1,Y(I)=J
+	;
+	S ESC=$C(27),CLS=ESC_"[H"_ESC_"[J",UND=ESC_"[4m",BLD=ESC_"[1m"
+	S NOR=ESC_"[m",REV=ESC_"[7m",POS="*27,""["",R,"";"",C,""H"""
+	S DBL=ESC_"#6"
+	S CEL=ESC_"[K"
+	USE 0:(WIDTH=0)
+	Q
+	;
+BOARD	W CLS
+	F I=1:1:4 DO
+	.W UND
+	.S R=I*6-4,C=10
+	.W @POS,UND
+	.W:I=1 "  1   2   3   4 "
+	.W:I'=1 "                "
+	.W NOR
+	.F J=1:1:4 DO
+	..S R=I*6-4+J,C=9-J
+	..W @POS
+	..W:I=1 J W:I'=1 " "
+	..W UND,"/   /   /   /   ",NOR,"/"
+	.S R=I*6-2,C=3
+	.W @POS,I
+	F I=0:1:1 DO
+	.S C=I*21+5
+	.F J=7:1:24 DO
+	..S R=-4*I+J
+	..W @POS,"|"
+	S C=9
+	F I=1:1:3 DO
+	.F J=1:1:2 DO
+	..S R=I*6+J
+	..W @POS,"|"
+	S R=1,C=22 W @POS,DBL,"Q U B I C"
+	S C=35
+	F I=1:1:5 S R=I+2 W @POS,$P($T(TEXT+I),";;",2)
+	Q
+TEXT	;
+	;;Qubic  is a game of  three dimensional
+	;;tic-tac-toe.  You win by  placing four
+	;;marks  in a row in any direction.  You
+	;;make your move by a three digit number
+	;;indicating level, row and column.
+	;
+THINK	G THINK^KUBIC1
+MOVE	G MOVE^KUBIC1
+
+KUBIC1
+KUBIC1	;MSM;05Aug86; Qubic 3D Tic Tac Toe Game
+	;PRX;29Jul88 20:00;(c) Copyright 1986,1987 PRx, Inc. Concord, MA
+	;This version of the program has been split into 3 routines KUBIC0-3
+MOVE	;
+	S MARK="X"
+	S C=35,R=9 W @POS,NOR,"Your move: ",CEL
+	R J1:300 E  S J1="^"
+	I J1="^" G EXIT
+	I J1'?3N S R=11 W @POS,"Type a 3 digit number or '^' to quit.",CEL G MOVE
+	D CLRX
+	S K1=J1\100,K2=J1#100\10,K3=J1#10
+	S M=16*K1+(4*K2)+K3-20
+	I X(M)'=0 S R=11 W @POS,"That square is already used.",CEL G MOVE
+	S X(M)=8
+	F R=11,13,14 W @POS,CEL
+	D DISPLAY
+	;
+THINK	;
+	S R=13,C=35 W @POS
+	S MARK="O"
+	D SUML
+	W "."
+	F I=1:1:76 I L(I)=32 S MARK="X" G YOUWIN
+	W "."
+	F I=1:1:76 I L(I)=120 G IWIN
+	W "."
+	F I=1:1:76 I L(I)=24 G NICE
+	G PONDER
+	;
+YOUWIN	S C=35,R=11 W @POS,"You win as follows: "
+	D SETB
+	F J=1:1:4 S M=B(J) D SHOW
+	F J=1:1:4 S M=B(J) W REV D DISPLAY
+	G ANOTHER
+	;
+IWIN	S C=35,R=13 W @POS,"Machine moves to"
+	D SETB
+	F J=1:1:4 S M=B(J) I X(M)=0 S X(M)=40 D SHOW,DISPLAY
+	H 1
+	S C=55,R=13 W @POS,", and wins as follows:"
+	S C=35,R=14 W @POS
+	F J=1:1:4 S M=B(J) D SHOW
+	F J=1:1:4 S M=B(J) W REV D DISPLAY
+	G ANOTHER
+NICE	S C=35,R=13 W @POS,"Nice try.  Machine moves to "
+	D SETB
+	F J=1:1:4 S M=B(J) I X(M)=0 S X(M)=40 D SHOW,DISPLAY G MOVE
+	;
+PONDER	D SUML
+	W "."
+	F I=1:1:76 S L=L(I) D:L=80 TMPX I L>80,L<88 D CLOSE G END:M<0,MOVE:M
+	D SUML
+	W "."
+	F I=1:1:76 I L(I)=4!(L(I)=43) D TAKE G MOVE:M
+	D CLRX,SUML
+	W "."
+	F I=1:1:76 S L=L(I) D:L=16 TMPX I L>16,L<24 D CLOSE G END:M<0,MOVE:M
+	D SUML
+	W "."
+	F I=1:1:76 I L(I)=4!(L(I)=11) D TAKE G MOVE:M
+	W "."
+	F K=1:1:18 D P G MOVE:M
+	D CLRX
+	F Z=1:1:16 I X(Y(Z))=0 S M=Y(Z),X(M)=40 S C=35,R=13 W @POS,"Machine moves to " D SHOW,DISPLAY G MOVE
+	F I=1:1:64 I X(I)=0 S M=I,X(M)=40 S C=35,R=13 W POS,"Machine likes " D SHOW,DISPLAY G MOVE
+	W !,"Game is a Draw."
+	G ANOTHER
+	;
+P	S P=0,M=0
+	D SETB
+	F I=4*K-3:1:4*K F J=1:1:4 S P=P+X(B(J))
+	I 32'<P,P<40 D TAKE Q
+	I 72'<P,P<80 D TAKE
+	Q
+	;
+SETB	;(I,.B)
+	S BTXT=$TEXT(DATA+I)
+	F J=1:1:4 S B(J)=$P(BTXT,";",J+2)
+	Q
+	;
+TMPX	;W "?"
+	D SETB
+	F J=1:1:4 I X(B(J))=0 S X(B(J))=1
+	Q
+	;
+CLRX	;W "0"
+	F I=1:1:64 I X(I)=1 S X(I)=0
+	Q
+	;
+SHOW	S K1=M-1\16+1,K2=M-1\4#4+1,K3=M-1#4+1
+	S SM=K1*10+K2*10+K3
+	W " ",SM
+	Q
+	;
+DISPLAY	S K1=M-1\16+1,K2=M-1\4#4+1,K3=M-1#4+1
+	S R=K1*6+K2-4,C=K3*4-K2+8
+	W @POS,UND,BLD,MARK,NOR
+	Q
+	;
+CLOSE	S M=0
+	D SETB
+	F J=1:1:4 I 1=X(B(J)) G CL
+	S C=35,R=14 W @POS,"Machine concedes this game."
+	S M=-1
+	Q
+CL	S M=B(J),X(M)=40
+	I L(I)<40 S C=35,R=13 W POS,"You fox.  Just in the nick of time, machine moves to "
+	E  S C=35,R=13 W @POS,"Let's see you get out of this:" S R=14 W @POS,"Machine moves to:"
+	D SHOW,DISPLAY Q
+	;
+TAKE	;W "$" 
+	D SETB
+	S S=1,M=0,A=1 I I#4>1 S A=2
+	F J=A:-2*A+5:5-A I X(B(J))=1 S M=B(J),X(M)=40 S C=35,R=13 W @POS,"Machine takes" D SHOW,DISPLAY Q
+	Q
+	;
+DATA	;
+	;;1;2;3;4
+	;;5;6;7;8
+	;;9;10;11;12
+	;;13;14;15;16
+	;;17;18;19;20
+	;;21;22;23;24
+	;;25;26;27;28
+	;;29;30;31;32
+	;;33;34;35;36
+	;;37;38;39;40
+	;;41;42;43;44
+	;;45;46;47;48
+	;;49;50;51;52
+	;;53;54;55;56
+	;;57;58;59;60
+	;;61;62;63;64
+	;;1;17;33;49
+	;;5;21;37;53
+	;;9;25;41;57
+	;;13;29;45;61
+	;;2;18;34;50
+	;;6;22;38;54
+	;;10;26;42;58
+	;;14;30;46;62
+	;;3;19;35;51
+	;;7;23;39;55
+	;;11;27;43;59
+	;;15;31;47;63
+	;;4;20;36;52
+	;;8;24;40;56
+	;;12;28;44;60
+	;;16;32;48;64
+	;;1;5;9;13
+	;;17;21;25;29
+	;;33;37;41;45
+	;;49;53;57;61
+	;;2;6;10;14
+	;;18;22;26;30
+	;;34;38;42;46
+	;;50;54;58;62
+	;;3;7;11;15
+	;;19;23;27;31
+	;;35;39;43;47
+	;;51;55;59;63
+	;;4;8;12;16
+	;;20;24;28;32
+	;;36;40;44;48
+	;;52;56;60;64
+	;;1;6;11;16
+	;;17;22;27;32
+	;;33;38;43;48
+	;;49;54;59;64
+	;;13;10;7;4
+	;;29;26;23;20
+	;;45;42;39;36
+	;;61;58;55;52
+	;;1;21;41;61
+	;;2;22;42;62
+	;;3;23;43;63
+	;;4;24;44;64
+	;;49;37;25;13
+	;;50;38;26;14
+	;;51;39;27;15
+	;;52;40;28;16
+	;;1;18;35;52
+	;;5;22;39;56
+	;;9;26;43;60
+	;;13;30;47;64
+	;;49;34;19;4
+	;;53;38;23;8
+	;;57;42;27;12
+	;;61;46;31;16
+	;;1;22;43;64
+	;;16;27;38;49
+	;;4;23;42;61
+	;;13;26;39;52
+	;End of Data
+ANOTHER	G ANOTHER^KUBIC0
+EXIT	G EXIT^KUBIC0
+SUML	G SUML^KUBIC2
+
+KUBIC2
+KUBIC	;MSM;05Aug86; Qubic 3D Tic Tac Toe Game
+SUML	;
+	;W "+",*8
+	S L(1)=X(1)+X(2)+X(3)+X(4)
+	S L(2)=X(5)+X(6)+X(7)+X(8)
+	S L(3)=X(9)+X(10)+X(11)+X(12)
+	S L(4)=X(13)+X(14)+X(15)+X(16)
+	S L(5)=X(17)+X(18)+X(19)+X(20)
+	S L(6)=X(21)+X(22)+X(23)+X(24)
+	S L(7)=X(25)+X(26)+X(27)+X(28)
+	S L(8)=X(29)+X(30)+X(31)+X(32)
+	S L(9)=X(33)+X(34)+X(35)+X(36)
+	S L(10)=X(37)+X(38)+X(39)+X(40)
+	S L(11)=X(41)+X(42)+X(43)+X(44)
+	S L(12)=X(45)+X(46)+X(47)+X(48)
+	S L(13)=X(49)+X(50)+X(51)+X(52)
+	S L(14)=X(53)+X(54)+X(55)+X(56)
+	S L(15)=X(57)+X(58)+X(59)+X(60)
+	S L(16)=X(61)+X(62)+X(63)+X(64)
+	S L(17)=X(1)+X(17)+X(33)+X(49)
+	S L(18)=X(5)+X(21)+X(37)+X(53)
+	S L(19)=X(9)+X(25)+X(41)+X(57)
+	S L(20)=X(13)+X(29)+X(45)+X(61)
+	S L(21)=X(2)+X(18)+X(34)+X(50)
+	S L(22)=X(6)+X(22)+X(38)+X(54)
+	S L(23)=X(10)+X(26)+X(42)+X(58)
+	S L(24)=X(14)+X(30)+X(46)+X(62)
+	S L(25)=X(3)+X(19)+X(35)+X(51)
+	S L(26)=X(7)+X(23)+X(39)+X(55)
+	S L(27)=X(11)+X(27)+X(43)+X(59)
+	S L(28)=X(15)+X(31)+X(47)+X(63)
+	S L(29)=X(4)+X(20)+X(36)+X(52)
+	S L(30)=X(8)+X(24)+X(40)+X(56)
+	S L(31)=X(12)+X(28)+X(44)+X(60)
+	S L(32)=X(16)+X(32)+X(48)+X(64)
+	S L(33)=X(1)+X(5)+X(9)+X(13)
+	S L(34)=X(17)+X(21)+X(25)+X(29)
+	S L(35)=X(33)+X(37)+X(41)+X(45)
+	S L(36)=X(49)+X(53)+X(57)+X(61)
+	S L(37)=X(2)+X(6)+X(10)+X(14)
+	S L(38)=X(18)+X(22)+X(26)+X(30)
+	S L(39)=X(34)+X(38)+X(42)+X(46)
+	S L(40)=X(50)+X(54)+X(58)+X(62)
+	S L(41)=X(3)+X(7)+X(11)+X(15)
+	S L(42)=X(19)+X(23)+X(27)+X(31)
+	S L(43)=X(35)+X(39)+X(43)+X(47)
+	S L(44)=X(51)+X(55)+X(59)+X(63)
+	S L(45)=X(4)+X(8)+X(12)+X(16)
+	S L(46)=X(20)+X(24)+X(28)+X(32)
+	S L(47)=X(36)+X(40)+X(44)+X(48)
+	S L(48)=X(52)+X(56)+X(60)+X(64)
+	S L(49)=X(1)+X(6)+X(11)+X(16)
+	S L(50)=X(17)+X(22)+X(27)+X(32)
+	S L(51)=X(33)+X(38)+X(43)+X(48)
+	S L(52)=X(49)+X(54)+X(59)+X(64)
+	S L(53)=X(13)+X(10)+X(7)+X(4)
+	S L(54)=X(29)+X(26)+X(23)+X(20)
+	S L(55)=X(45)+X(42)+X(39)+X(36)
+	S L(56)=X(61)+X(58)+X(55)+X(52)
+	S L(57)=X(1)+X(21)+X(41)+X(61)
+	S L(58)=X(2)+X(22)+X(42)+X(62)
+	S L(59)=X(3)+X(23)+X(43)+X(63)
+	S L(60)=X(4)+X(24)+X(44)+X(64)
+	S L(61)=X(49)+X(37)+X(25)+X(13)
+	S L(62)=X(50)+X(38)+X(26)+X(14)
+	S L(63)=X(51)+X(39)+X(27)+X(15)
+	S L(64)=X(52)+X(40)+X(28)+X(16)
+	S L(65)=X(1)+X(18)+X(35)+X(52)
+	S L(66)=X(5)+X(22)+X(39)+X(56)
+	S L(67)=X(9)+X(26)+X(43)+X(60)
+	S L(68)=X(13)+X(30)+X(47)+X(64)
+	S L(69)=X(49)+X(34)+X(19)+X(4)
+	S L(70)=X(53)+X(38)+X(23)+X(8)
+	S L(71)=X(57)+X(42)+X(27)+X(12)
+	S L(72)=X(61)+X(46)+X(31)+X(16)
+	S L(73)=X(1)+X(22)+X(43)+X(64)
+	S L(74)=X(16)+X(27)+X(38)+X(49)
+	S L(75)=X(4)+X(23)+X(42)+X(61)
+	S L(76)=X(13)+X(26)+X(39)+X(52)
+	;W "+"
+	Q
+
+

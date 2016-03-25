@@ -1,0 +1,7170 @@
+^ADV Adventure Global
+ 2-May-90, 15:20
+^ADV
+111
+^ADV("1","0")
+2/You're at end of road again.
+^ADV("1","1")
+You are standing at the end of a road before a small brick building.  Around
+^ADV("1","2")
+you is a forest.  A small stream flows out of the building and down a gully.
+^ADV("1","BUILD","0")
+1
+^ADV("1","BUILD","1")
+I 1\TR2\3
+^ADV("1","D","0")
+1
+^ADV("1","D","1")
+I 1\TR2\4
+^ADV("1","DEPRE","0")
+1
+^ADV("1","DEPRE","1")
+I 1\TR2\8
+^ADV("1","DNSTR","0")
+1
+^ADV("1","DNSTR","1")
+I 1\TR2\4
+^ADV("1","E","0")
+1
+^ADV("1","E","1")
+I 1\TR2\3
+^ADV("1","ENTER","0")
+1
+^ADV("1","ENTER","1")
+I 1\TR2\3
+^ADV("1","FORES","0")
+1
+^ADV("1","FORES","1")
+I 1\TR2\5
+^ADV("1","GULLY","0")
+1
+^ADV("1","GULLY","1")
+I 1\TR2\4
+^ADV("1","INWAR","0")
+1
+^ADV("1","INWAR","1")
+I 1\TR2\3
+^ADV("1","N","0")
+1
+^ADV("1","N","1")
+I 1\TR2\5
+^ADV("1","ROAD","0")
+1
+^ADV("1","ROAD","1")
+I 1\TR2\2
+^ADV("1","S","0")
+1
+^ADV("1","S","1")
+I 1\TR2\4
+^ADV("1","STREA","0")
+1
+^ADV("1","STREA","1")
+I 1\TR2\4
+^ADV("1","U","0")
+1
+^ADV("1","U","1")
+I 1\TR2\2
+^ADV("1","W","0")
+1
+^ADV("1","W","1")
+I 1\TR2\2
+^ADV("1","c")
+00110
+^ADV("2","0")
+2/You're at hill in road.
+^ADV("2","1")
+You have walked up a hill, still in the forest.  The road slopes back down the
+^ADV("2","2")
+other side of the hill.  There is a building in the distance.
+^ADV("2","BUILD","0")
+1
+^ADV("2","BUILD","1")
+I 1\TR2\1
+^ADV("2","D","0")
+1
+^ADV("2","D","1")
+I 1\TR2\1
+^ADV("2","E","0")
+1
+^ADV("2","E","1")
+I 1\TR2\1
+^ADV("2","FORES","0")
+1
+^ADV("2","FORES","1")
+I 1\TR2\5
+^ADV("2","FORWA","0")
+1
+^ADV("2","FORWA","1")
+I 1\TR2\1
+^ADV("2","N","0")
+1
+^ADV("2","N","1")
+I 1\TR2\1
+^ADV("2","ROAD","0")
+1
+^ADV("2","ROAD","1")
+I 1\TR2\1
+^ADV("2","S","0")
+1
+^ADV("2","S","1")
+I 1\TR2\5
+^ADV("2","c")
+00100
+^ADV("3","0")
+1/You're inside building.
+^ADV("3","1")
+You are inside a building, a well house for a large spring.
+^ADV("3","DNSTR","0")
+1
+^ADV("3","DNSTR","1")
+I 1\TR2\79
+^ADV("3","ENTER","0")
+1
+^ADV("3","ENTER","1")
+I 1\TR2\1
+^ADV("3","OUT","0")
+1
+^ADV("3","OUT","1")
+I 1\TR2\1
+^ADV("3","OUTDO","0")
+1
+^ADV("3","OUTDO","1")
+I 1\TR2\1
+^ADV("3","PLUGH","0")
+1
+^ADV("3","PLUGH","1")
+I 1\TR2\33
+^ADV("3","STREA","0")
+1
+^ADV("3","STREA","1")
+I 1\TR2\79
+^ADV("3","W","0")
+1
+^ADV("3","W","1")
+I 1\TR2\1
+^ADV("3","XYZZY","0")
+1
+^ADV("3","XYZZY","1")
+I 1\TR2\11
+^ADV("3","c")
+00110
+^ADV("4","0")
+1/You're in valley.
+^ADV("4","1")
+You are in a valley in the forest beside a stream tumbling along a rocky bed.
+^ADV("4","BUILD","0")
+1
+^ADV("4","BUILD","1")
+I 1\TR2\1
+^ADV("4","D","0")
+1
+^ADV("4","D","1")
+I 1\TR2\7
+^ADV("4","DEPRE","0")
+1
+^ADV("4","DEPRE","1")
+I 1\TR2\8
+^ADV("4","DNSTR","0")
+1
+^ADV("4","DNSTR","1")
+I 1\TR2\7
+^ADV("4","E","0")
+1
+^ADV("4","E","1")
+I 1\TR2\5
+^ADV("4","FORES","0")
+1
+^ADV("4","FORES","1")
+I 1\TR2\5
+^ADV("4","N","0")
+1
+^ADV("4","N","1")
+I 1\TR2\1
+^ADV("4","S","0")
+1
+^ADV("4","S","1")
+I 1\TR2\7
+^ADV("4","U","0")
+1
+^ADV("4","U","1")
+I 1\TR2\5
+^ADV("4","UPSTR","0")
+1
+^ADV("4","UPSTR","1")
+I 1\TR2\1
+^ADV("4","W","0")
+1
+^ADV("4","W","1")
+I 1\TR2\5
+^ADV("4","c")
+00110
+^ADV("5","0")
+1/You're in forest.
+^ADV("5","1")
+You are in open forest, with a deep valley to one side.
+^ADV("5","D","0")
+1
+^ADV("5","D","1")
+I 1\TR2\4
+^ADV("5","E","0")
+1
+^ADV("5","E","1")
+I 1\TR2\4
+^ADV("5","FORES","0")
+2
+^ADV("5","FORES","1")
+I $R(10000)<5000\TR2\5
+^ADV("5","FORES","2")
+I 1\TR2\6
+^ADV("5","FORWA","0")
+2
+^ADV("5","FORWA","1")
+I $R(10000)<5000\TR2\5
+^ADV("5","FORWA","2")
+I 1\TR2\6
+^ADV("5","N","0")
+2
+^ADV("5","N","1")
+I $R(10000)<5000\TR2\5
+^ADV("5","N","2")
+I 1\TR2\6
+^ADV("5","S","0")
+1
+^ADV("5","S","1")
+I 1\TR2\5
+^ADV("5","VALLE","0")
+1
+^ADV("5","VALLE","1")
+I 1\TR2\4
+^ADV("5","W","0")
+1
+^ADV("5","W","1")
+I 1\TR2\5
+^ADV("5","c")
+00100
+^ADV("6","0")
+1/You're in forest.
+^ADV("6","1")
+You are in open forest near both a valley and a road.
+^ADV("6","D","0")
+1
+^ADV("6","D","1")
+I 1\TR2\4
+^ADV("6","E","0")
+1
+^ADV("6","E","1")
+I 1\TR2\4
+^ADV("6","FORES","0")
+1
+^ADV("6","FORES","1")
+I 1\TR2\5
+^ADV("6","N","0")
+1
+^ADV("6","N","1")
+I 1\TR2\1
+^ADV("6","ROAD","0")
+1
+^ADV("6","ROAD","1")
+I 1\TR2\1
+^ADV("6","S","0")
+1
+^ADV("6","S","1")
+I 1\TR2\5
+^ADV("6","VALLE","0")
+1
+^ADV("6","VALLE","1")
+I 1\TR2\4
+^ADV("6","W","0")
+1
+^ADV("6","W","1")
+I 1\TR2\4
+^ADV("6","c")
+00100
+^ADV("7","0")
+2/You're at slit in streambed.
+^ADV("7","1")
+At your feet all the water of the stream splashes into a two-inch slit in the
+^ADV("7","2")
+rock.  Downstream the streambed is bare rock.
+^ADV("7","BED","0")
+1
+^ADV("7","BED","1")
+I 1\TR2\8
+^ADV("7","BUILD","0")
+1
+^ADV("7","BUILD","1")
+I 1\TR2\1
+^ADV("7","D","0")
+1
+^ADV("7","D","1")
+I 1\TR3\95
+^ADV("7","DNSTR","0")
+1
+^ADV("7","DNSTR","1")
+I 1\TR2\8
+^ADV("7","E","0")
+1
+^ADV("7","E","1")
+I 1\TR2\5
+^ADV("7","FORES","0")
+1
+^ADV("7","FORES","1")
+I 1\TR2\5
+^ADV("7","N","0")
+1
+^ADV("7","N","1")
+I 1\TR2\4
+^ADV("7","ROCK","0")
+1
+^ADV("7","ROCK","1")
+I 1\TR2\8
+^ADV("7","S","0")
+1
+^ADV("7","S","1")
+I 1\TR2\8
+^ADV("7","SLIT","0")
+1
+^ADV("7","SLIT","1")
+I 1\TR3\95
+^ADV("7","STREA","0")
+1
+^ADV("7","STREA","1")
+I 1\TR3\95
+^ADV("7","UPSTR","0")
+1
+^ADV("7","UPSTR","1")
+I 1\TR2\4
+^ADV("7","W","0")
+1
+^ADV("7","W","1")
+I 1\TR2\5
+^ADV("7","c")
+00110
+^ADV("8","0")
+3/You're outside grate.
+^ADV("8","1")
+You are in a 20-foot depression floored with bare dirt.  Set into the dirt is a
+^ADV("8","2")
+strong steel grate mounted in concrete.  A dry streambed leads into the
+^ADV("8","3")
+depression.
+^ADV("8","BUILD","0")
+1
+^ADV("8","BUILD","1")
+I 1\TR2\1
+^ADV("8","D","0")
+2
+^ADV("8","D","1")
+I ^ADVG(G,"GRATE","P")\TR2\9
+^ADV("8","D","2")
+I 1\TR3\93
+^ADV("8","E","0")
+1
+^ADV("8","E","1")
+I 1\TR2\5
+^ADV("8","ENTER","0")
+2
+^ADV("8","ENTER","1")
+I ^ADVG(G,"GRATE","P")\TR2\9
+^ADV("8","ENTER","2")
+I 1\TR3\93
+^ADV("8","FORES","0")
+1
+^ADV("8","FORES","1")
+I 1\TR2\5
+^ADV("8","GULLY","0")
+1
+^ADV("8","GULLY","1")
+I 1\TR2\7
+^ADV("8","INWAR","0")
+2
+^ADV("8","INWAR","1")
+I ^ADVG(G,"GRATE","P")\TR2\9
+^ADV("8","INWAR","2")
+I 1\TR3\93
+^ADV("8","N","0")
+1
+^ADV("8","N","1")
+I 1\TR2\7
+^ADV("8","S","0")
+1
+^ADV("8","S","1")
+I 1\TR2\5
+^ADV("8","UPSTR","0")
+1
+^ADV("8","UPSTR","1")
+I 1\TR2\7
+^ADV("8","W","0")
+1
+^ADV("8","W","1")
+I 1\TR2\5
+^ADV("8","c")
+00104
+^ADV("9","0")
+2/You're below the grate.
+^ADV("9","1")
+You are in a small chamber beneath a 3 x 3 steel grate to the surface.  A low
+^ADV("9","2")
+crawl over cobbles leads inward to the west.
+^ADV("9","COBBL","0")
+1
+^ADV("9","COBBL","1")
+I 1\TR2\10
+^ADV("9","CRAWL","0")
+1
+^ADV("9","CRAWL","1")
+I 1\TR2\10
+^ADV("9","DEBRI","0")
+1
+^ADV("9","DEBRI","1")
+I 1\TR2\11
+^ADV("9","INWAR","0")
+1
+^ADV("9","INWAR","1")
+I 1\TR2\10
+^ADV("9","OUT","0")
+2
+^ADV("9","OUT","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("9","OUT","2")
+I 1\TR3\93
+^ADV("9","PIT","0")
+1
+^ADV("9","PIT","1")
+I 1\TR2\14
+^ADV("9","U","0")
+2
+^ADV("9","U","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("9","U","2")
+I 1\TR3\93
+^ADV("9","W","0")
+1
+^ADV("9","W","1")
+I 1\TR2\10
+^ADV("9","c")
+00100
+^ADV("10","0")
+2/You're in cobble crawl.
+^ADV("10","1")
+You are crawling over cobbles in a low passage.  There is a dim light at the
+^ADV("10","2")
+east end of the passage.
+^ADV("10","DARK","0")
+1
+^ADV("10","DARK","1")
+I 1\TR2\11
+^ADV("10","DEBRI","0")
+1
+^ADV("10","DEBRI","1")
+I 1\TR2\11
+^ADV("10","E","0")
+1
+^ADV("10","E","1")
+I 1\TR2\9
+^ADV("10","INWAR","0")
+1
+^ADV("10","INWAR","1")
+I 1\TR2\11
+^ADV("10","NULL","0")
+1
+^ADV("10","NULL","1")
+I 1\TR2\9
+^ADV("10","OUT","0")
+1
+^ADV("10","OUT","1")
+I 1\TR2\9
+^ADV("10","PIT","0")
+1
+^ADV("10","PIT","1")
+I 1\TR2\14
+^ADV("10","SURFA","0")
+1
+^ADV("10","SURFA","1")
+I 1\TR2\9
+^ADV("10","W","0")
+1
+^ADV("10","W","1")
+I 1\TR2\11
+^ADV("10","c")
+00100
+^ADV("11","0")
+4/You're in Debris Room.
+^ADV("11","1")
+You are in a Debris Room filled with stuff washed in from the surface.  A low
+^ADV("11","2")
+wide passage with cobbles becomes plugged with mud and debris here, but an
+^ADV("11","3")
+awkward canyon leads upward and west.  A note on the wall says,
+^ADV("11","4")
+                   "Magic Word XYZZY."
+^ADV("11","CANYO","0")
+1
+^ADV("11","CANYO","1")
+I 1\TR2\12
+^ADV("11","COBBL","0")
+1
+^ADV("11","COBBL","1")
+I 1\TR2\10
+^ADV("11","CRAWL","0")
+1
+^ADV("11","CRAWL","1")
+I 1\TR2\10
+^ADV("11","DEPRE","0")
+2
+^ADV("11","DEPRE","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("11","DEPRE","2")
+I 1\TR2\9
+^ADV("11","E","0")
+1
+^ADV("11","E","1")
+I 1\TR2\10
+^ADV("11","ENTRA","0")
+1
+^ADV("11","ENTRA","1")
+I 1\TR2\9
+^ADV("11","INWAR","0")
+1
+^ADV("11","INWAR","1")
+I 1\TR2\12
+^ADV("11","LOW","0")
+1
+^ADV("11","LOW","1")
+I 1\TR2\10
+^ADV("11","PASSA","0")
+1
+^ADV("11","PASSA","1")
+I 1\TR2\10
+^ADV("11","PIT","0")
+1
+^ADV("11","PIT","1")
+I 1\TR2\14
+^ADV("11","U","0")
+1
+^ADV("11","U","1")
+I 1\TR2\12
+^ADV("11","W","0")
+1
+^ADV("11","W","1")
+I 1\TR2\12
+^ADV("11","XYZZY","0")
+1
+^ADV("11","XYZZY","1")
+I 1\TR2\3
+^ADV("11","c")
+00000
+^ADV("12","0")
+1
+^ADV("12","1")
+You are in an awkward sloping east-west canyon.
+^ADV("12","D","0")
+1
+^ADV("12","D","1")
+I 1\TR2\11
+^ADV("12","DEBRI","0")
+1
+^ADV("12","DEBRI","1")
+I 1\TR2\11
+^ADV("12","DEPRE","0")
+2
+^ADV("12","DEPRE","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("12","DEPRE","2")
+I 1\TR2\9
+^ADV("12","E","0")
+1
+^ADV("12","E","1")
+I 1\TR2\11
+^ADV("12","ENTRA","0")
+1
+^ADV("12","ENTRA","1")
+I 1\TR2\9
+^ADV("12","INWAR","0")
+1
+^ADV("12","INWAR","1")
+I 1\TR2\13
+^ADV("12","PIT","0")
+1
+^ADV("12","PIT","1")
+I 1\TR2\14
+^ADV("12","U","0")
+1
+^ADV("12","U","1")
+I 1\TR2\13
+^ADV("12","W","0")
+1
+^ADV("12","W","1")
+I 1\TR2\13
+^ADV("12","c")
+00000
+^ADV("13","0")
+3/You're in bird chamber.
+^ADV("13","1")
+You are in a splendid chamber thirty feet high.  The walls are frozen rivers of
+^ADV("13","2")
+orange stone.  An awkward canyon and a good passage exit from the east and west
+^ADV("13","3")
+side of the chamber.
+^ADV("13","CANYO","0")
+1
+^ADV("13","CANYO","1")
+I 1\TR2\12
+^ADV("13","DEBRI","0")
+1
+^ADV("13","DEBRI","1")
+I 1\TR2\11
+^ADV("13","DEPRE","0")
+2
+^ADV("13","DEPRE","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("13","DEPRE","2")
+I 1\TR2\9
+^ADV("13","E","0")
+1
+^ADV("13","E","1")
+I 1\TR2\12
+^ADV("13","ENTRA","0")
+1
+^ADV("13","ENTRA","1")
+I 1\TR2\9
+^ADV("13","PASSA","0")
+1
+^ADV("13","PASSA","1")
+I 1\TR2\14
+^ADV("13","PIT","0")
+1
+^ADV("13","PIT","1")
+I 1\TR2\14
+^ADV("13","W","0")
+1
+^ADV("13","W","1")
+I 1\TR2\14
+^ADV("13","c")
+00005
+^ADV("14","0")
+2/You're at top of small pit.
+^ADV("14","1")
+At your feet is a small pit breathing traces of white mist.  An east passage
+^ADV("14","2")
+ends here except for a small crack leading on.
+^ADV("14","CRACK","0")
+1
+^ADV("14","CRACK","1")
+I 1\TR2\16
+^ADV("14","D","0")
+2
+^ADV("14","D","1")
+I TOTING["/GOLD/"\TR2\20
+^ADV("14","D","2")
+I 1\TR2\15
+^ADV("14","DEBRI","0")
+1
+^ADV("14","DEBRI","1")
+I 1\TR2\11
+^ADV("14","DEPRE","0")
+2
+^ADV("14","DEPRE","1")
+I ^ADVG(G,"GRATE","P")\TR2\8
+^ADV("14","DEPRE","2")
+I 1\TR2\9
+^ADV("14","E","0")
+1
+^ADV("14","E","1")
+I 1\TR2\13
+^ADV("14","ENTRA","0")
+1
+^ADV("14","ENTRA","1")
+I 1\TR2\9
+^ADV("14","PASSA","0")
+1
+^ADV("14","PASSA","1")
+I 1\TR2\13
+^ADV("14","PIT","0")
+2
+^ADV("14","PIT","1")
+I TOTING["/GOLD/"\TR2\20
+^ADV("14","PIT","2")
+I 1\TR2\15
+^ADV("14","STEPS","0")
+2
+^ADV("14","STEPS","1")
+I TOTING["/GOLD/"\TR2\20
+^ADV("14","STEPS","2")
+I 1\TR2\15
+^ADV("14","W","0")
+1
+^ADV("14","W","1")
+I 1\TR2\16
+^ADV("14","c")
+00000
+^ADV("15","0")
+5/You're in Hall of Mists.
+^ADV("15","1")
+You are at one end of a vast hall stretching forward out of sight to the west.
+^ADV("15","2")
+There are openings to either side.  Nearby, a wide stone staircase leads
+^ADV("15","3")
+downward.  The hall is filled with wisps of white mist swaying to and fro almost
+^ADV("15","4")
+as if alive.  A cold wind blows up the staircase.  There is a passage at the top
+^ADV("15","5")
+of a dome behind you.
+^ADV("15","D","0")
+1
+^ADV("15","D","1")
+I 1\TR2\19
+^ADV("15","DOME","0")
+2
+^ADV("15","DOME","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","DOME","2")
+I 1\TR2\14
+^ADV("15","E","0")
+2
+^ADV("15","E","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","E","2")
+I 1\TR2\14
+^ADV("15","FORWA","0")
+1
+^ADV("15","FORWA","1")
+I 1\TR2\17
+^ADV("15","HALL","0")
+1
+^ADV("15","HALL","1")
+I 1\TR2\17
+^ADV("15","LEFT","0")
+1
+^ADV("15","LEFT","1")
+I 1\TR2\18
+^ADV("15","N","0")
+1
+^ADV("15","N","1")
+I 1\TR2\19
+^ADV("15","PASSA","0")
+2
+^ADV("15","PASSA","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","PASSA","2")
+I 1\TR2\14
+^ADV("15","PIT","0")
+2
+^ADV("15","PIT","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","PIT","2")
+I 1\TR2\14
+^ADV("15","S","0")
+1
+^ADV("15","S","1")
+I 1\TR2\18
+^ADV("15","STAIR","0")
+1
+^ADV("15","STAIR","1")
+I 1\TR2\19
+^ADV("15","STEPS","0")
+2
+^ADV("15","STEPS","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","STEPS","2")
+I 1\TR2\14
+^ADV("15","U","0")
+2
+^ADV("15","U","1")
+I TOTING["/GOLD/"\TR2\22
+^ADV("15","U","2")
+I 1\TR2\14
+^ADV("15","W","0")
+1
+^ADV("15","W","1")
+I 1\TR2\17
+^ADV("15","Y2","0")
+1
+^ADV("15","Y2","1")
+I 1\TR2\34
+^ADV("15","c")
+00000
+^ADV("15","d")
+4/17/18/19/34
+^ADV("15","p")
+4/17/18/19/34
+^ADV("16","0")
+1
+^ADV("16","1")
+The crack is far too small for you to follow.
+^ADV("16","FORCED","0")
+1
+^ADV("16","FORCED","1")
+I 1\TR2\14
+^ADV("16","c")
+10000
+^ADV("17","0")
+2/You're on east bank of fissure.
+^ADV("17","1")
+You are on the east bank of a fissure slicing clear across the hall.  The mist
+^ADV("17","2")
+is quite thick here, and the fissure is too wide to jump.
+^ADV("17","ACROS","0")
+2
+^ADV("17","ACROS","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("17","ACROS","2")
+I 1\TR2\27
+^ADV("17","CROSS","0")
+2
+^ADV("17","CROSS","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("17","CROSS","2")
+I 1\TR2\27
+^ADV("17","E","0")
+1
+^ADV("17","E","1")
+I 1\TR2\15
+^ADV("17","FORWA","0")
+2
+^ADV("17","FORWA","1")
+I ^ADVG(G,"FISSU","P")-1\TR2\21
+^ADV("17","FORWA","2")
+I 1\TR2\27
+^ADV("17","HALL","0")
+1
+^ADV("17","HALL","1")
+I 1\TR2\15
+^ADV("17","JUMP","0")
+3
+^ADV("17","JUMP","1")
+I ^ADVG(G,"FISSU","P")\TR3\96
+^ADV("17","JUMP","2")
+I ^ADVG(G,"FISSU","P")-1\TR2\21
+^ADV("17","JUMP","3")
+I 1\TR2\27
+^ADV("17","OVER","0")
+2
+^ADV("17","OVER","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("17","OVER","2")
+I 1\TR2\27
+^ADV("17","W","0")
+2
+^ADV("17","W","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("17","W","2")
+I 1\TR2\27
+^ADV("17","c")
+00000
+^ADV("17","d")
+2/15/27
+^ADV("17","p")
+2/15/27
+^ADV("18","0")
+2/You're in nugget of gold room.
+^ADV("18","1")
+This is a low room with a crude note on the wall.  The note says,
+^ADV("18","2")
+"You won't get it up the steps."
+^ADV("18","HALL","0")
+1
+^ADV("18","HALL","1")
+I 1\TR2\15
+^ADV("18","N","0")
+1
+^ADV("18","N","1")
+I 1\TR2\15
+^ADV("18","OUT","0")
+1
+^ADV("18","OUT","1")
+I 1\TR2\15
+^ADV("18","c")
+00000
+^ADV("18","d")
+1/15
+^ADV("18","p")
+1/15
+^ADV("19","0")
+1/You're in Hall of the Mountain King.
+^ADV("19","1")
+You are in the Hall of the Mountain King, with passages off in all directions.
+^ADV("19","E","0")
+1
+^ADV("19","E","1")
+I 1\TR2\15
+^ADV("19","FORWA","0")
+2
+^ADV("19","FORWA","1")
+I ^ADVG(G,"SNAKE","P")\TR2\30
+^ADV("19","FORWA","2")
+I 1\TR2\32
+^ADV("19","LEFT","0")
+2
+^ADV("19","LEFT","1")
+I ^ADVG(G,"SNAKE","P")\TR2\28
+^ADV("19","LEFT","2")
+I 1\TR2\32
+^ADV("19","N","0")
+2
+^ADV("19","N","1")
+I ^ADVG(G,"SNAKE","P")\TR2\28
+^ADV("19","N","2")
+I 1\TR2\32
+^ADV("19","RIGHT","0")
+2
+^ADV("19","RIGHT","1")
+I ^ADVG(G,"SNAKE","P")\TR2\29
+^ADV("19","RIGHT","2")
+I 1\TR2\32
+^ADV("19","S","0")
+2
+^ADV("19","S","1")
+I ^ADVG(G,"SNAKE","P")\TR2\29
+^ADV("19","S","2")
+I 1\TR2\32
+^ADV("19","SECRE","0")
+1
+^ADV("19","SECRE","1")
+I 1\TR2\74
+^ADV("19","STAIR","0")
+1
+^ADV("19","STAIR","1")
+I 1\TR2\15
+^ADV("19","SW","0")
+3
+^ADV("19","SW","1")
+I $R(10000)<3500\TR2\74
+^ADV("19","SW","2")
+I TOTING["/SNAKE/" E  S O="SNAKE" D AT\TR2\32
+^ADV("19","SW","3")
+I 1\TR2\74
+^ADV("19","U","0")
+1
+^ADV("19","U","1")
+I 1\TR2\15
+^ADV("19","W","0")
+2
+^ADV("19","W","1")
+I ^ADVG(G,"SNAKE","P")\TR2\30
+^ADV("19","W","2")
+I 1\TR2\32
+^ADV("19","c")
+00006
+^ADV("19","d")
+5/15/28/29/30/74
+^ADV("19","p")
+5/15/28/29/30/74
+^ADV("20","0")
+1
+^ADV("20","1")
+You are at the bottom of the pit with a broken neck.
+^ADV("20","FORCED","0")
+1
+^ADV("20","FORCED","1")
+I 1\TR2\0
+^ADV("20","c")
+10000
+^ADV("21","0")
+1
+^ADV("21","1")
+You didn't make it.
+^ADV("21","FORCED","0")
+1
+^ADV("21","FORCED","1")
+I 1\TR2\0
+^ADV("21","c")
+10000
+^ADV("22","0")
+1
+^ADV("22","1")
+The dome is unclimbable.
+^ADV("22","FORCED","0")
+1
+^ADV("22","FORCED","1")
+I 1\TR2\15
+^ADV("22","c")
+10000
+^ADV("23","0")
+2/You're at west end of Twopit Room.
+^ADV("23","1")
+You are at the west end of the Twopit Room.  There is a large hole in the wall
+^ADV("23","2")
+above the pit at this end of the room.
+^ADV("23","ACROS","0")
+1
+^ADV("23","ACROS","1")
+I 1\TR2\67
+^ADV("23","D","0")
+1
+^ADV("23","D","1")
+I 1\TR2\25
+^ADV("23","E","0")
+1
+^ADV("23","E","1")
+I 1\TR2\67
+^ADV("23","HOLE","0")
+1
+^ADV("23","HOLE","1")
+I 1\TR3\148
+^ADV("23","PIT","0")
+1
+^ADV("23","PIT","1")
+I 1\TR2\25
+^ADV("23","SLAB","0")
+1
+^ADV("23","SLAB","1")
+I 1\TR2\68
+^ADV("23","W","0")
+1
+^ADV("23","W","1")
+I 1\TR2\68
+^ADV("23","c")
+00000
+^ADV("23","d")
+3/25/67/68
+^ADV("23","p")
+3/25/67/68
+^ADV("24","0")
+2/You're in east pit.
+^ADV("24","1")
+You are at the bottom of the eastern pit in the Twopit Room.  There is a small
+^ADV("24","2")
+pool of oil in one corner of the pit.
+^ADV("24","OUT","0")
+1
+^ADV("24","OUT","1")
+I 1\TR2\67
+^ADV("24","U","0")
+1
+^ADV("24","U","1")
+I 1\TR2\67
+^ADV("24","c")
+00020
+^ADV("24","d")
+1/67
+^ADV("24","p")
+1/67
+^ADV("25","0")
+2/You're in west pit.
+^ADV("25","1")
+You are at the bottom of the western pit in the Twopit Room.  There is a large
+^ADV("25","2")
+hole in the wall about 25 feet above you.
+^ADV("25","CLIMB","0")
+2
+^ADV("25","CLIMB","1")
+I ^ADVG(G,"PLANT","P")-4\TR2\31
+^ADV("25","CLIMB","2")
+I 1\TR2\26
+^ADV("25","OUT","0")
+1
+^ADV("25","OUT","1")
+I 1\TR2\23
+^ADV("25","U","0")
+1
+^ADV("25","U","1")
+I 1\TR2\23
+^ADV("25","c")
+00000
+^ADV("25","d")
+1/23
+^ADV("25","p")
+1/23
+^ADV("26","0")
+1
+^ADV("26","1")
+You clamber up the plant and scurry through the hole at the top.
+^ADV("26","FORCED","0")
+1
+^ADV("26","FORCED","1")
+I 1\TR2\88
+^ADV("26","c")
+10000
+^ADV("27","0")
+1
+^ADV("27","1")
+You are on the west side of the fissure in the Hall of Mists.
+^ADV("27","ACROS","0")
+2
+^ADV("27","ACROS","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("27","ACROS","2")
+I 1\TR2\17
+^ADV("27","CROSS","0")
+2
+^ADV("27","CROSS","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("27","CROSS","2")
+I 1\TR2\17
+^ADV("27","E","0")
+2
+^ADV("27","E","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("27","E","2")
+I 1\TR2\17
+^ADV("27","FORWA","0")
+2
+^ADV("27","FORWA","1")
+I ^ADVG(G,"FISSU","P")-1\TR2\21
+^ADV("27","FORWA","2")
+I 1\TR2\17
+^ADV("27","JUMP","0")
+3
+^ADV("27","JUMP","1")
+I ^ADVG(G,"FISSU","P")\TR3\96
+^ADV("27","JUMP","2")
+I ^ADVG(G,"FISSU","P")-1\TR2\21
+^ADV("27","JUMP","3")
+I 1\TR2\17
+^ADV("27","N","0")
+1
+^ADV("27","N","1")
+I 1\TR2\40
+^ADV("27","OVER","0")
+2
+^ADV("27","OVER","1")
+I ^ADVG(G,"FISSU","P")-1\TR3\97
+^ADV("27","OVER","2")
+I 1\TR2\17
+^ADV("27","W","0")
+1
+^ADV("27","W","1")
+I 1\TR2\41
+^ADV("27","c")
+00000
+^ADV("27","d")
+2/17/41
+^ADV("27","p")
+2/17/41
+^ADV("28","0")
+2
+^ADV("28","1")
+You are in a low north-south passage at a hole in the floor.  The hole goes
+^ADV("28","2")
+down to an east-west passage.
+^ADV("28","D","0")
+1
+^ADV("28","D","1")
+I 1\TR2\36
+^ADV("28","HALL","0")
+1
+^ADV("28","HALL","1")
+I 1\TR2\19
+^ADV("28","HOLE","0")
+1
+^ADV("28","HOLE","1")
+I 1\TR2\36
+^ADV("28","N","0")
+1
+^ADV("28","N","1")
+I 1\TR2\33
+^ADV("28","OUT","0")
+1
+^ADV("28","OUT","1")
+I 1\TR2\19
+^ADV("28","S","0")
+1
+^ADV("28","S","1")
+I 1\TR2\19
+^ADV("28","Y2","0")
+1
+^ADV("28","Y2","1")
+I 1\TR2\33
+^ADV("28","c")
+00000
+^ADV("28","d")
+3/19/33/36
+^ADV("28","p")
+3/19/33/36
+^ADV("29","0")
+1
+^ADV("29","1")
+You are in the south side chamber.
+^ADV("29","HALL","0")
+1
+^ADV("29","HALL","1")
+I 1\TR2\19
+^ADV("29","N","0")
+1
+^ADV("29","N","1")
+I 1\TR2\19
+^ADV("29","OUT","0")
+1
+^ADV("29","OUT","1")
+I 1\TR2\19
+^ADV("29","c")
+00000
+^ADV("29","d")
+1/19
+^ADV("29","p")
+1/19
+^ADV("30","0")
+2
+^ADV("30","1")
+You are in the west side chamber of the Hall of the Mountain King.  A passage
+^ADV("30","2")
+continues west and up here.
+^ADV("30","E","0")
+1
+^ADV("30","E","1")
+I 1\TR2\19
+^ADV("30","HALL","0")
+1
+^ADV("30","HALL","1")
+I 1\TR2\19
+^ADV("30","OUT","0")
+1
+^ADV("30","OUT","1")
+I 1\TR2\19
+^ADV("30","U","0")
+1
+^ADV("30","U","1")
+I 1\TR2\62
+^ADV("30","W","0")
+1
+^ADV("30","W","1")
+I 1\TR2\62
+^ADV("30","c")
+00000
+^ADV("30","d")
+2/19/62
+^ADV("30","p")
+2/19/62
+^ADV("31","0")
+0
+^ADV("31","FORCED","0")
+2
+^ADV("31","FORCED","1")
+I ^ADVG(G,"PLANT","P")-2\TR2\89
+^ADV("31","FORCED","2")
+I 1\TR2\90
+^ADV("31","c")
+10000
+^ADV("32","0")
+1
+^ADV("32","1")
+You can't get by the snake.
+^ADV("32","FORCED","0")
+1
+^ADV("32","FORCED","1")
+I 1\TR2\19
+^ADV("32","c")
+10000
+^ADV("33","0")
+3/You're at Y2.
+^ADV("33","1")
+You are in a large room, with a passage to the south, a passage to the west,
+^ADV("33","2")
+and a wall of broken rock to the east.  There is a large "Y2" on a rock in
+^ADV("33","3")
+the room's center.
+^ADV("33","BROKE","0")
+1
+^ADV("33","BROKE","1")
+I 1\TR2\34
+^ADV("33","E","0")
+1
+^ADV("33","E","1")
+I 1\TR2\34
+^ADV("33","PLOVE","0")
+2
+^ADV("33","PLOVE","1")
+I TOTING["/EMERA/"\TRS2^ADV9
+^ADV("33","PLOVE","2")
+I 1\TR2\100
+^ADV("33","PLUGH","0")
+1
+^ADV("33","PLUGH","1")
+I 1\TR2\3
+^ADV("33","S","0")
+1
+^ADV("33","S","1")
+I 1\TR2\28
+^ADV("33","W","0")
+1
+^ADV("33","W","1")
+I 1\TR2\35
+^ADV("33","WALL","0")
+1
+^ADV("33","WALL","1")
+I 1\TR2\34
+^ADV("33","c")
+00000
+^ADV("33","d")
+4/28/34/35/100
+^ADV("33","p")
+4/28/34/35/100
+^ADV("34","0")
+1
+^ADV("34","1")
+You are in a jumble of rock, with cracks everywhere.
+^ADV("34","D","0")
+1
+^ADV("34","D","1")
+I 1\TR2\33
+^ADV("34","U","0")
+1
+^ADV("34","U","1")
+I 1\TR2\15
+^ADV("34","Y2","0")
+1
+^ADV("34","Y2","1")
+I 1\TR2\33
+^ADV("34","c")
+00000
+^ADV("34","d")
+2/15/33
+^ADV("34","p")
+2/15/33
+^ADV("35","0")
+7/You're at window on pit.
+^ADV("35","1")
+You're at a low window overlooking a huge pit which extends up out of sight.
+^ADV("35","2")
+A floor is indistinctly visible over 50 feet below.  Traces of white mist cover
+^ADV("35","3")
+the floor of the pit, becoming thicker to the right.  Marks in the dust around
+^ADV("35","4")
+the window would seem to indicate that someone has been here recently.
+^ADV("35","5")
+Directly across the pit from you and 25 feet away there is a similar window
+^ADV("35","6")
+looking into a lighted room.  A shadowy figure can be seen there peering back
+^ADV("35","7")
+at you. 
+^ADV("35","E","0")
+1
+^ADV("35","E","1")
+I 1\TR2\33
+^ADV("35","JUMP","0")
+1
+^ADV("35","JUMP","1")
+I 1\TR2\20
+^ADV("35","Y2","0")
+1
+^ADV("35","Y2","1")
+I 1\TR2\33
+^ADV("35","c")
+00000
+^ADV("35","d")
+1/33
+^ADV("35","p")
+1/33
+^ADV("36","0")
+2/You're in dirty passage.
+^ADV("36","1")
+You are in a dirty broken passage.  To the east is a crawl.  To the west is a
+^ADV("36","2")
+large passage.  Above you is a hole to another passage.
+^ADV("36","BEDQU","0")
+1
+^ADV("36","BEDQU","1")
+I 1\TR2\65
+^ADV("36","CRAWL","0")
+1
+^ADV("36","CRAWL","1")
+I 1\TR2\37
+^ADV("36","E","0")
+1
+^ADV("36","E","1")
+I 1\TR2\37
+^ADV("36","HOLE","0")
+1
+^ADV("36","HOLE","1")
+I 1\TR2\28
+^ADV("36","U","0")
+1
+^ADV("36","U","1")
+I 1\TR2\28
+^ADV("36","W","0")
+1
+^ADV("36","W","1")
+I 1\TR2\39
+^ADV("36","c")
+00000
+^ADV("36","d")
+4/28/37/39/65
+^ADV("36","p")
+4/28/37/39/65
+^ADV("37","0")
+1
+^ADV("37","1")
+You are on the brink of a small clean climbable pit.  A crawl leads west.
+^ADV("37","CLIMB","0")
+1
+^ADV("37","CLIMB","1")
+I 1\TR2\38
+^ADV("37","CRAWL","0")
+1
+^ADV("37","CRAWL","1")
+I 1\TR2\36
+^ADV("37","D","0")
+1
+^ADV("37","D","1")
+I 1\TR2\38
+^ADV("37","PIT","0")
+1
+^ADV("37","PIT","1")
+I 1\TR2\38
+^ADV("37","W","0")
+1
+^ADV("37","W","1")
+I 1\TR2\36
+^ADV("37","c")
+00000
+^ADV("37","d")
+2/36/38
+^ADV("37","p")
+2/36/38
+^ADV("38","0")
+2
+^ADV("38","1")
+You are in the bottom of a small pit with a little stream which enters and
+^ADV("38","2")
+exits through tiny slits.
+^ADV("38","CLIMB","0")
+1
+^ADV("38","CLIMB","1")
+I 1\TR2\37
+^ADV("38","D","0")
+1
+^ADV("38","D","1")
+I 1\TR3\95
+^ADV("38","DNSTR","0")
+1
+^ADV("38","DNSTR","1")
+I 1\TR3\95
+^ADV("38","OUT","0")
+1
+^ADV("38","OUT","1")
+I 1\TR2\37
+^ADV("38","SLIT","0")
+1
+^ADV("38","SLIT","1")
+I 1\TR3\95
+^ADV("38","STREA","0")
+1
+^ADV("38","STREA","1")
+I 1\TR3\95
+^ADV("38","U","0")
+1
+^ADV("38","U","1")
+I 1\TR2\37
+^ADV("38","UPSTR","0")
+1
+^ADV("38","UPSTR","1")
+I 1\TR3\95
+^ADV("38","c")
+00010
+^ADV("38","d")
+1/37
+^ADV("38","p")
+1/37
+^ADV("39","0")
+2/You're in dusty rock room.
+^ADV("39","1")
+You are in a large room full of dusty rocks.  There is a big hole in the floor.
+^ADV("39","2")
+There are cracks everywhere, and a passage leading east.
+^ADV("39","BEDQU","0")
+1
+^ADV("39","BEDQU","1")
+I 1\TR2\65
+^ADV("39","D","0")
+1
+^ADV("39","D","1")
+I 1\TR2\64
+^ADV("39","E","0")
+1
+^ADV("39","E","1")
+I 1\TR2\36
+^ADV("39","FLOOR","0")
+1
+^ADV("39","FLOOR","1")
+I 1\TR2\64
+^ADV("39","HOLE","0")
+1
+^ADV("39","HOLE","1")
+I 1\TR2\64
+^ADV("39","PASSA","0")
+1
+^ADV("39","PASSA","1")
+I 1\TR2\36
+^ADV("39","c")
+00000
+^ADV("39","d")
+3/36/64/65
+^ADV("39","p")
+3/36/64/65
+^ADV("40","0")
+2
+^ADV("40","1")
+You have crawled through a very low wide passage parallel to and north of the
+^ADV("40","2")
+Hall of Mists.
+^ADV("40","FORCED","0")
+1
+^ADV("40","FORCED","1")
+I 1\TR2\41
+^ADV("40","c")
+10000
+^ADV("41","0")
+2/You're at west end of Hall of Mists.
+^ADV("41","1")
+You are at the west end of the Hall of Mists.  A low wide crawl continues west
+^ADV("41","2")
+and another goes north.  To the south is a little passage 6 feet off the floor.
+^ADV("41","CLIMB","0")
+1
+^ADV("41","CLIMB","1")
+I 1\TR2\42
+^ADV("41","CRAWL","0")
+1
+^ADV("41","CRAWL","1")
+I 1\TR2\60
+^ADV("41","E","0")
+1
+^ADV("41","E","1")
+I 1\TR2\27
+^ADV("41","N","0")
+1
+^ADV("41","N","1")
+I 1\TR2\59
+^ADV("41","PASSA","0")
+1
+^ADV("41","PASSA","1")
+I 1\TR2\42
+^ADV("41","S","0")
+1
+^ADV("41","S","1")
+I 1\TR2\42
+^ADV("41","U","0")
+1
+^ADV("41","U","1")
+I 1\TR2\42
+^ADV("41","W","0")
+1
+^ADV("41","W","1")
+I 1\TR2\60
+^ADV("41","c")
+00000
+^ADV("41","d")
+3/27/42/60
+^ADV("41","p")
+3/27/42/60
+^ADV("42","0")
+1
+^ADV("42","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("42","E","0")
+1
+^ADV("42","E","1")
+I 1\TR2\43
+^ADV("42","N","0")
+1
+^ADV("42","N","1")
+I 1\TR2\42
+^ADV("42","S","0")
+1
+^ADV("42","S","1")
+I 1\TR2\45
+^ADV("42","U","0")
+1
+^ADV("42","U","1")
+I 1\TR2\41
+^ADV("42","W","0")
+1
+^ADV("42","W","1")
+I 1\TR2\80
+^ADV("42","c")
+00007
+^ADV("42","d")
+4/41/43/45/80
+^ADV("42","p")
+4/41/43/45/80
+^ADV("43","0")
+1
+^ADV("43","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("43","E","0")
+1
+^ADV("43","E","1")
+I 1\TR2\45
+^ADV("43","S","0")
+1
+^ADV("43","S","1")
+I 1\TR2\44
+^ADV("43","W","0")
+1
+^ADV("43","W","1")
+I 1\TR2\42
+^ADV("43","c")
+00007
+^ADV("43","d")
+3/42/44/45
+^ADV("43","p")
+3/42/44/45
+^ADV("44","0")
+1
+^ADV("44","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("44","D","0")
+1
+^ADV("44","D","1")
+I 1\TR2\48
+^ADV("44","E","0")
+1
+^ADV("44","E","1")
+I 1\TR2\43
+^ADV("44","N","0")
+1
+^ADV("44","N","1")
+I 1\TR2\82
+^ADV("44","S","0")
+1
+^ADV("44","S","1")
+I 1\TR2\50
+^ADV("44","c")
+00007
+^ADV("44","d")
+4/43/48/50/82
+^ADV("44","p")
+2/43/50
+^ADV("45","0")
+1
+^ADV("45","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("45","D","0")
+1
+^ADV("45","D","1")
+I 1\TR2\87
+^ADV("45","E","0")
+1
+^ADV("45","E","1")
+I 1\TR2\46
+^ADV("45","N","0")
+1
+^ADV("45","N","1")
+I 1\TR2\43
+^ADV("45","S","0")
+1
+^ADV("45","S","1")
+I 1\TR2\47
+^ADV("45","U","0")
+1
+^ADV("45","U","1")
+I 1\TR2\87
+^ADV("45","W","0")
+1
+^ADV("45","W","1")
+I 1\TR2\42
+^ADV("45","c")
+00007
+^ADV("45","d")
+5/42/43/46/47/87
+^ADV("45","p")
+3/42/43/87
+^ADV("46","0")
+1
+^ADV("46","1")
+Dead end.
+^ADV("46","OUT","0")
+1
+^ADV("46","OUT","1")
+I 1\TR2\45
+^ADV("46","W","0")
+1
+^ADV("46","W","1")
+I 1\TR2\45
+^ADV("46","c")
+01007
+^ADV("46","d")
+1/45
+^ADV("46","p")
+1/45
+^ADV("47","0")
+1
+^ADV("47","1")
+Dead end.
+^ADV("47","E","0")
+1
+^ADV("47","E","1")
+I 1\TR2\45
+^ADV("47","OUT","0")
+1
+^ADV("47","OUT","1")
+I 1\TR2\45
+^ADV("47","c")
+01007
+^ADV("47","d")
+1/45
+^ADV("47","p")
+1/45
+^ADV("48","0")
+1
+^ADV("48","1")
+Dead end.
+^ADV("48","OUT","0")
+1
+^ADV("48","OUT","1")
+I 1\TR2\44
+^ADV("48","U","0")
+1
+^ADV("48","U","1")
+I 1\TR2\44
+^ADV("48","c")
+01007
+^ADV("48","d")
+1/44
+^ADV("48","p")
+1/44
+^ADV("49","0")
+1
+^ADV("49","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("49","E","0")
+1
+^ADV("49","E","1")
+I 1\TR2\50
+^ADV("49","W","0")
+1
+^ADV("49","W","1")
+I 1\TR2\51
+^ADV("49","c")
+00007
+^ADV("49","d")
+2/50/51
+^ADV("49","p")
+2/50/51
+^ADV("50","0")
+1
+^ADV("50","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("50","D","0")
+1
+^ADV("50","D","1")
+I 1\TR2\51
+^ADV("50","E","0")
+1
+^ADV("50","E","1")
+I 1\TR2\44
+^ADV("50","S","0")
+1
+^ADV("50","S","1")
+I 1\TR2\52
+^ADV("50","W","0")
+1
+^ADV("50","W","1")
+I 1\TR2\49
+^ADV("50","c")
+00007
+^ADV("50","d")
+4/44/49/51/52
+^ADV("50","p")
+4/44/49/51/52
+^ADV("51","0")
+1
+^ADV("51","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("51","E","0")
+1
+^ADV("51","E","1")
+I 1\TR2\52
+^ADV("51","S","0")
+1
+^ADV("51","S","1")
+I 1\TR2\53
+^ADV("51","U","0")
+1
+^ADV("51","U","1")
+I 1\TR2\50
+^ADV("51","W","0")
+1
+^ADV("51","W","1")
+I 1\TR2\49
+^ADV("51","c")
+00007
+^ADV("51","d")
+4/49/50/52/53
+^ADV("51","p")
+4/49/50/52/53
+^ADV("52","0")
+1
+^ADV("52","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("52","D","0")
+1
+^ADV("52","D","1")
+I 1\TR2\86
+^ADV("52","E","0")
+1
+^ADV("52","E","1")
+I 1\TR2\51
+^ADV("52","N","0")
+1
+^ADV("52","N","1")
+I 1\TR2\55
+^ADV("52","S","0")
+1
+^ADV("52","S","1")
+I 1\TR2\52
+^ADV("52","U","0")
+1
+^ADV("52","U","1")
+I 1\TR2\53
+^ADV("52","W","0")
+1
+^ADV("52","W","1")
+I 1\TR2\50
+^ADV("52","c")
+00007
+^ADV("52","d")
+5/50/51/53/55/86
+^ADV("52","p")
+4/50/51/53/55
+^ADV("53","0")
+1
+^ADV("53","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("53","N","0")
+1
+^ADV("53","N","1")
+I 1\TR2\52
+^ADV("53","S","0")
+1
+^ADV("53","S","1")
+I 1\TR2\54
+^ADV("53","W","0")
+1
+^ADV("53","W","1")
+I 1\TR2\51
+^ADV("53","c")
+00007
+^ADV("53","d")
+3/51/52/54
+^ADV("53","p")
+2/51/52
+^ADV("54","0")
+1
+^ADV("54","1")
+Dead end.
+^ADV("54","OUT","0")
+1
+^ADV("54","OUT","1")
+I 1\TR2\53
+^ADV("54","W","0")
+1
+^ADV("54","W","1")
+I 1\TR2\53
+^ADV("54","c")
+01007
+^ADV("54","d")
+1/53
+^ADV("54","p")
+1/53
+^ADV("55","0")
+1
+^ADV("55","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("55","D","0")
+1
+^ADV("55","D","1")
+I 1\TR2\56
+^ADV("55","E","0")
+1
+^ADV("55","E","1")
+I 1\TR2\57
+^ADV("55","N","0")
+1
+^ADV("55","N","1")
+I 1\TR2\55
+^ADV("55","W","0")
+1
+^ADV("55","W","1")
+I 1\TR2\52
+^ADV("55","c")
+00007
+^ADV("55","d")
+3/52/56/57
+^ADV("55","p")
+2/52/57
+^ADV("56","0")
+1
+^ADV("56","1")
+Dead end.
+^ADV("56","OUT","0")
+1
+^ADV("56","OUT","1")
+I 1\TR2\55
+^ADV("56","U","0")
+1
+^ADV("56","U","1")
+I 1\TR2\55
+^ADV("56","c")
+01007
+^ADV("56","d")
+1/55
+^ADV("56","p")
+1/55
+^ADV("57","0")
+3/You're at brink of pit.
+^ADV("57","1")
+You are on the brink of a thirty-foot pit with a massive orange column down one
+^ADV("57","2")
+wall.  You could climb down here but you could not get back up.  The maze
+^ADV("57","3")
+continues at this level.
+^ADV("57","CLIMB","0")
+1
+^ADV("57","CLIMB","1")
+I 1\TR2\13
+^ADV("57","D","0")
+1
+^ADV("57","D","1")
+I 1\TR2\13
+^ADV("57","E","0")
+1
+^ADV("57","E","1")
+I 1\TR2\84
+^ADV("57","N","0")
+1
+^ADV("57","N","1")
+I 1\TR2\83
+^ADV("57","S","0")
+1
+^ADV("57","S","1")
+I 1\TR2\58
+^ADV("57","W","0")
+1
+^ADV("57","W","1")
+I 1\TR2\55
+^ADV("57","c")
+00000
+^ADV("57","d")
+4/55/58/83/84
+^ADV("57","p")
+3/55/83/84
+^ADV("58","0")
+1
+^ADV("58","1")
+Dead end.
+^ADV("58","E","0")
+1
+^ADV("58","E","1")
+I 1\TR2\57
+^ADV("58","OUT","0")
+1
+^ADV("58","OUT","1")
+I 1\TR2\57
+^ADV("58","c")
+01000
+^ADV("58","d")
+1/57
+^ADV("58","p")
+1/57
+^ADV("59","0")
+2
+^ADV("59","1")
+You have crawled through a very low wide passage parallel to and north of the
+^ADV("59","2")
+Hall of Mists.
+^ADV("59","FORCED","0")
+1
+^ADV("59","FORCED","1")
+I 1\TR2\27
+^ADV("59","c")
+10000
+^ADV("60","0")
+3/You're at east end of Long Hall.
+^ADV("60","1")
+You are at the east end of a very long hall apparently without side chambers.
+^ADV("60","2")
+To the east a low wide crawl slants up.  To the north a round two-foot hole
+^ADV("60","3")
+slants down.
+^ADV("60","CRAWL","0")
+1
+^ADV("60","CRAWL","1")
+I 1\TR2\41
+^ADV("60","D","0")
+1
+^ADV("60","D","1")
+I 1\TR2\62
+^ADV("60","E","0")
+1
+^ADV("60","E","1")
+I 1\TR2\41
+^ADV("60","HOLE","0")
+1
+^ADV("60","HOLE","1")
+I 1\TR2\62
+^ADV("60","N","0")
+1
+^ADV("60","N","1")
+I 1\TR2\62
+^ADV("60","U","0")
+1
+^ADV("60","U","1")
+I 1\TR2\41
+^ADV("60","W","0")
+1
+^ADV("60","W","1")
+I 1\TR2\61
+^ADV("60","c")
+00000
+^ADV("60","d")
+3/41/61/62
+^ADV("60","p")
+3/41/61/62
+^ADV("61","0")
+2/You're at west end of Long Hall.
+^ADV("61","1")
+You are at the west end of a very long featureless hall.  The hall joins up
+^ADV("61","2")
+with a narrow north-south passage.
+^ADV("61","E","0")
+1
+^ADV("61","E","1")
+I 1\TR2\60
+^ADV("61","N","0")
+1
+^ADV("61","N","1")
+I 1\TR2\62
+^ADV("61","S","0")
+1
+^ADV("61","S","1")
+I 1\TR2\107\1
+^ADV("61","c")
+00000
+^ADV("61","d")
+2/60/62
+^ADV("61","p")
+2/60/62
+^ADV("62","0")
+1
+^ADV("62","1")
+You are at a crossover of a high north-south passage and a low east-west one.
+^ADV("62","E","0")
+1
+^ADV("62","E","1")
+I 1\TR2\30
+^ADV("62","N","0")
+1
+^ADV("62","N","1")
+I 1\TR2\63
+^ADV("62","S","0")
+1
+^ADV("62","S","1")
+I 1\TR2\61
+^ADV("62","W","0")
+1
+^ADV("62","W","1")
+I 1\TR2\60
+^ADV("62","c")
+00000
+^ADV("62","d")
+4/30/60/61/63
+^ADV("62","p")
+4/30/60/61/63
+^ADV("63","0")
+1
+^ADV("63","1")
+Dead end.
+^ADV("63","OUT","0")
+1
+^ADV("63","OUT","1")
+I 1\TR2\62
+^ADV("63","S","0")
+1
+^ADV("63","S","1")
+I 1\TR2\62
+^ADV("63","c")
+00000
+^ADV("63","d")
+1/62
+^ADV("63","p")
+1/62
+^ADV("64","0")
+3/You're at complex junction.
+^ADV("64","1")
+You are at a complex junction.  A low hands-and-knees passage from the north
+^ADV("64","2")
+joins a higher crawl from the east to make a walking passage going west.  There
+^ADV("64","3")
+is also a large room above.  The air is damp here.
+^ADV("64","BEDQU","0")
+1
+^ADV("64","BEDQU","1")
+I 1\TR2\65
+^ADV("64","CLIMB","0")
+1
+^ADV("64","CLIMB","1")
+I 1\TR2\39
+^ADV("64","E","0")
+1
+^ADV("64","E","1")
+I 1\TR2\106
+^ADV("64","N","0")
+1
+^ADV("64","N","1")
+I 1\TR2\103
+^ADV("64","ROOM","0")
+1
+^ADV("64","ROOM","1")
+I 1\TR2\39
+^ADV("64","SHELL","0")
+1
+^ADV("64","SHELL","1")
+I 1\TR2\103
+^ADV("64","U","0")
+1
+^ADV("64","U","1")
+I 1\TR2\39
+^ADV("64","W","0")
+1
+^ADV("64","W","1")
+I 1\TR2\65
+^ADV("64","c")
+00000
+^ADV("64","d")
+4/39/65/103/106
+^ADV("64","p")
+4/39/65/103/106
+^ADV("65","0")
+2
+^ADV("65","1")
+You are in Bedquilt, a long east-west passage with holes everywhere.  To
+^ADV("65","2")
+explore at random select north, south, up, or down.
+^ADV("65","D","0")
+2
+^ADV("65","D","1")
+I $R(10000)<8000\TR3\56
+^ADV("65","D","2")
+I 1\TR2\106
+^ADV("65","E","0")
+1
+^ADV("65","E","1")
+I 1\TR2\64
+^ADV("65","N","0")
+3
+^ADV("65","N","1")
+I $R(10000)<6000\TR3\56
+^ADV("65","N","2")
+I $R(10000)<7500\TR2\72
+^ADV("65","N","3")
+I 1\TR2\71
+^ADV("65","S","0")
+2
+^ADV("65","S","1")
+I $R(10000)<8000\TR3\56
+^ADV("65","S","2")
+I 1\TR2\68
+^ADV("65","SLAB","0")
+1
+^ADV("65","SLAB","1")
+I 1\TR2\68
+^ADV("65","U","0")
+3
+^ADV("65","U","1")
+I $R(10000)<8000\TR3\56
+^ADV("65","U","2")
+I $R(10000)<5000\TR2\70
+^ADV("65","U","3")
+I 1\TR2\39
+^ADV("65","W","0")
+1
+^ADV("65","W","1")
+I 1\TR2\66
+^ADV("65","c")
+00000
+^ADV("65","d")
+8/39/64/66/68/70/71/72/106
+^ADV("65","p")
+8/39/64/66/68/70/71/72/106
+^ADV("66","0")
+2/You're in Swiss cheese room.
+^ADV("66","1")
+You are in a room whose walls resemble Swiss cheese.  Obvious passages go west,
+^ADV("66","2")
+east, NE, and NW.  Part of the room is occupied by a large bedrock block.
+^ADV("66","CANYO","0")
+1
+^ADV("66","CANYO","1")
+I 1\TR2\77
+^ADV("66","E","0")
+1
+^ADV("66","E","1")
+I 1\TR2\96
+^ADV("66","NE","0")
+1
+^ADV("66","NE","1")
+I 1\TR2\65
+^ADV("66","NW","0")
+2
+^ADV("66","NW","1")
+I $R(10000)<5000\TR3\56
+^ADV("66","NW","2")
+I 1\TR2\97
+^ADV("66","ORIEN","0")
+1
+^ADV("66","ORIEN","1")
+I 1\TR2\97
+^ADV("66","S","0")
+2
+^ADV("66","S","1")
+I $R(10000)<8000\TR3\56
+^ADV("66","S","2")
+I 1\TR2\77
+^ADV("66","W","0")
+1
+^ADV("66","W","1")
+I 1\TR2\67
+^ADV("66","c")
+00000
+^ADV("66","d")
+5/65/67/77/96/97
+^ADV("66","p")
+5/65/67/77/96/97
+^ADV("67","0")
+5/You're at east end of Twopit Room.
+^ADV("67","1")
+You are at the east end of Twopit Room.  The floor here is littered with thin
+^ADV("67","2")
+rock slabs, which make it easy to descend the pits.  There is a path here
+^ADV("67","3")
+bypassing the pits to connect passages from the east and west.  There are holes
+^ADV("67","4")
+all over, but the only big one is on the wall directly over the west pit where
+^ADV("67","5")
+you can't get to it.
+^ADV("67","ACROS","0")
+1
+^ADV("67","ACROS","1")
+I 1\TR2\23
+^ADV("67","D","0")
+1
+^ADV("67","D","1")
+I 1\TR2\24
+^ADV("67","E","0")
+1
+^ADV("67","E","1")
+I 1\TR2\66
+^ADV("67","PIT","0")
+1
+^ADV("67","PIT","1")
+I 1\TR2\24
+^ADV("67","W","0")
+1
+^ADV("67","W","1")
+I 1\TR2\23
+^ADV("67","c")
+00000
+^ADV("67","d")
+3/23/24/66
+^ADV("67","p")
+3/23/24/66
+^ADV("68","0")
+4/You're in Slab Room.
+^ADV("68","1")
+You are in a large low circular chamber whose floor is an immense slab fallen
+^ADV("68","2")
+from the ceiling (Slab Room).  East and west there once were large passages,
+^ADV("68","3")
+but they are now filled with boulders.  Low small passages go north and south,
+^ADV("68","4")
+and the south one quickly bends west around the boulders.
+^ADV("68","CLIMB","0")
+1
+^ADV("68","CLIMB","1")
+I 1\TR2\69
+^ADV("68","N","0")
+1
+^ADV("68","N","1")
+I 1\TR2\65
+^ADV("68","S","0")
+1
+^ADV("68","S","1")
+I 1\TR2\23
+^ADV("68","U","0")
+1
+^ADV("68","U","1")
+I 1\TR2\69
+^ADV("68","c")
+00000
+^ADV("68","d")
+3/23/65/69
+^ADV("68","p")
+3/23/65/69
+^ADV("69","0")
+1
+^ADV("69","1")
+You are in a secret N-S canyon above a large room.
+^ADV("69","D","0")
+1
+^ADV("69","D","1")
+I 1\TR2\68
+^ADV("69","N","0")
+1
+^ADV("69","N","1")
+I 1\TR2\109
+^ADV("69","RESER","0")
+1
+^ADV("69","RESER","1")
+I 1\TR2\113
+^ADV("69","S","0")
+2
+^ADV("69","S","1")
+I ^ADVG(G,"DRAGO","P")\TR2\120
+^ADV("69","S","2")
+I 1\TR2\119
+^ADV("69","SLAB","0")
+1
+^ADV("69","SLAB","1")
+I 1\TR2\68
+^ADV("69","c")
+00000
+^ADV("69","d")
+5/68/109/113/119/120
+^ADV("69","p")
+5/68/109/113/119/120
+^ADV("70","0")
+1
+^ADV("70","1")
+You are in a secret N-S canyon above a sizable passage.
+^ADV("70","D","0")
+1
+^ADV("70","D","1")
+I 1\TR2\65
+^ADV("70","N","0")
+1
+^ADV("70","N","1")
+I 1\TR2\71
+^ADV("70","PASSA","0")
+1
+^ADV("70","PASSA","1")
+I 1\TR2\65
+^ADV("70","S","0")
+1
+^ADV("70","S","1")
+I 1\TR2\111
+^ADV("70","c")
+00000
+^ADV("70","d")
+3/65/71/111
+^ADV("70","p")
+3/65/71/111
+^ADV("71","0")
+2/You're at junction of three secret canyons.
+^ADV("71","1")
+You are in a secret canyon at a junction of three canyons, bearing north,
+^ADV("71","2")
+south, and SE.  The north one is as tall as the other two conbined.
+^ADV("71","N","0")
+1
+^ADV("71","N","1")
+I 1\TR2\110
+^ADV("71","S","0")
+1
+^ADV("71","S","1")
+I 1\TR2\70
+^ADV("71","SE","0")
+1
+^ADV("71","SE","1")
+I 1\TR2\65
+^ADV("71","c")
+00000
+^ADV("71","d")
+3/65/70/110
+^ADV("71","p")
+3/65/70/110
+^ADV("72","0")
+1
+^ADV("72","1")
+You are in a large low room.  Crawls lead north, SE, and SW.
+^ADV("72","BEDQU","0")
+1
+^ADV("72","BEDQU","1")
+I 1\TR2\65
+^ADV("72","N","0")
+1
+^ADV("72","N","1")
+I 1\TR2\73
+^ADV("72","ORIEN","0")
+1
+^ADV("72","ORIEN","1")
+I 1\TR2\97
+^ADV("72","SE","0")
+1
+^ADV("72","SE","1")
+I 1\TR2\97
+^ADV("72","SW","0")
+1
+^ADV("72","SW","1")
+I 1\TR2\118
+^ADV("72","c")
+00000
+^ADV("72","d")
+4/65/73/97/118
+^ADV("72","p")
+4/65/73/97/118
+^ADV("73","0")
+1
+^ADV("73","1")
+Dead end crawl.
+^ADV("73","CRAWL","0")
+1
+^ADV("73","CRAWL","1")
+I 1\TR2\72
+^ADV("73","OUT","0")
+1
+^ADV("73","OUT","1")
+I 1\TR2\72
+^ADV("73","S","0")
+1
+^ADV("73","S","1")
+I 1\TR2\72
+^ADV("73","c")
+00000
+^ADV("73","d")
+1/72
+^ADV("73","p")
+1/72
+^ADV("74","0")
+2/You're in secret E-W canyon above tight canyon.
+^ADV("74","1")
+You are in a secret canyon which here runs E-W.  It crosses over a very tight
+^ADV("74","2")
+canyon 15 feet below.  If you go down you may not be able to get back up.
+^ADV("74","D","0")
+1
+^ADV("74","D","1")
+I 1\TR2\75
+^ADV("74","E","0")
+1
+^ADV("74","E","1")
+I 1\TR2\19
+^ADV("74","W","0")
+2
+^ADV("74","W","1")
+I ^ADVG(G,"DRAGO","P")\TR2\120
+^ADV("74","W","2")
+I 1\TR2\121
+^ADV("74","c")
+00000
+^ADV("74","d")
+4/19/75/120/121
+^ADV("74","p")
+4/19/75/120/121
+^ADV("75","0")
+1
+^ADV("75","1")
+You are at a wide place in a very tight N-S canyon..
+^ADV("75","N","0")
+1
+^ADV("75","N","1")
+I 1\TR2\77
+^ADV("75","S","0")
+1
+^ADV("75","S","1")
+I 1\TR2\76
+^ADV("75","c")
+00000
+^ADV("75","d")
+2/76/77
+^ADV("75","p")
+2/76/77
+^ADV("76","0")
+1
+^ADV("76","1")
+The canyon here becomes too tight to go further south.
+^ADV("76","N","0")
+1
+^ADV("76","N","1")
+I 1\TR2\75
+^ADV("76","c")
+00000
+^ADV("76","d")
+1/75
+^ADV("76","p")
+1/75
+^ADV("77","0")
+2
+^ADV("77","1")
+You are in a tall E-W canyon.  A low tight crawl goes three feet north and
+^ADV("77","2")
+seems to open up.
+^ADV("77","CRAWL","0")
+1
+^ADV("77","CRAWL","1")
+I 1\TR2\66
+^ADV("77","E","0")
+1
+^ADV("77","E","1")
+I 1\TR2\75
+^ADV("77","N","0")
+1
+^ADV("77","N","1")
+I 1\TR2\66
+^ADV("77","W","0")
+1
+^ADV("77","W","1")
+I 1\TR2\78
+^ADV("77","c")
+00000
+^ADV("77","d")
+3/66/75/78
+^ADV("77","p")
+3/66/75/78
+^ADV("78","0")
+1
+^ADV("78","1")
+The canyon runs into a mass of boulders -- dead end.
+^ADV("78","S","0")
+1
+^ADV("78","S","1")
+I 1\TR2\77
+^ADV("78","c")
+00000
+^ADV("78","d")
+1/77
+^ADV("78","p")
+1/77
+^ADV("79","0")
+2
+^ADV("79","1")
+The stream flows out through a pair of one-foot-diameter sewer pipes.  It would
+^ADV("79","2")
+be advisable to use the exit.
+^ADV("79","FORCED","0")
+1
+^ADV("79","FORCED","1")
+I 1\TR2\3
+^ADV("79","c")
+10000
+^ADV("80","0")
+1
+^ADV("80","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("80","E","0")
+1
+^ADV("80","E","1")
+I 1\TR2\81
+^ADV("80","N","0")
+1
+^ADV("80","N","1")
+I 1\TR2\42
+^ADV("80","S","0")
+1
+^ADV("80","S","1")
+I 1\TR2\80
+^ADV("80","W","0")
+1
+^ADV("80","W","1")
+I 1\TR2\80
+^ADV("80","c")
+00007
+^ADV("80","d")
+2/42/81
+^ADV("80","p")
+2/42/81
+^ADV("81","0")
+1
+^ADV("81","1")
+Dead end.
+^ADV("81","OUT","0")
+1
+^ADV("81","OUT","1")
+I 1\TR2\80
+^ADV("81","W","0")
+1
+^ADV("81","W","1")
+I 1\TR2\80
+^ADV("81","c")
+00007
+^ADV("81","d")
+1/80
+^ADV("81","p")
+1/80
+^ADV("82","0")
+1
+^ADV("82","1")
+Dead end.
+^ADV("82","OUT","0")
+1
+^ADV("82","OUT","1")
+I 1\TR2\44
+^ADV("82","S","0")
+1
+^ADV("82","S","1")
+I 1\TR2\44
+^ADV("82","c")
+01007
+^ADV("82","d")
+1/44
+^ADV("82","p")
+1/44
+^ADV("83","0")
+1
+^ADV("83","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("83","E","0")
+1
+^ADV("83","E","1")
+I 1\TR2\84
+^ADV("83","S","0")
+1
+^ADV("83","S","1")
+I 1\TR2\57
+^ADV("83","W","0")
+1
+^ADV("83","W","1")
+I 1\TR2\85
+^ADV("83","c")
+00000
+^ADV("83","d")
+3/57/84/85
+^ADV("83","p")
+2/57/84
+^ADV("84","0")
+1
+^ADV("84","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("84","N","0")
+1
+^ADV("84","N","1")
+I 1\TR2\57
+^ADV("84","NW","0")
+1
+^ADV("84","NW","1")
+I 1\TR2\114
+^ADV("84","W","0")
+1
+^ADV("84","W","1")
+I 1\TR2\83
+^ADV("84","c")
+00000
+^ADV("84","d")
+3/57/83/114
+^ADV("84","p")
+3/57/83/114
+^ADV("85","0")
+1
+^ADV("85","1")
+Dead end.
+^ADV("85","E","0")
+1
+^ADV("85","E","1")
+I 1\TR2\83
+^ADV("85","OUT","0")
+1
+^ADV("85","OUT","1")
+I 1\TR2\83
+^ADV("85","c")
+01007
+^ADV("85","d")
+1/83
+^ADV("85","p")
+1/83
+^ADV("86","0")
+1
+^ADV("86","1")
+Dead end.
+^ADV("86","OUT","0")
+1
+^ADV("86","OUT","1")
+I 1\TR2\52
+^ADV("86","U","0")
+1
+^ADV("86","U","1")
+I 1\TR2\52
+^ADV("86","c")
+01007
+^ADV("86","d")
+1/52
+^ADV("86","p")
+1/52
+^ADV("87","0")
+1
+^ADV("87","1")
+You are in a maze of twisty little passages, all alike.
+^ADV("87","D","0")
+1
+^ADV("87","D","1")
+I 1\TR2\45
+^ADV("87","U","0")
+1
+^ADV("87","U","1")
+I 1\TR2\45
+^ADV("87","c")
+00007
+^ADV("87","d")
+1/45
+^ADV("87","p")
+1/45
+^ADV("88","0")
+2/You're in narrow corridor.
+^ADV("88","1")
+You are in a long narrow corridor stretching out of sight to the west.  At the
+^ADV("88","2")
+eastern end is a hole through which you can see a profusion of leaves.
+^ADV("88","CLIMB","0")
+1
+^ADV("88","CLIMB","1")
+I 1\TR2\25
+^ADV("88","D","0")
+1
+^ADV("88","D","1")
+I 1\TR2\25
+^ADV("88","E","0")
+1
+^ADV("88","E","1")
+I 1\TR2\25
+^ADV("88","GIANT","0")
+1
+^ADV("88","GIANT","1")
+I 1\TR2\92
+^ADV("88","JUMP","0")
+1
+^ADV("88","JUMP","1")
+I 1\TR2\20
+^ADV("88","W","0")
+1
+^ADV("88","W","1")
+I 1\TR2\92
+^ADV("88","c")
+00000
+^ADV("88","d")
+2/25/92
+^ADV("88","p")
+2/25/92
+^ADV("89","0")
+1
+^ADV("89","1")
+There is nothing here to climb.  Use "up" or "out" to leave the pit.
+^ADV("89","FORCED","0")
+1
+^ADV("89","FORCED","1")
+I 1\TR2\25
+^ADV("89","c")
+10000
+^ADV("90","0")
+1
+^ADV("90","1")
+You have climbed up the plant and out of the pit.
+^ADV("90","FORCED","0")
+1
+^ADV("90","FORCED","1")
+I 1\TR2\23
+^ADV("90","c")
+10000
+^ADV("91","0")
+3/You're at steep incline above large room.
+^ADV("91","1")
+You are at the top of a steep incline above a large room.  You could climb down
+^ADV("91","2")
+here, but you would not be able to climb up.  There is a passage leading back
+^ADV("91","3")
+to the north.
+^ADV("91","CAVER","0")
+1
+^ADV("91","CAVER","1")
+I 1\TR2\95
+^ADV("91","CLIMB","0")
+1
+^ADV("91","CLIMB","1")
+I 1\TR2\72
+^ADV("91","D","0")
+1
+^ADV("91","D","1")
+I 1\TR2\72
+^ADV("91","N","0")
+1
+^ADV("91","N","1")
+I 1\TR2\95
+^ADV("91","PASSA","0")
+1
+^ADV("91","PASSA","1")
+I 1\TR2\95
+^ADV("91","c")
+00000
+^ADV("91","d")
+2/72/95
+^ADV("91","p")
+2/72/95
+^ADV("92","0")
+3/You're in Giant Room.
+^ADV("92","1")
+You are in the Giant Room.  The ceiling here is too high up for your lamp to
+^ADV("92","2")
+show it.  Cavernous passages lead east, north, and south.  On the west wall is
+^ADV("92","3")
+scrawled the inscription, "FEE FIE FOE FOO" [sic].
+^ADV("92","E","0")
+1
+^ADV("92","E","1")
+I 1\TR2\93
+^ADV("92","N","0")
+1
+^ADV("92","N","1")
+I 1\TR2\94
+^ADV("92","S","0")
+1
+^ADV("92","S","1")
+I 1\TR2\88
+^ADV("92","c")
+00000
+^ADV("92","d")
+3/88/93/94
+^ADV("92","p")
+3/88/93/94
+^ADV("93","0")
+1
+^ADV("93","1")
+The passage here is blocked by a recent cave-in.
+^ADV("93","GIANT","0")
+1
+^ADV("93","GIANT","1")
+I 1\TR2\92
+^ADV("93","OUT","0")
+1
+^ADV("93","OUT","1")
+I 1\TR2\92
+^ADV("93","S","0")
+1
+^ADV("93","S","1")
+I 1\TR2\92
+^ADV("93","c")
+00000
+^ADV("93","d")
+1/92
+^ADV("93","p")
+1/92
+^ADV("94","0")
+1
+^ADV("94","1")
+You are at one end of an immense north-south passage.
+^ADV("94","CAVER","0")
+2
+^ADV("94","CAVER","1")
+I ^ADVG(G,"DOOR","P")\TR2\95
+^ADV("94","CAVER","2")
+I 1\TR3\111
+^ADV("94","ENTER","0")
+2
+^ADV("94","ENTER","1")
+I ^ADVG(G,"DOOR","P")\TR2\95
+^ADV("94","ENTER","2")
+I 1\TR3\111
+^ADV("94","GIANT","0")
+1
+^ADV("94","GIANT","1")
+I 1\TR2\92
+^ADV("94","N","0")
+2
+^ADV("94","N","1")
+I ^ADVG(G,"DOOR","P")\TR2\95
+^ADV("94","N","2")
+I 1\TR3\111
+^ADV("94","PASSA","0")
+1
+^ADV("94","PASSA","1")
+I 1\TR2\92
+^ADV("94","S","0")
+1
+^ADV("94","S","1")
+I 1\TR2\92
+^ADV("94","c")
+00000
+^ADV("94","d")
+2/92/95
+^ADV("94","p")
+2/92/95
+^ADV("95","0")
+3/You're in cavern with waterfall.
+^ADV("95","1")
+You are in a magnificent cavern with a rushing stream which cascades over a
+^ADV("95","2")
+sparkling waterfall into a roaring whirlpool which disappears through a hole in
+^ADV("95","3")
+the floor.  Passages exit to the south and west.
+^ADV("95","GIANT","0")
+1
+^ADV("95","GIANT","1")
+I 1\TR2\92
+^ADV("95","OUT","0")
+1
+^ADV("95","OUT","1")
+I 1\TR2\94
+^ADV("95","S","0")
+1
+^ADV("95","S","1")
+I 1\TR2\94
+^ADV("95","W","0")
+1
+^ADV("95","W","1")
+I 1\TR2\91
+^ADV("95","c")
+00010
+^ADV("95","d")
+3/91/92/94
+^ADV("95","p")
+3/91/92/94
+^ADV("96","0")
+2/You're in Soft Room.
+^ADV("96","1")
+You are in the Soft Room.  The walls are covered with heavy curtains, the floor
+^ADV("96","2")
+with a thick pile carpet.  Moss covers the ceiling.
+^ADV("96","OUT","0")
+1
+^ADV("96","OUT","1")
+I 1\TR2\66
+^ADV("96","W","0")
+1
+^ADV("96","W","1")
+I 1\TR2\66
+^ADV("96","c")
+00000
+^ADV("96","d")
+1/66
+^ADV("96","p")
+1/66
+^ADV("97","0")
+3/You're in Oriental Room.
+^ADV("97","1")
+This is the Oriental Room.  Ancient oriental cave drawings cover the walls.  A
+^ADV("97","2")
+gently sloping passage leads upward to the north, another passage leads SE, and
+^ADV("97","3")
+a hands-and-knees crawl leads west.
+^ADV("97","CAVER","0")
+1
+^ADV("97","CAVER","1")
+I 1\TR2\98
+^ADV("97","CRAWL","0")
+1
+^ADV("97","CRAWL","1")
+I 1\TR2\72
+^ADV("97","N","0")
+1
+^ADV("97","N","1")
+I 1\TR2\98
+^ADV("97","SE","0")
+1
+^ADV("97","SE","1")
+I 1\TR2\66
+^ADV("97","U","0")
+1
+^ADV("97","U","1")
+I 1\TR2\98
+^ADV("97","W","0")
+1
+^ADV("97","W","1")
+I 1\TR2\72
+^ADV("97","c")
+00000
+^ADV("97","d")
+3/66/72/98
+^ADV("97","p")
+3/66/72/98
+^ADV("98","0")
+4/You're in misty cavern.
+^ADV("98","1")
+You are following a wide path around the outer edge of a large cavern.  Far
+^ADV("98","2")
+below, through a heavy white mist, strange splashing noises can be heard.  The
+^ADV("98","3")
+mist rises up through a fissure in the ceiling.  The path exits to the south
+^ADV("98","4")
+and west.
+^ADV("98","ORIEN","0")
+1
+^ADV("98","ORIEN","1")
+I 1\TR2\97
+^ADV("98","S","0")
+1
+^ADV("98","S","1")
+I 1\TR2\97
+^ADV("98","W","0")
+1
+^ADV("98","W","1")
+I 1\TR2\99
+^ADV("98","c")
+00000
+^ADV("98","d")
+2/97/99
+^ADV("98","p")
+2/97/99
+^ADV("99","0")
+3/You're in alcove.
+^ADV("99","1")
+You are in an alcove.  A small NW path seems to widen after a short distance.
+^ADV("99","2")
+An extremely tight tunnel leads east.  It looks like a very tight squeeze.  An
+^ADV("99","3")
+eerie light can be seen at the other end.
+^ADV("99","CAVER","0")
+1
+^ADV("99","CAVER","1")
+I 1\TR2\98
+^ADV("99","E","0")
+1
+^ADV("99","E","1")
+I 1\TRS1^ADV9\
+^ADV("99","NW","0")
+1
+^ADV("99","NW","1")
+I 1\TR2\98
+^ADV("99","PASSA","0")
+1
+^ADV("99","PASSA","1")
+I 1\TRS1^ADV9\
+^ADV("99","c")
+00008
+^ADV("99","d")
+1/98
+^ADV("99","p")
+1/98
+^ADV("100","0")
+2/You're in Plover Room.
+^ADV("100","1")
+You're in a small chamber lit by an eerie green light.  An extremely narrow
+^ADV("100","2")
+tunnel exits to the west.  A dark corridor leads NE.
+^ADV("100","DARK","0")
+1
+^ADV("100","DARK","1")
+I 1\TR2\101
+^ADV("100","NE","0")
+1
+^ADV("100","NE","1")
+I 1\TR2\101
+^ADV("100","OUT","0")
+1
+^ADV("100","OUT","1")
+I 1\TRS1^ADV9\
+^ADV("100","PASSA","0")
+1
+^ADV("100","PASSA","1")
+I 1\TRS1^ADV9\
+^ADV("100","PLOVE","0")
+2
+^ADV("100","PLOVE","1")
+I TOTING["/EMERA/"\TRS2^ADV9\
+^ADV("100","PLOVE","2")
+I 1\TR2\33
+^ADV("100","W","0")
+1
+^ADV("100","W","1")
+I 1\TRS1^ADV9\
+^ADV("100","c")
+00108
+^ADV("100","d")
+2/33/101
+^ADV("100","p")
+2/33/101
+^ADV("101","0")
+1/You're in Dark-Room.
+^ADV("101","1")
+You're in the Dark-Room.  A corridor leading south is the only exit.
+^ADV("101","OUT","0")
+1
+^ADV("101","OUT","1")
+I 1\TR2\100
+^ADV("101","PLOVE","0")
+1
+^ADV("101","PLOVE","1")
+I 1\TR2\100
+^ADV("101","S","0")
+1
+^ADV("101","S","1")
+I 1\TR2\100
+^ADV("101","c")
+00008
+^ADV("101","d")
+1/100
+^ADV("101","p")
+1/100
+^ADV("102","0")
+2/You're in arched hall.
+^ADV("102","1")
+You are in an arched hall.  A coral passage once continued up and east from
+^ADV("102","2")
+here, but is now blocked by debris.  The air smells of sea water.
+^ADV("102","D","0")
+1
+^ADV("102","D","1")
+I 1\TR2\103
+^ADV("102","OUT","0")
+1
+^ADV("102","OUT","1")
+I 1\TR2\103
+^ADV("102","SHELL","0")
+1
+^ADV("102","SHELL","1")
+I 1\TR2\103
+^ADV("102","c")
+00000
+^ADV("102","d")
+1/103
+^ADV("102","p")
+1/103
+^ADV("103","0")
+4/You're in Shell Room.
+^ADV("103","1")
+You're in a large room carved out of sedimentary rock.  The floor and walls are
+^ADV("103","2")
+littered with bits of shells imbedded in the stone.  A shallow passage proceeds
+^ADV("103","3")
+downward, and a somewhat steeper one leads up.  A low hands-and-knees passage
+^ADV("103","4")
+enters from the south.
+^ADV("103","D","0")
+1
+^ADV("103","D","1")
+I 1\TR2\104
+^ADV("103","HALL","0")
+1
+^ADV("103","HALL","1")
+I 1\TR2\102
+^ADV("103","S","0")
+3
+^ADV("103","S","1")
+I TOTING["/CLAM/"\TR3\118
+^ADV("103","S","2")
+I TOTING["/OYSTE/"\TR3\119
+^ADV("103","S","3")
+I 1\TR2\64
+^ADV("103","U","0")
+1
+^ADV("103","U","1")
+I 1\TR2\102
+^ADV("103","c")
+00000
+^ADV("103","d")
+3/64/102/104
+^ADV("103","p")
+3/64/102/104
+^ADV("104","0")
+1
+^ADV("104","1")
+You are in a long sloping corridor with ragged sharp walls.
+^ADV("104","D","0")
+1
+^ADV("104","D","1")
+I 1\TR2\105
+^ADV("104","SHELL","0")
+1
+^ADV("104","SHELL","1")
+I 1\TR2\103
+^ADV("104","U","0")
+1
+^ADV("104","U","1")
+I 1\TR2\103
+^ADV("104","c")
+00000
+^ADV("104","d")
+2/103/105
+^ADV("104","p")
+2/103/105
+^ADV("105","0")
+1
+^ADV("105","1")
+You are in a cul-de-sac about eight feet across.
+^ADV("105","OUT","0")
+1
+^ADV("105","OUT","1")
+I 1\TR2\104
+^ADV("105","SHELL","0")
+1
+^ADV("105","SHELL","1")
+I 1\TR2\103
+^ADV("105","U","0")
+1
+^ADV("105","U","1")
+I 1\TR2\104
+^ADV("105","c")
+00000
+^ADV("105","d")
+2/103/104
+^ADV("105","p")
+2/103/104
+^ADV("106","0")
+4/You're in anteroom.
+^ADV("106","1")
+You are in an anteroom leading to a large passage to the east.  Small passages
+^ADV("106","2")
+go west and up.  The remnants of recent digging are evident.  A sign in midair
+^ADV("106","3")
+here says "CAVE UNDER CONSTRUCTION BEYOND THIS POINT.  PROCEED AT OWN RISK.
+^ADV("106","4")
+[Witt Construction Company]."
+^ADV("106","E","0")
+1
+^ADV("106","E","1")
+I 1\TR2\108
+^ADV("106","U","0")
+1
+^ADV("106","U","1")
+I 1\TR2\64
+^ADV("106","W","0")
+1
+^ADV("106","W","1")
+I 1\TR2\65
+^ADV("106","c")
+00000
+^ADV("106","d")
+3/64/65/108
+^ADV("106","p")
+3/64/65/108
+^ADV("107","0")
+1
+^ADV("107","1")
+You are in a maze of twisty little passages, all different.
+^ADV("107","D","0")
+1
+^ADV("107","D","1")
+I 1\TR2\61
+^ADV("107","E","0")
+1
+^ADV("107","E","1")
+I 1\TR2\137
+^ADV("107","N","0")
+1
+^ADV("107","N","1")
+I 1\TR2\139
+^ADV("107","NE","0")
+1
+^ADV("107","NE","1")
+I 1\TR2\133
+^ADV("107","NW","0")
+1
+^ADV("107","NW","1")
+I 1\TR2\136
+^ADV("107","S","0")
+1
+^ADV("107","S","1")
+I 1\TR2\131
+^ADV("107","SE","0")
+1
+^ADV("107","SE","1")
+I 1\TR2\134
+^ADV("107","SW","0")
+1
+^ADV("107","SW","1")
+I 1\TR2\132
+^ADV("107","U","0")
+1
+^ADV("107","U","1")
+I 1\TR2\135
+^ADV("107","W","0")
+1
+^ADV("107","W","1")
+I 1\TR2\138
+^ADV("107","c")
+00000
+^ADV("107","d")
+10/61/131/132/133/134/135/136/137/138/139
+^ADV("107","p")
+10/61/131/132/133/134/135/136/137/138/139
+^ADV("108","0")
+1/You're at Witt's End.
+^ADV("108","1")
+You are at Witt's End.  Passages lead off in *ALL* directions.
+^ADV("108","D","0")
+2
+^ADV("108","D","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","D","2")
+I 1\TR2\106
+^ADV("108","E","0")
+2
+^ADV("108","E","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","E","2")
+I 1\TR2\106
+^ADV("108","N","0")
+2
+^ADV("108","N","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","N","2")
+I 1\TR2\106
+^ADV("108","NE","0")
+2
+^ADV("108","NE","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","NE","2")
+I 1\TR2\106
+^ADV("108","NW","0")
+2
+^ADV("108","NW","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","NW","2")
+I 1\TR2\106
+^ADV("108","S","0")
+2
+^ADV("108","S","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","S","2")
+I 1\TR2\106
+^ADV("108","SE","0")
+2
+^ADV("108","SE","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","SE","2")
+I 1\TR2\106
+^ADV("108","SW","0")
+2
+^ADV("108","SW","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","SW","2")
+I 1\TR2\106
+^ADV("108","U","0")
+2
+^ADV("108","U","1")
+I $R(10000)<9500\TR3\56
+^ADV("108","U","2")
+I 1\TR2\106
+^ADV("108","W","0")
+1
+^ADV("108","W","1")
+I 1\TR3\126
+^ADV("108","c")
+00009
+^ADV("108","d")
+1/106
+^ADV("108","p")
+1/106
+^ADV("109","0")
+7/You're in Mirror Canyon.
+^ADV("109","1")
+You are in a north-south canyon about 25 feet acress.  The floor is covered by
+^ADV("109","2")
+white mist seeping in from the north.  The walls extend upward for well over
+^ADV("109","3")
+100 feet.  Suspended from some unseen point far above you, an enormous
+^ADV("109","4")
+two-sided mirror is hanging parallel to and midway between the canyon walls. 
+^ADV("109","5")
+(The mirror is obviously provided for the use of the dwarves who, as you know,
+^ADV("109","6")
+are extremely vain.)  A small window can be seen in either wall, some fifty
+^ADV("109","7")
+feet up. 
+^ADV("109","N","0")
+1
+^ADV("109","N","1")
+I 1\TR2\113
+^ADV("109","RESER","0")
+1
+^ADV("109","RESER","1")
+I 1\TR2\113
+^ADV("109","S","0")
+1
+^ADV("109","S","1")
+I 1\TR2\69
+^ADV("109","c")
+00000
+^ADV("109","d")
+2/69/113
+^ADV("109","p")
+2/69/113
+^ADV("110","0")
+7/You're at window on pit.
+^ADV("110","1")
+You're at a low window overlooking a huge pit which extends up out of sight.
+^ADV("110","2")
+A floor is indistinctly visible over 50 feet below.  Traces of white mist cover
+^ADV("110","3")
+the floor of the pit, becoming thicker to the left.  Marks in the dust around
+^ADV("110","4")
+the window would seem to indicate that someone has been here recently. 
+^ADV("110","5")
+Directly across the pit from you and 25 feet away there is a similar window
+^ADV("110","6")
+looking into a lighted room.  A shadowy figure can be seen there peering back
+^ADV("110","7")
+at you. 
+^ADV("110","JUMP","0")
+1
+^ADV("110","JUMP","1")
+I 1\TR2\20
+^ADV("110","W","0")
+1
+^ADV("110","W","1")
+I 1\TR2\71
+^ADV("110","c")
+00000
+^ADV("110","d")
+1/71
+^ADV("110","p")
+1/71
+^ADV("111","0")
+3/You're at top of stalactite.
+^ADV("111","1")
+A large stalactite extends from the roof and almost reaches the floor below.
+^ADV("111","2")
+You could climb down it and jump from it to the floor, but having done so you
+^ADV("111","3")
+would be unable to reach it to climb back up.
+^ADV("111","CLIMB","0")
+3
+^ADV("111","CLIMB","1")
+I $R(10000)<4000\TR2\50
+^ADV("111","CLIMB","2")
+I $R(10000)<5000\TR2\53
+^ADV("111","CLIMB","3")
+I 1\TR2\45
+^ADV("111","D","0")
+3
+^ADV("111","D","1")
+I $R(10000)<4000\TR2\50
+^ADV("111","D","2")
+I $R(10000)<5000\TR2\53
+^ADV("111","D","3")
+I 1\TR2\45
+^ADV("111","JUMP","0")
+3
+^ADV("111","JUMP","1")
+I $R(10000)<4000\TR2\50
+^ADV("111","JUMP","2")
+I $R(10000)<5000\TR2\53
+^ADV("111","JUMP","3")
+I 1\TR2\45
+^ADV("111","N","0")
+1
+^ADV("111","N","1")
+I 1\TR2\70
+^ADV("111","c")
+00000
+^ADV("111","d")
+4/45/50/53/70
+^ADV("111","p")
+4/45/50/53/70
+^ADV("112","0")
+1
+^ADV("112","1")
+You are in a little maze of twisting passages, all different.
+^ADV("112","D","0")
+1
+^ADV("112","D","1")
+I 1\TR2\138
+^ADV("112","E","0")
+1
+^ADV("112","E","1")
+I 1\TR2\133
+^ADV("112","N","0")
+1
+^ADV("112","N","1")
+I 1\TR2\132
+^ADV("112","NE","0")
+1
+^ADV("112","NE","1")
+I 1\TR2\136
+^ADV("112","NW","0")
+1
+^ADV("112","NW","1")
+I 1\TR2\134
+^ADV("112","S","0")
+1
+^ADV("112","S","1")
+I 1\TR2\140
+^ADV("112","SE","0")
+1
+^ADV("112","SE","1")
+I 1\TR2\135
+^ADV("112","SW","0")
+1
+^ADV("112","SW","1")
+I 1\TR2\131
+^ADV("112","U","0")
+1
+^ADV("112","U","1")
+I 1\TR2\139
+^ADV("112","W","0")
+1
+^ADV("112","W","1")
+I 1\TR2\137
+^ADV("112","c")
+00000
+^ADV("112","d")
+10/131/132/133/134/135/136/137/138/139/140
+^ADV("112","p")
+10/131/132/133/134/135/136/137/138/139/140
+^ADV("113","0")
+5/You're at reservoir.
+^ADV("113","1")
+You are at the edge of a large underground reservoir.  An opaque cloud of white
+^ADV("113","2")
+mist fills the room and rises rapidly upward.  The lake is fed by a stream
+^ADV("113","3")
+which tumbles out of a hole in the wall about ten feet overhead and splashes
+^ADV("113","4")
+noisily into the water somewhere within the mist.  The only passage goes back
+^ADV("113","5")
+toward the south.
+^ADV("113","OUT","0")
+1
+^ADV("113","OUT","1")
+I 1\TR2\109
+^ADV("113","S","0")
+1
+^ADV("113","S","1")
+I 1\TR2\109
+^ADV("113","c")
+00010
+^ADV("113","d")
+1/109
+^ADV("113","p")
+1/109
+^ADV("114","0")
+1
+^ADV("114","1")
+Dead end.
+^ADV("114","SE","0")
+1
+^ADV("114","SE","1")
+I 1\TR2\84
+^ADV("114","c")
+00000
+^ADV("114","d")
+1/84
+^ADV("114","p")
+1/84
+^ADV("115","0")
+11/You're at NE end.
+^ADV("115","1")
+You are at the northeast end of an immense room, even larger than the Giant
+^ADV("115","2")
+Room.  It appears to be a repository for the "Adventure" program.  Massive
+^ADV("115","3")
+torches far overhead bathe the room with smoky yellow light.  Scattered about
+^ADV("115","4")
+you can be seen a pile of bottles (all of them empty), a nursery of young
+^ADV("115","5")
+beanstalks murmuring quietly, a bed of oysters, a bundle of black rods with
+^ADV("115","6")
+rusty stars on their ends, and a collection of brass lanterns.
+^ADV("115","7")
+ 
+^ADV("115","8")
+Off to one side a great many dwarves are sleeping on the floor, snoring loudly.
+^ADV("115","9")
+A sign nearby reads, "Do not disturb the dwarves!"  An immense mirror is
+^ADV("115","10")
+hanging against one wall; it stretches to the other end of the room where
+^ADV("115","11")
+various other sundry objects can be glimpsed dimly in the distance.
+^ADV("115","SW","0")
+1
+^ADV("115","SW","1")
+I 1\TR2\116
+^ADV("115","c")
+00100
+^ADV("115","d")
+1/116
+^ADV("115","p")
+1/116
+^ADV("116","0")
+7/You're at SW end.
+^ADV("116","1")
+You are at the southwest end of the Repository.  To one side is a pit full of
+^ADV("116","2")
+fierce green snakes.  On the other side is a row of small wicker cages, each of
+^ADV("116","3")
+which contains a little sulking bird.  In one corner is a bundle of black rods
+^ADV("116","4")
+with rusty marks on their ends.  A large number of velvet pillows are scattered
+^ADV("116","5")
+about on the floor.  A vast mirror stretches off to the northeast.  At your
+^ADV("116","6")
+feet is a large steel grate, next to which is a sign which reads, "TREASURE
+^ADV("116","7")
+VAULT. KEYS IN MAIN OFFICE."
+^ADV("116","D","0")
+1
+^ADV("116","D","1")
+I 1\TR3\93
+^ADV("116","NE","0")
+1
+^ADV("116","NE","1")
+I 1\TR2\115
+^ADV("116","c")
+00100
+^ADV("116","d")
+1/115
+^ADV("116","p")
+1/115
+^ADV("117","0")
+3/You're on SW side of chasm.
+^ADV("117","1")
+You are on one side of a large, deep chasm.  A heavy white mist rising from
+^ADV("117","2")
+below obscures all view of the far side.  A SW path leads away from the chasm
+^ADV("117","3")
+into a winding corridor.
+^ADV("117","ACROS","0")
+3
+^ADV("117","ACROS","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("117","ACROS","2")
+I ^ADVG(G,"CHASM","P")\TR3\161
+^ADV("117","ACROS","3")
+I 1\TRS3^ADV9\
+^ADV("117","CROSS","0")
+3
+^ADV("117","CROSS","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("117","CROSS","2")
+I ^ADVG(G,"CHASM","P")\TR3\161
+^ADV("117","CROSS","3")
+I 1\TRS3^ADV9\
+^ADV("117","JUMP","0")
+2
+^ADV("117","JUMP","1")
+I ^ADVG(G,"CHASM","P")\TR2\21
+^ADV("117","JUMP","2")
+I 1\TR3\96
+^ADV("117","NE","0")
+3
+^ADV("117","NE","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("117","NE","2")
+I ^ADVG(G,"CHASM","P")\TR3\161
+^ADV("117","NE","3")
+I 1\TRS3^ADV9\
+^ADV("117","OVER","0")
+3
+^ADV("117","OVER","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("117","OVER","2")
+I ^ADVG(G,"CHASM","P")\TR3\161
+^ADV("117","OVER","3")
+I 1\TRS3^ADV9\
+^ADV("117","SW","0")
+1
+^ADV("117","SW","1")
+I 1\TR2\118
+^ADV("117","c")
+00000
+^ADV("117","d")
+1/118
+^ADV("117","p")
+1/118
+^ADV("118","0")
+1/You're in sloping corridor.
+^ADV("118","1")
+You are in a long winding corridor sloping out of sight in both directions.
+^ADV("118","D","0")
+1
+^ADV("118","D","1")
+I 1\TR2\72
+^ADV("118","U","0")
+1
+^ADV("118","U","1")
+I 1\TR2\117
+^ADV("118","c")
+00000
+^ADV("118","d")
+2/72/117
+^ADV("118","p")
+2/72/117
+^ADV("119","0")
+1
+^ADV("119","1")
+You are in a secret canyon which exits to the north and east.
+^ADV("119","E","0")
+1
+^ADV("119","E","1")
+I 1\TR3\153
+^ADV("119","FORWA","0")
+1
+^ADV("119","FORWA","1")
+I 1\TR3\153
+^ADV("119","N","0")
+1
+^ADV("119","N","1")
+I 1\TR2\69
+^ADV("119","OUT","0")
+1
+^ADV("119","OUT","1")
+I 1\TR2\69
+^ADV("119","c")
+00000
+^ADV("119","d")
+1/69
+^ADV("119","p")
+1/69
+^ADV("120","0")
+1
+^ADV("120","1")
+You are in a secret canyon which exits to the north and east.
+^ADV("120","E","0")
+1
+^ADV("120","E","1")
+I 1\TR2\74
+^ADV("120","N","0")
+1
+^ADV("120","N","1")
+I 1\TR2\69
+^ADV("120","c")
+00000
+^ADV("120","d")
+2/69/74
+^ADV("120","p")
+2/69/74
+^ADV("121","0")
+1
+^ADV("121","1")
+You are in a secret canyon which exits to the north and east.
+^ADV("121","E","0")
+1
+^ADV("121","E","1")
+I 1\TR2\74
+^ADV("121","FORWA","0")
+1
+^ADV("121","FORWA","1")
+I 1\TR3\153
+^ADV("121","N","0")
+1
+^ADV("121","N","1")
+I 1\TR3\153
+^ADV("121","OUT","0")
+1
+^ADV("121","OUT","1")
+I 1\TR2\74
+^ADV("121","c")
+00000
+^ADV("121","d")
+1/74
+^ADV("121","p")
+1/74
+^ADV("122","0")
+2/You're on NE side of chasm.
+^ADV("122","1")
+You are on the far side of the chasm.  A NE path leads away from the chasm on
+^ADV("122","2")
+this side.
+^ADV("122","ACROS","0")
+2
+^ADV("122","ACROS","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("122","ACROS","2")
+I 1\TRS3^ADV9\
+^ADV("122","BARRE","0")
+1
+^ADV("122","BARRE","1")
+I 1\TR2\129
+^ADV("122","CROSS","0")
+2
+^ADV("122","CROSS","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("122","CROSS","2")
+I 1\TRS3^ADV9\
+^ADV("122","FORK","0")
+1
+^ADV("122","FORK","1")
+I 1\TR2\124
+^ADV("122","JUMP","0")
+1
+^ADV("122","JUMP","1")
+I 1\TR3\96
+^ADV("122","NE","0")
+1
+^ADV("122","NE","1")
+I 1\TR2\123
+^ADV("122","OVER","0")
+2
+^ADV("122","OVER","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("122","OVER","2")
+I 1\TRS3^ADV9\
+^ADV("122","SW","0")
+2
+^ADV("122","SW","1")
+I TOTING["/TROLL/" E  S O="TROLL" D AT\TR3\160
+^ADV("122","SW","2")
+I 1\TRS3^ADV9\
+^ADV("122","VIEW","0")
+1
+^ADV("122","VIEW","1")
+I 1\TR2\126
+^ADV("122","c")
+01000
+^ADV("122","d")
+4/123/124/126/129
+^ADV("122","p")
+0
+^ADV("123","0")
+2/You're in corridor.
+^ADV("123","1")
+You're in a long east-west corridor.  A faint rumbling noise can be heard in
+^ADV("123","2")
+the distance.
+^ADV("123","BARRE","0")
+1
+^ADV("123","BARRE","1")
+I 1\TR2\129
+^ADV("123","E","0")
+1
+^ADV("123","E","1")
+I 1\TR2\124
+^ADV("123","FORK","0")
+1
+^ADV("123","FORK","1")
+I 1\TR2\124
+^ADV("123","VIEW","0")
+1
+^ADV("123","VIEW","1")
+I 1\TR2\126
+^ADV("123","W","0")
+1
+^ADV("123","W","1")
+I 1\TR2\122
+^ADV("123","c")
+01000
+^ADV("123","d")
+4/122/124/126/129
+^ADV("123","p")
+0
+^ADV("124","0")
+3/You're at fork in path.
+^ADV("124","1")
+The path forks here.  The left fork leads northeast.  A dull rumbling seems to
+^ADV("124","2")
+get louder in that direction.  The right fork leads southeast down a gentle
+^ADV("124","3")
+slope.  The main corridor enters from the west.
+^ADV("124","BARRE","0")
+1
+^ADV("124","BARRE","1")
+I 1\TR2\129
+^ADV("124","D","0")
+1
+^ADV("124","D","1")
+I 1\TR2\128
+^ADV("124","LEFT","0")
+1
+^ADV("124","LEFT","1")
+I 1\TR2\125
+^ADV("124","NE","0")
+1
+^ADV("124","NE","1")
+I 1\TR2\125
+^ADV("124","RIGHT","0")
+1
+^ADV("124","RIGHT","1")
+I 1\TR2\128
+^ADV("124","SE","0")
+1
+^ADV("124","SE","1")
+I 1\TR2\128
+^ADV("124","VIEW","0")
+1
+^ADV("124","VIEW","1")
+I 1\TR2\126
+^ADV("124","W","0")
+1
+^ADV("124","W","1")
+I 1\TR2\123
+^ADV("124","c")
+01000
+^ADV("124","d")
+5/123/125/126/128/129
+^ADV("124","p")
+0
+^ADV("125","0")
+3/You're at junction with warm walls.
+^ADV("125","1")
+The walls are quite warm here.  From the north can be heard a steady roar, so
+^ADV("125","2")
+loud that the entire cave seems to be trembling.  Another passage leads south,
+^ADV("125","3")
+and a low crawl goes east.
+^ADV("125","CRAWL","0")
+1
+^ADV("125","CRAWL","1")
+I 1\TR2\127
+^ADV("125","E","0")
+1
+^ADV("125","E","1")
+I 1\TR2\127
+^ADV("125","FORK","0")
+1
+^ADV("125","FORK","1")
+I 1\TR2\124
+^ADV("125","N","0")
+1
+^ADV("125","N","1")
+I 1\TR2\126
+^ADV("125","S","0")
+1
+^ADV("125","S","1")
+I 1\TR2\124
+^ADV("125","VIEW","0")
+1
+^ADV("125","VIEW","1")
+I 1\TR2\126
+^ADV("125","c")
+01000
+^ADV("125","d")
+3/124/126/127
+^ADV("125","p")
+0
+^ADV("126","0")
+21/You're at breath-taking view.
+^ADV("126","1")
+You are on the edge of a breath-taking view.  Far below you is an active 
+^ADV("126","2")
+volcano, from which great gouts of molten lava come surging, cascading back
+^ADV("126","3")
+down into the depths.  The glowing rock fills the farthest reaches of the
+^ADV("126","4")
+cavern with a blood-red glare, giving everything an eerie, macabre appearance.
+^ADV("126","5")
+The air is filled with flickering sparks of ash and a heavy smell of brimstone.
+^ADV("126","6")
+ 
+^ADV("126","7")
+The walls are hot to the touch, and the thundering of the volcano drowns out
+^ADV("126","8")
+all other sounds.  Embedded in the jagged roof far overhead are myriad twisted
+^ADV("126","9")
+formations composed of pure white alabaster, which scatter the murky light
+^ADV("126","10")
+into sinister apparitions upon the walls.  To one side is a deep gorge, filled
+^ADV("126","11")
+with a bizarre chaos of tortured rock which seems to have been crafted by the
+^ADV("126","12")
+devil himself.
+^ADV("126","13")
+ 
+^ADV("126","14")
+An immense river of fire crashes out from the depths of the volcano, burns its
+^ADV("126","15")
+way through the gorge, and plummets into a bottomless pit far off to your left.
+^ADV("126","16")
+To the right, an immense geyser of blistering steam erupts continuously from a
+^ADV("126","17")
+barren island in the center of a sulfurous lake which bubbles ominously.  The
+^ADV("126","18")
+far right wall is aflame with an incandescence of its own, which lends an
+^ADV("126","19")
+additional infernal splendor to the already hellish scene.
+^ADV("126","20")
+ 
+^ADV("126","21")
+A dark, foreboding passage exits to the south.
+^ADV("126","D","0")
+1
+^ADV("126","D","1")
+I 1\TR3\110
+^ADV("126","FORK","0")
+1
+^ADV("126","FORK","1")
+I 1\TR2\124
+^ADV("126","JUMP","0")
+1
+^ADV("126","JUMP","1")
+I 1\TR3\110
+^ADV("126","OUT","0")
+1
+^ADV("126","OUT","1")
+I 1\TR2\125
+^ADV("126","PASSA","0")
+1
+^ADV("126","PASSA","1")
+I 1\TR2\125
+^ADV("126","S","0")
+1
+^ADV("126","S","1")
+I 1\TR2\125
+^ADV("126","c")
+01100
+^ADV("126","d")
+2/124/125
+^ADV("126","p")
+0
+^ADV("127","0")
+3/You're in chamber of boulders.
+^ADV("127","1")
+You are in a small chamber filled with large boulders.  The walls are very
+^ADV("127","2")
+warm, causing the air in the room to be almost stifling from the heat.  The
+^ADV("127","3")
+only exit is a crawl heading west, through which is coming a low rumbling.
+^ADV("127","CRAWL","0")
+1
+^ADV("127","CRAWL","1")
+I 1\TR2\125
+^ADV("127","FORK","0")
+1
+^ADV("127","FORK","1")
+I 1\TR2\124
+^ADV("127","OUT","0")
+1
+^ADV("127","OUT","1")
+I 1\TR2\125
+^ADV("127","VIEW","0")
+1
+^ADV("127","VIEW","1")
+I 1\TR2\126
+^ADV("127","W","0")
+1
+^ADV("127","W","1")
+I 1\TR2\125
+^ADV("127","c")
+01000
+^ADV("127","d")
+3/124/125/126
+^ADV("127","p")
+0
+^ADV("128","0")
+2/You're in limestone passage.
+^ADV("128","1")
+You are walking along a gently sloping north-south passage lined with oddly
+^ADV("128","2")
+shaped limestone formations.
+^ADV("128","BARRE","0")
+1
+^ADV("128","BARRE","1")
+I 1\TR2\129
+^ADV("128","D","0")
+1
+^ADV("128","D","1")
+I 1\TR2\129
+^ADV("128","FORK","0")
+1
+^ADV("128","FORK","1")
+I 1\TR2\124
+^ADV("128","N","0")
+1
+^ADV("128","N","1")
+I 1\TR2\124
+^ADV("128","S","0")
+1
+^ADV("128","S","1")
+I 1\TR2\129
+^ADV("128","U","0")
+1
+^ADV("128","U","1")
+I 1\TR2\124
+^ADV("128","VIEW","0")
+1
+^ADV("128","VIEW","1")
+I 1\TR2\126
+^ADV("128","c")
+01000
+^ADV("128","d")
+3/124/126/129
+^ADV("128","p")
+0
+^ADV("129","0")
+2/You're in front of barren room.
+^ADV("129","1")
+You are standing at the entrance to a large, barren room.  A sign posted above
+^ADV("129","2")
+the entrance reads, "CAUTION!  BEAR IN ROOM!"
+^ADV("129","BARRE","0")
+1
+^ADV("129","BARRE","1")
+I 1\TR2\130
+^ADV("129","E","0")
+1
+^ADV("129","E","1")
+I 1\TR2\130
+^ADV("129","ENTER","0")
+1
+^ADV("129","ENTER","1")
+I 1\TR2\130
+^ADV("129","FORK","0")
+1
+^ADV("129","FORK","1")
+I 1\TR2\124
+^ADV("129","INWAR","0")
+1
+^ADV("129","INWAR","1")
+I 1\TR2\130
+^ADV("129","U","0")
+1
+^ADV("129","U","1")
+I 1\TR2\128
+^ADV("129","VIEW","0")
+1
+^ADV("129","VIEW","1")
+I 1\TR2\126
+^ADV("129","W","0")
+1
+^ADV("129","W","1")
+I 1\TR2\128
+^ADV("129","c")
+01000
+^ADV("129","d")
+4/124/126/128/130
+^ADV("129","p")
+0
+^ADV("130","0")
+3/You're in barren room.
+^ADV("130","1")
+You are inside a barren room.  The center of the room is completely empty
+^ADV("130","2")
+except for some dust.  Marks in the dust lead away toward the far end of the
+^ADV("130","3")
+room.  The only exit is the way you came in.
+^ADV("130","FORK","0")
+1
+^ADV("130","FORK","1")
+I 1\TR2\124
+^ADV("130","OUT","0")
+1
+^ADV("130","OUT","1")
+I 1\TR2\129
+^ADV("130","VIEW","0")
+1
+^ADV("130","VIEW","1")
+I 1\TR2\126
+^ADV("130","W","0")
+1
+^ADV("130","W","1")
+I 1\TR2\129
+^ADV("130","c")
+01000
+^ADV("130","d")
+3/124/126/129
+^ADV("130","p")
+0
+^ADV("131","0")
+1
+^ADV("131","1")
+You are in a maze of twisting little passages, all different.
+^ADV("131","D","0")
+1
+^ADV("131","D","1")
+I 1\TR2\137
+^ADV("131","E","0")
+1
+^ADV("131","E","1")
+I 1\TR2\112
+^ADV("131","N","0")
+1
+^ADV("131","N","1")
+I 1\TR2\138
+^ADV("131","NE","0")
+1
+^ADV("131","NE","1")
+I 1\TR2\135
+^ADV("131","NW","0")
+1
+^ADV("131","NW","1")
+I 1\TR2\133
+^ADV("131","S","0")
+1
+^ADV("131","S","1")
+I 1\TR2\139
+^ADV("131","SE","0")
+1
+^ADV("131","SE","1")
+I 1\TR2\132
+^ADV("131","SW","0")
+1
+^ADV("131","SW","1")
+I 1\TR2\134
+^ADV("131","U","0")
+1
+^ADV("131","U","1")
+I 1\TR2\136
+^ADV("131","W","0")
+1
+^ADV("131","W","1")
+I 1\TR2\107
+^ADV("131","c")
+00000
+^ADV("131","d")
+10/107/112/132/133/134/135/136/137/138/139
+^ADV("131","p")
+10/107/112/132/133/134/135/136/137/138/139
+^ADV("132","0")
+1
+^ADV("132","1")
+You are in a little maze of twisty passages, all different.
+^ADV("132","D","0")
+1
+^ADV("132","D","1")
+I 1\TR2\139
+^ADV("132","E","0")
+1
+^ADV("132","E","1")
+I 1\TR2\138
+^ADV("132","N","0")
+1
+^ADV("132","N","1")
+I 1\TR2\133
+^ADV("132","NE","0")
+1
+^ADV("132","NE","1")
+I 1\TR2\137
+^ADV("132","NW","0")
+1
+^ADV("132","NW","1")
+I 1\TR2\107
+^ADV("132","S","0")
+1
+^ADV("132","S","1")
+I 1\TR2\134
+^ADV("132","SE","0")
+1
+^ADV("132","SE","1")
+I 1\TR2\112
+^ADV("132","SW","0")
+1
+^ADV("132","SW","1")
+I 1\TR2\136
+^ADV("132","U","0")
+1
+^ADV("132","U","1")
+I 1\TR2\131
+^ADV("132","W","0")
+1
+^ADV("132","W","1")
+I 1\TR2\135
+^ADV("132","c")
+00000
+^ADV("132","d")
+10/107/112/131/133/134/135/136/137/138/139
+^ADV("132","p")
+10/107/112/131/133/134/135/136/137/138/139
+^ADV("133","0")
+1
+^ADV("133","1")
+You are in a twisting maze of little passages, all different.
+^ADV("133","D","0")
+1
+^ADV("133","D","1")
+I 1\TR2\131
+^ADV("133","E","0")
+1
+^ADV("133","E","1")
+I 1\TR2\136
+^ADV("133","N","0")
+1
+^ADV("133","N","1")
+I 1\TR2\137
+^ADV("133","NE","0")
+1
+^ADV("133","NE","1")
+I 1\TR2\134
+^ADV("133","NW","0")
+1
+^ADV("133","NW","1")
+I 1\TR2\138
+^ADV("133","S","0")
+1
+^ADV("133","S","1")
+I 1\TR2\112
+^ADV("133","SE","0")
+1
+^ADV("133","SE","1")
+I 1\TR2\139
+^ADV("133","SW","0")
+1
+^ADV("133","SW","1")
+I 1\TR2\135
+^ADV("133","U","0")
+1
+^ADV("133","U","1")
+I 1\TR2\107
+^ADV("133","W","0")
+1
+^ADV("133","W","1")
+I 1\TR2\132
+^ADV("133","c")
+00000
+^ADV("133","d")
+10/107/112/131/132/134/135/136/137/138/139
+^ADV("133","p")
+10/107/112/131/132/134/135/136/137/138/139
+^ADV("134","0")
+1
+^ADV("134","1")
+You are in a twisting little maze of passages, all different.
+^ADV("134","D","0")
+1
+^ADV("134","D","1")
+I 1\TR2\136
+^ADV("134","E","0")
+1
+^ADV("134","E","1")
+I 1\TR2\135
+^ADV("134","N","0")
+1
+^ADV("134","N","1")
+I 1\TR2\131
+^ADV("134","NE","0")
+1
+^ADV("134","NE","1")
+I 1\TR2\107
+^ADV("134","NW","0")
+1
+^ADV("134","NW","1")
+I 1\TR2\132
+^ADV("134","S","0")
+1
+^ADV("134","S","1")
+I 1\TR2\137
+^ADV("134","SE","0")
+1
+^ADV("134","SE","1")
+I 1\TR2\133
+^ADV("134","SW","0")
+1
+^ADV("134","SW","1")
+I 1\TR2\112
+^ADV("134","U","0")
+1
+^ADV("134","U","1")
+I 1\TR2\138
+^ADV("134","W","0")
+1
+^ADV("134","W","1")
+I 1\TR2\139
+^ADV("134","c")
+00000
+^ADV("134","d")
+10/107/112/131/132/133/135/136/137/138/139
+^ADV("134","p")
+10/107/112/131/132/133/135/136/137/138/139
+^ADV("135","0")
+1
+^ADV("135","1")
+You are in a twisty little maze of passages, all different.
+^ADV("135","D","0")
+1
+^ADV("135","D","1")
+I 1\TR2\132
+^ADV("135","E","0")
+1
+^ADV("135","E","1")
+I 1\TR2\134
+^ADV("135","N","0")
+1
+^ADV("135","N","1")
+I 1\TR2\107
+^ADV("135","NE","0")
+1
+^ADV("135","NE","1")
+I 1\TR2\138
+^ADV("135","NW","0")
+1
+^ADV("135","NW","1")
+I 1\TR2\139
+^ADV("135","S","0")
+1
+^ADV("135","S","1")
+I 1\TR2\133
+^ADV("135","SE","0")
+1
+^ADV("135","SE","1")
+I 1\TR2\131
+^ADV("135","SW","0")
+1
+^ADV("135","SW","1")
+I 1\TR2\137
+^ADV("135","U","0")
+1
+^ADV("135","U","1")
+I 1\TR2\112
+^ADV("135","W","0")
+1
+^ADV("135","W","1")
+I 1\TR2\136
+^ADV("135","c")
+00000
+^ADV("135","d")
+10/107/112/131/132/133/134/136/137/138/139
+^ADV("135","p")
+10/107/112/131/132/133/134/136/137/138/139
+^ADV("136","0")
+1
+^ADV("136","1")
+You are in a twisty maze of little passages, all different.
+^ADV("136","D","0")
+1
+^ADV("136","D","1")
+I 1\TR2\134
+^ADV("136","E","0")
+1
+^ADV("136","E","1")
+I 1\TR2\107
+^ADV("136","N","0")
+1
+^ADV("136","N","1")
+I 1\TR2\112
+^ADV("136","NE","0")
+1
+^ADV("136","NE","1")
+I 1\TR2\139
+^ADV("136","NW","0")
+1
+^ADV("136","NW","1")
+I 1\TR2\137
+^ADV("136","S","0")
+1
+^ADV("136","S","1")
+I 1\TR2\135
+^ADV("136","SE","0")
+1
+^ADV("136","SE","1")
+I 1\TR2\138
+^ADV("136","SW","0")
+1
+^ADV("136","SW","1")
+I 1\TR2\133
+^ADV("136","U","0")
+1
+^ADV("136","U","1")
+I 1\TR2\132
+^ADV("136","W","0")
+1
+^ADV("136","W","1")
+I 1\TR2\131
+^ADV("136","c")
+00000
+^ADV("136","d")
+10/107/112/131/132/133/134/135/137/138/139
+^ADV("136","p")
+10/107/112/131/132/133/134/135/137/138/139
+^ADV("137","0")
+1
+^ADV("137","1")
+You are in a little twisty maze of passages, all different.
+^ADV("137","D","0")
+1
+^ADV("137","D","1")
+I 1\TR2\133
+^ADV("137","E","0")
+1
+^ADV("137","E","1")
+I 1\TR2\139
+^ADV("137","N","0")
+1
+^ADV("137","N","1")
+I 1\TR2\136
+^ADV("137","NE","0")
+1
+^ADV("137","NE","1")
+I 1\TR2\131
+^ADV("137","NW","0")
+1
+^ADV("137","NW","1")
+I 1\TR2\135
+^ADV("137","S","0")
+1
+^ADV("137","S","1")
+I 1\TR2\132
+^ADV("137","SE","0")
+1
+^ADV("137","SE","1")
+I 1\TR2\107
+^ADV("137","SW","0")
+1
+^ADV("137","SW","1")
+I 1\TR2\138
+^ADV("137","U","0")
+1
+^ADV("137","U","1")
+I 1\TR2\134
+^ADV("137","W","0")
+1
+^ADV("137","W","1")
+I 1\TR2\112
+^ADV("137","c")
+00000
+^ADV("137","d")
+10/107/112/131/132/133/134/135/136/138/139
+^ADV("137","p")
+10/107/112/131/132/133/134/135/136/138/139
+^ADV("138","0")
+1
+^ADV("138","1")
+You are in a maze of little twisting passages, all different.
+^ADV("138","D","0")
+1
+^ADV("138","D","1")
+I 1\TR2\107
+^ADV("138","E","0")
+1
+^ADV("138","E","1")
+I 1\TR2\131
+^ADV("138","N","0")
+1
+^ADV("138","N","1")
+I 1\TR2\135
+^ADV("138","NE","0")
+1
+^ADV("138","NE","1")
+I 1\TR2\132
+^ADV("138","NW","0")
+1
+^ADV("138","NW","1")
+I 1\TR2\112
+^ADV("138","S","0")
+1
+^ADV("138","S","1")
+I 1\TR2\136
+^ADV("138","SE","0")
+1
+^ADV("138","SE","1")
+I 1\TR2\137
+^ADV("138","SW","0")
+1
+^ADV("138","SW","1")
+I 1\TR2\139
+^ADV("138","U","0")
+1
+^ADV("138","U","1")
+I 1\TR2\133
+^ADV("138","W","0")
+1
+^ADV("138","W","1")
+I 1\TR2\134
+^ADV("138","c")
+00000
+^ADV("138","d")
+10/107/112/131/132/133/134/135/136/137/139
+^ADV("138","p")
+10/107/112/131/132/133/134/135/136/137/139
+^ADV("139","0")
+1
+^ADV("139","1")
+You are in a maze of little twisty passages, all different.
+^ADV("139","D","0")
+1
+^ADV("139","D","1")
+I 1\TR2\135
+^ADV("139","E","0")
+1
+^ADV("139","E","1")
+I 1\TR2\132
+^ADV("139","N","0")
+1
+^ADV("139","N","1")
+I 1\TR2\134
+^ADV("139","NE","0")
+1
+^ADV("139","NE","1")
+I 1\TR2\112
+^ADV("139","NW","0")
+1
+^ADV("139","NW","1")
+I 1\TR2\131
+^ADV("139","S","0")
+1
+^ADV("139","S","1")
+I 1\TR2\138
+^ADV("139","SE","0")
+1
+^ADV("139","SE","1")
+I 1\TR2\136
+^ADV("139","SW","0")
+1
+^ADV("139","SW","1")
+I 1\TR2\107
+^ADV("139","U","0")
+1
+^ADV("139","U","1")
+I 1\TR2\137
+^ADV("139","W","0")
+1
+^ADV("139","W","1")
+I 1\TR2\133
+^ADV("139","c")
+00000
+^ADV("139","d")
+10/107/112/131/132/133/134/135/136/137/138
+^ADV("139","p")
+10/107/112/131/132/133/134/135/136/137/138
+^ADV("140","0")
+1
+^ADV("140","1")
+Dead end.
+^ADV("140","N","0")
+1
+^ADV("140","N","1")
+I 1\TR2\112
+^ADV("140","OUT","0")
+1
+^ADV("140","OUT","1")
+I 1\TR2\112
+^ADV("140","c")
+00000
+^ADV("140","d")
+1/112
+^ADV("140","p")
+1/112
+^ADV("?")
+4
+^ADV("ABOVE")
+0UP
+^ADV("ABRA")
+0SESAM
+^ADV("ABRAC")
+0SESAM
+^ADV("ACROS")
+1
+^ADV("ASCEN")
+0UP
+^ADV("ATTAC")
+3/110/AVA^ADV5/AVA1^ADV5
+^ADV("AWKWA")
+1
+^ADV("AXE")
+2Dwarf's axe
+^ADV("AXE","0","0")
+.1
+^ADV("AXE","0",".1")
+There is a little axe here.
+^ADV("AXE","1","0")
+.1
+^ADV("AXE","1",".1")
+There is a little axe lying beside the bear.
+^ADV("BACK")
+1TRB^ADV9
+^ADV("BARRE")
+1
+^ADV("BARS")
+0SILVE
+^ADV("BATTE")
+2Batteries
+^ADV("BATTE","0","0")
+.1
+^ADV("BATTE","0",".1")
+There are fresh batteries here.
+^ADV("BATTE","1","0")
+.1
+^ADV("BATTE","1",".1")
+Some worn-out batteries have been discarded nearby.
+^ADV("BEANS")
+0PLANT
+^ADV("BEAR")
+2
+^ADV("BEAR","0","0")
+.1
+^ADV("BEAR","0",".1")
+There is a ferocious cave bear eyeing you from the far end of the room!
+^ADV("BEAR","1","0")
+.1
+^ADV("BEAR","1",".1")
+There is a gentle cave bear sitting placidly in one corner.
+^ADV("BEAR","2","0")
+.1
+^ADV("BEAR","2",".1")
+There is a contented-looking bear wandering about nearby.
+^ADV("BEAR","3","0")
+0
+^ADV("BED")
+1
+^ADV("BEDQU")
+1
+^ADV("BIRD")
+2Little bird in cage
+^ADV("BIRD","0","0")
+.1
+^ADV("BIRD","0",".1")
+A cheerful little bird is sitting here singing.
+^ADV("BIRD","1","0")
+.1
+^ADV("BIRD","1",".1")
+There is a little bird in the cage.
+^ADV("BLAST")
+3/67/AVB^ADV6/AVB^ADV6
+^ADV("BLOWU")
+0BLAST
+^ADV("BOTTL")
+2Small bottle
+^ADV("BOTTL","0","0")
+.1
+^ADV("BOTTL","0",".1")
+There is a bottle of water here.
+^ADV("BOTTL","1","0")
+.1
+^ADV("BOTTL","1",".1")
+There is an empty bottle here.
+^ADV("BOTTL","2","0")
+.1
+^ADV("BOTTL","2",".1")
+There is a bottle of oil here.
+^ADV("BOX")
+0CHEST
+^ADV("BREAK")
+3/146/AV0^ADV5/AVX^ADV4
+^ADV("BRIEF")
+2
+^ADV("BROKE")
+1
+^ADV("BUILD")
+1
+^ADV("CAGE")
+2Wicker cage
+^ADV("CAGE","0","0")
+.1
+^ADV("CAGE","0",".1")
+There is a small wicker cage discarded nearby.
+^ADV("CALM")
+3/14/AV0^ADV5/AVQ^ADV3
+^ADV("CANYO")
+1
+^ADV("CAPTU")
+0TAKE
+^ADV("CARPE")
+2
+^ADV("CARPE","0","0")
+0
+^ADV("CARRY")
+0TAKE
+^ADV("CATCH")
+0TAKE
+^ADV("CAVE")
+1TRC^ADV9
+^ADV("CAVER")
+1
+^ADV("CHAIN")
+2Golden chain
+^ADV("CHAIN","0","0")
+.1
+^ADV("CHAIN","0",".1")
+There is a golden chain lying in a heap on the floor!
+^ADV("CHAIN","1","0")
+.1
+^ADV("CHAIN","1",".1")
+The bear is locked to the wall with a golden chain!
+^ADV("CHAIN","2","0")
+.1
+^ADV("CHAIN","2",".1")
+There is a golden chain locked to the wall!
+^ADV("CHANT")
+0SAY
+^ADV("CHASM")
+2
+^ADV("CHASM","0","0")
+.2
+^ADV("CHASM","0",".1")
+A rickety wooden bridge extends across the chasm, vanishing into the mist.  A
+^ADV("CHASM","0",".2")
+sign posted on the bridge reads, "STOP!  Pay Troll!"
+^ADV("CHASM","1","0")
+.2
+^ADV("CHASM","1",".1")
+The wreckage of a bridge (and a dead bear) can be seen at the bottom of the
+^ADV("CHASM","1",".2")
+chasm.
+^ADV("CHEST")
+2Treasure chest
+^ADV("CHEST","0","0")
+.1
+^ADV("CHEST","0",".1")
+The pirate's treasure chest is here!
+^ADV("CLAM")
+2Giant clam >GRUNT!<
+^ADV("CLAM","0","0")
+.1
+^ADV("CLAM","0",".1")
+There is an enormous clam here with its shell tightly closed.
+^ADV("CLIMB")
+1
+^ADV("CLOSE")
+3/33/AVL^ADV7/AVL1^ADV7
+^ADV("COBBL")
+1
+^ADV("COINS")
+2Rare coins
+^ADV("COINS","0","0")
+.1
+^ADV("COINS","0",".1")
+There are many coins here!
+^ADV("CONTI")
+0GO
+^ADV("CRACK")
+1
+^ADV("CRAWL")
+180
+^ADV("CROSS")
+1
+^ADV("D")
+19
+^ADV("DARK")
+1
+^ADV("DEBRI")
+1
+^ADV("DEPRE")
+1
+^ADV("DESCE")
+0DOWN
+^ADV("DESCR")
+0LOOK
+^ADV("DETON")
+0BLAST
+^ADV("DEVOU")
+0EAT
+^ADV("DIAMO")
+2Several diamonds
+^ADV("DIAMO","0","0")
+.1
+^ADV("DIAMO","0",".1")
+There are diamonds here!
+^ADV("DIG")
+466
+^ADV("DISCA")
+0DROP
+^ADV("DISTU")
+0WAKE
+^ADV("DNSTR")
+1
+^ADV("DOME")
+1
+^ADV("DOOR")
+2
+^ADV("DOOR","0","0")
+.1
+^ADV("DOOR","0",".1")
+The way north is barred by a massive, rusty, iron door.
+^ADV("DOOR","1","0")
+.1
+^ADV("DOOR","1",".1")
+The way north leads through a massive, rusty, iron door.
+^ADV("DOWN")
+0D
+^ADV("DOWNS")
+0DNSTR
+^ADV("DRAGO")
+2
+^ADV("DRAGO","0","0")
+.1
+^ADV("DRAGO","0",".1")
+A huge green fierce dragon bars the way!
+^ADV("DRAGO","1","0")
+.2
+^ADV("DRAGO","1",".1")
+Congratulations!  You have just vanquished a dragon with your bare hands! 
+^ADV("DRAGO","1",".2")
+(Unbelievable, isn't it?)
+^ADV("DRAGO","2","0")
+.1
+^ADV("DRAGO","2",".1")
+The body of a huge green dead dragon is lying off to one side.
+^ADV("DRAWI")
+2
+^ADV("DRAWI","0","0")
+0
+^ADV("DRINK")
+3/73/AVG^ADV5/AVG^ADV5
+^ADV("DROP")
+3/29/AV0^ADV5/AVD^ADV4
+^ADV("DUMP")
+0DROP
+^ADV("DWARF")
+2
+^ADV("E")
+19
+^ADV("EAST")
+0E
+^ADV("EAT")
+3/110/AVE^ADV5/AVE2^ADV5
+^ADV("EGG")
+0EGGS
+^ADV("EGGS")
+2Golden eggs
+^ADV("EGGS","0","0")
+.1
+^ADV("EGGS","0",".1")
+There is a large nest here, full of golden eggs!
+^ADV("EGGS","1","0")
+.1
+^ADV("EGGS","1",".1")
+The nest of golden eggs has vanished!
+^ADV("EGGS","2","0")
+.1
+^ADV("EGGS","2",".1")
+Done!
+^ADV("EMERA")
+2Egg-sized emarald
+^ADV("EMERA","0","0")
+.1
+^ADV("EMERA","0",".1")
+There is an emerald here the size of a plover's egg!
+^ADV("ENTER")
+1
+^ADV("ENTRA")
+1
+^ADV("EXAMI")
+0LOOK
+^ADV("EXCAV")
+0DIG
+^ADV("EXIT")
+0OUT
+^ADV("EXPLO")
+0GO
+^ADV("EXTIN")
+3/38/AVOFL^ADV6/AVOF1^ADV6
+^ADV("FEE")
+3/147/AVM^ADV6/AVQ^ADV3
+^ADV("FEED")
+3/174/AV0^ADV5/AVK^ADV6
+^ADV("FIE")
+0FEE
+^ADV("FIGHT")
+0ATTAC
+^ADV("FIGUR")
+0SHADO
+^ADV("FILL")
+3/109/AVF^ADV6/AVF^ADV6
+^ADV("FIND")
+3/59/AV0^ADV5/AVN^ADV5
+^ADV("FISSU")
+2
+^ADV("FISSU","0","0")
+0
+^ADV("FISSU","1","0")
+.1
+^ADV("FISSU","1",".1")
+A crystal bridge now spans the fissure.
+^ADV("FISSU","2","0")
+.1
+^ADV("FISSU","2",".1")
+The crystal bridge has vanished!
+^ADV("FLOOR")
+1
+^ADV("FOE")
+0FEE
+^ADV("FOLLOW")
+0GO
+^ADV("FOO")
+0FEE
+^ADV("FOOD")
+2Tasty food
+^ADV("FOOD","0","0")
+.1
+^ADV("FOOD","0",".1")
+There is food here.
+^ADV("FORCED")
+1
+^ADV("FORES")
+1
+^ADV("FORK")
+1
+^ADV("FORWA")
+110
+^ADV("FREE")
+0DROP
+^ADV("FUCK")
+479
+^ADV("FUM")
+0FEE
+^ADV("GET")
+0TAKE
+^ADV("GEYSE")
+0VOLCA
+^ADV("GIANT")
+1
+^ADV("GO")
+3/43/AVQ^ADV3/AVQ^ADV3
+^ADV("GOLD")
+2Large gold nugget
+^ADV("GOLD","0","0")
+.1
+^ADV("GOLD","0",".1")
+There is large sparkling nugget of gold here!
+^ADV("GOTO")
+0GO
+^ADV("GRATE")
+2
+^ADV("GRATE","0","0")
+.1
+^ADV("GRATE","0",".1")
+The grate is locked.
+^ADV("GRATE","1","0")
+.1
+^ADV("GRATE","1",".1")
+The grate is open.
+^ADV("GULLY")
+1
+^ADV("H2O")
+0WATER
+^ADV("HALL")
+1
+^ADV("HEADL")
+0LAMP
+^ADV("HELP")
+451
+^ADV("HILL")
+0ROAD
+^ADV("HIT")
+0ATTAC
+^ADV("HOCUS")
+0SESAM
+^ADV("HOLE")
+1
+^ADV("HOURS")
+3/13/AVH^ADV7/AVQ^ADV3
+^ADV("HOUSE")
+0BUILD
+^ADV("IGNIT")
+0BLAST
+^ADV("IN")
+0INWAR
+^ADV("INFO")
+4142
+^ADV("INSID")
+0INWAR
+^ADV("INVEN")
+3/59/AVI^ADV5/AVN^ADV5
+^ADV("INWAR")
+111
+^ADV("ISSUE")
+0MAGAZ
+^ADV("JAR")
+0BOTTL
+^ADV("JEWEL")
+2Precious jewelry
+^ADV("JEWEL","0","0")
+.1
+^ADV("JEWEL","0",".1")
+There is precious jewelry here!
+^ADV("JUMP")
+1
+^ADV("KEEP")
+0TAKE
+^ADV("KEY")
+0KEYS
+^ADV("KEYS")
+2Set of keys
+^ADV("KEYS","0","0")
+.1
+^ADV("KEYS","0",".1")
+There are some keys on the ground here.
+^ADV("KILL")
+0ATTAC
+^ADV("KNIFE")
+2
+^ADV("KNIVE")
+0KNIFE
+^ADV("LAMP")
+2Brass lantern
+^ADV("LAMP","0","0")
+.1
+^ADV("LAMP","0",".1")
+There is a shiny brass lamp nearby.
+^ADV("LAMP","1","0")
+.1
+^ADV("LAMP","1",".1")
+There is a lamp shining nearby.
+^ADV("LANTE")
+0LAMP
+^ADV("LEAVE")
+0OUT
+^ADV("LEFT")
+110
+^ADV("LIGHT")
+3/38/AVONL^ADV6/AVON1^ADV6
+^ADV("LOCK")
+0CLOSE
+^ADV("LOOK")
+1TRL^ADV9
+^ADV("LOST")
+468
+^ADV("LOW")
+1
+^ADV("MACHI")
+2
+^ADV("MACHI","0","0")
+.2
+^ADV("MACHI","0",".1")
+There is a massive vending machine here.  The instructions on it read,
+^ADV("MACHI","0",".2")
+        "DROP COINS HERE TO RECEIVE FRESH BATTERIES."
+^ADV("MAGAZ")
+2"Spelunker Today"
+^ADV("MAGAZ","0","0")
+.1
+^ADV("MAGAZ","0",".1")
+There are a few recent issues of "Spelunker Today" magazine here.
+^ADV("MAIN")
+1
+^ADV("MESSA")
+2
+^ADV("MESSA","0","0")
+.2
+^ADV("MESSA","0",".1")
+There is a message scrawled in the dust in a flowery script, reading, "This is
+^ADV("MESSA","0",".2")
+not the maze where the pirate leaves his treasure chest."
+^ADV("MING")
+0VASE
+^ADV("MIRRO")
+2
+^ADV("MIRRO","0","0")
+0
+^ADV("MIST")
+469
+^ADV("MOSS")
+2
+^ADV("MUMBL")
+0SAY
+^ADV("N")
+19
+^ADV("NE")
+19
+^ADV("NEST")
+2
+^ADV("NEST","0","0")
+0
+^ADV("NORTH")
+0N
+^ADV("NOTHI")
+3//AVQ^ADV3/AVQ^ADV3
+^ADV("NOWHE")
+0NULL
+^ADV("NUGGE")
+0GOLD
+^ADV("NULL")
+1TRN^ADV9
+^ADV("NW")
+19
+^ADV("OFF")
+3/38/AVOFL^ADV6/AVOF^ADV6
+^ADV("OFFIC")
+0MAIN
+^ADV("OIL")
+2Oil in the bottle
+^ADV("OIL","0","0")
+0
+^ADV("ON")
+3/38/AVONL^ADV6/AVON^ADV6
+^ADV("ONWAR")
+0FORWA
+^ADV("OPEN")
+3/33/AVL^ADV7/AVL1^ADV7
+^ADV("OPENS")
+0SESAM
+^ADV("ORIEN")
+1
+^ADV("OUT")
+111
+^ADV("OUTDO")
+1
+^ADV("OUTSI")
+0OUT
+^ADV("OVER")
+1
+^ADV("OYSTE")
+2Giant oyster >GROAN!<
+^ADV("OYSTE","0","0")
+.1
+^ADV("OYSTE","0",".1")
+There is an enormous oyster here with its shell tightly closed.
+^ADV("OYSTE","1","0")
+.2
+^ADV("OYSTE","1",".1")
+Interesting.  There seems to be something written on the underside of the
+^ADV("OYSTE","1",".2")
+oyster.
+^ADV("PASSA")
+1
+^ADV("PAUSE")
+0SUSPE
+^ADV("PEARL")
+2Glistening pearl
+^ADV("PEARL","0","0")
+.1
+^ADV("PEARL","0",".1")
+Off to one side lies a glistening pearl!
+^ADV("PERSI")
+0RUG
+^ADV("PERUS")
+0READ
+^ADV("PILLO")
+2Velvet pillow
+^ADV("PILLO","0","0")
+.1
+^ADV("PILLO","0",".1")
+A small velvet pillow lies on the floor.
+^ADV("PIRAT")
+2
+^ADV("PIRAT","0","0")
+0
+^ADV("PIT")
+1
+^ADV("PLACA")
+0CALM
+^ADV("PLANT")
+2
+^ADV("PLANT","0","0")
+.1
+^ADV("PLANT","0",".1")
+There is a tiny little plant in the pit, murmuring, "Water, water, ..."
+^ADV("PLANT","1","0")
+.1
+^ADV("PLANT","1",".1")
+The plant spurts into furious growth for a few seconds.
+^ADV("PLANT","2","0")
+.2
+^ADV("PLANT","2",".1")
+There is a 12-foot-tall beanstalk stretching up out of the pit, bellowing
+^ADV("PLANT","2",".2")
+"WATER!! WATER!!"
+^ADV("PLANT","3","0")
+.1
+^ADV("PLANT","3",".1")
+The plant grows explosively, almost filling the bottom of the pit.
+^ADV("PLANT","4","0")
+.1
+^ADV("PLANT","4",".1")
+There is a gigantic beanstalk stretching all the way up to the hole.
+^ADV("PLANT","5","0")
+.1
+^ADV("PLANT","5",".1")
+You've over-watered the plant!  It's shriveling up!  It's, it's...
+^ADV("PLANT2")
+2
+^ADV("PLANT2","0","0")
+0
+^ADV("PLANT2","1","0")
+.1
+^ADV("PLANT2","1",".1")
+The top of a 12-foot-tall beanstalk is poking out of the west pit.
+^ADV("PLANT2","2","0")
+.1
+^ADV("PLANT2","2",".1")
+There is a huge beanstalk growing out of the west pit up to the hole.
+^ADV("PLATI")
+2Platinum pyramid
+^ADV("PLATI","0","0")
+.1
+^ADV("PLATI","0",".1")
+The is a platinum pyramid here, 8 inches on a side!
+^ADV("PLOVE")
+1
+^ADV("PLUGH")
+142
+^ADV("POCUS")
+0SESAM
+^ADV("POTTE")
+0VASE
+^ADV("POUR")
+3/29/AVP^ADV5/AVP^ADV5
+^ADV("PROCE")
+0GO
+^ADV("PYRAM")
+0PLATI
+^ADV("QUIT")
+3/13/AVU^ADV5/AVQ^ADV3
+^ADV("RATIO")
+0FOOD
+^ADV("READ")
+3/195/AVV^ADV6/AVV1^ADV6
+^ADV("RELEA")
+0DROP
+^ADV("RESER")
+1
+^ADV("RETRE")
+0BACK
+^ADV("RETUR")
+0BACK
+^ADV("RIGHT")
+110
+^ADV("ROAD")
+1
+^ADV("ROCK")
+1
+^ADV("ROD")
+2Black rod
+^ADV("ROD","0","0")
+.1
+^ADV("ROD","0",".1")
+A three-foot black rod with a rusty star on an end lies nearby.
+^ADV("ROD2")
+2Black rod
+^ADV("ROD2","0","0")
+.1
+^ADV("ROD2","0",".1")
+A three-foot black rod with a rusty mark on an end lies nearby.
+^ADV("ROOM")
+1
+^ADV("RUB")
+3/75/AV0^ADV5/AVR^ADV5
+^ADV("RUG")
+2Persian rug
+^ADV("RUG","0","0")
+.1
+^ADV("RUG","0",".1")
+There is a Persian rug spread out on the floor!
+^ADV("RUG","1","0")
+.1
+^ADV("RUG","1",".1")
+The dragon is sprawled out on a Persian rug!!
+^ADV("RUN")
+0GO
+^ADV("S")
+19
+^ADV("SAVE")
+0SUSPE
+^ADV("SAY")
+3//AV0^ADV5/AVY^ADV4
+^ADV("SCORE")
+3/13/AVS^ADV6/AVQ^ADV3
+^ADV("SE")
+19
+^ADV("SECRE")
+1
+^ADV("SESAM")
+450
+^ADV("SHADO")
+2
+^ADV("SHADO","0","0")
+.1
+^ADV("SHADO","0",".1")
+The shadowy figure seems to be trying to attract your attention.
+^ADV("SHAKE")
+0WAVE
+^ADV("SHARD")
+0VASE
+^ADV("SHATT")
+0BREAK
+^ADV("SHAZA")
+0SESAM
+^ADV("SHELL")
+1
+^ADV("SILVE")
+2Bars of silver
+^ADV("SILVE","0","0")
+.1
+^ADV("SILVE","0",".1")
+There are bars of silver here!
+^ADV("SING")
+0SAY
+^ADV("SLAB")
+1
+^ADV("SLIT")
+1
+^ADV("SMASH")
+0BREAK
+^ADV("SNAKE")
+2
+^ADV("SNAKE","0","0")
+.1
+^ADV("SNAKE","0",".1")
+A huge green fierce snake bars the way!
+^ADV("SNAKE","1","0")
+0
+^ADV("SOUTH")
+0S
+^ADV("SPELU")
+0MAGAZ
+^ADV("SPICE")
+2Rare spices
+^ADV("SPICE","0","0")
+.1
+^ADV("SPICE","0",".1")
+There are rare spices here!
+^ADV("STAIR")
+1
+^ADV("STALA")
+2
+^ADV("STALA","0","0")
+0
+^ADV("STEAL")
+0TAKE
+^ADV("STEPS")
+2
+^ADV("STEPS","0","0")
+.1
+^ADV("STEPS","0",".1")
+Rough stone steps lead down the pit.
+^ADV("STEPS","1","0")
+.1
+^ADV("STEPS","1",".1")
+Rough stone steps lead up the dome.
+^ADV("STOP")
+4139
+^ADV("STREA")
+1
+^ADV("STRIK")
+0ATTAC
+^ADV("SURFA")
+1
+^ADV("SUSPE")
+3/13/AVZ^ADV6/AVQ^ADV3
+^ADV("SW")
+19
+^ADV("SWIM")
+4147
+^ADV("SWING")
+0WAVE
+^ADV("TABLE")
+2
+^ADV("TABLE","0","0")
+.2
+^ADV("TABLE","0",".1")
+A massive stone tablet imbedded in the wall reads, "Congratulations on
+^ADV("TABLE","0",".2")
+bringing light into the Dark-Room!"
+^ADV("TAKE")
+3/24/AVT^ADV7/AVT1^ADV7
+^ADV("TAME")
+0CALM
+^ADV("THROW")
+3/29/AV0^ADV5/AVJ^ADV4
+^ADV("TOSS")
+0THROW
+^ADV("TOTE")
+0TAKE
+^ADV("TOUCH")
+0LOOK
+^ADV("TRAVE")
+0GO
+^ADV("TREAS")
+0CHEST
+^ADV("TREE")
+464
+^ADV("TREES")
+0TREE
+^ADV("TRIDE")
+2Jeweled trident
+^ADV("TRIDE","0","0")
+.1
+^ADV("TRIDE","0",".1")
+There is a jewel-encrusted trident here!
+^ADV("TROLL")
+2
+^ADV("TROLL","0","0")
+.2
+^ADV("TROLL","0",".1")
+A burly troll stands by the bridge and insists you throw him a treasure before
+^ADV("TROLL","0",".2")
+you may cross.
+^ADV("TROLL","1","0")
+.1
+^ADV("TROLL","1",".1")
+The troll steps out from beneath the bridge and blocks your way.
+^ADV("TROLL","2","0")
+0
+^ADV("TROLL2")
+2
+^ADV("TROLL2","0","0")
+.1
+^ADV("TROLL2","0",".1")
+The troll is nowhere to be seen.
+^ADV("TUNNE")
+0PASSA
+^ADV("TURN")
+0GO
+^ADV("U")
+19
+^ADV("UNLOC")
+0OPEN
+^ADV("UP")
+0U
+^ADV("UPSTR")
+1
+^ADV("UPWAR")
+0U
+^ADV("UTTER")
+0SAY
+^ADV("VALLE")
+1
+^ADV("VASE")
+2Ming vase
+^ADV("VASE","0","0")
+.1
+^ADV("VASE","0",".1")
+There is a delicate, precious Ming vase here!
+^ADV("VASE","1","0")
+.1
+^ADV("VASE","1",".1")
+The vase is now resting delicately on a velvet pillow.
+^ADV("VASE","2","0")
+.1
+^ADV("VASE","2",".1")
+The floor is littered with worthles shards of pottery.
+^ADV("VASE","3","0")
+.1
+^ADV("VASE","3",".1")
+The Ming vase drops with a delicate crash.
+^ADV("VELVE")
+0PILLO
+^ADV("VENDI")
+0MACHI
+^ADV("VIEW")
+1
+^ADV("VOLCA")
+2
+^ADV("VOLCA","0","0")
+0
+^ADV("W")
+19
+^ADV("WAKE")
+3/110/AV0^ADV5/AVC^ADV4
+^ADV("WALK")
+0GO
+^ADV("WALL")
+1
+^ADV("WATER")
+2Water in the bottle
+^ADV("WATER","0","0")
+0
+^ADV("WAVE")
+3/42/AV0^ADV5/AVW^ADV4
+^ADV("WEST")
+0W
+^ADV("WHERE")
+0FIND
+^ADV("XYZZY")
+142
+^ADV("Y2")
+1
+^ADV("h","2")
+9999/10/0/0
+^ADV("h","3")
+9999/5/0/0
+^ADV("h","4")
+4/2/62/63
+^ADV("h","5")
+5/2/18/19
+^ADV("h","6")
+8/2/20/21
+^ADV("h","7")
+75/4/176/177
+^ADV("h","8")
+25/5/178/179
+^ADV("h","9")
+20/3/180/181
+^ADV("i","3","O")
+/KEYS/LAMP/FOOD/BOTTL/
+^ADV("i","8","O")
+/GRATE/
+^ADV("i","9","O")
+/GRATE/
+^ADV("i","10","O")
+/CAGE/
+^ADV("i","11","O")
+/ROD/
+^ADV("i","13","O")
+/BIRD/
+^ADV("i","14","O")
+/STEPS/
+^ADV("i","15","O")
+/STEPS/
+^ADV("i","17","O")
+/FISSU/
+^ADV("i","18","O")
+/GOLD/
+^ADV("i","19","O")
+/SNAKE/
+^ADV("i","23","O")
+/PLANT2/
+^ADV("i","25","O")
+/PLANT/
+^ADV("i","27","O")
+/FISSU/DIAMO/
+^ADV("i","28","O")
+/SILVE/
+^ADV("i","29","O")
+/JEWEL/
+^ADV("i","30","O")
+/COINS/
+^ADV("i","35","O")
+/SHADO/
+^ADV("i","67","O")
+/PLANT2/
+^ADV("i","92","O")
+/EGGS/
+^ADV("i","94","O")
+/DOOR/
+^ADV("i","95","O")
+/TRIDE/
+^ADV("i","96","O")
+/PILLO/CARPE/
+^ADV("i","97","O")
+/DRAWI/VASE/
+^ADV("i","100","O")
+/EMERA/
+^ADV("i","101","O")
+/TABLE/PLATI/
+^ADV("i","103","O")
+/CLAM/
+^ADV("i","106","O")
+/MAGAZ/
+^ADV("i","109","O")
+/MIRRO/
+^ADV("i","110","O")
+/SHADO/
+^ADV("i","111","O")
+/STALA/
+^ADV("i","117","O")
+/CHASM/TROLL/
+^ADV("i","119","O")
+/DRAGO/RUG/
+^ADV("i","121","O")
+/DRAGO/RUG/
+^ADV("i","122","O")
+/CHASM/TROLL/
+^ADV("i","126","O")
+/VOLCA/
+^ADV("i","127","O")
+/SPICE/
+^ADV("i","130","O")
+/BEAR/CHAIN/
+^ADV("i","140","O")
+/MACHI/
+^ADV("i","AXE","F")
+0
+^ADV("i","AXE","L")
+0
+^ADV("i","AXE","P")
+0
+^ADV("i","BATTE","F")
+0
+^ADV("i","BATTE","L")
+0
+^ADV("i","BATTE","P")
+0
+^ADV("i","BEAR","F")
+-1
+^ADV("i","BEAR","L")
+130
+^ADV("i","BEAR","P")
+0
+^ADV("i","BIRD","F")
+0
+^ADV("i","BIRD","L")
+13
+^ADV("i","BIRD","P")
+0
+^ADV("i","BOTTL","F")
+0
+^ADV("i","BOTTL","L")
+3
+^ADV("i","BOTTL","P")
+0
+^ADV("i","BRIEF","F")
+0
+^ADV("i","BRIEF","L")
+0
+^ADV("i","BRIEF","P")
+0
+^ADV("i","CAGE","F")
+0
+^ADV("i","CAGE","L")
+10
+^ADV("i","CAGE","P")
+0
+^ADV("i","CARPE","F")
+-1
+^ADV("i","CARPE","L")
+96
+^ADV("i","CARPE","P")
+0
+^ADV("i","CHAIN","F")
+-1
+^ADV("i","CHAIN","L")
+130
+^ADV("i","CHAIN","P")
+-1
+^ADV("i","CHASM","F")
+122
+^ADV("i","CHASM","L")
+117
+^ADV("i","CHASM","P")
+0
+^ADV("i","CHEST","F")
+0
+^ADV("i","CHEST","L")
+0
+^ADV("i","CHEST","P")
+-1
+^ADV("i","CLAM","F")
+0
+^ADV("i","CLAM","L")
+103
+^ADV("i","CLAM","P")
+0
+^ADV("i","COINS","F")
+0
+^ADV("i","COINS","L")
+30
+^ADV("i","COINS","P")
+-1
+^ADV("i","DIAMO","F")
+0
+^ADV("i","DIAMO","L")
+27
+^ADV("i","DIAMO","P")
+-1
+^ADV("i","DOOR","F")
+-1
+^ADV("i","DOOR","L")
+94
+^ADV("i","DOOR","P")
+0
+^ADV("i","DRAGO","F")
+121
+^ADV("i","DRAGO","L")
+119
+^ADV("i","DRAGO","P")
+0
+^ADV("i","DRAWI","F")
+-1
+^ADV("i","DRAWI","L")
+97
+^ADV("i","DRAWI","P")
+0
+^ADV("i","DWARF","F")
+-1
+^ADV("i","DWARF","L")
+0
+^ADV("i","DWARF","P")
+0
+^ADV("i","EGGS","F")
+0
+^ADV("i","EGGS","L")
+92
+^ADV("i","EGGS","P")
+-1
+^ADV("i","EMERA","F")
+0
+^ADV("i","EMERA","L")
+100
+^ADV("i","EMERA","P")
+-1
+^ADV("i","FISSU","F")
+27
+^ADV("i","FISSU","L")
+17
+^ADV("i","FISSU","P")
+0
+^ADV("i","FOOD","F")
+0
+^ADV("i","FOOD","L")
+3
+^ADV("i","FOOD","P")
+0
+^ADV("i","GOLD","F")
+0
+^ADV("i","GOLD","L")
+18
+^ADV("i","GOLD","P")
+-1
+^ADV("i","GRATE","F")
+9
+^ADV("i","GRATE","L")
+8
+^ADV("i","GRATE","P")
+0
+^ADV("i","JEWEL","F")
+0
+^ADV("i","JEWEL","L")
+29
+^ADV("i","JEWEL","P")
+-1
+^ADV("i","KEYS","F")
+0
+^ADV("i","KEYS","L")
+3
+^ADV("i","KEYS","P")
+0
+^ADV("i","KNIFE","F")
+0
+^ADV("i","KNIFE","L")
+0
+^ADV("i","KNIFE","P")
+0
+^ADV("i","LAMP","F")
+0
+^ADV("i","LAMP","L")
+3
+^ADV("i","LAMP","P")
+0
+^ADV("i","MACHI","F")
+-1
+^ADV("i","MACHI","L")
+140
+^ADV("i","MACHI","P")
+0
+^ADV("i","MAGAZ","F")
+0
+^ADV("i","MAGAZ","L")
+106
+^ADV("i","MAGAZ","P")
+0
+^ADV("i","MESSA","F")
+-1
+^ADV("i","MESSA","L")
+0
+^ADV("i","MESSA","P")
+0
+^ADV("i","MIRRO","F")
+-1
+^ADV("i","MIRRO","L")
+109
+^ADV("i","MIRRO","P")
+0
+^ADV("i","MOSS","F")
+-1
+^ADV("i","MOSS","L")
+96
+^ADV("i","MOSS","P")
+0
+^ADV("i","NEST","F")
+-1
+^ADV("i","NEST","L")
+92
+^ADV("i","NEST","P")
+0
+^ADV("i","OIL","F")
+0
+^ADV("i","OIL","L")
+0
+^ADV("i","OIL","P")
+0
+^ADV("i","OYSTE","F")
+0
+^ADV("i","OYSTE","L")
+0
+^ADV("i","OYSTE","P")
+0
+^ADV("i","PEARL","F")
+0
+^ADV("i","PEARL","L")
+0
+^ADV("i","PEARL","P")
+-1
+^ADV("i","PILLO","F")
+0
+^ADV("i","PILLO","L")
+96
+^ADV("i","PILLO","P")
+0
+^ADV("i","PIRAT","F")
+-1
+^ADV("i","PIRAT","L")
+0
+^ADV("i","PIRAT","P")
+0
+^ADV("i","PLANT","F")
+-1
+^ADV("i","PLANT","L")
+25
+^ADV("i","PLANT","P")
+0
+^ADV("i","PLANT2","F")
+67
+^ADV("i","PLANT2","L")
+23
+^ADV("i","PLANT2","P")
+0
+^ADV("i","PLATI","F")
+0
+^ADV("i","PLATI","L")
+101
+^ADV("i","PLATI","P")
+-1
+^ADV("i","ROD","F")
+0
+^ADV("i","ROD","L")
+11
+^ADV("i","ROD","P")
+0
+^ADV("i","ROD2","F")
+0
+^ADV("i","ROD2","L")
+0
+^ADV("i","ROD2","P")
+0
+^ADV("i","RUG","F")
+121
+^ADV("i","RUG","L")
+119
+^ADV("i","RUG","P")
+-1
+^ADV("i","SHADO","F")
+110
+^ADV("i","SHADO","L")
+35
+^ADV("i","SHADO","P")
+0
+^ADV("i","SILVE","F")
+0
+^ADV("i","SILVE","L")
+28
+^ADV("i","SILVE","P")
+-1
+^ADV("i","SNAKE","F")
+-1
+^ADV("i","SNAKE","L")
+19
+^ADV("i","SNAKE","P")
+0
+^ADV("i","SPICE","F")
+0
+^ADV("i","SPICE","L")
+127
+^ADV("i","SPICE","P")
+-1
+^ADV("i","STALA","F")
+-1
+^ADV("i","STALA","L")
+111
+^ADV("i","STALA","P")
+0
+^ADV("i","STEPS","F")
+15
+^ADV("i","STEPS","L")
+14
+^ADV("i","STEPS","P")
+0
+^ADV("i","TABLE","F")
+-1
+^ADV("i","TABLE","L")
+101
+^ADV("i","TABLE","P")
+0
+^ADV("i","TRIDE","F")
+0
+^ADV("i","TRIDE","L")
+95
+^ADV("i","TRIDE","P")
+-1
+^ADV("i","TROLL","F")
+122
+^ADV("i","TROLL","L")
+117
+^ADV("i","TROLL","P")
+0
+^ADV("i","TROLL2","F")
+0
+^ADV("i","TROLL2","L")
+0
+^ADV("i","TROLL2","P")
+0
+^ADV("i","VASE","F")
+0
+^ADV("i","VASE","L")
+97
+^ADV("i","VASE","P")
+-1
+^ADV("i","VOLCA","F")
+-1
+^ADV("i","VOLCA","L")
+126
+^ADV("i","VOLCA","P")
+0
+^ADV("i","WATER","F")
+0
+^ADV("i","WATER","L")
+0
+^ADV("i","WATER","P")
+0
+^ADV("i","i","ABB")
+5
+^ADV("i","i","BONUS")
+0
+^ADV("i","i","CLK1")
+30
+^ADV("i","i","CLK2")
+50
+^ADV("i","i","CLOSED")
+0
+^ADV("i","i","CLOSNG")
+0
+^ADV("i","i","DETAIL")
+0
+^ADV("i","i","DFLAG")
+0
+^ADV("i","i","DKILL")
+0
+^ADV("i","i","DSEEN(1)")
+0
+^ADV("i","i","DSEEN(2)")
+0
+^ADV("i","i","DSEEN(3)")
+0
+^ADV("i","i","DSEEN(4)")
+0
+^ADV("i","i","DSEEN(5)")
+0
+^ADV("i","i","DSEEN(6)")
+0
+^ADV("i","i","FOOBAR")
+0
+^ADV("i","i","HINTED(2)")
+0
+^ADV("i","i","HINTED(3)")
+0
+^ADV("i","i","HINTED(4)")
+0
+^ADV("i","i","HINTED(5)")
+0
+^ADV("i","i","HINTED(6)")
+0
+^ADV("i","i","HINTED(7)")
+0
+^ADV("i","i","HINTED(8)")
+0
+^ADV("i","i","HINTED(9)")
+0
+^ADV("i","i","HINTH(4)")
+4
+^ADV("i","i","HINTH(5)")
+5
+^ADV("i","i","HINTH(6)")
+8
+^ADV("i","i","HINTH(7)")
+75
+^ADV("i","i","HINTH(8)")
+25
+^ADV("i","i","HINTH(9)")
+20
+^ADV("i","i","HINTLC(4)")
+0
+^ADV("i","i","HINTLC(5)")
+0
+^ADV("i","i","HINTLC(6)")
+0
+^ADV("i","i","HINTLC(7)")
+0
+^ADV("i","i","HINTLC(8)")
+0
+^ADV("i","i","HINTLC(9)")
+0
+^ADV("i","i","HOLDNG")
+0
+^ADV("i","i","KNFL")
+0
+^ADV("i","i","LD(1)")
+19
+^ADV("i","i","LD(2)")
+27
+^ADV("i","i","LD(3)")
+33
+^ADV("i","i","LD(4)")
+44
+^ADV("i","i","LD(5)")
+64
+^ADV("i","i","LD(6)")
+114
+^ADV("i","i","LD1(1)")
+0
+^ADV("i","i","LD1(2)")
+0
+^ADV("i","i","LD1(3)")
+0
+^ADV("i","i","LD1(4)")
+0
+^ADV("i","i","LD1(5)")
+0
+^ADV("i","i","LD1(6)")
+0
+^ADV("i","i","LIMIT")
+330
+^ADV("i","i","LIT")
+0
+^ADV("i","i","LMWARN")
+0
+^ADV("i","i","LNEW")
+1
+^ADV("i","i","LP")
+1
+^ADV("i","i","LP1")
+1
+^ADV("i","i","NUMDIE")
+0
+^ADV("i","i","PANIC")
+0
+^ADV("i","i","S")
+1
+^ADV("i","i","SAVED")
+0
+^ADV("i","i","TALLY")
+15
+^ADV("i","i","TALLY2")
+0
+^ADV("i","i","TOTING")
+/
+^ADV("i","i","TR")
+/GOLD/DIAMO/SILVE/JEWEL/COINS/CHEST/EGGS/TRIDE/VASE/EMERA/PLATI/PEARL/RUG/SPICE/CHAIN/
+^ADV("i","i","TURNS")
+0
+^ADV("i","i","WZDARK")
+0
+^ADV("s","35")
+You are obviously a rank amateur.  Better luck next time.
+^ADV("s","100")
+Your score qualifies you as a novice class adventurer.
+^ADV("s","130")
+You have achieved the rating, "Experienced Adventurer."
+^ADV("s","200")
+You man now consider yourself a "Seasoned Adventurer."
+^ADV("s","250")
+You have reached "Junior Master" status.
+^ADV("s","300")
+Your score puts you in Master Adventurer Class C.
+^ADV("s","330")
+Your score puts you in Master Adventurer Class B.
+^ADV("s","349")
+Your score puts you in Master Adventurer Class A.
+^ADV("s","9999")
+All of Adventuredom gives tribute to you, Adventurer Grandmaster!
+^ADV("t","1","0")
+7
+^ADV("t","1","1")
+Somewhere nearby is Colossal Cave, where others have found fortunes in treasure
+^ADV("t","1","2")
+and gold, though it is rumored that some who enter are never seen again.  Magic
+^ADV("t","1","3")
+is said to work in the cave.  I will be your eyes and hands.  Direct me with
+^ADV("t","1","4")
+commands of one or two words.  I should warn you that I look at only the first
+^ADV("t","1","5")
+five letters of each word, so you'll have to enter "NORTHEAST" as "NE" to
+^ADV("t","1","6")
+distinguish it from "NORTH".  Should you get stuck, type "HELP" for some general
+^ADV("t","1","7")
+hints.  For information on how to end your adventure, etc., type "INFO".
+^ADV("t","2","0")
+1
+^ADV("t","2","1")
+A little dwarf with a big knife blocks your way.
+^ADV("t","3","0")
+2
+^ADV("t","3","1")
+A little dwarf just walked around a corner, saw you, threw a little axe at you
+^ADV("t","3","2")
+(which missed), cursed, and ran away.
+^ADV("t","4","0")
+1
+^ADV("t","4","1")
+There is a threatening little dwarf in the room with you!
+^ADV("t","5","0")
+1
+^ADV("t","5","1")
+One sharp nasty knife is thrown at you!
+^ADV("t","6","0")
+1
+^ADV("t","6","1")
+None of them hits you.
+^ADV("t","7","0")
+1
+^ADV("t","7","1")
+One of them gets you!
+^ADV("t","8","0")
+1
+^ADV("t","8","1")
+A hollow voice says "PLUGH".
+^ADV("t","9","0")
+1
+^ADV("t","9","1")
+There is no way to go that way.
+^ADV("t","10","0")
+1
+^ADV("t","10","1")
+I am unsure how you are facing.  Use compass points or nearby objects.
+^ADV("t","11","0")
+2
+^ADV("t","11","1")
+I don't know in from out here.  Use compass points or name something in the
+^ADV("t","11","2")
+general direction that you want to go.
+^ADV("t","12","0")
+1
+^ADV("t","12","1")
+I don't know how to apply that word here.
+^ADV("t","13","0")
+1
+^ADV("t","13","1")
+I don't understand that.
+^ADV("t","14","0")
+1
+^ADV("t","14","1")
+I'm game.  Would you care to explain how?
+^ADV("t","15","0")
+2
+^ADV("t","15","1")
+Sorry, but I am not allowed to give more detail.  I will repeat the description
+^ADV("t","15","2")
+of your location.
+^ADV("t","16","0")
+1
+^ADV("t","16","1")
+It is now pitch dark.  If you proceed you will likely fall into a pit.
+^ADV("t","17","0")
+1
+^ADV("t","17","1")
+If you prefer, simply type W rather than WEST.
+^ADV("t","18","0")
+1
+^ADV("t","18","1")
+Are you trying to catch the bird?
+^ADV("t","19","0")
+2
+^ADV("t","19","1")
+The bird is frightened right now and you cannot catch it no matter what you try.
+^ADV("t","19","2")
+Perhaps you might try later.
+^ADV("t","20","0")
+1
+^ADV("t","20","1")
+Are you trying to somehow deal with the snake?
+^ADV("t","21","0")
+2
+^ADV("t","21","1")
+You can't kill the snake, or drive it away, or avoid it, or anything like that.
+^ADV("t","21","2")
+There is a way to get by, but you don't have the necessary resources right now.
+^ADV("t","22","0")
+1
+^ADV("t","22","1")
+Do you really want to quit now?
+^ADV("t","23","0")
+1
+^ADV("t","23","1")
+You fell into a pit and broke every bone in your body!
+^ADV("t","24","0")
+1
+^ADV("t","24","1")
+You are already carrying it!
+^ADV("t","25","0")
+1
+^ADV("t","25","1")
+You can't be serious!
+^ADV("t","26","0")
+2
+^ADV("t","26","1")
+The bird was unafraid when you entered, but as you approach it becomes disturbed
+^ADV("t","26","2")
+and you cannot catch it.
+^ADV("t","27","0")
+1
+^ADV("t","27","1")
+You can catch the bird, but you cannot carry it.
+^ADV("t","28","0")
+1
+^ADV("t","28","1")
+There is nothing here with a lock!
+^ADV("t","29","0")
+1
+^ADV("t","29","1")
+You aren't carrying it!
+^ADV("t","30","0")
+2
+^ADV("t","30","1")
+The little bird attacks the green snake, and in an astounding flurry drives the
+^ADV("t","30","2")
+snake away.
+^ADV("t","31","0")
+1
+^ADV("t","31","1")
+You have no keys.
+^ADV("t","32","0")
+1
+^ADV("t","32","1")
+It has no lock.
+^ADV("t","33","0")
+1
+^ADV("t","33","1")
+I don't know how to lock or unlock such a thing.
+^ADV("t","34","0")
+1
+^ADV("t","34","1")
+It was already locked.
+^ADV("t","35","0")
+1
+^ADV("t","35","1")
+The grate is now locked.
+^ADV("t","36","0")
+1
+^ADV("t","36","1")
+The grate is now unlocked.
+^ADV("t","37","0")
+1
+^ADV("t","37","1")
+It was already unlocked.
+^ADV("t","38","0")
+1
+^ADV("t","38","1")
+You have no source of light.
+^ADV("t","39","0")
+1
+^ADV("t","39","1")
+Your lamp is now on.
+^ADV("t","40","0")
+1
+^ADV("t","40","1")
+Your lamp is now off.
+^ADV("t","41","0")
+2
+^ADV("t","41","1")
+There is no way to get past the bear to unlock the chain, which is probably just
+^ADV("t","41","2")
+as well.
+^ADV("t","42","0")
+1
+^ADV("t","42","1")
+Nothing happens.
+^ADV("t","43","0")
+1
+^ADV("t","43","1")
+Where?
+^ADV("t","44","0")
+1
+^ADV("t","44","1")
+There is nothing here to attack.
+^ADV("t","45","0")
+1
+^ADV("t","45","1")
+The little bird is now dead.  Its body disappears.
+^ADV("t","46","0")
+1
+^ADV("t","46","1")
+Attacking the snake both doesn't work and is very dangerous.
+^ADV("t","47","0")
+1
+^ADV("t","47","1")
+You killed a little dwarf.
+^ADV("t","48","0")
+1
+^ADV("t","48","1")
+You attack a little dwarf, but he dodges out of the way.
+^ADV("t","49","0")
+1
+^ADV("t","49","1")
+With what, your bare hands?
+^ADV("t","50","0")
+1
+^ADV("t","50","1")
+Good try, but that is an old worn-out magic word.
+^ADV("t","51","0")
+19
+^ADV("t","51","1")
+I know of places, actions, and things.  Most of my vocabulary describes places
+^ADV("t","51","2")
+and is used to move you there.  To move, try words like forest, building, down-
+^ADV("t","51","3")
+stream, enter, east, west, north, south, up, or down.  I know about a few
+^ADV("t","51","4")
+special objects, like a black rod hidden in the cave.  These objects can be
+^ADV("t","51","5")
+manipulated using some of the action words that I know.  Usually you will need
+^ADV("t","51","6")
+to give both the object and action words, in either order, but sometimes I can
+^ADV("t","51","7")
+infer the object from the verb alone.  Some objects also imply verbs--in
+^ADV("t","51","8")
+particular, "INVENTORY" implies "TAKE INVENTORY," for which I will give you a
+^ADV("t","51","9")
+list of what you're carrying.
+^ADV("t","51","10")
+ 
+^ADV("t","51","11")
+The objects have side effects; for instance, the rod scares the bird.  Usually
+^ADV("t","51","12")
+people having trouble moving just need to try a few more words.  Most people
+^ADV("t","51","13")
+trying unsuccessfully to manipulate an object are attempting something beyond
+^ADV("t","51","14")
+their (or my!) capability and should try a completely different tack.  To speed
+^ADV("t","51","15")
+the game you can sometimes move long distances with a single word.  For example,
+^ADV("t","51","16")
+"BUILDING" usually gets you to the building from anywhere above ground except
+^ADV("t","51","17")
+when you are lost in the forest.  Also, note that cave passages turn a lot, and
+^ADV("t","51","18")
+that leaving a room to the north does not guarantee entering the next room from
+^ADV("t","51","19")
+the south.  Good luck!
+^ADV("t","52","0")
+1
+^ADV("t","52","1")
+It misses!
+^ADV("t","53","0")
+1
+^ADV("t","53","1")
+It gets you!
+^ADV("t","54","0")
+1
+^ADV("t","54","1")
+OK
+^ADV("t","55","0")
+1
+^ADV("t","55","1")
+You can't unlock the keys.
+^ADV("t","56","0")
+2
+^ADV("t","56","1")
+You have crawled around in some little holes and wound up back in the main
+^ADV("t","56","2")
+passage.
+^ADV("t","57","0")
+2
+^ADV("t","57","1")
+I don't know where the cave is, but hereabouts no stream can run on the surface
+^ADV("t","57","2")
+for very long.  I would try the stream.
+^ADV("t","58","0")
+1
+^ADV("t","58","1")
+I need more detailed instructions to do that.
+^ADV("t","59","0")
+2
+^ADV("t","59","1")
+I can only tell you what you see as you move about and manipulate things.
+^ADV("t","59","2")
+I cannot tell you where remote things are.
+^ADV("t","60","0")
+1
+^ADV("t","60","1")
+I don't know that word.
+^ADV("t","61","0")
+1
+^ADV("t","61","1")
+What?
+^ADV("t","62","0")
+1
+^ADV("t","62","1")
+Are you trying to get into the cave?
+^ADV("t","63","0")
+3
+^ADV("t","63","1")
+The grate is very solid and has a hardened steel lock.  You cannot enter without
+^ADV("t","63","2")
+a key and there are no keys nearby.  I would recommend looking elsewhere for the
+^ADV("t","63","3")
+keys.
+^ADV("t","64","0")
+5
+^ADV("t","64","1")
+The trees of the forest are large hardwood oak and maple, with an occasional
+^ADV("t","64","2")
+grove of pine or spruce.  There is quite a bit on undergrowth, largely birch and
+^ADV("t","64","3")
+ash saplings plus nondescript bushes of various sorts.  This time of year
+^ADV("t","64","4")
+visibility is quite restricted by all the leaves, but travel is quite easy if
+^ADV("t","64","5")
+you detour around the spruce and berry bushes.
+^ADV("t","65","0")
+1
+^ADV("t","65","1")
+Welcome to Adventure!  Would you like to resume a suspended adventure?
+^ADV("t","66","0")
+2
+^ADV("t","66","1")
+Digging without a shovel is quite impractical.  Even with a shovel progress is
+^ADV("t","66","2")
+unlikely.
+^ADV("t","67","0")
+1
+^ADV("t","67","1")
+Blasting requires dynamite.
+^ADV("t","68","0")
+1
+^ADV("t","68","1")
+I'm as confused as you are.
+^ADV("t","69","0")
+2
+^ADV("t","69","1")
+Mist is a white vapor, usually water, seen from time to time in caverns.  It can
+^ADV("t","69","2")
+be found anywhere but is frequently a sign of a deep pit leading down to water.
+^ADV("t","70","0")
+1
+^ADV("t","70","1")
+Your feet are now wet.
+^ADV("t","71","0")
+1
+^ADV("t","71","1")
+I think I just lost my appetite.
+^ADV("t","72","0")
+1
+^ADV("t","72","1")
+Thank you, it was delicious!
+^ADV("t","73","0")
+2
+^ADV("t","73","1")
+You have taken a drink from the stream.  The water tastes strongly of minerals,
+^ADV("t","73","2")
+but is not unpleasant.  It is extremely cold.
+^ADV("t","74","0")
+1
+^ADV("t","74","1")
+The bottle of water is now empty.
+^ADV("t","75","0")
+2
+^ADV("t","75","1")
+Rubbing the electric lamp is not particularly rewarding.  Anyway, nothing
+^ADV("t","75","2")
+exciting happens.
+^ADV("t","76","0")
+1
+^ADV("t","76","1")
+Peculiar.  Nothing unexpected happens.
+^ADV("t","77","0")
+1
+^ADV("t","77","1")
+Your bottle is empty and the ground is wet.
+^ADV("t","78","0")
+1
+^ADV("t","78","1")
+You can't pour that.
+^ADV("t","79","0")
+1
+^ADV("t","79","1")
+Watch it!
+^ADV("t","80","0")
+1
+^ADV("t","80","1")
+Which way?
+^ADV("t","81","0")
+3
+^ADV("t","81","1")
+Oh dear, you seem to have gotten yourself killed.  I might be able to help you
+^ADV("t","81","2")
+out, but I've never really done this before.  Do you want me to try to reincar-
+^ADV("t","81","3")
+nate you?
+^ADV("t","82","0")
+4
+^ADV("t","82","1")
+All right.  But don't blame me if something goes wr.......
+^ADV("t","82","2")
+                     --- POOF! ---
+^ADV("t","82","3")
+You are engulfed in a cloud of orange smoke.  Coughing and gasping, you emerge
+^ADV("t","82","4")
+from the smoke and find....
+^ADV("t","83","0")
+2
+^ADV("t","83","1")
+You clumsy oaf, you've done it again!  I don't kow how long I can keep this up.
+^ADV("t","83","2")
+Do you want me to try reincarnating you again?
+^ADV("t","84","0")
+2
+^ADV("t","84","1")
+Okay, now where did I put my orange smoke?....  >POOF!<
+^ADV("t","84","2")
+Everything disappears in a dense cloud of orange smoke.
+^ADV("t","85","0")
+2
+^ADV("t","85","1")
+Now you've really done it!  I'm out of orange smoke!  You don't expect me to do
+^ADV("t","85","2")
+a decent reincarnation without any orange smoke, do you?
+^ADV("t","86","0")
+0
+^ADV("t","86","1")
+Okay, if you're so smart, do it yourself!  I'm leaving!
+^ADV("t","91","0")
+1
+^ADV("t","91","1")
+Sorry, but I no longer seem to remember how it was you got here.
+^ADV("t","92","0")
+1
+^ADV("t","92","1")
+You can't carry anything more.  You'll have to drop something first.
+^ADV("t","93","0")
+1
+^ADV("t","93","1")
+You can't go through a locked steel grate!
+^ADV("t","94","0")
+1
+^ADV("t","94","1")
+I believe what you want is right here with you.
+^ADV("t","95","0")
+1
+^ADV("t","95","1")
+You don't fit through a two-inch slit!
+^ADV("t","96","0")
+1
+^ADV("t","96","1")
+I respectfully suggest you go across the bridge instead of jumping.
+^ADV("t","97","0")
+1
+^ADV("t","97","1")
+There is no way across the fissure.
+^ADV("t","98","0")
+1
+^ADV("t","98","1")
+You're not carrying anything.
+^ADV("t","99","0")
+1
+^ADV("t","99","1")
+You are currently holding the following:
+^ADV("t","100","0")
+2
+^ADV("t","100","1")
+It's not hungry (it's merely pinin' for the fjords).  Besides, you have no
+^ADV("t","100","2")
+bird seed.
+^ADV("t","101","0")
+1
+^ADV("t","101","1")
+The snake has now devoured your bird.
+^ADV("t","102","0")
+1
+^ADV("t","102","1")
+There's nothing here it wants to eat (except perhaps you).
+^ADV("t","103","0")
+1
+^ADV("t","103","1")
+You fool, dwarves eat only coal!  Now you've made him REALLY mad!!
+^ADV("t","104","0")
+1
+^ADV("t","104","1")
+You have nothing in which to carry it.
+^ADV("t","105","0")
+1
+^ADV("t","105","1")
+Your bottle is already full.
+^ADV("t","106","0")
+1
+^ADV("t","106","1")
+There is nothing here with which to fill the bottle.
+^ADV("t","107","0")
+1
+^ADV("t","107","1")
+Your bottle is now full of water.
+^ADV("t","108","0")
+1
+^ADV("t","108","1")
+Your bottle is now full of oil.
+^ADV("t","109","0")
+1
+^ADV("t","109","1")
+You can't fill that.
+^ADV("t","110","0")
+1
+^ADV("t","110","1")
+Don't be ridiculous!
+^ADV("t","111","0")
+1
+^ADV("t","111","1")
+The door is extremely rusty and refuses to open.
+^ADV("t","112","0")
+1
+^ADV("t","112","1")
+The plant indignantly shakes the oil off its leaves and asks, "Water?"
+^ADV("t","113","0")
+1
+^ADV("t","113","1")
+The hinges are quite thoroughly rusted now and won't budge.
+^ADV("t","114","0")
+2
+^ADV("t","114","1")
+The oil has freed up the hinges so that the door will now move, although it
+^ADV("t","114","2")
+requires some effort.
+^ADV("t","115","0")
+1
+^ADV("t","115","1")
+The plant has exceptionally deep roots and cannot be pulled free.
+^ADV("t","116","0")
+1
+^ADV("t","116","1")
+The dwarves' knives vanish as they strike the walls of the cave.
+^ADV("t","117","0")
+2
+^ADV("t","117","1")
+Something you're carrying won't fit through the tunnel with you.  You'd best
+^ADV("t","117","2")
+take inventory and drop something.
+^ADV("t","118","0")
+1
+^ADV("t","118","1")
+You can't fit this five-foot clam through that little passage!
+^ADV("t","119","0")
+1
+^ADV("t","119","1")
+You can't fit this five-foot oyster through that little passage!
+^ADV("t","120","0")
+1
+^ADV("t","120","1")
+I advise you to put down the clam before opening it.  >STRAIN!<
+^ADV("t","121","0")
+1
+^ADV("t","121","1")
+I advise you to put down the oyster before opening it.  >WRENCH!<
+^ADV("t","122","0")
+1
+^ADV("t","122","1")
+You don't have anything strong enough to open the clam.
+^ADV("t","123","0")
+1
+^ADV("t","123","1")
+You don't have anything strong enough to open the oyster.
+^ADV("t","124","0")
+3
+^ADV("t","124","1")
+A glistening pearl falls out of the clam and rolls away!  Goodness, this must
+^ADV("t","124","2")
+really be an oyster.  (I never was very good at identifying bivalves.)
+^ADV("t","124","3")
+Whatever it is, it has now snapped shut again.
+^ADV("t","125","0")
+2
+^ADV("t","125","1")
+The oyster creaks open, revealing nothing but oyster inside.  It promptly snaps
+^ADV("t","125","2")
+shut again.
+^ADV("t","126","0")
+2
+^ADV("t","126","1")
+You have crawled around in some little holes and found your way blocked by a
+^ADV("t","126","2")
+recent cave-in.  You are now back in the main passage.
+^ADV("t","127","0")
+1
+^ADV("t","127","1")
+There are faint rustling noises from the darkness behind you.
+^ADV("t","128","0")
+3
+^ADV("t","128","1")
+Out from the shadows behind you pounces a bearded pirate!  "Har, Har," he
+^ADV("t","128","2")
+chortles, "I'll just take all this booty and hide it away with me chest deep in
+^ADV("t","128","3")
+the maze!"  He snatches your treasure and vanishes into the gloom.
+^ADV("t","129","0")
+2
+^ADV("t","129","1")
+A sepulchral voice reverberating through the cave says, "Cave closing soon.  All
+^ADV("t","129","2")
+adventurers exit immediately through the main office."
+^ADV("t","130","0")
+2
+^ADV("t","130","1")
+A mysterious recorded voice groans into life and announces, "This exit is 
+^ADV("t","130","2")
+closed.  Please leave via the main office."
+^ADV("t","131","0")
+2
+^ADV("t","131","1")
+It looks as though you're dead.  Well, seeing as how it's so close to closing
+^ADV("t","131","2")
+time anyway, I think we'll just call it a day.
+^ADV("t","132","0")
+3
+^ADV("t","132","1")
+The sepulchral voice entones, "The cave is now closed."  As the echoes fade,
+^ADV("t","132","2")
+there is a blinding flash of light (and a small puff of orange smoke). . . .
+^ADV("t","132","3")
+As your eyes refocus, you look around and find...
+^ADV("t","133","0")
+4
+^ADV("t","133","1")
+There is a loud explosion, and a twenty-foot hole appears in the far wall,
+^ADV("t","133","2")
+burying the dwarves in the rubble.  You march through the hole and find yourself
+^ADV("t","133","3")
+in the main office, where a cheering band of friendly elves carries the
+^ADV("t","133","4")
+conquering adventurer off into the sunset.
+^ADV("t","134","0")
+3
+^ADV("t","134","1")
+There is a loud explosion, and a twenty-foot hole appears in the far wall,
+^ADV("t","134","2")
+burying the snakes in the rubble.  A river of molten lava pours in through the
+^ADV("t","134","3")
+hole, destroying everything in its path, including you!
+^ADV("t","135","0")
+2
+^ADV("t","135","1")
+There is a loud explosion, and you are suddenly splashed across the walls of
+^ADV("t","135","2")
+the room.
+^ADV("t","136","0")
+3
+^ADV("t","136","1")
+The resulting ruckus has awakened the dwarves.  There are now several threaten-
+^ADV("t","136","2")
+ing little dwarves in the room with you!  Most of them throw knives at you!
+^ADV("t","136","3")
+All of them get you!
+^ADV("t","137","0")
+1
+^ADV("t","137","1")
+Oh, leave the poor unhappy bird alone.
+^ADV("t","138","0")
+1
+^ADV("t","138","1")
+I daresay whatever you want is around here somewhere.
+^ADV("t","139","0")
+1
+^ADV("t","139","1")
+I don't know the word "STOP".  Use "QUIT" if you want to give up.
+^ADV("t","140","0")
+1
+^ADV("t","140","1")
+You can't get there from here.
+^ADV("t","141","0")
+1
+^ADV("t","141","1")
+You are being followed by a very large, tame bear.
+^ADV("t","142","0")
+20
+^ADV("t","142","1")
+If you want to end your adventure early, say "QUIT".  To suspend your adventure
+^ADV("t","142","2")
+so that you can continue later, say "SUSPEND" or "PAUSE" or "SAVE".  To see what
+^ADV("t","142","3")
+hours the cave is normally open, say "HOURS".  To see how well you're doing, say
+^ADV("t","142","4")
+"SCORE".  To get full credit for a treasure, you must have left it safely in the
+^ADV("t","142","5")
+building, though you get partial credit just for locating it.  You lose points
+^ADV("t","142","6")
+for getting killed or for quitting, though the former costs you more.  There
+^ADV("t","142","7")
+are also points based on how much (if any) of the cave you've managed to
+^ADV("t","142","8")
+explore; in particular, there is a large bonus just for getting in (to distin-
+^ADV("t","142","9")
+guish the beginners from the rest of the pack), and there are other ways to
+^ADV("t","142","10")
+determine whether you've been through some of the more harrowing sections.
+^ADV("t","142","11")
+ 
+^ADV("t","142","12")
+If you think you've found all the treasures, just keep exploring for a while.
+^ADV("t","142","13")
+If nothing interesting happens, you haven't found them all yet.  If something
+^ADV("t","142","14")
+interesting does happen, it means you're getting a bonus and have an opportunity
+^ADV("t","142","15")
+to garner many more points in the master's section.
+^ADV("t","142","16")
+ 
+^ADV("t","142","17")
+I may occasionally offer hints if you seem to be having trouble.  If I do, I'll
+^ADV("t","142","18")
+warn you in advance how much it will affect your score to accept the hints.
+^ADV("t","142","19")
+Finally, to save paper, you may specify "BRIEF", which tells me never to repeat
+^ADV("t","142","20")
+the full description of a place unless you explicitly ask me to.
+^ADV("t","143","0")
+1
+^ADV("t","143","1")
+Do you indeed wish to quit now?
+^ADV("t","144","0")
+1
+^ADV("t","144","1")
+There is nothing here with which to fill the vase.
+^ADV("t","145","0")
+1
+^ADV("t","145","1")
+The sudden change in temperature has delicately shattered the vase.
+^ADV("t","146","0")
+1
+^ADV("t","146","1")
+It is beyond your power to do that.
+^ADV("t","147","0")
+1
+^ADV("t","147","1")
+I don't know how.
+^ADV("t","148","0")
+1
+^ADV("t","148","1")
+It is too far up for you to reach.
+^ADV("t","149","0")
+1
+^ADV("t","149","1")
+You killed a little dwarf.  The body vanishes in a cloud of greasy black smoke.
+^ADV("t","150","0")
+1
+^ADV("t","150","1")
+The shell is very strong and is impervious to attack.
+^ADV("t","151","0")
+1
+^ADV("t","151","1")
+What's the matter, can't you read?  Now you'd best start over.
+^ADV("t","152","0")
+1
+^ADV("t","152","1")
+The axe bounces harmlessly off the dragon's thick scales.
+^ADV("t","153","0")
+1
+^ADV("t","153","1")
+The dragon looks rather nasty.  You'd best not try to get by.
+^ADV("t","154","0")
+2
+^ADV("t","154","1")
+The little bird attacks the green dragon, and in an astounding flurry gets burnt
+^ADV("t","154","2")
+to a cinder.  The ashes blow away.
+^ADV("t","155","0")
+1
+^ADV("t","155","1")
+On what?
+^ADV("t","156","0")
+2
+^ADV("t","156","1")
+Okay, from now on I'll describe a place in full only the first time you come to
+^ADV("t","156","2")
+it.  To get the full description again, say "LOOK".
+^ADV("t","157","0")
+2
+^ADV("t","157","1")
+Trolls are close relatives with the rocks and have skin as tough as that of a
+^ADV("t","157","2")
+rhinoceros.  The troll fends off your blows effortlessly.
+^ADV("t","158","0")
+2
+^ADV("t","158","1")
+The troll deftly catches the axe, examines it carefully, and tosses it back,
+^ADV("t","158","2")
+declaring, "Good workmanship, but it's not valuable enough."
+^ADV("t","159","0")
+1
+^ADV("t","159","1")
+The troll catches your treasure and scurries away out of sight.
+^ADV("t","160","0")
+1
+^ADV("t","160","1")
+The troll refuses to let you cross.
+^ADV("t","161","0")
+1
+^ADV("t","161","1")
+There is no longer any way across the chasm.
+^ADV("t","162","0")
+3
+^ADV("t","162","1")
+Just as you reach the other side, the bridge buckles beneath the weight of the
+^ADV("t","162","2")
+bear, which was still following you around.  You scrabble desperately for
+^ADV("t","162","3")
+support, but as the bridge collapses you stumble back and fall into the depths.
+^ADV("t","163","0")
+2
+^ADV("t","163","1")
+The bear lumbers toward the troll, who lets out a startled shriek and scurries
+^ADV("t","163","2")
+away.  The bear soon gives up the pursuit and wanders back.
+^ADV("t","164","0")
+1
+^ADV("t","164","1")
+The axe misses and lands near the bear where you can't get at it.
+^ADV("t","165","0")
+1
+^ADV("t","165","1")
+With what, your bare hands?  Against HIS bear hands??
+^ADV("t","166","0")
+1
+^ADV("t","166","1")
+The bear is confused--he only wants to be your friend.
+^ADV("t","167","0")
+1
+^ADV("t","167","1")
+For crying out loud, the poor thing is already dead!
+^ADV("t","168","0")
+2
+^ADV("t","168","1")
+The bear eagerly wolfs down your food, after which he seems to calm down
+^ADV("t","168","2")
+considerably and even becomes rather friendly.
+^ADV("t","169","0")
+1
+^ADV("t","169","1")
+The bear is still chained to the wall.
+^ADV("t","170","0")
+1
+^ADV("t","170","1")
+The chain is still locked.
+^ADV("t","171","0")
+1
+^ADV("t","171","1")
+The chain is now unlocked.
+^ADV("t","172","0")
+1
+^ADV("t","172","1")
+The chain is now locked.
+^ADV("t","173","0")
+1
+^ADV("t","173","1")
+There is nothing here to which the chain can be locked.
+^ADV("t","174","0")
+1
+^ADV("t","174","1")
+There is nothing here to eat.
+^ADV("t","175","0")
+1
+^ADV("t","175","1")
+Do you want the hint?
+^ADV("t","176","0")
+1
+^ADV("t","176","1")
+Do you need help getting out of the maze?
+^ADV("t","177","0")
+1
+^ADV("t","177","1")
+You can make the passages look less alike by dropping things.
+^ADV("t","178","0")
+1
+^ADV("t","178","1")
+Are you trying to explore beyond the plover room?
+^ADV("t","179","0")
+3
+^ADV("t","179","1")
+There is a way to explore that region without having to worry about falling into
+^ADV("t","179","2")
+a pit.  None of the objects available is immediately useful in discovering the
+^ADV("t","179","3")
+secret.
+^ADV("t","180","0")
+1
+^ADV("t","180","1")
+Do you need help getting out of here?
+^ADV("t","181","0")
+1
+^ADV("t","181","1")
+Don't go west.
+^ADV("t","182","0")
+1
+^ADV("t","182","1")
+Gluttony is not one of the troll's vices.  Avarice, however, is.
+^ADV("t","183","0")
+3
+^ADV("t","183","1")
+Your lamp is getting dim.  You'd best start wrapping this up, unless you can
+^ADV("t","183","2")
+find some fresh batteries.  I seem to recall there's a vending machine in the
+^ADV("t","183","3")
+maze.  Bring some coins with you.
+^ADV("t","184","0")
+1
+^ADV("t","184","1")
+Your lamp has run out of power.
+^ADV("t","185","0")
+2
+^ADV("t","185","1")
+There's not much point in wandering around out here, and you can't explore the
+^ADV("t","185","2")
+cave without a lamp.  So let's just call it a day.
+^ADV("t","186","0")
+5
+^ADV("t","186","1")
+There are faint rustling noises from the darkness behind you.  As you turn
+^ADV("t","186","2")
+toward them, the beam of your lamp falls across a bearded pirate.  He is carry-
+^ADV("t","186","3")
+ing a large chest.  "Shiver me timbers!" he cries, "I've been spotted!  I'd best
+^ADV("t","186","4")
+hie meself off to the maze to hide me chest!"  With that, he vanishes into the
+^ADV("t","186","5")
+gloom.
+^ADV("t","187","0")
+1
+^ADV("t","187","1")
+Your lamp is getting dim.  You'd best go back for those batteries.
+^ADV("t","188","0")
+1
+^ADV("t","188","1")
+Your lamp is getting dim.  I'm taking the liberty of replacing the batteries.
+^ADV("t","189","0")
+2
+^ADV("t","189","1")
+Your lamp is getting dim, and you're out of spare batteries.  You'd best start
+^ADV("t","189","2")
+wrapping this up.
+^ADV("t","190","0")
+1
+^ADV("t","190","1")
+I'm afraid the magazine is written in Dwarvish.
+^ADV("t","191","0")
+1
+^ADV("t","191","1")
+"This is not the maze where the pirate leaves his treasure chest."
+^ADV("t","192","0")
+2
+^ADV("t","192","1")
+Hmmm, this looks like a clue, which means it'll cost you 10 points to read it.
+^ADV("t","192","2")
+Should I go ahead and read it?
+^ADV("t","193","0")
+2
+^ADV("t","193","1")
+It says, "There is something strange about this place:  one of the words I've
+^ADV("t","193","2")
+always known now has a new effect."
+^ADV("t","194","0")
+1
+^ADV("t","194","1")
+It says the same thing it did before.
+^ADV("t","195","0")
+1
+^ADV("t","195","1")
+I'm afraid I don't understand.
+^ADV("t","196","0")
+1
+^ADV("t","196","1")
+"Congratulations on bringing light into the Dark-Room!"
+^ADV("t","197","0")
+2
+^ADV("t","197","1")
+You strike the mirror a resounding blow, whereupon it shatters into a myriad
+^ADV("t","197","2")
+tiny fragments.
+^ADV("t","198","0")
+1
+^ADV("t","198","1")
+You have taken the vase and hurled it delicately to the ground.
+^ADV("t","199","0")
+2
+^ADV("t","199","1")
+You prod the nearest dwarf, who wakes up grumpily, takes one look at you,
+^ADV("t","199","2")
+curses, and grabs for his axe.
+^ADV("t","200","0")
+1
+^ADV("t","200","1")
+Is this acceptable?
+^ADV("t","201","0")
+1
+^ADV("t","201","1")
+Ok, I'll plan a new adventure for you.
+^ADV("t","202","0")
+2
+^ADV("t","202","1")
+Please type a name (up to five letters or numbers) for this particular
+^ADV("t","202","2")
+adventure, so we can identify it later.
+^ADV("t","203","0")
+1
+^ADV("t","203","1")
+Type one to five characters, letters or numbers only, please.
+^ADV("t","204","0")
+1
+^ADV("t","204","1")
+Sorry, I already have an adventure on file with that name.  Please type another.
+^ADV("t","205","0")
+1
+^ADV("t","205","1")
+Please type the name of the suspended adventure.
+^ADV("t","206","0")
+1
+^ADV("t","206","1")
+Sorry, I don't have that on file.  Type ? for a list or NEW to start a new one.
+^ADV("t","207","0")
+1
+^ADV("t","207","1")
+Stand by while I set the stage...
+^ADV("t","208","0")
+1
+^ADV("t","208","1")
+Done.  Would you like instructions?
+^ADV("t","209","0")
+1
+^ADV("t","209","1")
+Colossal Cave is ALWAYS open, provided this is your computer.
+^ADV("t","210","0")
+1
+^ADV("t","210","1")
+"NEW" is not a good name.  Please try another.
