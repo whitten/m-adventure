@@ -2,25 +2,23 @@
 
                                              V. A.  C R O S S  R E F E R E N C E R  7.3
                                                  [2008 VA Standards & Conventions]
-                                             UCI: EHR CPU: EHR    Mar 25, 2016@18:33:25
+                                             UCI: EHR CPU: EHR    Mar 26, 2016@00:08:30
 Routines: 10  Faux Routines: 0
 
-ADV       ADV2      ADV3      ADV4      ADV5      ADV6      ADV7      ADV8      ADV9      ADVDOC    
+C1GADV    C1GADV2   C1GADV3   C1GADV4   C1GADV5   C1GADV6   C1GADV7   C1GADV8   C1GADV9   C1GADVDC  
 
 --- CROSS REFERENCING ---
 
 
-Compiled list of Errors and Warnings                                                                  Mar 25, 2016@18:33:25 page 1
+Compiled list of Errors and Warnings                                                                  Mar 26, 2016@00:08:30 page 1
+No errors or warnings to report
 
-ADV      * *  56 Lines,  2428 Bytes, Checksum: B7576465
-         I 0 X ^%ZOSF("NBRK") 
-   ADV+10       W - Blank(s) at end of line.
 
 --- Routine Detail   --- with R/S ROUTINE LISTING ---
 
-ADV   2428     printed  Mar 25, 2016@18:33:25                                                                              Page 2
+C1GADV   2572     printed  Mar 26, 2016@00:08:30                                                                           Page 2
 
-ADV       ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
+C1GADV    ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;DNL;20May89 13:00;Copyright (c) 1989 PRx, Inc.
  +3       ;ADVENTURE V1.0.  FLH ; 07 FEB 83  3:37 PM
@@ -51,7 +49,7 @@ ADV       ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
                DO NEWNAM
                DO GCOPY
                DO GETGAM
- +15       SET X="ERR^ADV"
+ +15       SET X="ERR^C1GADV"
            XECUTE ^%ZOSF("TRAP")
  +16       SET Q=208
            SET Y=1
@@ -61,16 +59,16 @@ ADV       ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
                IF 'HINTED(3)
                    SET HINTED(3)=1
                    SET LIMIT=LIMIT+670
- +17       GOTO ^ADV2
+ +17       GOTO ^C1GADV2
 ENDGAM     IF '(SAVED&GAVEUP)
-               KILL ^ADVG(G)
+               KILL ^C1GADV(71100.1,G)
  +1       IF '$TEST
                DO PUTGAM
  +2        SET X="^ERR1"
            XECUTE ^%ZOSF("TRAP")
            SET G=""
            FOR Z=0:0
-               SET G=$ORDER(^ADVG(G))
+               SET G=$ORDER(^C1GADV(71100.1,G))
                if G=""
                    QUIT 
                IF $HOROLOG-10>^(G)
@@ -83,7 +81,7 @@ TIMO       SET GAVEUP=1
            GOTO ^XUSCLEAN
  +1       ;
  +2       ; no Standard ANSI M way to detect CONTROL-C
-ERR       ;I $ZE?1"<INRPT".E S $ZE="ERR^ADV",RET="TURN^ADV3" D @$P(^ADV("QUIT"),"/",3) G @RET
+ERR       ;I $ZE?1"<INRPT".E S $ZE="ERR^C1GADV",RET="TURN^C1GADV3" D @$P(^C1GADV(71100,"QUIT"),"/",3) G @RET
 ERR1       DO ^%ZTER
            QUIT 
 OLDNAM     SET M=205
@@ -99,7 +97,7 @@ OL1        DO GETIN
  +2        if U1="NEW"
                QUIT 
            SET G=U1
-           IF $DATA(^ADVG(G))
+           IF $DATA(^C1GADV(71100.1,G))
                SET M=207
                DO SPK
                QUIT 
@@ -109,7 +107,7 @@ OL1        DO GETIN
 LIST       WRITE !!
            SET G=""
            FOR X=0:8
-               SET G=$ORDER(^ADVG(G))
+               SET G=$ORDER(^C1GADV(71100.1,G))
                if G=""
                    QUIT 
                WRITE ?X,G
@@ -121,18 +119,18 @@ NEWNAM     SET M=202
            DO SPK
 NE1        DO GETIN
            SET G=U1
-           SET M=$SELECT(W'?1.5AN:203,G="NEW":210,$DATA(^ADVG(G)):204,1:207)
+           SET M=$SELECT(W'?1.5AN:203,G="NEW":210,$DATA(^C1GADV(71100.1,G)):204,1:207)
            DO SPK
            if M-207
                GOTO NE1
-           SET ^ADVG(G)=$HOROLOG
+           SET ^C1GADV(71100.1,G)=$HOROLOG
            QUIT 
 GCOPY      FOR L=1:1:140
-               SET ^ADVG(G,L,"A")=0
+               SET ^C1GADV(71100.1,G,L,"A")=0
                SET ^("O")="/"
  +1        SET N=0
-           SET F(N)="^ADV(""i"","
-           SET T(N)="^ADVG(G,"
+           SET F(N)="^C1GADV(71100,""i"","
+           SET T(N)="^C1GADV(71100.1,G,"
            SET X=$HOROLOG
            DO COP
            KILL D,F,IN,N,OUT,T,SAVE,X
@@ -148,7 +146,7 @@ CO1        SET SAVE(N)=$ORDER(@IN(N))
                SET @OUT(N)=@IN(N)
                IF X'=$HOROLOG
 
-ADV   2428     printed  Mar 25, 2016@18:33:25                                                                              Page 3
+C1GADV   2572     printed  Mar 26, 2016@00:08:30                                                                           Page 3
 
                    SET X=$HOROLOG
                    WRITE "."
@@ -161,14 +159,14 @@ ADV   2428     printed  Mar 25, 2016@18:33:25                                   
  +3        GOTO CO1
 GETGAM     SET X=""
            FOR Z=0:0
-               SET X=$ORDER(^ADVG(G,"i",X))
+               SET X=$ORDER(^C1GADV(71100.1,G,"i",X))
                if X=""
                    QUIT 
                SET @X=^(X)
  +1        QUIT 
 PUTGAM     SET X=""
            FOR Z=0:0
-               SET X=$ORDER(^ADVG(G,"i",X))
+               SET X=$ORDER(^C1GADV(71100.1,G,"i",X))
                if X=""
                    QUIT 
                SET ^(X)=@X
@@ -202,7 +200,7 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
            SET SAVE=W
            FOR I=1:1
                if SAVE?.CNPU
@@ -213,19 +211,19 @@ KBD        if S
            QUIT 
 SPK 
 
-ADV   2428     printed  Mar 25, 2016@18:33:25                                                                              Page 4
+C1GADV   2572     printed  Mar 26, 2016@00:08:30                                                                           Page 4
 
            if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
 
 
-ADV      * *  56 Lines,  2428 Bytes, Checksum: B7576465                                               Mar 25, 2016@18:33:25 page 5
-              385 bytes in comments
-ADV      ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
+C1GADV   * *  56 Lines,  2572 Bytes, Checksum: B8315948                                               Mar 26, 2016@00:08:30 page 5
+              400 bytes in comments
+C1GADV   ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;DNL;20May89 13:00;Copyright (c) 1989 PRx, Inc.
          ;ADVENTURE V1.0.  FLH ; 07 FEB 83  3:37 PM
@@ -235,63 +233,58 @@ ADV      ;ADVENTURE V1.0.  FLH. DJW/WV ; 07 FEB 83  3:37 PM
          ;NEW (GAME,NAME)
          ; CTRL-C allowed during debugging- change IF to disallow
          I 1 X ^%ZOSF("BRK")
-         I 0 X ^%ZOSF("NBRK") 
+         I 0 X ^%ZOSF("NBRK")
          S X="^ERR1" X ^%ZOSF("TRAP")
          S GAVEUP=0,S=1
          S Q=65,Y=54,N=201 D YES I  D OLDNAM I  D GETGAM I 1
          E  D NEWNAM,GCOPY,GETGAM
-         S X="ERR^ADV" X ^%ZOSF("TRAP")
+         S X="ERR^C1GADV" X ^%ZOSF("TRAP")
          S Q=208,Y=1,N=0 D YES I  I 'HINTED(3) S HINTED(3)=1,LIMIT=LIMIT+670
-         G ^ADV2
-ENDGAM   I '(SAVED&GAVEUP) K ^ADVG(G)
+         G ^C1GADV2
+ENDGAM   I '(SAVED&GAVEUP) K ^C1GADV(71100.1,G)
          E  D PUTGAM
-         S X="^ERR1" X ^%ZOSF("TRAP") S G="" F Z=0:0 S G=$O(^ADVG(G)) Q:G=""  I $H-10>^(G) K ^(G)
+         S X="^ERR1" X ^%ZOSF("TRAP") S G="" F Z=0:0 S G=$O(^C1GADV(71100.1,G)) Q:G=""  I $H-10>^(G) K ^(G)
          S X="^%ZTER" X ^%ZOSF("TRAP") Q
 TIMO     S GAVEUP=1 D ENDGAM G ^XUSCLEAN
          ;
          ; no Standard ANSI M way to detect CONTROL-C
-ERR      ;I $ZE?1"<INRPT".E S $ZE="ERR^ADV",RET="TURN^ADV3" D @$P(^ADV("QUIT"),"/",3) G @RET
+ERR      ;I $ZE?1"<INRPT".E S $ZE="ERR^C1GADV",RET="TURN^C1GADV3" D @$P(^C1GADV(71100,"QUIT"),"/",3) G @RET
 ERR1     D ^%ZTER Q
 OLDNAM   S M=205 D SPK
 OL1      D GETIN I U1="?"!(U1="HELP") D LIST G OLDNAM
          I W'?1.5AN S M=203 D SPK G OL1
-         Q:U1="NEW"  S G=U1 I $D(^ADVG(G)) S M=207 D SPK Q
+         Q:U1="NEW"  S G=U1 I $D(^C1GADV(71100.1,G)) S M=207 D SPK Q
          S M=206 D SPK G OLDNAM
-LIST     W !! S G="" F X=0:8 S G=$O(^ADVG(G)) Q:G=""  W ?X,G I X>70 W ! S X=0
+LIST     W !! S G="" F X=0:8 S G=$O(^C1GADV(71100.1,G)) Q:G=""  W ?X,G I X>70 W ! S X=0
          Q
 NEWNAM   S M=202 D SPK
-NE1      D GETIN S G=U1,M=$S(W'?1.5AN:203,G="NEW":210,$D(^ADVG(G)):204,1:207) D SPK G:M-207 NE1 S ^ADVG(G)=$H Q
-GCOPY    F L=1:1:140 S ^ADVG(G,L,"A")=0,^("O")="/"
-         S N=0,F(N)="^ADV(""i"",",T(N)="^ADVG(G,",X=$H D COP K D,F,IN,N,OUT,T,SAVE,X Q
+NE1      D GETIN S G=U1,M=$S(W'?1.5AN:203,G="NEW":210,$D(^C1GADV(71100.1,G)):204,1:207) D SPK G:M-207 NE1 S ^C1GADV(71100.1,G)=$H Q
+GCOPY    F L=1:1:140 S ^C1GADV(71100.1,G,L,"A")=0,^("O")="/"
+         S N=0,F(N)="^C1GADV(71100,""i"",",T(N)="^C1GADV(71100.1,G,",X=$H D COP K D,F,IN,N,OUT,T,SAVE,X Q
 COP      S SAVE(N)="",IN(N)=F(N)_"SAVE(N))",OUT(N)=T(N)_"SAVE(N))"
 CO1      S SAVE(N)=$O(@IN(N)) I SAVE(N)="" Q
          S D=$D(@IN(N)) I D#2 S @OUT(N)=@IN(N) I X'=$H S X=$H W "."
          I D>9 S F(N+1)=F(N)_""""_SAVE(N)_""",",T(N+1)=T(N)_""""_SAVE(N)_""",",N=N+1 D COP S N=N-1
          G CO1
-GETGAM   S X="" F Z=0:0 S X=$O(^ADVG(G,"i",X)) Q:X=""  S @X=^(X)
+GETGAM   S X="" F Z=0:0 S X=$O(^C1GADV(71100.1,G,"i",X)) Q:X=""  S @X=^(X)
          Q
-PUTGAM   S X="" F Z=0:0 S X=$O(^ADVG(G,"i",X)) Q:X=""  S ^(X)=@X
+PUTGAM   S X="" F Z=0:0 S X=$O(^C1GADV(71100.1,G,"i",X)) Q:X=""  S ^(X)=@X
          W !!,"This adventure saved with name ",G,"." Q
 GETIN    D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(SAVE," ",1),1,5),U2=$E($P(SAVE," ",2),1,5) K SAVE Q
 YES      S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
          E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
          E  S M=N D:M SPK
          K M Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SA
-          VE,I+1,99)
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E
+          (SAVE,I+1,99)
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-*****   ERRORS & WARNINGS IN ADV   *****
+
+*****   INDEX OF C1GADV   *****
 
 
-ADV      * *  56 Lines,  2428 Bytes, Checksum: B7576465                                               Mar 25, 2016@18:33:25 page 6
-
-*****   ERRORS & WARNINGS IN ADV   *****
-   ADV+10       W - Blank(s) at end of line.
-
-*****   INDEX OF ADV   *****
-
+*****   INDEX OF C1GADV   *****                                                                       Mar 26, 2016@00:08:30 page 6
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
                                         ( * Changed  ! Killed  ~ Newed)
@@ -299,21 +292,21 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    F            GCOPY+1!
    F(           GCOPY+1*,COP,CO1+2*
 >> G            ENDGAM,ENDGAM+2*,OL1+2*,LIST*,NE1*,GCOPY,GETGAM,PUTGAM,PUTGAM+1
->> GAME         ADV+6*
->> GAVEUP       ADV+12*,ENDGAM,TIMO*
->> HINTED(3     ADV+16*
+>> GAME         C1GADV+6*
+>> GAVEUP       C1GADV+12*,ENDGAM,TIMO*
+>> HINTED(3     C1GADV+16*
    I            KBD*,KBD+1!,SPK*,SPK+1!
    IN           GCOPY+1!
    IN(          COP*,CO1,CO1+1
 >> L            GCOPY*
->> LIMIT        ADV+16*
+>> LIMIT        C1GADV+16*
    M            OLDNAM*,OL1+1*,OL1+2*,OL1+3*,NEWNAM*,NE1*,YES*,YES+2*,YES+3!,SPK
-   N            ADV+13*,ADV+16*,GCOPY+1*!,COP,CO1,CO1+1,CO1+2*,YES+2
->> NAME         ADV+6*
+   N            C1GADV+13*,C1GADV+16*,GCOPY+1*!,COP,CO1,CO1+1,CO1+2*,YES+2
+>> NAME         C1GADV+6*
    OUT          GCOPY+1!
    OUT(         COP*,CO1+1
->> Q            ADV+13*,ADV+16*,YES
->> S            ADV+12*,KBD,SPK
+>> Q            C1GADV+13*,C1GADV+16*,YES
+>> S            C1GADV+12*,KBD,SPK
    SAVE         GCOPY+1!,GETIN!,YES,YES+1,KBD*
    SAVE(        COP*,CO1*,CO1+2
 >> SAVED        ENDGAM
@@ -324,18 +317,18 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
 >> W            OL1+1,NE1,GETIN,KBD*
 >> W1           GETIN*
 >> W2           GETIN*
-   X            ADV+11*,ADV+15*,ENDGAM+2*,ENDGAM+3*,LIST*,GCOPY+1*!,CO1+1*,GETGAM*,PUTGAM*
->> XID          ADV+6
->> XID("USER"   ADV+6
->> Y            ADV+13*,ADV+16*,YES
+   X            C1GADV+11*,C1GADV+15*,ENDGAM+2*,ENDGAM+3*,LIST*,GCOPY+1*!,CO1+1*,GETGAM*,PUTGAM*
+>> XID          C1GADV+6
+>> XID("USER"   C1GADV+6
+>> Y            C1GADV+13*,C1GADV+16*,YES
 >> Z            ENDGAM+2*,GETGAM*,PUTGAM*
 
 Global Variables  ( * Changed  ! Killed)
-   ^%ZOSF("BRK"        ADV+9
-   ^%ZOSF("NBRK"       ADV+10
-   ^%ZOSF("TRAP"       ADV+11,ADV+15,ENDGAM+2,ENDGAM+3
-   ^ADV("t"            SPK
-   ^ADVG(              ENDGAM!,ENDGAM+2,OL1+2,LIST,NE1*,GCOPY*,GETGAM,PUTGAM
+   ^%ZOSF("BRK"        C1GADV+9
+   ^%ZOSF("NBRK"       C1GADV+10
+   ^%ZOSF("TRAP"       C1GADV+11,C1GADV+15,ENDGAM+2,ENDGAM+3
+   ^C1GADV(71100       SPK
+   ^C1GADV(71100.1     ENDGAM!,ENDGAM+2,OL1+2,LIST,NE1*,GCOPY*,GETGAM,PUTGAM
 
 Naked Globals
    ^(           ENDGAM+2!,GETGAM,PUTGAM*,SPK
@@ -345,38 +338,38 @@ Marked Items
    NONE
 
 Label References
-
-
-*****   INDEX OF ADV   *****                                                                          Mar 25, 2016@18:33:25 page 7
-
-Label References
    CO1          CO1+3
    COP          GCOPY+1,CO1+2
    ENDGAM       TIMO
-   GCOPY        ADV+14
-   GETGAM       ADV+13,ADV+14
+   GCOPY        C1GADV+14
+   GETGAM       C1GADV+13,C1GADV+14
    GETIN        OL1,NE1
+
+
+*****   INDEX OF C1GADV   *****                                                                       Mar 26, 2016@00:08:30 page 7
+
+Label References
    KBD          GETIN,YES
    LIST         OL1
    NE1          NE1
-   NEWNAM       ADV+14
+   NEWNAM       C1GADV+14
    OL1          OL1+1
-   OLDNAM       ADV+13,OL1,OL1+3
+   OLDNAM       C1GADV+13,OL1,OL1+3
    PUTGAM       ENDGAM+1
    SPK          OLDNAM,OL1+1,OL1+2,OL1+3,NEWNAM,NE1,YES,YES+2
-   YES          ADV+13,ADV+16,YES+1
+   YES          C1GADV+13,C1GADV+16,YES+1
 
 External References
    ^%ZTER              ERR1
-   TIMO^ADV            KBD
-   ^ADV2               ADV+17
+   TIMO^C1GADV         KBD
+   ^C1GADV2            C1GADV+17
    ^XUSCLEAN           TIMO
 
 *****   END   *****
 
-ADV2   3445     printed  Mar 25, 2016@18:33:25                                                                             Page 8
+C1GADV2   3683     printed  Mar 26, 2016@00:08:30                                                                          Page 8
 
-ADV2      ;ADVENTURE.  FLH, DJW/WV ; 07 FEB 83  12:39 PM
+C1GADV2   ;ADVENTURE.  FLH, DJW/WV ; 07 FEB 83  12:39 PM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;FLH ; 07 FEB 83  12:39 PM
  +3       ; DJW/WV ;March 1, 2016
@@ -389,7 +382,7 @@ NEWLP      IF CLOSNG
                        if 'PANIC
                            SET CLK2=15
                            SET PANIC=1
- +1        SET CONDLP=^ADV(LP,"c")
+ +1        SET CONDLP=^C1GADV(71100,LP,"c")
            IF LNEW-LP
                IF $EXTRACT(CONDLP,1,2)="00"
                    FOR DW=1:1:5
@@ -401,36 +394,36 @@ NEWLP      IF CLOSNG
                                QUIT 
  +2        SET LP=LNEW
            IF LP
-               SET CONDLP=^ADV(LP,"c")
+               SET CONDLP=^C1GADV(71100,LP,"c")
                IF $EXTRACT(CONDLP,1,2)="00"
                    DO @$SELECT(DFLAG=0:"DW1",DFLAG=1:"DW2",1:"DW3")
 SHOW       if 'LP
-               GOTO DEAD^ADV8
+               GOTO DEAD^C1GADV8
  +1        SET DARK=0
-           SET L=^ADVG(G,"LAMP","L")
+           SET L=^C1GADV(71100.1,G,"LAMP","L")
            IF L'<0!'LIT
                IF L-LP!'LIT
                    IF '$EXTRACT(CONDLP,3)
                        SET DARK=1
  +2        DO SHOWL
            if 'LP
-               GOTO DEAD^ADV8
+               GOTO DEAD^C1GADV8
            IF $EXTRACT(CONDLP)
                SET WD1="FORCED"
-               SET WD1X=^ADV(WD1)
-               GOTO TRAVEL^ADV3
+               SET WD1X=^C1GADV(71100,WD1)
+               GOTO TRAVEL^C1GADV3
  +3        IF LP=33
                IF 'CLOSNG
                    IF $RANDOM(10000)<2500
                        SET M=8
                        DO SPK
  +4        IF 'DARK
-               SET X=^ADVG(G,LP,"O")
+               SET X=^C1GADV(71100.1,G,LP,"O")
                FOR J=2:1:$LENGTH(X,"/")-1
                    SET O=$PIECE(X,"/",J)
                    DO SHOWO
  +5        SET M=0
-           GOTO TURN^ADV3
+           GOTO TURN^C1GADV3
 DW1        if LP>14
                SET DFLAG=1
            QUIT 
@@ -438,7 +431,7 @@ DW2        IF LP>14
                IF $RANDOM(10000)<500
                    DO DW2A
 
-ADV2   3445     printed  Mar 25, 2016@18:33:25                                                                             Page 9
+C1GADV2   3683     printed  Mar 26, 2016@00:08:30                                                                          Page 9
 
                    DO DW2B
                    SET DFLAG=2
@@ -503,12 +496,12 @@ DW3        SET (ND,ATTACK,STICK)=0
                    QUIT 
  +8 
 
-ADV2   3445     printed  Mar 25, 2016@18:33:25                                                                             Page 10
+C1GADV2   3683     printed  Mar 26, 2016@00:08:30                                                                          Page 10
 
            SET LP2=LP
            SET LP=0
            QUIT 
-DMOV       SET Y=^ADV(LD(DW),K)
+DMOV       SET Y=^C1GADV(71100,LD(DW),K)
            SET N=0
            FOR I=2:1:Y+1
                SET L=$PIECE(Y,"/",I)
@@ -531,22 +524,22 @@ DWARF      SET ND=ND+1
                if $RANDOM(10000)<(DFLAG-2*950)
                    SET STICK=STICK+1
  +1        QUIT 
-PIRAT      if LP=114!(^ADVG(G,"CHEST","P")'<0)
+PIRAT      if LP=114!(^C1GADV(71100.1,G,"CHEST","P")'<0)
                QUIT 
            SET F=0
  +1        FOR J=2:1:16
                SET O=$PIECE(TR,"/",J)
                DO PI1
               IF '$TEST
-                   SET L=^ADVG(G,O,"L")
+                   SET L=^C1GADV(71100.1,G,O,"L")
                    if L<0
                        GOTO STEAL
                    if L=LP
                        SET F=1
  +2        IF TALLY2+1=TALLY
                IF 'F
-                   IF ^ADVG(G,"CHEST","L")=0
-                       SET L=^ADVG(G,"LAMP","L")
+                   IF ^C1GADV(71100.1,G,"CHEST","L")=0
+                       SET L=^C1GADV(71100.1,G,"LAMP","L")
                        IF L<0!(L=LP)
                            IF LIT
                                GOTO ST2
@@ -560,14 +553,14 @@ PI1        IF O="PLATI"
  +1        QUIT 
 STEAL      SET M=128
            DO SPK
-           IF ^ADVG(G,"MESSA","L")=0
+           IF ^C1GADV(71100.1,G,"MESSA","L")=0
                SET O="CHEST"
                SET L=114
                DO MOVE
  +1        SET O="MESSA"
            SET L=140
 
-ADV2   3445     printed  Mar 25, 2016@18:33:25                                                                             Page 11
+C1GADV2   3683     printed  Mar 26, 2016@00:08:30                                                                          Page 11
 
            DO MOVE
  +2        FOR J=2:1:16
@@ -575,7 +568,7 @@ ADV2   3445     printed  Mar 25, 2016@18:33:25                                  
                DO PI1
               IF '$TEST
                    SET L=LP
-                   if L=^ADVG(G,O,"L")&'^("F")
+                   if L=^C1GADV(71100.1,G,O,"L")&'^("F")
                        DO CARRY
                    IF TOTING[("/"_O_"/")
                        SET L=114
@@ -608,9 +601,9 @@ SHOWL      IF DARK
                SET M=16
                DO SPK
                QUIT 
- +3        SET J=^ADVG(G,LP,"A")
+ +3        SET J=^C1GADV(71100.1,G,LP,"A")
            SET ^("A")=J+1#ABB
-           SET X=^ADV(LP,0)
+           SET X=^C1GADV(71100,LP,0)
            IF J
                IF X["/"
                    if S
@@ -626,12 +619,12 @@ SHOWL      IF DARK
 SHOWO      IF O="STEPS"
                IF TOTING["/GOLD/"
                    QUIT 
- +1        SET P=^ADVG(G,O,"P")
+ +1        SET P=^C1GADV(71100.1,G,O,"P")
            IF P<0
                if CLOSED
                    QUIT 
 
-ADV2   3445     printed  Mar 25, 2016@18:33:25                                                                             Page 12
+C1GADV2   3683     printed  Mar 26, 2016@00:08:30                                                                          Page 12
 
                SET (^("P"),P)=O="RUG"!(O="CHAIN")
                SET TALLY=TALLY-1
@@ -640,17 +633,17 @@ ADV2   3445     printed  Mar 25, 2016@18:33:25                                  
                        IF LIMIT>35
                            SET LIMIT=35
  +2        IF O="STEPS"
-               IF LP=^ADVG(G,O,"F")
+               IF LP=^C1GADV(71100.1,G,O,"F")
                    SET P=1
  +3        DO PSPK
            QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
-PSPK       SET N=^ADV(O,P,0)
+PSPK       SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -663,16 +656,16 @@ DROP       FOR Z=2:1:HOLDNG+1
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -680,7 +673,7 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
@@ -688,21 +681,21 @@ MOVE       SET MOL=L
            QUIT 
 
 
-ADV2     * *  69 Lines,  3445 Bytes, Checksum: B14136981                                              Mar 25, 2016@18:33:25 page 13
+C1GADV2  * *  69 Lines,  3683 Bytes, Checksum: B15669419                                              Mar 26, 2016@00:08:30 page 13
               95 bytes in comments
-ADV2     ;ADVENTURE.  FLH, DJW/WV ; 07 FEB 83  12:39 PM
+C1GADV2  ;ADVENTURE.  FLH, DJW/WV ; 07 FEB 83  12:39 PM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;FLH ; 07 FEB 83  12:39 PM
          ; DJW/WV ;March 1, 2016
 NEWLP    I CLOSNG,LNEW,LNEW<9 S LNEW=LP,M=130 D SPK S:'PANIC CLK2=15,PANIC=1
-         S CONDLP=^ADV(LP,"c") I LNEW-LP,$E(CONDLP,1,2)="00" F DW=1:1:5 I DSEEN(DW),LD1(DW)=LNEW S LNEW=LP,M=2 D SPK Q
-         S LP=LNEW I LP S CONDLP=^ADV(LP,"c") I $E(CONDLP,1,2)="00" D @$S(DFLAG=0:"DW1",DFLAG=1:"DW2",1:"DW3")
-SHOW     G:'LP DEAD^ADV8
-         S DARK=0,L=^ADVG(G,"LAMP","L") I L'<0!'LIT,L-LP!'LIT,'$E(CONDLP,3) S DARK=1
-         D SHOWL G:'LP DEAD^ADV8 I $E(CONDLP) S WD1="FORCED",WD1X=^ADV(WD1) G TRAVEL^ADV3
+         S CONDLP=^C1GADV(71100,LP,"c") I LNEW-LP,$E(CONDLP,1,2)="00" F DW=1:1:5 I DSEEN(DW),LD1(DW)=LNEW S LNEW=LP,M=2 D SPK Q
+         S LP=LNEW I LP S CONDLP=^C1GADV(71100,LP,"c") I $E(CONDLP,1,2)="00" D @$S(DFLAG=0:"DW1",DFLAG=1:"DW2",1:"DW3")
+SHOW     G:'LP DEAD^C1GADV8
+         S DARK=0,L=^C1GADV(71100.1,G,"LAMP","L") I L'<0!'LIT,L-LP!'LIT,'$E(CONDLP,3) S DARK=1
+         D SHOWL G:'LP DEAD^C1GADV8 I $E(CONDLP) S WD1="FORCED",WD1X=^C1GADV(71100,WD1) G TRAVEL^C1GADV3
          I LP=33,'CLOSNG,$R(10000)<2500 S M=8 D SPK
-         I 'DARK S X=^ADVG(G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D SHOWO
-         S M=0 G TURN^ADV3
+         I 'DARK S X=^C1GADV(71100.1,G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D SHOWO
+         S M=0 G TURN^C1GADV3
 DW1      S:LP>14 DFLAG=1 Q
 DW2      I LP>14,$R(10000)<500 D DW2A,DW2B S DFLAG=2,M=3,O="AXE",L=LP D SPK,DROP
          Q
@@ -719,51 +712,52 @@ DW3      S (ND,ATTACK,STICK)=0,K="d" F DW=1:1:5 I LD(DW) D DMOV,DWARF:DSEEN(DW)
          I STICK>1 W:S ! W !,STICK," of them get you!!"
          E  S M=M+STICK D SPK Q:'STICK
          S LP2=LP,LP=0 Q
-DMOV     S Y=^ADV(LD(DW),K),N=0 F I=2:1:Y+1 S L=$P(Y,"/",I) I L-LD1(DW) S LL(N)=L,N=N+1
+DMOV     S Y=^C1GADV(71100,LD(DW),K),N=0 F I=2:1:Y+1 S L=$P(Y,"/",I) I L-LD1(DW) S LL(N)=L,N=N+1
          S L=$S(N:LL($R(10000)*N\10000),1:LD1(DW)),LD1(DW)=LD(DW),LD(DW)=L K I,L,LL,N,Y
          S DSEEN(DW)=DSEEN(DW)&(LP>14)!(LD(DW)=LP)!(LD1(DW)=LP) S:DSEEN(DW) LD(DW)=LP Q
 DWARF    S ND=ND+1 I LD(DW)=LD1(DW) S ATTACK=ATTACK+1 S:KNFL'<0 KNFL=LP S:$R(10000)<(DFLAG-2*950) STICK=STICK+1
          Q
-PIRAT    Q:LP=114!(^ADVG(G,"CHEST","P")'<0)  S F=0
-         F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=^ADVG(G,O,"L") G:L<0 STEAL S:L=LP F=1
-         I TALLY2+1=TALLY,'F,^ADVG(G,"CHEST","L")=0 S L=^ADVG(G,"LAMP","L") I L<0!(L=LP),LIT G ST2
+PIRAT    Q:LP=114!(^C1GADV(71100.1,G,"CHEST","P")'<0)  S F=0
+         F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=^C1GADV(71100.1,G,O,"L") G:L<0 STEAL S:L=LP F=1
+         I TALLY2+1=TALLY,'F,^C1GADV(71100.1,G,"CHEST","L")=0 S L=^C1GADV(71100.1,G,"LAMP","L") I L<0!(L=LP),LIT G ST2
          I LD(6)-LD1(6),$R(10000)<2000 S M=127 D SPK
          Q
 PI1      I O="PLATI",LP=100!(LP=101)
          Q
-STEAL    S M=128 D SPK I ^ADVG(G,"MESSA","L")=0 S O="CHEST",L=114 D MOVE
+STEAL    S M=128 D SPK I ^C1GADV(71100.1,G,"MESSA","L")=0 S O="CHEST",L=114 D MOVE
          S O="MESSA",L=140 D MOVE
-         F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=LP D:L=^ADVG(G,O,"L")&'^("F") CARRY I TOTING[("/"_O_"/") S L=114 D DROP
+         F J=2:1:16 S O=$P(TR,"/",J) D PI1 E  S L=LP D:L=^C1GADV(71100.1,G,O,"L")&'^("F") CARRY I TOTING[("/"_O_"/") S L=114 D DROP
          G ST3
 ST2      S M=186 D SPK S O="CHEST",L=114 D MOVE S O="MESSA",L=140 D MOVE
 ST3      S (LD(6),LD1(6))=114,DSEEN(6)=0 Q
 SHOWL    I DARK,'$E(CONDLP),WZDARK,$R(10000)<3500 S M=23,LP2=LP,LP=0 D SPK Q
          I TOTING["/BEAR/" S M=141 D SPK
          I DARK S M=16 D SPK Q
-         S J=^ADVG(G,LP,"A"),^("A")=J+1#ABB,X=^ADV(LP,0) I J,X["/" W:S ! W !,$P(X,"/",2) Q
+         S J=^C1GADV(71100.1,G,LP,"A"),^("A")=J+1#ABB,X=^C1GADV(71100,LP,0) I J,X["/" W:S ! W !,$P(X,"/",2) Q
          I X W:S ! F I=1:1:X W !,^(I)
          Q
 SHOWO    I O="STEPS",TOTING["/GOLD/" Q
-         S P=^ADVG(G,O,"P") I P<0 Q:CLOSED  S (^("P"),P)=O="RUG"!(O="CHAIN"),TALLY=TALLY-1 I TALLY,TALLY=TALLY2,LIMIT>35 S LIMIT=35
-         I O="STEPS",LP=^ADVG(G,O,"F") S P=1
+         S P=^C1GADV(71100.1,G,O,"P") I P<0 Q:CLOSED  S (^("P"),P)=O="RUG"!(O="CHAIN"),TALLY=TALLY-1 I TALLY,TALLY=TALLY2,LIMIT>35 S
+           LIMIT=35
+         I O="STEPS",LP=^C1GADV(71100.1,G,O,"F") S P=1
          D PSPK Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
 
 
-ADV2     * *  69 Lines,  3445 Bytes, Checksum: B14136981                                              Mar 25, 2016@18:33:25 page 14
+C1GADV2  * *  69 Lines,  3683 Bytes, Checksum: B15669419                                              Mar 26, 2016@00:08:30 page 14
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
          K I,N Q
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
 
-*****   INDEX OF ADV2   *****
+*****   INDEX OF C1GADV2   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -809,13 +803,13 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
 >> PANIC        NEWLP*
 >> S            DW3+2,DW3+4,DW3+6,SHOWL+3,SHOWL+4,SPK,PSPK
 >> STICK        DW3*,DW3+6,DW3+7,DWARF*
->> TALLY        PIRAT+2,SHOWO+1*
 
 
-*****   INDEX OF ADV2   *****                                                                         Mar 25, 2016@18:33:25 page 15
+*****   INDEX OF C1GADV2   *****                                                                      Mar 26, 2016@00:08:30 page 15
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
                                         ( * Changed  ! Killed  ~ Newed)
+>> TALLY        PIRAT+2,SHOWO+1*
 >> TALLY2       PIRAT+2,SHOWO+1
 >> TOTING       STEAL+2,SHOWL+1,SHOWO,DROP*,CARRY*
 >> TR           PIRAT+1,STEAL+2
@@ -827,9 +821,8 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               NEWLP+1,NEWLP+2,SHOW+2,DMOV,SHOWL+3,PSPK
-   ^ADV("t"            SPK
-   ^ADVG(              SHOW+1,SHOW+4,PIRAT,PIRAT+1,PIRAT+2,STEAL,STEAL+2,SHOWL+3,SHOWO+1,SHOWO+2,DROP+1*,DR1,CARRY*,CARRYF,MOVE
+   ^C1GADV(71100       NEWLP+1,NEWLP+2,SHOW+2,DMOV,SHOWL+3,SPK,PSPK
+   ^C1GADV(71100.1     SHOW+1,SHOW+4,PIRAT,PIRAT+1,PIRAT+2,STEAL,STEAL+2,SHOWL+3,SHOWO+1,SHOWO+2,DROP+1*,DR1,CARRY*,CARRYF,MOVE
 
 Naked Globals
    ^(           SHOWL+4,SPK,PSPK
@@ -861,15 +854,15 @@ Label References
    STEAL        PIRAT+1
 
 External References
-   TRAVEL^ADV3         SHOW+2
-   TURN^ADV3           SHOW+5
-   DEAD^ADV8           SHOW,SHOW+2
+   TRAVEL^C1GADV3      SHOW+2
+   TURN^C1GADV3        SHOW+5
+   DEAD^C1GADV8        SHOW,SHOW+2
 
 *****   END   *****
 
-ADV3   3222     printed  Mar 25, 2016@18:33:25                                                                             Page 16
+C1GADV3   3406     printed  Mar 26, 2016@00:08:30                                                                          Page 16
 
-ADV3      ;ADVENTURE.  FLH, DJW/WV ; 27 JAN 83  12:32 PM
+C1GADV3   ;ADVENTURE.  FLH, DJW/WV ; 27 JAN 83  12:32 PM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;ADVENTURE. FLH ; 27 JAN 83  12:32 PM
  +3       ;PRX;24Apr89 18:52;Copyright (c) 1989 PRx, Inc.
@@ -881,17 +874,17 @@ TU1        FOR J=4:1:9
                IF 'HINTED(J)
                    SET HINTLC(J)=$SELECT($EXTRACT(CONDLP,5)=J:HINTLC(J)+1,1:0)
                    IF HINTLC(J)'<HINTH(J)
-                       DO HINT^ADV9
+                       DO HINT^C1GADV9
  +1        IF CLOSED
                IF TOTING["/OYSTE/"
                    SET O="OYSTE"
                    SET P=1
-                   IF ^ADVG(G,O,"P")<0
+                   IF ^C1GADV(71100.1,G,O,"P")<0
                        DO PSPK
  +2        IF CLOSED
                FOR J=2:1:HOLDNG+1
                    SET O=$PIECE(TOTING,"/",J)
-                   SET P=^ADVG(G,O,"P")
+                   SET P=^C1GADV(71100.1,G,O,"P")
                    IF P<0
                        SET ^("P")=-P-1
  +3        SET WZDARK=DARK
@@ -905,13 +898,13 @@ TU3        SET FOOBAR=$SELECT(FOOBAR>0:-FOOBAR,1:0)
            SET WD2=U2
            SET (WD1X,WD2X)=""
 G1         IF WD1?1.U.E
-               IF $DATA(^ADV(WD1))
+               IF $DATA(^C1GADV(71100,WD1))
                    SET WD1X=^(WD1)
                    IF WD1X?1"0".E
                        SET WD1=$EXTRACT(WD1X,2,99)
                        GOTO G1
 G2         IF WD2?1.U.E
-               IF $DATA(^ADV(WD2))
+               IF $DATA(^C1GADV(71100,WD2))
                    SET WD2X=^(WD2)
                    IF WD2X?1"0".E
                        SET WD2=$EXTRACT(WD2X,2,99)
@@ -921,21 +914,21 @@ G2         IF WD2?1.U.E
                    IF LP-33
                        SET CLK1=CLK1-1
                        IF CLK1=0
-                           DO CLOSEUP^ADV8
+                           DO CLOSEUP^C1GADV8
                            GOTO WD1
  +2        IF CLK1<0
                SET CLK2=CLK2-1
                IF CLK2=0
-                   DO CLOSED^ADV8
-                   GOTO NEWLP^ADV2
+                   DO CLOSED^C1GADV8
+                   GOTO NEWLP^C1GADV2
  +3        SET LIMIT=LIMIT-LIT
            IF LIMIT<31
 
-ADV3   3222     printed  Mar 25, 2016@18:33:25                                                                             Page 17
+C1GADV3   3406     printed  Mar 26, 2016@00:08:30                                                                          Page 17
 
-               DO LAMP^ADV8
+               DO LAMP^C1GADV8
                IF GAVEUP
-                   GOTO SCORE^ADV8
+                   GOTO SCORE^C1GADV8
 WD1        IF WD1="ENTER"
                IF WD2="WATER"!(WD2="STREA")
                    SET M=$SELECT($EXTRACT(CONDLP,4)=1:70,1:43)
@@ -943,7 +936,7 @@ WD1        IF WD1="ENTER"
  +1        IF WD1="WATER"!(WD1="OIL")
                IF WD2="PLANT"!(WD2="DOOR")
                    SET WD2="POUR"
-                   SET WD2X=^ADV(WD2)
+                   SET WD2X=^C1GADV(71100,WD2)
  +2        GOTO WD2A
 WD2        SET WD1=WD2
            SET W1=W2
@@ -964,20 +957,20 @@ TRAVEL     SET LNEW=LP
            SET MOX=$EXTRACT(WD1X,2,99)
            IF MOX?3U.E
                DO @MOX
-               GOTO NEWLP^ADV2
+               GOTO NEWLP^C1GADV2
  +1        SET LP2=LP1
            SET LP1=LP
-TR1        IF $DATA(^ADV(LP,MOV,0))
+TR1        IF $DATA(^C1GADV(71100,LP,MOV,0))
                FOR J=1:1:^(0)
-                   SET Y=^ADV(LP,MOV,J)
+                   SET Y=^C1GADV(71100,LP,MOV,J)
                    XECUTE $PIECE(Y,"\",1)
                   IF $TEST
-                       SET RET="NEWLP^ADV2"
+                       SET RET="NEWLP^C1GADV2"
                        DO @$PIECE(Y,"\",2)
                        GOTO @RET
  +1        SET M=$SELECT(VERB="FIND"!(VERB="INVEN"):59,MOX:MOX,1:12)
            DO SPK
-           GOTO NEWLP^ADV2
+           GOTO NEWLP^C1GADV2
 TR2        SET LNEW=$PIECE(Y,"\",3)
            QUIT 
 TR3        SET M=$PIECE(Y,"\",3)
@@ -986,7 +979,7 @@ TR3        SET M=$PIECE(Y,"\",3)
 OBJECT     SET (O,OBJ)=WD1
            DO HERE
           IF '$TEST
-               IF ^ADVG(G,O,"F")-LP
+               IF ^C1GADV(71100.1,G,O,"F")-LP
                    GOTO OBJ2
 OBJ1       if WD2]""
                GOTO WD2
@@ -995,7 +988,7 @@ OBJ1       if WD2]""
            if S
                WRITE !
 
-ADV3   3222     printed  Mar 25, 2016@18:33:25                                                                             Page 18
+C1GADV3   3406     printed  Mar 26, 2016@00:08:30                                                                          Page 18
 
            WRITE !,"What do you want to do with the ",W1,"?"
            GOTO TU1
@@ -1003,7 +996,7 @@ OBJ2       IF OBJ="GRATE"
                SET OBJ=$SELECT(LP=1!(LP=4)!(LP=7):"DEPRE",LP>9&(LP<15):"ENTRA",1:OBJ)
                IF OBJ'="GRATE"
                    SET WD1=OBJ
-                   SET WD1X=^ADV(OBJ)
+                   SET WD1X=^C1GADV(71100,OBJ)
                    GOTO TRAVEL
  +1        IF OBJ="DWARF"
                IF DFLAG>1
@@ -1022,7 +1015,7 @@ OBJ2       IF OBJ="GRATE"
                SET O="PLANT2"
                DO AT
               IF $TEST
-                   IF ^ADVG(G,O,"P")=0
+                   IF ^C1GADV(71100.1,G,O,"P")=0
                        SET OBJ=O
                        GOTO OBJ1
  +5        IF OBJ="ROD"
@@ -1039,7 +1032,7 @@ OBJ2       IF OBJ="GRATE"
  +7        IF OBJ="BRIEF"
                if WD2=""
                    SET WD2="ON"
-                   SET WD2X=^ADV("ON")
+                   SET WD2X=^C1GADV(71100,"ON")
                GOTO OBJ1
 OBNONE     IF WD2=""
                IF VERB="FIND"!(VERB="INVEN")
@@ -1059,7 +1052,7 @@ ACTION     SET VERB=WD1
 ACT1       SET M=$PIECE(VBX,"/",2)
            SET RET="TURN"
 
-ADV3   3222     printed  Mar 25, 2016@18:33:25                                                                             Page 19
+C1GADV3   3406     printed  Mar 26, 2016@00:08:30                                                                          Page 19
 
            DO @$PIECE(VBX,"/",OBJ]""+3)
            GOTO @RET
@@ -1077,7 +1070,7 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
  +1       ;MSM;24Apr89
            IF W="^"!(W="^Q")
                SET W="QUIT"
@@ -1091,11 +1084,11 @@ KBD        if S
            QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
-PSPK       SET N=^ADV(O,P,0)
+PSPK       SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -1103,62 +1096,63 @@ PSPK       SET N=^ADV(O,P,0)
                    WRITE !,^(I)
  +1        KILL I,N
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
-AT         IF ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT         IF ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
  +1        QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV3     * *  62 Lines,  3222 Bytes, Checksum: B11441719                                              Mar 25, 2016@18:33:25 page 20
+C1GADV3  * *  62 Lines,  3406 Bytes, Checksum: B12534891                                              Mar 26, 2016@00:08:30 page 20
               153 bytes in comments
-ADV3     ;ADVENTURE.  FLH, DJW/WV ; 27 JAN 83  12:32 PM
+C1GADV3  ;ADVENTURE.  FLH, DJW/WV ; 27 JAN 83  12:32 PM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;ADVENTURE. FLH ; 27 JAN 83  12:32 PM
          ;PRX;24Apr89 18:52;Copyright (c) 1989 PRx, Inc.
          ; DJW/WV ;March 1, 2016
 TURN     S (VERB,OBJ)="" D:M SPK
-TU1      F J=4:1:9 I 'HINTED(J) S HINTLC(J)=$S($E(CONDLP,5)=J:HINTLC(J)+1,1:0) I HINTLC(J)'<HINTH(J) D HINT^ADV9
-         I CLOSED,TOTING["/OYSTE/" S O="OYSTE",P=1 I ^ADVG(G,O,"P")<0 D PSPK
-         I CLOSED F J=2:1:HOLDNG+1 S O=$P(TOTING,"/",J),P=^ADVG(G,O,"P") I P<0 S ^("P")=-P-1
+TU1      F J=4:1:9 I 'HINTED(J) S HINTLC(J)=$S($E(CONDLP,5)=J:HINTLC(J)+1,1:0) I HINTLC(J)'<HINTH(J) D HINT^C1GADV9
+         I CLOSED,TOTING["/OYSTE/" S O="OYSTE",P=1 I ^C1GADV(71100.1,G,O,"P")<0 D PSPK
+         I CLOSED F J=2:1:HOLDNG+1 S O=$P(TOTING,"/",J),P=^C1GADV(71100.1,G,O,"P") I P<0 S ^("P")=-P-1
          S WZDARK=DARK I KNFL>0,KNFL-LP S KNFL=0
          D GETIN
 TU3      S FOOBAR=$S(FOOBAR>0:-FOOBAR,1:0),TURNS=TURNS+1,WD1=U1,WD2=U2,(WD1X,WD2X)=""
-G1       I WD1?1.U.E,$D(^ADV(WD1)) S WD1X=^(WD1) I WD1X?1"0".E S WD1=$E(WD1X,2,99) G G1
-G2       I WD2?1.U.E,$D(^ADV(WD2)) S WD2X=^(WD2) I WD2X?1"0".E S WD2=$E(WD2X,2,99) G G2
-         I TALLY=0,LP>14,LP-33 S CLK1=CLK1-1 I CLK1=0 D CLOSEUP^ADV8 G WD1
-         I CLK1<0 S CLK2=CLK2-1 I CLK2=0 D CLOSED^ADV8 G NEWLP^ADV2
-         S LIMIT=LIMIT-LIT I LIMIT<31 D LAMP^ADV8 I GAVEUP G SCORE^ADV8
+G1       I WD1?1.U.E,$D(^C1GADV(71100,WD1)) S WD1X=^(WD1) I WD1X?1"0".E S WD1=$E(WD1X,2,99) G G1
+G2       I WD2?1.U.E,$D(^C1GADV(71100,WD2)) S WD2X=^(WD2) I WD2X?1"0".E S WD2=$E(WD2X,2,99) G G2
+         I TALLY=0,LP>14,LP-33 S CLK1=CLK1-1 I CLK1=0 D CLOSEUP^C1GADV8 G WD1
+         I CLK1<0 S CLK2=CLK2-1 I CLK2=0 D CLOSED^C1GADV8 G NEWLP^C1GADV2
+         S LIMIT=LIMIT-LIT I LIMIT<31 D LAMP^C1GADV8 I GAVEUP G SCORE^C1GADV8
 WD1      I WD1="ENTER",WD2="WATER"!(WD2="STREA") S M=$S($E(CONDLP,4)=1:70,1:43) G TURN
-         I WD1="WATER"!(WD1="OIL"),WD2="PLANT"!(WD2="DOOR") S WD2="POUR",WD2X=^ADV(WD2)
+         I WD1="WATER"!(WD1="OIL"),WD2="PLANT"!(WD2="DOOR") S WD2="POUR",WD2X=^C1GADV(71100,WD2)
          G WD2A
 WD2      S WD1=WD2,W1=W2,U1=U2,WD1X=WD2X,(WD2,W2,U2,WD2X)=""
 WD2A     I WD1X="" S I=$R(10000),M=$S(I<2000:13,I<3600:61,1:60) G TURN
          I U1="WEST",$R(10000)<2000 S M=17 D SPK
          G @$P("TRAVEL/OBJECT/ACTION/SPEC","/",$E(WD1X))
-TRAVEL   S LNEW=LP,MOV=WD1,MOX=$E(WD1X,2,99) I MOX?3U.E D @MOX G NEWLP^ADV2
+TRAVEL   S LNEW=LP,MOV=WD1,MOX=$E(WD1X,2,99) I MOX?3U.E D @MOX G NEWLP^C1GADV2
          S LP2=LP1,LP1=LP
-TR1      I $D(^ADV(LP,MOV,0)) F J=1:1:^(0) S Y=^ADV(LP,MOV,J) X $P(Y,"\",1) I  S RET="NEWLP^ADV2" D @$P(Y,"\",2) G @RET
-         S M=$S(VERB="FIND"!(VERB="INVEN"):59,MOX:MOX,1:12) D SPK G NEWLP^ADV2
+TR1      I $D(^C1GADV(71100,LP,MOV,0)) F J=1:1:^(0) S Y=^C1GADV(71100,LP,MOV,J) X $P(Y,"\",1) I  S RET="NEWLP^C1GADV2" D @$P(Y,"\",2
+          ) G @RET
+         S M=$S(VERB="FIND"!(VERB="INVEN"):59,MOX:MOX,1:12) D SPK G NEWLP^C1GADV2
 TR2      S LNEW=$P(Y,"\",3) Q
 TR3      S M=$P(Y,"\",3) D SPK Q
-OBJECT   S (O,OBJ)=WD1 D HERE E  I ^ADVG(G,O,"F")-LP G OBJ2
+OBJECT   S (O,OBJ)=WD1 D HERE E  I ^C1GADV(71100.1,G,O,"F")-LP G OBJ2
 OBJ1     G WD2:WD2]"",ACT1:VERB]"" W:S ! W !,"What do you want to do with the ",W1,"?" G TU1
-OBJ2     I OBJ="GRATE" S OBJ=$S(LP=1!(LP=4)!(LP=7):"DEPRE",LP>9&(LP<15):"ENTRA",1:OBJ) I OBJ'="GRATE" S WD1=OBJ,WD1X=^ADV(OBJ) G TRA
-          VEL
+OBJ2     I OBJ="GRATE" S OBJ=$S(LP=1!(LP=4)!(LP=7):"DEPRE",LP>9&(LP<15):"ENTRA",1:OBJ) I OBJ'="GRATE" S WD1=OBJ,WD1X=^C1GADV(71100,O
+          BJ) G TRAVEL
          I OBJ="DWARF",DFLAG>1 F DW=1:1:5 I LD(DW)=LP G OBJ1
          I OBJ=$P("WATER/OIL","/",$E(CONDLP,4)) G OBJ1
          D LIQ I O=OBJ S O="BOTTL" D HERE I  G OBJ1
-         I OBJ="PLANT" S O="PLANT2" D AT I  I ^ADVG(G,O,"P")=0 S OBJ=O G OBJ1
+         I OBJ="PLANT" S O="PLANT2" D AT I  I ^C1GADV(71100.1,G,O,"P")=0 S OBJ=O G OBJ1
          I OBJ="ROD" S O="ROD2" D HERE I  S OBJ=O G OBJ1
          I OBJ="KNIFE",KNFL=LP S KNFL=-1,M=116 G TURN
-         I OBJ="BRIEF" S:WD2="" WD2="ON",WD2X=^ADV("ON") G OBJ1
+         I OBJ="BRIEF" S:WD2="" WD2="ON",WD2X=^C1GADV(71100,"ON") G OBJ1
 OBNONE   I WD2="",VERB="FIND"!(VERB="INVEN") G OBJ1
          W:S ! W !,"I don't see any ",W1,"." S M=0 G TURN
 ACTION   S VERB=WD1,VBX=WD1X I VERB="SAY" S OBJ=WD2
@@ -1168,24 +1162,24 @@ AVQ      Q
 SPEC     S M=$E(WD1X,2,99) G TURN
 GETIN    D KBD
          S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(SAVE," ",1),1,5),U2=$E($P(SAVE," ",2),1,5) K SAVE Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV
          I W="^"!(W="^Q") S W="QUIT" ;MSM;24Apr89
          S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SAVE,I+1,99)
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
-         K I,N Q
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
 
 
-ADV3     * *  62 Lines,  3222 Bytes, Checksum: B11441719                                              Mar 25, 2016@18:33:25 page 21
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+C1GADV3  * *  62 Lines,  3406 Bytes, Checksum: B12534891                                              Mar 26, 2016@00:08:30 page 21
+         K I,N Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-AT       I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT       I ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
          Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV3   *****
+*****   INDEX OF C1GADV3   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -1237,22 +1231,20 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
 >> W2           WD2*,GETIN+1*
 >> WD1          TU3*,G1*,WD1,WD1+1,WD2*,TRAVEL,OBJECT,OBJ2*,ACTION
 >> WD1X         TU3*,G1*,WD2*,WD2A,WD2A+2,TRAVEL,OBJ2*,ACTION,SPEC
->> WD2          TU3*,G2*,WD1,WD1+1*,WD2*,OBJ1,OBJ2+7*,OBNONE,ACTION,ACTION+1
 
 
-*****   INDEX OF ADV3   *****                                                                         Mar 25, 2016@18:33:25 page 22
+*****   INDEX OF C1GADV3   *****                                                                      Mar 26, 2016@00:08:30 page 22
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
                                         ( * Changed  ! Killed  ~ Newed)
+>> WD2          TU3*,G2*,WD1,WD1+1*,WD2*,OBJ1,OBJ2+7*,OBNONE,ACTION,ACTION+1
 >> WD2X         TU3*,G2*,WD1+1*,WD2*,OBJ2+7*
 >> WZDARK       TU1+3*
 >> Y            TR1*,TR2,TR3
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               G1,G2,WD1+1,TR1,OBJ2,PSPK
-   ^ADV("ON"           OBJ2+7
-   ^ADV("t"            SPK
-   ^ADVG(              TU1+1,TU1+2,OBJECT,OBJ2+4,HERE,AT,LIQ
+   ^C1GADV(71100       G1,G2,WD1+1,TR1,OBJ2,OBJ2+7,SPK,PSPK
+   ^C1GADV(71100.1     TU1+1,TU1+2,OBJECT,OBJ2+4,HERE,AT,LIQ
 
 Naked Globals
    ^(           G1,G2,SPK,PSPK
@@ -1285,19 +1277,19 @@ Label References
    WD2A         WD1+2
 
 External References
-   TIMO^ADV            KBD
-   NEWLP^ADV2          G2+2,TRAVEL,TR1+1
-   CLOSED^ADV8         G2+2
-   CLOSEUP^ADV8        G2+1
-   LAMP^ADV8           G2+3
-   SCORE^ADV8          G2+3
-   HINT^ADV9           TU1
+   TIMO^C1GADV         KBD
+   NEWLP^C1GADV2       G2+2,TRAVEL,TR1+1
+   CLOSED^C1GADV8      G2+2
+   CLOSEUP^C1GADV8     G2+1
+   LAMP^C1GADV8        G2+3
+   SCORE^C1GADV8       G2+3
+   HINT^C1GADV9        TU1
 
 *****   END   *****
 
-ADV4   3251     printed  Mar 25, 2016@18:33:25                                                                             Page 23
+C1GADV4   3537     printed  Mar 26, 2016@00:08:30                                                                          Page 23
 
-ADV4      ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:30 AM
+C1GADV4   ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:30 AM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;ADVENTURE. FLH ; 04 FEB 83  4:30 AM
  +3       ; DJW/WV ;March 1, 2016
@@ -1327,7 +1319,7 @@ AVD        SET I=TOTING[("/"_OBJ_"/")
                    SET M=0
                    SET L=0
                    DO MOVE
-                   SET ^ADVG(G,O,"P")=1
+                   SET ^C1GADV(71100.1,G,O,"P")=1
                    GOTO AVDL
  +3        IF OBJ="COINS"
                SET O="MACHI"
@@ -1347,23 +1339,23 @@ AVD        SET I=TOTING[("/"_OBJ_"/")
                SET O="DRAGO"
                DO AT
               IF $TEST
-                   IF ^ADVG(G,O,"P")=0
+                   IF ^C1GADV(71100.1,G,O,"P")=0
                        SET M=154
                        SET L=0
                        SET O="BIRD"
-                       SET ^ADVG(G,O,"P")=0
+                       SET ^C1GADV(71100.1,G,O,"P")=0
                        DO MOVE
-                       if ^ADVG(G,"SNAKE","L")=19
+                       if ^C1GADV(71100.1,G,"SNAKE","L")=19
                            SET TALLY2=TALLY2+1
                        QUIT 
  +5        IF OBJ="BEAR"
                SET O="TROLL"
 
-ADV4   3251     printed  Mar 25, 2016@18:33:25                                                                             Page 24
+C1GADV4   3537     printed  Mar 26, 2016@00:08:30                                                                          Page 24
 
                DO AT
               IF $TEST
-                   SET ^ADVG(G,O,"P")=2
+                   SET ^C1GADV(71100.1,G,O,"P")=2
                    SET M=163
                    DO TROLLX
                    GOTO AVDL
@@ -1372,7 +1364,7 @@ AVDV       IF OBJ="VASE"
                    SET O="PILLO"
                    DO AT
                    SET O="VASE"
-                   SET (P,^ADVG(G,O,"P"))=$SELECT($TEST:0,1:2)
+                   SET (P,^C1GADV(71100.1,G,O,"P"))=$SELECT($TEST:0,1:2)
                    SET P=P+1
                    SET M=0
                    if P-1
@@ -1387,19 +1379,19 @@ AVDL       DO LIQ
                    DO DROP
  +1       IF '$TEST
                IF OBJ="CAGE"
-                   IF ^ADVG(G,"BIRD","P")
+                   IF ^C1GADV(71100.1,G,"BIRD","P")
                        SET O="BIRD"
                        SET L=LP
                        DO DROP
                        IF 1
  +2       IF '$TEST
                IF OBJ="BIRD"
-                   SET ^ADVG(G,"BIRD","P")=0
+                   SET ^C1GADV(71100.1,G,"BIRD","P")=0
  +3        SET O=OBJ
            SET L=LP
            DO DROP
            QUIT 
-RUCKUS     SET RET="SCORE^ADV8"
+RUCKUS     SET RET="SCORE^C1GADV8"
            SET M=136
            DO SPK
            QUIT 
@@ -1423,7 +1415,7 @@ AVJ        SET I=TOTING[("/"_OBJ_"/")
                        SET I=1
  +1        if 'I
 
-ADV4   3251     printed  Mar 25, 2016@18:33:25                                                                             Page 25
+C1GADV4   3537     printed  Mar 26, 2016@00:08:30                                                                          Page 25
 
                QUIT 
            IF TR[("/"_OBJ_"/")
@@ -1441,9 +1433,9 @@ ADV4   3251     printed  Mar 25, 2016@18:33:25                                  
                DO HERE
               IF $TEST
                    SET OBJ=O
-                   GOTO AVK3^ADV6
+                   GOTO AVK3^C1GADV6
  +3        if OBJ'="AXE"
-               GOTO AVD^ADV4
+               GOTO AVD^C1GADV4
            FOR DW=1:1:5
                IF LD(DW)=LP
                    GOTO AVJ1
@@ -1451,7 +1443,7 @@ ADV4   3251     printed  Mar 25, 2016@18:33:25                                  
            SET O="DRAGO"
            DO AT
           IF $TEST
-               IF ^ADVG(G,O,"P")=0
+               IF ^C1GADV(71100.1,G,O,"P")=0
                    GOTO AVJ2
  +5        SET M=158
            SET O="TROLL"
@@ -1461,17 +1453,17 @@ ADV4   3251     printed  Mar 25, 2016@18:33:25                                  
  +6        SET O="BEAR"
            DO HERE
           IF $TEST
-               IF ^ADVG(G,O,"P")=0
+               IF ^C1GADV(71100.1,G,O,"P")=0
                    DO JUGGLE
                    SET M=164
                    SET L=LP
                    SET O="AXE"
                    DO DROP
-                   SET ^ADVG(G,O,"F")=-1
+                   SET ^C1GADV(71100.1,G,O,"F")=-1
                    SET ^("P")=1
                    QUIT 
  +7        SET OBJ=""
-           GOTO AVA^ADV5
+           GOTO AVA^C1GADV5
 AVJ1       SET M=48
            IF $RANDOM(10000)<6667
                SET (DSEEN(DW),LD(DW))=0
@@ -1480,14 +1472,14 @@ AVJ1       SET M=48
 AVJ2       DO SPK
            SET O="AXE"
            SET (L,LNEW)=LP
-           SET RET="NEWLP^ADV2"
+           SET RET="NEWLP^C1GADV2"
            DO DROP
            QUIT 
 AVW        SET I=TOTING[("/"_OBJ_"/")
            SET J=(OBJ="ROD")
            IF 'I
 
-ADV4   3251     printed  Mar 25, 2016@18:33:25                                                                             Page 26
+C1GADV4   3537     printed  Mar 26, 2016@00:08:30                                                                          Page 26
 
                IF TOTING'["/ROD2/"!'J
                    SET M=29
@@ -1497,13 +1489,13 @@ ADV4   3251     printed  Mar 25, 2016@18:33:25                                  
                        SET O="FISSU"
                        DO AT
                       IF $TEST
-                           SET (P,^("P"))=1-^ADVG(G,O,"P")
+                           SET (P,^("P"))=1-^C1GADV(71100.1,G,O,"P")
                            SET P=2-P
                            SET M=0
                            DO PSPK
  +2        QUIT 
 AVX        IF OBJ="VASE"
-               IF ^ADVG(G,OBJ,"P")=0
+               IF ^C1GADV(71100.1,G,OBJ,"P")=0
                    SET ^("P")=2
                    SET ^("F")=-1
                    SET M=198
@@ -1535,11 +1527,11 @@ AVY        SET M=0
  +3        QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
-PSPK       SET N=^ADV(O,P,0)
+PSPK       SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -1547,26 +1539,26 @@ PSPK       SET N=^ADV(O,P,0)
                    WRITE !,^(I)
  +1        KILL I,N
            QUIT 
-DROPF      SET ^ADVG(G,O,"F")=L
+DROPF      SET ^C1GADV(71100.1,G,O,"F")=L
            GOTO DR1
 DROP       FOR Z=2:1:HOLDNG+1
 
-ADV4   3251     printed  Mar 25, 2016@18:33:25                                                                             Page 27
+C1GADV4   3537     printed  Mar 26, 2016@00:08:30                                                                          Page 27
 
                IF $PIECE(TOTING,"/",Z)=O
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -1574,43 +1566,43 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVEF      SET MOL=L
-           SET L=^ADVG(G,O,"F")
+           SET L=^C1GADV(71100.1,G,O,"F")
            if L>0
                DO CARRYF
            SET L=MOL
            DO DROPF
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
-AT         IF ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT         IF ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
  +1        QUIT 
-JUGGLE     SET L=^ADVG(G,O,"L")
+JUGGLE     SET L=^C1GADV(71100.1,G,O,"L")
            IF L>0
-               SET X=^ADVG(G,L,"O")
+               SET X=^C1GADV(71100.1,G,L,"O")
                SET K=$FIND(X,"/"_O_"/")
                IF K
                    SET ^("O")="/"_O_$EXTRACT(X,1,K-$LENGTH(O)-2)_$EXTRACT(X,K,255)
  +1        KILL K,L,X
            QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV4     * *  60 Lines,  3251 Bytes, Checksum: B12412315                                              Mar 25, 2016@18:33:25 page 28
+C1GADV4  * *  60 Lines,  3537 Bytes, Checksum: B14207693                                              Mar 26, 2016@00:08:30 page 28
               104 bytes in comments
-ADV4     ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:30 AM
+C1GADV4  ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:30 AM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;ADVENTURE. FLH ; 04 FEB 83  4:30 AM
          ; DJW/WV ;March 1, 2016
@@ -1618,64 +1610,66 @@ AVC      I OBJ="DWARF",CLOSED S M=199 D SPK G RUCKUS
          Q
 AVD      S I=TOTING[("/"_OBJ_"/") I OBJ="ROD",'I,TOTING["/ROD2/" S OBJ="ROD2",I=1
          Q:'I  S M=54
-         I OBJ="BIRD" S O="SNAKE" D HERE I  S M=30 D SPK G:CLOSED RUCKUS S M=0,L=0 D MOVE S ^ADVG(G,O,"P")=1 G AVDL
+         I OBJ="BIRD" S O="SNAKE" D HERE I  S M=30 D SPK G:CLOSED RUCKUS S M=0,L=0 D MOVE S ^C1GADV(71100.1,G,O,"P")=1 G AVDL
          I OBJ="COINS" S O="MACHI" D HERE I  S L=0,O="COINS" D MOVE S L=LP,O="BATTE",P=0,M=0 D DROP,PSPK Q
-         I OBJ="BIRD" S O="DRAGO" D AT I  I ^ADVG(G,O,"P")=0 S M=154,L=0,O="BIRD",^ADVG(G,O,"P")=0 D MOVE S:^ADVG(G,"SNAKE","L")=19 
-          TALLY2=TALLY2+1 Q
-         I OBJ="BEAR" S O="TROLL" D AT I  S ^ADVG(G,O,"P")=2,M=163 D TROLLX G AVDL
-AVDV     I OBJ="VASE",LP-96 S O="PILLO" D AT S O="VASE",(P,^ADVG(G,O,"P"))=$S($T:0,1:2),P=P+1,M=0 S:P-1 ^("F")=-1 D PSPK
+         I OBJ="BIRD" S O="DRAGO" D AT I  I ^C1GADV(71100.1,G,O,"P")=0 S M=154,L=0,O="BIRD",^C1GADV(71100.1,G,O,"P")=0 D MOVE S:^C1G
+          ADV(71100.1,G,"SNAKE","L")=19 TALLY2=TALLY2+1 Q
+         I OBJ="BEAR" S O="TROLL" D AT I  S ^C1GADV(71100.1,G,O,"P")=2,M=163 D TROLLX G AVDL
+AVDV     I OBJ="VASE",LP-96 S O="PILLO" D AT S O="VASE",(P,^C1GADV(71100.1,G,O,"P"))=$S($T:0,1:2),P=P+1,M=0 S:P-1 ^("F")=-1 D PSPK
 AVDL     D LIQ S:O=OBJ OBJ="BOTTL" I OBJ="BOTTL",O]"" S L=0 D DROP
-         E  I OBJ="CAGE",^ADVG(G,"BIRD","P") S O="BIRD",L=LP D DROP I 1
-         E  I OBJ="BIRD" S ^ADVG(G,"BIRD","P")=0
+         E  I OBJ="CAGE",^C1GADV(71100.1,G,"BIRD","P") S O="BIRD",L=LP D DROP I 1
+         E  I OBJ="BIRD" S ^C1GADV(71100.1,G,"BIRD","P")=0
          S O=OBJ,L=LP D DROP Q
-RUCKUS   S RET="SCORE^ADV8",M=136 D SPK Q
+RUCKUS   S RET="SCORE^C1GADV8",M=136 D SPK Q
 TROLLX   S O="TROLL",L=0 D MOVE,MOVEF S O="TROLL2",L=117 D MOVE S L=122 D MOVEF S O="CHASM" D JUGGLE Q
 AVJ      S I=TOTING[("/"_OBJ_"/") I OBJ="ROD",'I,TOTING["/ROD2/" S OBJ="ROD2",I=1
          Q:'I  I TR[("/"_OBJ_"/") S O="TROLL" D AT I  S M=159,L=0,O=OBJ D DROP,TROLLX Q
-         I OBJ="FOOD" S O="BEAR" D HERE I  S OBJ=O G AVK3^ADV6
-         G:OBJ'="AXE" AVD^ADV4 F DW=1:1:5 I LD(DW)=LP G AVJ1
-         S M=152,O="DRAGO" D AT I  I ^ADVG(G,O,"P")=0 G AVJ2
+         I OBJ="FOOD" S O="BEAR" D HERE I  S OBJ=O G AVK3^C1GADV6
+         G:OBJ'="AXE" AVD^C1GADV4 F DW=1:1:5 I LD(DW)=LP G AVJ1
+         S M=152,O="DRAGO" D AT I  I ^C1GADV(71100.1,G,O,"P")=0 G AVJ2
          S M=158,O="TROLL" D AT I  G AVJ2
-         S O="BEAR" D HERE I  I ^ADVG(G,O,"P")=0 D JUGGLE S M=164,L=LP,O="AXE" D DROP S ^ADVG(G,O,"F")=-1,^("P")=1 Q
-         S OBJ="" G AVA^ADV5
+         S O="BEAR" D HERE I  I ^C1GADV(71100.1,G,O,"P")=0 D JUGGLE S M=164,L=LP,O="AXE" D DROP S ^C1GADV(71100.1,G,O,"F")=-1,^("P")
+          =1 Q
+         S OBJ="" G AVA^C1GADV5
 AVJ1     S M=48 I $R(10000)<6667 S (DSEEN(DW),LD(DW))=0,DKILL=DKILL+1,M=$S(DKILL=1:149,1:47)
-AVJ2     D SPK S O="AXE",(L,LNEW)=LP,RET="NEWLP^ADV2" D DROP Q
+AVJ2     D SPK S O="AXE",(L,LNEW)=LP,RET="NEWLP^C1GADV2" D DROP Q
 AVW      S I=TOTING[("/"_OBJ_"/"),J=(OBJ="ROD") I 'I,TOTING'["/ROD2/"!'J S M=29
-         I I,J,'CLOSNG S O="FISSU" D AT I  S (P,^("P"))=1-^ADVG(G,O,"P"),P=2-P,M=0 D PSPK
+         I I,J,'CLOSNG S O="FISSU" D AT I  S (P,^("P"))=1-^C1GADV(71100.1,G,O,"P"),P=2-P,M=0 D PSPK
          Q
-AVX      I OBJ="VASE",^ADVG(G,OBJ,"P")=0 S ^("P")=2,^("F")=-1,M=198,O=OBJ,L=LP D:TOTING["/VASE/" DROP Q
+AVX      I OBJ="VASE",^C1GADV(71100.1,G,OBJ,"P")=0 S ^("P")=2,^("F")=-1,M=198,O=OBJ,L=LP D:TOTING["/VASE/" DROP Q
          I OBJ="MIRRO" S M=148 I CLOSED S M=197 D SPK G RUCKUS
          Q
 AVY      S M=0 I WD2]"" S WD1=WD2,W1=W2,U1=U2,WD1X=WD2X
          I "/XYZZY/PLUGH/PLOVE/FEE/"[("/"_WD1_"/") S (WD2,OBJ)="",RET="WD2A"
          E  W:S ! W !,"Okay, ",W1,"."
          Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
          K I,N Q
-DROPF    S ^ADVG(G,O,"F")=L G DR1
+DROPF    S ^C1GADV(71100.1,G,O,"F")=L G DR1
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVEF    S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVEF    S MOL=L,L=^C1GADV(71100.1,G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-AT       I ^ADVG(G,O,"L")=LP!(^("F")=LP)
-         Q
+AT       I ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
 
 
-ADV4     * *  60 Lines,  3251 Bytes, Checksum: B12412315                                              Mar 25, 2016@18:33:25 page 29
-JUGGLE   S L=^ADVG(G,O,"L") I L>0 S X=^ADVG(G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X,K,255)
+C1GADV4  * *  60 Lines,  3537 Bytes, Checksum: B14207693                                              Mar 26, 2016@00:08:30 page 29
+         Q
+JUGGLE   S L=^C1GADV(71100.1,G,O,"L") I L>0 S X=^C1GADV(71100.1,G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X
+          ,K,255)
          K K,L,X Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV4   *****
+*****   INDEX OF C1GADV4   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -1723,18 +1717,17 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               PSPK
-   ^ADV("t"            SPK
-   ^ADVG(              AVD+2*,AVD+4*,AVD+5*,AVDV*,AVDL+1,AVDL+2*,AVJ+4,AVJ+6*,AVW+1,AVX,DROPF*,DROP+1*,DR1,CARRY*,CARRYF,MOVEF,MOVE
+   ^C1GADV(71100       SPK,PSPK
+   ^C1GADV(71100.1     AVD+2*,AVD+4*,AVD+5*,AVDV*,AVDL+1,AVDL+2*,AVJ+4,AVJ+6*,AVW+1,AVX,DROPF*,DROP+1*,DR1,CARRY*,CARRYF,MOVEF,MOVE
                        HERE,AT,JUGGLE,LIQ
 
 Naked Globals
-   ^(           SPK,PSPK
 
 
-*****   INDEX OF ADV4   *****                                                                         Mar 25, 2016@18:33:25 page 30
+*****   INDEX OF C1GADV4   *****                                                                      Mar 26, 2016@00:08:30 page 30
 
 Naked Globals
+   ^(           SPK,PSPK
    ^("F"        AVDV*,AVX*,AT
    ^("O"        DR1*,CARRYF*,JUGGLE*
    ^("P"        AVJ+6*,AVW+1*,AVX*
@@ -1763,15 +1756,15 @@ Label References
    TROLLX       AVD+5,AVJ+1
 
 External References
-   AVD^ADV4            AVJ+3
-   AVA^ADV5            AVJ+7
-   AVK3^ADV6           AVJ+2
+   AVD^C1GADV4         AVJ+3
+   AVA^C1GADV5         AVJ+7
+   AVK3^C1GADV6        AVJ+2
 
 *****   END   *****
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 31
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 31
 
-ADV5      ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:58 PM
+C1GADV5   ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:58 PM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;ADVENTURE. FLH ; 04 FEB 83  4:30 AM
  +3       ; DJW/WV ;March 1, 2016
@@ -1793,7 +1786,7 @@ AVA        SET J=0
            DO AVAJ
  +2       IF '$TEST
                SET O="DRAGO"
-               IF ^ADVG(G,O,"P")=0
+               IF ^C1GADV(71100.1,G,O,"P")=0
                    DO AT
                    DO AVAJ
  +3       IF '$TEST
@@ -1802,7 +1795,7 @@ AVA        SET J=0
                DO AVAJ
  +4       IF '$TEST
                SET O="BEAR"
-               IF ^ADVG(G,O,"P")=0
+               IF ^C1GADV(71100.1,G,O,"P")=0
                    DO HERE
                    DO AVAJ
  +5        if $TEST
@@ -1824,36 +1817,36 @@ AVA1       IF OBJ="BIRD"
                if CLOSED
                    QUIT 
                SET O=OBJ
-               SET ^ADVG(G,O,"P")=0
+               SET ^C1GADV(71100.1,G,O,"P")=0
                SET L=0
                SET M=45
                DO MOVE
-               IF ^ADVG(G,"SNAKE","L")=19
+               IF ^C1GADV(71100.1,G,"SNAKE","L")=19
                    SET TALLY2=TALLY2+1
  +1        SET M=$SELECT(OBJ="DWARF":49,OBJ="SNAKE":46,OBJ="CLAM":150,OBJ="OYSTE":150,OBJ="":44,1:M)
  +2        IF OBJ="DWARF"
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 32
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 32
 
                IF CLOSED
-                   GOTO RUCKUS^ADV4
+                   GOTO RUCKUS^C1GADV4
  +3        SET M=$SELECT(OBJ="DRAGO":167,OBJ="TROLL":157,1:M)
            IF OBJ="BEAR"
-               SET M=^ADVG(G,OBJ,"P")+1\2+165
- +4        if OBJ'="DRAGO"!^ADVG(G,"DRAGO","P")
+               SET M=^C1GADV(71100.1,G,OBJ,"P")+1\2+165
+ +4        if OBJ'="DRAGO"!^C1GADV(71100.1,G,"DRAGO","P")
                QUIT 
  +5        SET (VERB,OBJ)=""
            SET M=49
            DO SPK
            DO GETIN
            IF U1'?1"Y"."ES"
-               SET RET="TU3^ADV3"
+               SET RET="TU3^C1GADV3"
                QUIT 
  +6        SET O="DRAGO"
            SET P=1
            DO PSPK
-           SET ^ADVG(G,O,"P")=2
-           SET ^ADVG(G,"RUG","P")=0
+           SET ^C1GADV(71100.1,G,O,"P")=2
+           SET ^C1GADV(71100.1,G,"RUG","P")=0
  +7        SET L=-1
            DO MOVEF
            SET L=120
@@ -1864,12 +1857,12 @@ ADV5   3652     printed  Mar 25, 2016@18:33:25                                  
            DO MOVEF
  +8        SET L=120
            FOR LP=119,121
-               SET X=^ADVG(G,LP,"O")
+               SET X=^C1GADV(71100.1,G,LP,"O")
                FOR J=2:1:$LENGTH(X,"/")-1
                    SET O=$PIECE(X,"/",J)
                    DO MOVE
  +9        SET (LP,LNEW)=120
-           SET RET="NEWLP^ADV2"
+           SET RET="NEWLP^C1GADV2"
            QUIT 
 AVAJ      IF $TEST
                SET OBJ=O
@@ -1897,7 +1890,7 @@ AVG        DO LIQ
            IF 'J!'I
                IF OBJ=""
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 33
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 33
 
                    IF $EXTRACT(CONDLP,4)-1
                        GOTO AV0
@@ -1906,7 +1899,7 @@ ADV5   3652     printed  Mar 25, 2016@18:33:25                                  
  +2       IF '$TEST
                IF I
                    IF J
-                       SET ^ADVG(G,"BOTTL","P")=1
+                       SET ^C1GADV(71100.1,G,"BOTTL","P")=1
                        SET M=74
                        SET O="WATER"
                        SET L=0
@@ -1919,7 +1912,7 @@ AVI        SET N=1
                IF O'="BEAR"
                    if N
                        XECUTE "S N=0 D SPK"
-                   WRITE !?5,$EXTRACT(^ADV(O),2,255)
+                   WRITE !?5,$EXTRACT(^C1GADV(71100,O),2,255)
  +1        SET M=$SELECT(TOTING["/BEAR/":141,N:98,1:0)
            QUIT 
 AVN        IF TOTING[("/"_OBJ_"/")
@@ -1958,10 +1951,10 @@ AVP        IF "BOTTL"[OBJ
            IF OBJ'="WATER"
                IF OBJ'="OIL"
                    QUIT 
- +2        SET ^ADVG(G,"BOTTL","P")=1
+ +2        SET ^C1GADV(71100.1,G,"BOTTL","P")=1
            SET M=77
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 34
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 34
 
            SET L=0
            SET O=OBJ
@@ -1969,7 +1962,7 @@ ADV5   3652     printed  Mar 25, 2016@18:33:25                                  
  +3        SET O="DOOR"
            DO AT
           IF $TEST
-               SET (P,^ADVG(G,O,"P"))=OBJ="OIL"
+               SET (P,^C1GADV(71100.1,G,O,"P"))=OBJ="OIL"
                SET M=113+P
  +4       IF '$TEST
                SET O="PLANT"
@@ -1977,12 +1970,12 @@ ADV5   3652     printed  Mar 25, 2016@18:33:25                                  
               IF $TEST
                    SET M=112
                    IF OBJ="WATER"
-                       SET P=^ADVG(G,O,"P")+1
+                       SET P=^C1GADV(71100.1,G,O,"P")+1
                        DO PSPK
-                       SET (P,^ADVG(G,O,"P"))=P+1#6
-                       SET ^ADVG(G,"PLANT2","P")=P\2
+                       SET (P,^C1GADV(71100.1,G,O,"P"))=P+1#6
+                       SET ^C1GADV(71100.1,G,"PLANT2","P")=P\2
                        SET LNEW=LP
-                       SET RET="NEWLP^ADV2"
+                       SET RET="NEWLP^C1GADV2"
  +5        QUIT 
 AVR        if OBJ'="LAMP"
                SET M=76
@@ -1991,7 +1984,7 @@ AVU        SET Q=22
            SET (Y,N)=54
            DO YES
            if $TEST
-               SET RET="SCORE^ADV8"
+               SET RET="SCORE^C1GADV8"
            SET GAVEUP=$TEST
            SET M=0
            QUIT 
@@ -2023,9 +2016,9 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 35
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 35
 
            SET SAVE=W
            FOR I=1:1
@@ -2037,11 +2030,11 @@ ADV5   3652     printed  Mar 25, 2016@18:33:25                                  
            QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
-PSPK       SET N=^ADV(O,P,0)
+PSPK       SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -2049,23 +2042,23 @@ PSPK       SET N=^ADV(O,P,0)
                    WRITE !,^(I)
  +1        KILL I,N
            QUIT 
-DROPF      SET ^ADVG(G,O,"F")=L
+DROPF      SET ^C1GADV(71100.1,G,O,"F")=L
            GOTO DR1
 DROP       FOR Z=2:1:HOLDNG+1
                IF $PIECE(TOTING,"/",Z)=O
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -2073,61 +2066,62 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVEF      SET MOL=L
-           SET L=^ADVG(G,O,"F")
+           SET L=^C1GADV(71100.1,G,O,"F")
            if L>0
                DO CARRYF
            SET L=MOL
            DO DROPF
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1 
 
-ADV5   3652     printed  Mar 25, 2016@18:33:25                                                                             Page 36
+C1GADV5   3950     printed  Mar 26, 2016@00:08:30                                                                          Page 36
 
            KILL L
            QUIT 
-AT         IF ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT         IF ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
  +1        QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV5     * *  76 Lines,  3652 Bytes, Checksum: B15271097                                              Mar 25, 2016@18:33:25 page 37
+C1GADV5  * *  76 Lines,  3950 Bytes, Checksum: B17228163                                              Mar 26, 2016@00:08:30 page 37
               105 bytes in comments
-ADV5     ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:58 PM
+C1GADV5  ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:58 PM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;ADVENTURE. FLH ; 04 FEB 83  4:30 AM
          ; DJW/WV ;March 1, 2016
 AV0      W:S ! W !,"I don't understand ",W1,"." S OBJ="",RET="TU1" Q
 AVA      S J=0 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP S J=1,OBJ="DWARF" Q
          S O="SNAKE" D HERE,AVAJ
-         E  S O="DRAGO" I ^ADVG(G,O,"P")=0 D AT,AVAJ
+         E  S O="DRAGO" I ^C1GADV(71100.1,G,O,"P")=0 D AT,AVAJ
          E  S O="TROLL" D AT,AVAJ
-         E  S O="BEAR" I ^ADVG(G,O,"P")=0 D HERE,AVAJ
+         E  S O="BEAR" I ^C1GADV(71100.1,G,O,"P")=0 D HERE,AVAJ
          G AV0:$T,AVA1:OBJ]""
          I VERB'="THROW" S O="BIRD" D HERE I  S OBJ=O
          F O="CLAM","OYSTE" D HERE,AVAJ G:$T AV0
-AVA1     I OBJ="BIRD" S M=137 Q:CLOSED  S O=OBJ,^ADVG(G,O,"P")=0,L=0,M=45 D MOVE I ^ADVG(G,"SNAKE","L")=19 S TALLY2=TALLY2+1
+AVA1     I OBJ="BIRD" S M=137 Q:CLOSED  S O=OBJ,^C1GADV(71100.1,G,O,"P")=0,L=0,M=45 D MOVE I ^C1GADV(71100.1,G,"SNAKE","L")=19 S TAL
+          LY2=TALLY2+1
          S M=$S(OBJ="DWARF":49,OBJ="SNAKE":46,OBJ="CLAM":150,OBJ="OYSTE":150,OBJ="":44,1:M)
-         I OBJ="DWARF",CLOSED G RUCKUS^ADV4
-         S M=$S(OBJ="DRAGO":167,OBJ="TROLL":157,1:M) I OBJ="BEAR" S M=^ADVG(G,OBJ,"P")+1\2+165
-         Q:OBJ'="DRAGO"!^ADVG(G,"DRAGO","P")
-         S (VERB,OBJ)="",M=49 D SPK,GETIN I U1'?1"Y"."ES" S RET="TU3^ADV3" Q
-         S O="DRAGO",P=1 D PSPK S ^ADVG(G,O,"P")=2,^ADVG(G,"RUG","P")=0
+         I OBJ="DWARF",CLOSED G RUCKUS^C1GADV4
+         S M=$S(OBJ="DRAGO":167,OBJ="TROLL":157,1:M) I OBJ="BEAR" S M=^C1GADV(71100.1,G,OBJ,"P")+1\2+165
+         Q:OBJ'="DRAGO"!^C1GADV(71100.1,G,"DRAGO","P")
+         S (VERB,OBJ)="",M=49 D SPK,GETIN I U1'?1"Y"."ES" S RET="TU3^C1GADV3" Q
+         S O="DRAGO",P=1 D PSPK S ^C1GADV(71100.1,G,O,"P")=2,^C1GADV(71100.1,G,"RUG","P")=0
          S L=-1 D MOVEF S L=120 D MOVE S O="RUG" D MOVE S L=0 D MOVEF
-         S L=120 F LP=119,121 S X=^ADVG(G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D MOVE
-         S (LP,LNEW)=120,RET="NEWLP^ADV2" Q
+         S L=120 F LP=119,121 S X=^C1GADV(71100.1,G,LP,"O") F J=2:1:$L(X,"/")-1 S O=$P(X,"/",J) D MOVE
+         S (LP,LNEW)=120,RET="NEWLP^C1GADV2" Q
 AVAJ     I  S OBJ=O,J=J+1 I J>1
          Q
 AVE      S O="FOOD" D HERE E  G AV0
@@ -2136,9 +2130,9 @@ AVE2     G:OBJ="FOOD" AVE1 I "/BIRD/SNAKE/CLAM/OYSTE/DWARF/DRAGO/TROLL/BEAR/"[("
          Q
 AVG      D LIQ S I=O="WATER",O="BOTTL" D HERE S J=$T I 'J!'I,OBJ="",$E(CONDLP,4)-1 G AV0
          I "WATER"'[OBJ S M=110
-         E  I I,J S ^ADVG(G,"BOTTL","P")=1,M=74,O="WATER",L=0 D DROP
+         E  I I,J S ^C1GADV(71100.1,G,"BOTTL","P")=1,M=74,O="WATER",L=0 D DROP
          Q
-AVI      S N=1,M=99 F J=HOLDNG+1:-1:2 S O=$P(TOTING,"/",J) I O'="BEAR" X:N "S N=0 D SPK" W !?5,$E(^ADV(O),2,255)
+AVI      S N=1,M=99 F J=HOLDNG+1:-1:2 S O=$P(TOTING,"/",J) I O'="BEAR" X:N "S N=0 D SPK" W !?5,$E(^C1GADV(71100,O),2,255)
          S M=$S(TOTING["/BEAR/":141,N:98,1:0) Q
 AVN      I TOTING[("/"_OBJ_"/") S M=24 Q
          I CLOSED S M=138 Q
@@ -2149,45 +2143,45 @@ AVN      I TOTING[("/"_OBJ_"/") S M=24 Q
          Q
 AVP      I "BOTTL"[OBJ D LIQ S OBJ=O
          G:OBJ="" AV0 Q:TOTING'[("/"_OBJ_"/")  S M=78 I OBJ'="WATER",OBJ'="OIL" Q
-         S ^ADVG(G,"BOTTL","P")=1,M=77,L=0,O=OBJ D DROP
-         S O="DOOR" D AT I  S (P,^ADVG(G,O,"P"))=OBJ="OIL",M=113+P
-         E  S O="PLANT" D AT I  S M=112 I OBJ="WATER" S P=^ADVG(G,O,"P")+1 D PSPK S (P,^ADVG(G,O,"P"))=P+1#6,^ADVG(G,"PLANT2","P")=P
-          \2,LNEW=LP,RET="NEWLP^ADV2"
+         S ^C1GADV(71100.1,G,"BOTTL","P")=1,M=77,L=0,O=OBJ D DROP
+         S O="DOOR" D AT I  S (P,^C1GADV(71100.1,G,O,"P"))=OBJ="OIL",M=113+P
+         E  S O="PLANT" D AT I  S M=112 I OBJ="WATER" S P=^C1GADV(71100.1,G,O,"P")+1 D PSPK S (P,^C1GADV(71100.1,G,O,"P"))=P+1#6,^C1
+          GADV(71100.1,G,"PLANT2","P")=P\2,LNEW=LP,RET="NEWLP^C1GADV2"
          Q
 AVR      S:OBJ'="LAMP" M=76 Q
-AVU      S Q=22,(Y,N)=54 D YES S:$T RET="SCORE^ADV8" S GAVEUP=$T,M=0 Q
+AVU      S Q=22,(Y,N)=54 D YES S:$T RET="SCORE^C1GADV8" S GAVEUP=$T,M=0 Q
 GETIN    D KBD S W1=$P(W," ",1),W2=$P(W," ",2),U1=$E($P(SAVE," ",1),1,5),U2=$E($P(SAVE," ",2),1,5) K SAVE Q
 YES      S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
          E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
          E  S M=N D:M SPK
          K M Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SA
-          VE,I+1,99)
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E
+          (SAVE,I+1,99)
 
 
-ADV5     * *  76 Lines,  3652 Bytes, Checksum: B15271097                                              Mar 25, 2016@18:33:25 page 38
+C1GADV5  * *  76 Lines,  3950 Bytes, Checksum: B17228163                                              Mar 26, 2016@00:08:30 page 38
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
          K I,N Q
-DROPF    S ^ADVG(G,O,"F")=L G DR1
+DROPF    S ^C1GADV(71100.1,G,O,"F")=L G DR1
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVEF    S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVEF    S MOL=L,L=^C1GADV(71100.1,G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-AT       I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT       I ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
          Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV5   *****
+*****   INDEX OF C1GADV5   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -2227,7 +2221,7 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
 >> W            GETIN,KBD*
 
 
-*****   INDEX OF ADV5   *****                                                                         Mar 25, 2016@18:33:25 page 39
+*****   INDEX OF C1GADV5   *****                                                                      Mar 26, 2016@00:08:30 page 39
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
                                         ( * Changed  ! Killed  ~ Newed)
@@ -2239,9 +2233,8 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               AVI,PSPK
-   ^ADV("t"            SPK
-   ^ADVG(              AVA+2,AVA+4,AVA1*,AVA1+3,AVA1+4,AVA1+6*,AVA1+8,AVG+2*,AVP+2*,AVP+3*,AVP+4*,DROPF*,DROP+1*,DR1,CARRY*,CARRYF
+   ^C1GADV(71100       AVI,SPK,PSPK
+   ^C1GADV(71100.1     AVA+2,AVA+4,AVA1*,AVA1+3,AVA1+4,AVA1+6*,AVA1+8,AVG+2*,AVP+2*,AVP+3*,AVP+4*,DROPF*,DROP+1*,DR1,CARRY*,CARRYF
                        MOVEF,MOVE,HERE,AT,LIQ
 
 Naked Globals
@@ -2274,23 +2267,23 @@ Label References
    YES          AVU,YES+1
 
 External References
-   TIMO^ADV            KBD
-   RUCKUS^ADV4         AVA1+2
+   TIMO^C1GADV         KBD
+   RUCKUS^C1GADV4      AVA1+2
 
 *****   END   *****
 
-ADV6   3376     printed  Mar 25, 2016@18:33:25                                                                             Page 40
+C1GADV6   3607     printed  Mar 26, 2016@00:08:30                                                                          Page 40
 
-ADV6      ;ADVENTURE.  FLH, DJW/WV ; 28 DEC 82  9:53 AM
+C1GADV6   ;ADVENTURE.  FLH, DJW/WV ; 28 DEC 82  9:53 AM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;ADVENTURE.  FLH ; 28 DEC 82  9:53 AM
  +3       ; DJW/WV ;March 1, 2016
 AVB        IF CLOSED
-               IF ^ADVG(G,"ROD2","P")'<0
+               IF ^C1GADV(71100.1,G,"ROD2","P")'<0
                    SET O="ROD2"
                    DO HERE
                    SET @$SELECT($TEST:"M=135,BONUS=25",LP=115:"M=134,BONUS=30",1:"M=133,BONUS=45")
-                   SET RET="SCORE^ADV8"
+                   SET RET="SCORE^C1GADV8"
                    DO SPK
  +1        QUIT 
 AVF        SET I=$EXTRACT(CONDLP,4)
@@ -2301,16 +2294,16 @@ AVF        SET I=$EXTRACT(CONDLP,4)
                SET M=145
                DO SPK
                SET M=0
-               GOTO AVDV^ADV4
+               GOTO AVDV^C1GADV4
  +1        IF "BOTTL"[OBJ
                SET O="BOTTL"
                DO HERE
                if OBJ=""&'$TEST
-                   GOTO AV0^ADV5
+                   GOTO AV0^C1GADV5
                DO LIQ
                SET M=$SELECT(O]"":105,'I:106,1:107)
                IF M=107
-                   SET ^ADVG(G,"BOTTL","P")=$EXTRACT("102",I+1)
+                   SET ^C1GADV(71100.1,G,"BOTTL","P")=$EXTRACT("102",I+1)
                    SET L=1
                    DO LIQ
                    if TOTING["/BOTTL/"
@@ -2323,7 +2316,7 @@ AVK        IF OBJ="BIRD"
                QUIT 
  +1        SET J=$SELECT(OBJ="TROLL":182,OBJ="DRAGO":102,1:0)
            IF J=102
-               IF ^ADVG(G,OBJ,"P")
+               IF ^C1GADV(71100.1,G,OBJ,"P")
                    SET J=110
  +2        IF J
                SET M=J
@@ -2338,13 +2331,13 @@ AVK        IF OBJ="BIRD"
                    QUIT 
                SET M=101
                SET L=0
-               SET ^ADVG(G,O,"P")=0
+               SET ^C1GADV(71100.1,G,O,"P")=0
                SET TALLY2=TALLY2+1
                DO MOVE
                QUIT 
  +4 
 
-ADV6   3376     printed  Mar 25, 2016@18:33:25                                                                             Page 41
+C1GADV6   3607     printed  Mar 26, 2016@00:08:30                                                                          Page 41
 
            IF OBJ="DWARF"
                SET O="FOOD"
@@ -2356,16 +2349,16 @@ ADV6   3376     printed  Mar 25, 2016@18:33:25                                  
                    SET DFLAG=DFLAG+1
                QUIT 
 AVK3       IF OBJ="BEAR"
-               SET P=^ADVG(G,OBJ,"P")
+               SET P=^C1GADV(71100.1,G,OBJ,"P")
                SET M=$SELECT(P=0:102,P=3:110,1:M)
                SET O="FOOD"
                DO HERE
                if '$TEST
                    QUIT 
                SET M=168
-               SET ^ADVG(G,"AXE","P")=0
+               SET ^C1GADV(71100.1,G,"AXE","P")=0
                SET ^("F")=0
-               SET ^ADVG(G,OBJ,"P")=1
+               SET ^C1GADV(71100.1,G,OBJ,"P")=1
                SET L=0
                DO MOVE
                QUIT 
@@ -2383,11 +2376,11 @@ AVM        SET J=$FIND("FEEFIEFOEFOOFUM",U1)\3
                QUIT 
  +2        SET FOOBAR=0
            SET O="EGGS"
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L=92!(LP=92&(TOTING["/EGGS/"))
                QUIT 
  +3        IF L=0
-               IF ^ADVG(G,"TROLL","L")=0
+               IF ^C1GADV(71100.1,G,"TROLL","L")=0
                    IF ^("P")=0
                        SET ^("P")=1
  +4        DO HERE
@@ -2408,15 +2401,15 @@ AVONL      SET O="LAMP"
                SET M=184
                IF LIMIT'<0
 
-ADV6   3376     printed  Mar 25, 2016@18:33:25                                                                             Page 42
+C1GADV6   3607     printed  Mar 26, 2016@00:08:30                                                                          Page 42
 
-                   SET (LIT,^ADVG(G,O,"P"))=1
+                   SET (LIT,^C1GADV(71100.1,G,O,"P"))=1
                    SET DARK=0
                    SET M=39
                    DO SPK
                    SET M=0
                    IF WZDARK
-                       SET RET="SHOW^ADV2"
+                       SET RET="SHOW^C1GADV2"
  +1        QUIT 
 AVONB      SET ABB=10000
            SET DETAIL=3
@@ -2431,7 +2424,7 @@ AVOF1      IF OBJ'="LAMP"
 AVOFL      SET O="LAMP"
            DO HERE
           IF $TEST
-               SET (LIT,^ADVG(G,O,"P"))=0
+               SET (LIT,^C1GADV(71100.1,G,O,"P"))=0
                SET M=40
                DO SPK
                SET DARK='$EXTRACT(CONDLP,3)
@@ -2442,7 +2435,7 @@ AVOFB      SET ABB=5
            SET S=1
            SET M=54
            QUIT 
-AVS        DO SC1^ADV8
+AVS        DO SC1^C1GADV8
            if S
                WRITE !
            WRITE !,"If you were to quit now, you would score ",SCORE," out of a possible ",MXSCOR,"."
@@ -2452,7 +2445,7 @@ AVS        DO SC1^ADV8
            SET GAVEUP=$TEST
            SET M=0
            if $TEST
-               SET RET="SCORE^ADV8"
+               SET RET="SCORE^C1GADV8"
            QUIT 
 AVV        SET J=0
            IF DARK
@@ -2472,11 +2465,11 @@ AVV        SET J=0
                DO AVVJ
  +5        if J-1
 
-ADV6   3376     printed  Mar 25, 2016@18:33:25                                                                             Page 43
+C1GADV6   3607     printed  Mar 26, 2016@00:08:30                                                                          Page 43
 
-               GOTO AV0^ADV5
+               GOTO AV0^C1GADV5
 AVV1       IF DARK
-               SET RET="OBNONE^ADV3"
+               SET RET="OBNONE^C1GADV3"
                QUIT 
  +1        SET J=OBJ="OYSTE"&(TOTING["/OYSTE/")
  +2        SET M=$SELECT(J&HINTED(2):194,OBJ="MESSA":191,OBJ="TABLE":196,OBJ="MAGAZ":190,1:M)
@@ -2497,7 +2490,7 @@ AVVJ       DO HERE
  +1        QUIT 
 AVZ        SET SAVED=1
            SET M=0
-           DO PUTGAM^ADV
+           DO PUTGAM^C1GADV
            QUIT 
 YES        SET M=Q
            DO SPK
@@ -2520,7 +2513,7 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
            SET SAVE=W
            FOR I=1:1
                if SAVE?.CNPU
@@ -2531,15 +2524,15 @@ KBD        if S
            QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
 PSPK 
 
-ADV6   3376     printed  Mar 25, 2016@18:33:25                                                                             Page 44
+C1GADV6   3607     printed  Mar 26, 2016@00:08:30                                                                          Page 44
 
-           SET N=^ADV(O,P,0)
+           SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -2552,16 +2545,16 @@ DROP       FOR Z=2:1:HOLDNG+1
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -2569,102 +2562,103 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV6     * *  68 Lines,  3376 Bytes, Checksum: B14464219                                              Mar 25, 2016@18:33:25 page 45
+C1GADV6  * *  68 Lines,  3607 Bytes, Checksum: B16137883                                              Mar 26, 2016@00:08:30 page 45
               105 bytes in comments
-ADV6     ;ADVENTURE.  FLH, DJW/WV ; 28 DEC 82  9:53 AM
+C1GADV6  ;ADVENTURE.  FLH, DJW/WV ; 28 DEC 82  9:53 AM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;ADVENTURE.  FLH ; 28 DEC 82  9:53 AM
          ; DJW/WV ;March 1, 2016
-AVB      I CLOSED,^ADVG(G,"ROD2","P")'<0 S O="ROD2" D HERE S @$S($T:"M=135,BONUS=25",LP=115:"M=134,BONUS=30",1:"M=133,BONUS=45"),RET
-          ="SCORE^ADV8" D SPK
+AVB      I CLOSED,^C1GADV(71100.1,G,"ROD2","P")'<0 S O="ROD2" D HERE S @$S($T:"M=135,BONUS=25",LP=115:"M=134,BONUS=30",1:"M=133,BONU
+          S=45"),RET="SCORE^C1GADV8" D SPK
          Q
-AVF      S I=$E(CONDLP,4) I OBJ="VASE" S M=$S('I:144,1:29) Q:TOTING'["/VASE/"!'I  S M=145 D SPK S M=0 G AVDV^ADV4
-         I "BOTTL"[OBJ S O="BOTTL" D HERE G:OBJ=""&'$T AV0^ADV5 D LIQ S M=$S(O]"":105,'I:106,1:107) I M=107 S ^ADVG(G,"BOTTL","P")=$
-          E("102",I+1),L=1 D LIQ,CARRY:TOTING["/BOTTL/" S:O="OIL" M=108
+AVF      S I=$E(CONDLP,4) I OBJ="VASE" S M=$S('I:144,1:29) Q:TOTING'["/VASE/"!'I  S M=145 D SPK S M=0 G AVDV^C1GADV4
+         I "BOTTL"[OBJ S O="BOTTL" D HERE G:OBJ=""&'$T AV0^C1GADV5 D LIQ S M=$S(O]"":105,'I:106,1:107) I M=107 S ^C1GADV(71100.1,G,"
+          BOTTL","P")=$E("102",I+1),L=1 D LIQ,CARRY:TOTING["/BOTTL/" S:O="OIL" M=108
          Q
 AVK      I OBJ="BIRD" S M=100 Q
-         S J=$S(OBJ="TROLL":182,OBJ="DRAGO":102,1:0) I J=102,^ADVG(G,OBJ,"P") S J=110
+         S J=$S(OBJ="TROLL":182,OBJ="DRAGO":102,1:0) I J=102,^C1GADV(71100.1,G,OBJ,"P") S J=110
          I J S M=J Q
-         I OBJ="SNAKE" S M=102 Q:CLOSED  S O="BIRD" D HERE Q:'$T  S M=101,L=0,^ADVG(G,O,"P")=0,TALLY2=TALLY2+1 D MOVE Q
+         I OBJ="SNAKE" S M=102 Q:CLOSED  S O="BIRD" D HERE Q:'$T  S M=101,L=0,^C1GADV(71100.1,G,O,"P")=0,TALLY2=TALLY2+1 D MOVE Q
          I OBJ="DWARF" S O="FOOD" D HERE Q:'$T  S M=103 S:DFLAG<3 DFLAG=DFLAG+1 Q
-AVK3     I OBJ="BEAR" S P=^ADVG(G,OBJ,"P"),M=$S(P=0:102,P=3:110,1:M),O="FOOD" D HERE Q:'$T  S M=168,^ADVG(G,"AXE","P")=0,^("F")=0,^A
-          DVG(G,OBJ,"P")=1,L=0 D MOVE Q
+AVK3     I OBJ="BEAR" S P=^C1GADV(71100.1,G,OBJ,"P"),M=$S(P=0:102,P=3:110,1:M),O="FOOD" D HERE Q:'$T  S M=168,^C1GADV(71100.1,G,"AXE
+          ","P")=0,^("F")=0,^C1GADV(71100.1,G,OBJ,"P")=1,L=0 D MOVE Q
          S M=14 Q
 AVM      S J=$F("FEEFIEFOEFOOFUM",U1)\3,M=42 I FOOBAR-1+J S:FOOBAR M=151 Q
          I J-4 S FOOBAR=J,M=54 Q
-         S FOOBAR=0,O="EGGS",L=^ADVG(G,O,"L") Q:L=92!(LP=92&(TOTING["/EGGS/"))
-         I L=0,^ADVG(G,"TROLL","L")=0,^("P")=0 S ^("P")=1
+         S FOOBAR=0,O="EGGS",L=^C1GADV(71100.1,G,O,"L") Q:L=92!(LP=92&(TOTING["/EGGS/"))
+         I L=0,^C1GADV(71100.1,G,"TROLL","L")=0,^("P")=0 S ^("P")=1
          D HERE S M=0,L=92,P=$S(LP=92:0,$T:1,1:2) D MOVE,PSPK Q
 AVON     G:OBJ="BRIEF" AVONB
 AVON1    I OBJ'="LAMP" S M=13 Q
-AVONL    S O="LAMP" D HERE I  S M=184 I LIMIT'<0 S (LIT,^ADVG(G,O,"P"))=1,DARK=0,M=39 D SPK S M=0 I WZDARK S RET="SHOW^ADV2"
+AVONL    S O="LAMP" D HERE I  S M=184 I LIMIT'<0 S (LIT,^C1GADV(71100.1,G,O,"P"))=1,DARK=0,M=39 D SPK S M=0 I WZDARK S RET="SHOW^C1G
+          ADV2"
          Q
 AVONB    S ABB=10000,DETAIL=3,S=0,M=156 Q
 AVOF     G:OBJ="BRIEF" AVOFB
 AVOF1    I OBJ'="LAMP" S M=13 Q
-AVOFL    S O="LAMP" D HERE I  S (LIT,^ADVG(G,O,"P"))=0,M=40 D SPK S DARK='$E(CONDLP,3),M=$S(DARK:16,1:0)
+AVOFL    S O="LAMP" D HERE I  S (LIT,^C1GADV(71100.1,G,O,"P"))=0,M=40 D SPK S DARK='$E(CONDLP,3),M=$S(DARK:16,1:0)
          Q
 AVOFB    S ABB=5,DETAIL=0,S=1,M=54 Q
-AVS      D SC1^ADV8 W:S ! W !,"If you were to quit now, you would score ",SCORE," out of a possible ",MXSCOR,"."
-         S Q=143,(Y,N)=54 D YES S GAVEUP=$T,M=0 S:$T RET="SCORE^ADV8" Q
+AVS      D SC1^C1GADV8 W:S ! W !,"If you were to quit now, you would score ",SCORE," out of a possible ",MXSCOR,"."
+         S Q=143,(Y,N)=54 D YES S GAVEUP=$T,M=0 S:$T RET="SCORE^C1GADV8" Q
 AVV      S J=0 I DARK
          E  I CLOSED,TOTING["/OYSTE/" S OBJ="OYSTE",J=1
          E  S O="MAGAZ" D AVVJ
          E  S O="TABLE" D AVVJ
          E  S O="MESSA" D AVVJ
-         G:J-1 AV0^ADV5
-AVV1     I DARK S RET="OBNONE^ADV3" Q
+         G:J-1 AV0^C1GADV5
+AVV1     I DARK S RET="OBNONE^C1GADV3" Q
          S J=OBJ="OYSTE"&(TOTING["/OYSTE/")
          S M=$S(J&HINTED(2):194,OBJ="MESSA":191,OBJ="TABLE":196,OBJ="MAGAZ":190,1:M)
          I J,'HINTED(2) S Q=192,Y=193,N=54 D YES S HINTED(2)=$T,M=0
          Q
 AVVJ     D HERE I  S OBJ=O,J=J+1 I J>1
          Q
-AVZ      S SAVED=1,M=0 D PUTGAM^ADV Q
+AVZ      S SAVED=1,M=0 D PUTGAM^C1GADV Q
 YES      S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
          E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
          E  S M=N D:M SPK
          K M Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SA
-          VE,I+1,99)
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E
+          (SAVE,I+1,99)
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
 
 
-ADV6     * *  68 Lines,  3376 Bytes, Checksum: B14464219                                              Mar 25, 2016@18:33:25 page 46
+C1GADV6  * *  68 Lines,  3607 Bytes, Checksum: B16137883                                              Mar 26, 2016@00:08:30 page 46
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
          K I,N Q
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV6   *****
+*****   INDEX OF C1GADV6   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -2707,15 +2701,17 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
 >> W            KBD*
 >> WZDARK       AVONL
    Y            AVS+1*,AVV1+3*,YES,CARRYF*,CARRYF+1!
-   Z            DROP*,CARRYF*,CARRYF+1!
 
 
-*****   INDEX OF ADV6   *****                                                                         Mar 25, 2016@18:33:25 page 47
+*****   INDEX OF C1GADV6   *****                                                                      Mar 26, 2016@00:08:30 page 47
+
+Local Variables      Line Occurrences   ( >> not killed explicitly)
+                                        ( * Changed  ! Killed  ~ Newed)
+   Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               PSPK
-   ^ADV("t"            SPK
-   ^ADVG(              AVB,AVF+1*,AVK+1,AVK+3*,AVK3*,AVM+2,AVM+3,AVONL*,AVOFL*,DROP+1*,DR1,CARRY*,CARRYF,MOVE,HERE,LIQ
+   ^C1GADV(71100       SPK,PSPK
+   ^C1GADV(71100.1     AVB,AVF+1*,AVK+1,AVK+3*,AVK3*,AVM+2,AVM+3,AVONL*,AVOFL*,DROP+1*,DR1,CARRY*,CARRYF,MOVE,HERE,LIQ
 
 Naked Globals
    ^(           SPK,PSPK
@@ -2741,17 +2737,17 @@ Label References
    YES          AVS+1,AVV1+3,YES+1
 
 External References
-   PUTGAM^ADV          AVZ
-   TIMO^ADV            KBD
-   AVDV^ADV4           AVF
-   AV0^ADV5            AVF+1,AVV+5
-   SC1^ADV8            AVS
+   PUTGAM^C1GADV       AVZ
+   TIMO^C1GADV         KBD
+   AVDV^C1GADV4        AVF
+   AV0^C1GADV5         AVF+1,AVV+5
+   SC1^C1GADV8         AVS
 
 *****   END   *****
 
-ADV7   2590     printed  Mar 25, 2016@18:33:25                                                                             Page 48
+C1GADV7   2842     printed  Mar 26, 2016@00:08:30                                                                          Page 48
 
-ADV7      ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:16 PM
+C1GADV7   ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:16 PM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;FLH ; 24 JAN 83  12:16 PM
  +3       ; DJW/WV ;March 1, 2016
@@ -2777,7 +2773,7 @@ AVL        SET M=28
 AVL1       IF OBJ="CLAM"!(OBJ="OYSTE")
                GOTO AVL2
  +1        IF OBJ="DOOR"
-               SET M=$SELECT(^ADVG(G,OBJ,"P")=1:54,1:111)
+               SET M=$SELECT(^C1GADV(71100.1,G,OBJ,"P")=1:54,1:111)
  +2       IF '$TEST
                SET M=$SELECT(OBJ="CAGE":32,OBJ="KEYS":55,OBJ="GRATE":31,OBJ="CHAIN":31,1:M)
  +3        SET O="KEYS"
@@ -2794,7 +2790,7 @@ AVL1       IF OBJ="CLAM"!(OBJ="OYSTE")
                SET PANIC=1
                SET M=130
                QUIT 
- +5        SET M=^ADVG(G,"GRATE","P")+34
+ +5        SET M=^C1GADV(71100.1,G,"GRATE","P")+34
            SET (P,^("P"))=$SELECT(VERB="LOCK":0,1:1)
            SET M=2*P+M
            QUIT 
@@ -2813,41 +2809,41 @@ AVL2       SET J=OBJ="OYSTE"
                DO DROP
                SET O="PEARL"
 
-ADV7   2590     printed  Mar 25, 2016@18:33:25                                                                             Page 49
+C1GADV7   2842     printed  Mar 26, 2016@00:08:30                                                                          Page 49
 
                SET L=105
                DO DROP
  +3        QUIT 
-AVL3       SET P=^ADVG(G,"BEAR","P")
-           SET M=$SELECT(^ADVG(G,"CHAIN","P")=0:37,P=0:41,1:171)
+AVL3       SET P=^C1GADV(71100.1,G,"BEAR","P")
+           SET M=$SELECT(^C1GADV(71100.1,G,"CHAIN","P")=0:37,P=0:41,1:171)
  +1        IF M=171
-               SET ^ADVG(G,"CHAIN","P")=0
+               SET ^C1GADV(71100.1,G,"CHAIN","P")=0
                SET ^("F")=0
                if P-3
-                   SET (P,^ADVG(G,"BEAR","P"))=2
-               SET ^ADVG(G,"BEAR","F")=2-P
+                   SET (P,^C1GADV(71100.1,G,"BEAR","P"))=2
+               SET ^C1GADV(71100.1,G,"BEAR","F")=2-P
  +2        QUIT 
 AVL4       SET O="CHAIN"
            SET L=LP
-           SET M=$SELECT(L-130:173,^ADVG(G,O,"P"):34,1:172)
+           SET M=$SELECT(L-130:173,^C1GADV(71100.1,G,O,"P"):34,1:172)
  +1        IF M=172
-               SET ^ADVG(G,O,"P")=2
+               SET ^C1GADV(71100.1,G,O,"P")=2
                SET ^("F")=-1
                if TOTING["/CHAIN/"
                    DO DROP
  +2        QUIT 
  +3       ;
-AVT        if $LENGTH(^ADVG(G,LP,"O"),"/")-3
-               GOTO AV0^ADV5
+AVT        if $LENGTH(^C1GADV(71100.1,G,LP,"O"),"/")-3
+               GOTO AV0^C1GADV5
            IF DFLAG>1
                FOR DW=1:1:5
                    IF LD(DW)=LP
-                       GOTO AV0^ADV5
+                       GOTO AV0^C1GADV5
  +1        SET OBJ=$PIECE(^("O"),"/",2)
 AVT1       if TOTING[("/"_OBJ_"/")
                QUIT 
            SET M=25
-           SET F=^ADVG(G,OBJ,"F")
+           SET F=^C1GADV(71100.1,G,OBJ,"F")
            SET P=^("P")
  +1        IF OBJ="PLANT"
                IF P'>0
@@ -2858,7 +2854,7 @@ AVT1       if TOTING[("/"_OBJ_"/")
                        SET M=169
  +3       IF '$TEST
                IF OBJ="CHAIN"
-                   IF ^ADVG(G,"BEAR","P")
+                   IF ^C1GADV(71100.1,G,"BEAR","P")
                        SET M=170
  +4        if F
                QUIT 
@@ -2872,12 +2868,12 @@ AVT1       if TOTING[("/"_OBJ_"/")
            if $TEST&I
                GOTO AVT2
            SET I=TOTING["/BOTTL/"
-           SET P=^ADVG(G,O,"P")
+           SET P=^C1GADV(71100.1,G,O,"P")
  +6        if P=1&I
-               GOTO AVF^ADV6
+               GOTO AVF^C1GADV6
            SET M=$SELECT('I:104,P-1:105,1:M)
 
-ADV7   2590     printed  Mar 25, 2016@18:33:25                                                                             Page 50
+C1GADV7   2842     printed  Mar 26, 2016@00:08:30                                                                          Page 50
 
            QUIT 
 AVT2       IF HOLDNG>7
@@ -2887,7 +2883,7 @@ AVT2       IF HOLDNG>7
            IF OBJ'="BIRD"
                IF OBJ'="CAGE"
                    GOTO AVT3
- +2        SET P=^ADVG(G,"BIRD","P")
+ +2        SET P=^C1GADV(71100.1,G,"BIRD","P")
            IF OBJ="BIRD"
                IF P=0
                    SET M=26
@@ -2896,7 +2892,7 @@ AVT2       IF HOLDNG>7
                    SET M=27
                    if TOTING'["/CAGE/"
                        QUIT 
-                   SET (P,^ADVG(G,"BIRD","P"))=1
+                   SET (P,^C1GADV(71100.1,G,"BIRD","P"))=1
  +3        IF P
                SET O=$SELECT(OBJ="BIRD":"CAGE",1:"BIRD")
                DO CARRY
@@ -2905,7 +2901,7 @@ AVT3       SET O=OBJ
            DO LIQ
            IF O]""
                IF OBJ="BOTTL"
-                   SET ^ADVG(G,O,"L")=-1
+                   SET ^C1GADV(71100.1,G,O,"L")=-1
                    SET TOTING="/"_O_TOTING
                    SET HOLDNG=HOLDNG+1
  +1        SET M=54
@@ -2916,16 +2912,16 @@ DROP       FOR Z=2:1:HOLDNG+1
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -2933,31 +2929,31 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
 
-ADV7   2590     printed  Mar 25, 2016@18:33:25                                                                             Page 51
+C1GADV7   2842     printed  Mar 26, 2016@00:08:30                                                                          Page 51
 
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
-AT         IF ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT         IF ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
  +1        QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV7     * *  55 Lines,  2590 Bytes, Checksum: B9057952                                               Mar 25, 2016@18:33:25 page 52
+C1GADV7  * *  55 Lines,  2842 Bytes, Checksum: B10570717                                              Mar 26, 2016@00:08:30 page 52
               97 bytes in comments
-ADV7     ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:16 PM
+C1GADV7  ;ADVENTURE.  FLH, DJW/WV ; 24 JAN 83  12:16 PM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;FLH ; 24 JAN 83  12:16 PM
          ; DJW/WV ;March 1, 2016
@@ -2967,56 +2963,58 @@ AVL      S M=28 F O="CLAM","OYSTE" D HERE I  S OBJ=O
          S O="CHAIN" D HERE I  G:OBJ]"" AVT S OBJ=O
          Q:OBJ=""
 AVL1     I OBJ="CLAM"!(OBJ="OYSTE") G AVL2
-         I OBJ="DOOR" S M=$S(^ADVG(G,OBJ,"P")=1:54,1:111)
+         I OBJ="DOOR" S M=$S(^C1GADV(71100.1,G,OBJ,"P")=1:54,1:111)
          E  S M=$S(OBJ="CAGE":32,OBJ="KEYS":55,OBJ="GRATE":31,OBJ="CHAIN":31,1:M)
          S O="KEYS" D HERE Q:M-31!'$T  G:OBJ="CHAIN" AVL4:VERB="LOCK",AVL3
          I CLOSNG S:'PANIC CLK2=15 S PANIC=1,M=130 Q
-         S M=^ADVG(G,"GRATE","P")+34,(P,^("P"))=$S(VERB="LOCK":0,1:1),M=2*P+M Q
+         S M=^C1GADV(71100.1,G,"GRATE","P")+34,(P,^("P"))=$S(VERB="LOCK":0,1:1),M=2*P+M Q
 AVL2     S J=OBJ="OYSTE",M=$S(TOTING[("/"_OBJ_"/"):120,1:124)+J
          S:TOTING'["/TRIDE/" M=122+J S:VERB="LOCK" M=61
          I M=124 S O="CLAM",L=0 D MOVE S O="OYSTE",L=LP D DROP S O="PEARL",L=105 D DROP
          Q
-AVL3     S P=^ADVG(G,"BEAR","P"),M=$S(^ADVG(G,"CHAIN","P")=0:37,P=0:41,1:171)
-         I M=171 S ^ADVG(G,"CHAIN","P")=0,^("F")=0 S:P-3 (P,^ADVG(G,"BEAR","P"))=2 S ^ADVG(G,"BEAR","F")=2-P
+AVL3     S P=^C1GADV(71100.1,G,"BEAR","P"),M=$S(^C1GADV(71100.1,G,"CHAIN","P")=0:37,P=0:41,1:171)
+         I M=171 S ^C1GADV(71100.1,G,"CHAIN","P")=0,^("F")=0 S:P-3 (P,^C1GADV(71100.1,G,"BEAR","P"))=2 S ^C1GADV(71100.1,G,"BEAR","F
+          ")=2-P
          Q
-AVL4     S O="CHAIN",L=LP,M=$S(L-130:173,^ADVG(G,O,"P"):34,1:172)
-         I M=172 S ^ADVG(G,O,"P")=2,^("F")=-1 D:TOTING["/CHAIN/" DROP
+AVL4     S O="CHAIN",L=LP,M=$S(L-130:173,^C1GADV(71100.1,G,O,"P"):34,1:172)
+         I M=172 S ^C1GADV(71100.1,G,O,"P")=2,^("F")=-1 D:TOTING["/CHAIN/" DROP
          Q
          ;
-AVT      G:$L(^ADVG(G,LP,"O"),"/")-3 AV0^ADV5 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP G AV0^ADV5
+AVT      G:$L(^C1GADV(71100.1,G,LP,"O"),"/")-3 AV0^C1GADV5 I DFLAG>1 F DW=1:1:5 I LD(DW)=LP G AV0^C1GADV5
          S OBJ=$P(^("O"),"/",2)
-AVT1     Q:TOTING[("/"_OBJ_"/")  S M=25,F=^ADVG(G,OBJ,"F"),P=^("P")
+AVT1     Q:TOTING[("/"_OBJ_"/")  S M=25,F=^C1GADV(71100.1,G,OBJ,"F"),P=^("P")
          I OBJ="PLANT",P'>0 S M=115
          E  I OBJ="BEAR",P=1 S M=169
-         E  I OBJ="CHAIN",^ADVG(G,"BEAR","P") S M=170
+         E  I OBJ="CHAIN",^C1GADV(71100.1,G,"BEAR","P") S M=170
          Q:F  I OBJ'="WATER",OBJ'="OIL" G AVT2
-         D LIQ S I=O=OBJ,(O,OBJ)="BOTTL" D HERE G:$T&I AVT2 S I=TOTING["/BOTTL/",P=^ADVG(G,O,"P")
-         G:P=1&I AVF^ADV6 S M=$S('I:104,P-1:105,1:M) Q
+         D LIQ S I=O=OBJ,(O,OBJ)="BOTTL" D HERE G:$T&I AVT2 S I=TOTING["/BOTTL/",P=^C1GADV(71100.1,G,O,"P")
+         G:P=1&I AVF^C1GADV6 S M=$S('I:104,P-1:105,1:M) Q
 AVT2     I HOLDNG>7 S M=92 Q
          S L=LP I OBJ'="BIRD",OBJ'="CAGE" G AVT3
-         S P=^ADVG(G,"BIRD","P") I OBJ="BIRD",P=0 S M=26 Q:TOTING["/ROD/"  S M=27 Q:TOTING'["/CAGE/"  S (P,^ADVG(G,"BIRD","P"))=1
+         S P=^C1GADV(71100.1,G,"BIRD","P") I OBJ="BIRD",P=0 S M=26 Q:TOTING["/ROD/"  S M=27 Q:TOTING'["/CAGE/"  S (P,^C1GADV(71100.1
+          ,G,"BIRD","P"))=1
          I P S O=$S(OBJ="BIRD":"CAGE",1:"BIRD") D CARRY
-AVT3     S O=OBJ D CARRY,LIQ I O]"",OBJ="BOTTL" S ^ADVG(G,O,"L")=-1,TOTING="/"_O_TOTING,HOLDNG=HOLDNG+1
+AVT3     S O=OBJ D CARRY,LIQ I O]"",OBJ="BOTTL" S ^C1GADV(71100.1,G,O,"L")=-1,TOTING="/"_O_TOTING,HOLDNG=HOLDNG+1
          S M=54 Q
          ;
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-AT       I ^ADVG(G,O,"L")=LP!(^("F")=LP)
+AT       I ^C1GADV(71100.1,G,O,"L")=LP!(^("F")=LP)
          Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV7   *****
+*****   INDEX OF C1GADV7   *****
 
 
-*****   INDEX OF ADV7   *****                                                                         Mar 25, 2016@18:33:25 page 53
+*****   INDEX OF C1GADV7   *****                                                                      Mar 26, 2016@00:08:30 page 53
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
                                         ( * Changed  ! Killed  ~ Newed)
@@ -3047,7 +3045,7 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADVG(              AVL1+1,AVL1+5,AVL3,AVL3+1*,AVL4,AVL4+1*,AVT,AVT1,AVT1+3,AVT1+5,AVT2+2*,AVT3*,DROP+1*,DR1,CARRY*,CARRYF,MOVE
+   ^C1GADV(71100.1     AVL1+1,AVL1+5,AVL3,AVL3+1*,AVL4,AVL4+1*,AVT,AVT1,AVT1+3,AVT1+5,AVT2+2*,AVT3*,DROP+1*,DR1,CARRY*,CARRYF,MOVE
                        HERE,AT,LIQ
 
 Naked Globals
@@ -3073,28 +3071,28 @@ Label References
    MOVE         AVL2+2
 
 External References
-   AV0^ADV5            AVT
-   AVF^ADV6            AVT1+6
+   AV0^C1GADV5         AVT
+   AVF^C1GADV6         AVT1+6
 
 *****   END   *****
 
-ADV8   2927     printed  Mar 25, 2016@18:33:25                                                                             Page 54
+C1GADV8   3149     printed  Mar 26, 2016@00:08:30                                                                          Page 54
 
-ADV8      ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:00 AM
+C1GADV8   ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:00 AM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;FLH ; 04 FEB 83  4:00 AM
  +3       ; DJW/WV ;March 1, 2016
 CLOSEUP    FOR O="GRATE","FISSU"
-               SET ^ADVG(G,O,"P")=0
+               SET ^C1GADV(71100.1,G,O,"P")=0
  +1        FOR O="CHAIN","AXE"
-               SET ^ADVG(G,O,"P")=0
+               SET ^C1GADV(71100.1,G,O,"P")=0
                SET ^("F")=0
  +2        FOR DW=1:1:6
                SET (DSEEN(DW),LD(DW))=0
- +3        DO TROLLX^ADV4
+ +3        DO TROLLX^C1GADV4
            SET O="BEAR"
            SET L=0
-           IF ^ADVG(G,O,"P")-3
+           IF ^C1GADV(71100.1,G,O,"P")-3
                DO MOVE
  +4        SET CLK1=-1
            SET CLOSNG=1
@@ -3116,7 +3114,7 @@ CLOSED     SET (L,LP,LP1,LNEW)=115
            SET P=-2
            FOR O="SNAKE","BIRD"
                DO CL1
- +4        SET ^ADVG(G,"MIRRO","F")=116
+ +4        SET ^C1GADV(71100.1,G,"MIRRO","F")=116
            SET CLOSED=1
            SET BONUS=10
            SET M=132
@@ -3127,7 +3125,7 @@ CLOSED     SET (L,LP,LP1,LNEW)=115
                    QUIT 
                DO DROP
  +6        QUIT 
-CL1        SET ^ADVG(G,O,"P")=P
+CL1        SET ^C1GADV(71100.1,G,O,"P")=P
            DO MOVE
            QUIT 
 LAMP       SET O="LAMP"
@@ -3137,12 +3135,12 @@ LAMP       SET O="LAMP"
                SET O="BATTE"
                DO HERE
               IF $TEST
-                   IF ^ADVG(G,O,"P")=0
+                   IF ^C1GADV(71100.1,G,O,"P")=0
  +1       IF $TEST
                SET ^("P")=1
                SET LIMIT=LIMIT+2500
 
-ADV8   2927     printed  Mar 25, 2016@18:33:25                                                                             Page 55
+C1GADV8   3149     printed  Mar 26, 2016@00:08:30                                                                          Page 55
 
                SET LMWARN=0
                SET L=LP
@@ -3152,7 +3150,7 @@ ADV8   2927     printed  Mar 25, 2016@18:33:25                                  
                    DO DROP
                QUIT 
  +2        IF LIMIT=0
-               SET (LIT,^ADVG(G,"LAMP","P"))=0
+               SET (LIT,^C1GADV(71100.1,G,"LAMP","P"))=0
                SET LIMIT=-1
                SET M=184
                if I
@@ -3167,7 +3165,7 @@ ADV8   2927     printed  Mar 25, 2016@18:33:25                                  
  +4        IF I
                IF 'LMWARN
                    SET LMWARN=1
-                   SET M=$SELECT(^ADVG(G,"BATTE","P")=1:189,^("L")=0:183,1:187)
+                   SET M=$SELECT(^C1GADV(71100.1,G,"BATTE","P")=1:189,^("L")=0:183,1:187)
                    DO SPK
  +5        QUIT 
 DEAD       IF CLOSNG
@@ -3183,38 +3181,38 @@ DEAD       IF CLOSNG
            IF NUMDIE=3!'$TEST
                GOTO SCORE
  +2        FOR O="WATER","OIL"
-               SET ^ADVG(G,O,"L")=0
+               SET ^C1GADV(71100.1,G,O,"L")=0
  +3        IF TOTING["/LAMP/"
                SET O="LAMP"
                SET L=1
-               SET (LIT,^ADVG(G,O,"P"))=0
+               SET (LIT,^C1GADV(71100.1,G,O,"P"))=0
                DO DROP
  +4        SET L=LP2
            FOR J=1:1:HOLDNG
                SET O=$PIECE(TOTING,"/",2)
                DO DROP
  +5        SET (LP,LP2,LNEW)=3
-           GOTO NEWLP^ADV2
+           GOTO NEWLP^C1GADV2
  +6       ;
 SCORE      DO SC1
            if S
                WRITE !
            WRITE !,"You scored ",SCORE," out of a possible ",MXSCOR,", using ",TURNS," turns."
- +1        SET I=$ORDER(^ADV("s",SCORE))
+ +1        SET I=$ORDER(^C1GADV(71100,"s",SCORE))
            WRITE !,^(I)
  +2        IF I<9999
                WRITE !,"To achieve the next higher rating, you need ",I-SCORE," points."
- +3        GOTO ENDGAM^ADV
+ +3        GOTO ENDGAM^C1GADV
 SC1 
 
-ADV8   2927     printed  Mar 25, 2016@18:33:25                                                                             Page 56
+C1GADV8   3149     printed  Mar 26, 2016@00:08:30                                                                          Page 56
 
            SET (SCORE,MXSCOR)=2
  +1        FOR J=2:1:$LENGTH(TR,"/")-1
                SET N=$SELECT(J>7:16,J=7:14,1:12)
                SET MXSCOR=MXSCOR+N
                SET O=$PIECE(TR,"/",J)
-               SET P=^ADVG(G,O,"P")
+               SET P=^C1GADV(71100.1,G,O,"P")
                SET SCORE=SCORE+$SELECT(^("L")=3&'P:N,P'<0:2,1:0)
  +2        FOR I=1:1:6
                SET Y=$TEXT(SC2+I)
@@ -3225,14 +3223,14 @@ ADV8   2927     printed  Mar 25, 2016@18:33:25                                  
                    SET SCORE=SCORE+N
  +3        FOR I=2:1:9
                IF HINTED(I)
-                   SET SCORE=SCORE-$PIECE(^ADV("h",I),"/",2)
+                   SET SCORE=SCORE-$PIECE(^C1GADV(71100,"h",I),"/",2)
 SC2        QUIT 
  +1       ;N=30;S N=30-(NUMDIE*10) I 1;
  +2       ;N=4;I VERB'="SCORE",'GAVEUP;
  +3       ;N=25;I DFLAG;
  +4       ;N=25;I CLOSNG;
  +5       ;N=BONUS;I 1;
- +6       ;N=1;I ^ADVG(G,"MAGAZ","L")=108;
+ +6       ;N=1;I ^C1GADV(71100.1,G,"MAGAZ","L")=108;
 YES        SET M=Q
            DO SPK
            DO KBD
@@ -3254,7 +3252,7 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
            SET SAVE=W
            FOR I=1:1
                if SAVE?.CNPU
@@ -3265,28 +3263,28 @@ KBD        if S
            QUIT 
 SPK        if S
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
 DROP       FOR Z=2:1:HOLDNG+1
 
-ADV8   2927     printed  Mar 25, 2016@18:33:25                                                                             Page 57
+C1GADV8   3149     printed  Mar 26, 2016@00:08:30                                                                          Page 57
 
                IF $PIECE(TOTING,"/",Z)=O
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -3294,90 +3292,90 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
 
 
-ADV8     * *  63 Lines,  2927 Bytes, Checksum: B10710759                                              Mar 25, 2016@18:33:25 page 58
-              226 bytes in comments
-ADV8     ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:00 AM
+C1GADV8  * *  63 Lines,  3149 Bytes, Checksum: B11788934                                              Mar 26, 2016@00:08:30 page 58
+              236 bytes in comments
+C1GADV8  ;ADVENTURE.  FLH, DJW/WV ; 04 FEB 83  4:00 AM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;FLH ; 04 FEB 83  4:00 AM
          ; DJW/WV ;March 1, 2016
-CLOSEUP  F O="GRATE","FISSU" S ^ADVG(G,O,"P")=0
-         F O="CHAIN","AXE" S ^ADVG(G,O,"P")=0,^("F")=0
+CLOSEUP  F O="GRATE","FISSU" S ^C1GADV(71100.1,G,O,"P")=0
+         F O="CHAIN","AXE" S ^C1GADV(71100.1,G,O,"P")=0,^("F")=0
          F DW=1:1:6 S (DSEEN(DW),LD(DW))=0
-         D TROLLX^ADV4 S O="BEAR",L=0 I ^ADVG(G,O,"P")-3 D MOVE
+         D TROLLX^C1GADV4 S O="BEAR",L=0 I ^C1GADV(71100.1,G,O,"P")-3 D MOVE
          S CLK1=-1,CLOSNG=1,M=129 D SPK Q
 CLOSED   S (L,LP,LP1,LNEW)=115,P=-2,O="BOTTL" D CL1
          S P=-1 F O="PLANT","OYSTE","LAMP","ROD","DWARF","MIRRO" D CL1
          S L=116 F O="CAGE","ROD2","PILLO" D CL1
          S O="GRATE" D MOVE S P=-2 F O="SNAKE","BIRD" D CL1
-         S ^ADVG(G,"MIRRO","F")=116,CLOSED=1,BONUS=10,M=132 D SPK
+         S ^C1GADV(71100.1,G,"MIRRO","F")=116,CLOSED=1,BONUS=10,M=132 D SPK
          F L=0:0 S O=$P(TOTING,"/",2) Q:O=""  D DROP
          Q
-CL1      S ^ADVG(G,O,"P")=P D MOVE Q
-LAMP     S O="LAMP" D HERE S I=$T I  S O="BATTE" D HERE I  I ^ADVG(G,O,"P")=0
+CL1      S ^C1GADV(71100.1,G,O,"P")=P D MOVE Q
+LAMP     S O="LAMP" D HERE S I=$T I  S O="BATTE" D HERE I  I ^C1GADV(71100.1,G,O,"P")=0
          I  S ^("P")=1,LIMIT=LIMIT+2500,LMWARN=0,L=LP,M=188 D SPK,DROP:TOTING["/BATTE/" Q
-         I LIMIT=0 S (LIT,^ADVG(G,"LAMP","P"))=0,LIMIT=-1,M=184 D:I SPK Q
+         I LIMIT=0 S (LIT,^C1GADV(71100.1,G,"LAMP","P"))=0,LIMIT=-1,M=184 D:I SPK Q
          I LIMIT<0,LP<9 S GAVEUP=1,M=185 D SPK Q
-         I I,'LMWARN S LMWARN=1,M=$S(^ADVG(G,"BATTE","P")=1:189,^("L")=0:183,1:187) D SPK
+         I I,'LMWARN S LMWARN=1,M=$S(^C1GADV(71100.1,G,"BATTE","P")=1:189,^("L")=0:183,1:187) D SPK
          Q
 DEAD     I CLOSNG S NUMDIE=NUMDIE+1,M=131 D SPK G SCORE
          S Q=NUMDIE*2+81,Y=Q+1,N=54,NUMDIE=NUMDIE+1 D YES I NUMDIE=3!'$T G SCORE
-         F O="WATER","OIL" S ^ADVG(G,O,"L")=0
-         I TOTING["/LAMP/" S O="LAMP",L=1,(LIT,^ADVG(G,O,"P"))=0 D DROP
+         F O="WATER","OIL" S ^C1GADV(71100.1,G,O,"L")=0
+         I TOTING["/LAMP/" S O="LAMP",L=1,(LIT,^C1GADV(71100.1,G,O,"P"))=0 D DROP
          S L=LP2 F J=1:1:HOLDNG S O=$P(TOTING,"/",2) D DROP
-         S (LP,LP2,LNEW)=3 G NEWLP^ADV2
+         S (LP,LP2,LNEW)=3 G NEWLP^C1GADV2
          ;
 SCORE    D SC1 W:S ! W !,"You scored ",SCORE," out of a possible ",MXSCOR,", using ",TURNS," turns."
-         S I=$O(^ADV("s",SCORE)) W !,^(I)
+         S I=$O(^C1GADV(71100,"s",SCORE)) W !,^(I)
          I I<9999 W !,"To achieve the next higher rating, you need ",I-SCORE," points."
-         G ENDGAM^ADV
+         G ENDGAM^C1GADV
 SC1      S (SCORE,MXSCOR)=2
-         F J=2:1:$L(TR,"/")-1 S N=$S(J>7:16,J=7:14,1:12),MXSCOR=MXSCOR+N,O=$P(TR,"/",J),P=^ADVG(G,O,"P"),SCORE=SCORE+$S(^("L")=3&'P:
-          N,P'<0:2,1:0)
+         F J=2:1:$L(TR,"/")-1 S N=$S(J>7:16,J=7:14,1:12),MXSCOR=MXSCOR+N,O=$P(TR,"/",J),P=^C1GADV(71100.1,G,O,"P"),SCORE=SCORE+$S(^(
+          "L")=3&'P:N,P'<0:2,1:0)
          F I=1:1:6 S Y=$T(SC2+I),@$P(Y,";",2),MXSCOR=MXSCOR+N X $P(Y,";",3) I  S SCORE=SCORE+N
-         F I=2:1:9 I HINTED(I) S SCORE=SCORE-$P(^ADV("h",I),"/",2)
+         F I=2:1:9 I HINTED(I) S SCORE=SCORE-$P(^C1GADV(71100,"h",I),"/",2)
 SC2      Q
          ;N=30;S N=30-(NUMDIE*10) I 1;
          ;N=4;I VERB'="SCORE",'GAVEUP;
          ;N=25;I DFLAG;
          ;N=25;I CLOSNG;
          ;N=BONUS;I 1;
-         ;N=1;I ^ADVG(G,"MAGAZ","L")=108;
+         ;N=1;I ^C1GADV(71100.1,G,"MAGAZ","L")=108;
 YES      S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
          E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
          E  S M=N D:M SPK
          K M Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SA
-          VE,I+1,99)
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E
+          (SAVE,I+1,99)
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
 
 
-ADV8     * *  63 Lines,  2927 Bytes, Checksum: B10710759                                              Mar 25, 2016@18:33:25 page 59
+C1GADV8  * *  63 Lines,  3149 Bytes, Checksum: B11788934                                              Mar 26, 2016@00:08:30 page 59
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
 
-*****   INDEX OF ADV8   *****
+*****   INDEX OF C1GADV8   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -3423,14 +3421,14 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV("h"            SC1+3
-   ^ADV("s"            SCORE+1
-   ^ADV("t"            SPK
-   ^ADVG(              CLOSEUP*,CLOSEUP+1*,CLOSEUP+3,CLOSED+4*,CL1*,LAMP,LAMP+2*,LAMP+4,DEAD+2*,DEAD+3*,SC1+1,DROP+1*,DR1,CARRY*
+   ^C1GADV(71100       SCORE+1,SC1+3,SPK
+   ^C1GADV(71100.1     CLOSEUP*,CLOSEUP+1*,CLOSEUP+3,CLOSED+4*,CL1*,LAMP,LAMP+2*,LAMP+4,DEAD+2*,DEAD+3*,SC1+1,DROP+1*,DR1,CARRY*
                        CARRYF,MOVE,HERE
+
+Naked Globals
 
 
-*****   INDEX OF ADV8   *****                                                                         Mar 25, 2016@18:33:25 page 60
+*****   INDEX OF C1GADV8   *****                                                                      Mar 26, 2016@00:08:30 page 60
 
 Naked Globals
    ^(           SCORE+1,SPK
@@ -3455,16 +3453,16 @@ Label References
    YES          DEAD+1,YES+1
 
 External References
-   ENDGAM^ADV          SCORE+3
-   TIMO^ADV            KBD
-   NEWLP^ADV2          DEAD+5
-   TROLLX^ADV4         CLOSEUP+3
+   ENDGAM^C1GADV       SCORE+3
+   TIMO^C1GADV         KBD
+   NEWLP^C1GADV2       DEAD+5
+   TROLLX^C1GADV4      CLOSEUP+3
 
 *****   END   *****
 
-ADV9   2931     printed  Mar 25, 2016@18:33:25                                                                             Page 61
+C1GADV9   3204     printed  Mar 26, 2016@00:08:30                                                                          Page 61
 
-ADV9      ;ADVENTURE.  FLH, DJW/WV ; 29 DEC 82  8:52 AM
+C1GADV9   ;ADVENTURE.  FLH, DJW/WV ; 29 DEC 82  8:52 AM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;FLH ; 29 DEC 82  8:52 AM
  +3       ; DJW/WV ;March 1, 2016
@@ -3473,7 +3471,7 @@ HINT       DO @("HINT"_J)
                if J=5
                    QUIT 
                GOTO HI1
- +1        SET X=^ADV("h",J)
+ +1        SET X=^C1GADV(71100,"h",J)
            SET P=$PIECE(X,"/",2)
            SET Q=$PIECE(X,"/",3)
            SET Y=0
@@ -3493,7 +3491,7 @@ HINT       DO @("HINT"_J)
                    SET LIMIT=30*P+LIMIT
 HI1        SET HINTLC(J)=0
            QUIT 
-HINT4      IF ^ADVG(G,"GRATE","P")=0
+HINT4      IF ^C1GADV(71100.1,G,"GRATE","P")=0
                SET O="KEYS"
                DO HERE
                IF '$TEST
@@ -3515,18 +3513,18 @@ HINT7      SET I=HOLDNG>1
                if 'I
                    QUIT 
                IF L>0
-                   SET I=^ADVG(G,L,"O")="/"
+                   SET I=^C1GADV(71100.1,G,L,"O")="/"
  +1        IF I
  +2        KILL I
            QUIT 
-HINT8      IF ^ADVG(G,"EMERA","P")=-1
-               IF ^ADVG(G,"PLATI","P")=-1
+HINT8      IF ^C1GADV(71100.1,G,"EMERA","P")=-1
+               IF ^C1GADV(71100.1,G,"PLATI","P")=-1
  +1        QUIT 
 HINT9      IF 1
  +1        QUIT 
 TRS1       IF "/EMERA/"'[TOTING
 
-ADV9   2931     printed  Mar 25, 2016@18:33:25                                                                             Page 62
+C1GADV9   3204     printed  Mar 26, 2016@00:08:30                                                                          Page 62
 
                SET M=117
                DO SPK
@@ -3539,7 +3537,7 @@ TRS2       SET O="EMERA"
            DO DROP
            QUIT 
 TRS3       SET O="TROLL"
-           IF ^ADVG(G,O,"P")=1
+           IF ^C1GADV(71100.1,G,O,"P")=1
                SET ^("P")=0
                SET P=1
                DO PSPK
@@ -3559,21 +3557,21 @@ TRS3       SET O="TROLL"
                SET ^("P")=1
            if TOTING'["/BEAR/"
                QUIT 
- +2        SET ^ADVG(G,"CHASM","P")=1
-           SET ^ADVG(G,"TROLL","P")=2
+ +2        SET ^C1GADV(71100.1,G,"CHASM","P")=1
+           SET ^C1GADV(71100.1,G,"TROLL","P")=2
            SET O="BEAR"
            SET L=LNEW
            SET M=162
            DO DROP
            DO SPK
-           SET ^ADVG(G,O,"F")=-1
+           SET ^C1GADV(71100.1,G,O,"F")=-1
            SET ^("P")=3
- +3        if ^ADVG(G,"SPICE","P")<0
+ +3        if ^C1GADV(71100.1,G,"SPICE","P")<0
                SET TALLY2=TALLY2+1
            SET LP2=LNEW
-           SET RET="DEAD^ADV8"
+           SET RET="DEAD^C1GADV8"
            QUIT 
-TRB        SET L3=$SELECT($EXTRACT(^ADV(LP1,"c")):LP2,1:LP1)
+TRB        SET L3=$SELECT($EXTRACT(^C1GADV(71100,LP1,"c")):LP2,1:LP1)
            SET LP2=LP1
            SET LP1=LP
            IF L3=LP
@@ -3582,7 +3580,7 @@ TRB        SET L3=$SELECT($EXTRACT(^ADV(LP1,"c")):LP2,1:LP1)
  +1       IF '$TEST
                SET MOV="A"
                FOR Z=0:0
-                   SET MOV=$ORDER(^ADV(LP,MOV))
+                   SET MOV=$ORDER(^C1GADV(71100,LP,MOV))
                    if MOV]"ZZ"
                        QUIT 
                    FOR J=1:1:^(MOV,0)
@@ -3590,7 +3588,7 @@ TRB        SET L3=$SELECT($EXTRACT(^ADV(LP1,"c")):LP2,1:LP1)
                        IF $PIECE(Y,"\",2)="TR2"
                            SET L=$PIECE(Y,"\",3)
 
-ADV9   2931     printed  Mar 25, 2016@18:33:25                                                                             Page 63
+C1GADV9   3204     printed  Mar 26, 2016@00:08:30                                                                          Page 63
 
                            SET LL(L)=""
                            IF L=L3
@@ -3602,7 +3600,7 @@ ADV9   2931     printed  Mar 25, 2016@18:33:25                                  
                    SET L=$ORDER(LL(L))
                    if L=""
                        QUIT 
-                   IF $DATA(^ADV(L,"FORCED",1))
+                   IF $DATA(^C1GADV(71100,L,"FORCED",1))
                        IF $PIECE(^(1),"\",3)=L3
                            SET LNEW=L3
                            QUIT 
@@ -3619,7 +3617,7 @@ TRL        IF DETAIL<3
                DO SPK
  +1        SET DETAIL=DETAIL+1
            SET WZDARK=0
-           SET ^ADVG(G,LP,"A")=0
+           SET ^C1GADV(71100.1,G,LP,"A")=0
            QUIT 
 TRN        QUIT 
 YES        SET M=Q
@@ -3643,7 +3641,7 @@ KBD        if S
                WRITE !
            READ !,W:600
            if '$TEST
-               GOTO TIMO^ADV
+               GOTO TIMO^C1GADV
            SET SAVE=W
            FOR I=1:1
                if SAVE?.CNPU
@@ -3654,14 +3652,14 @@ KBD        if S
            QUIT 
 SPK        if S
 
-ADV9   2931     printed  Mar 25, 2016@18:33:25                                                                             Page 64
+C1GADV9   3204     printed  Mar 26, 2016@00:08:30                                                                          Page 64
 
                WRITE !
-           FOR I=1:1:^ADV("t",M,0)
+           FOR I=1:1:^C1GADV(71100,"t",M,0)
                WRITE !,^(I)
  +1        KILL I
            QUIT 
-PSPK       SET N=^ADV(O,P,0)
+PSPK       SET N=^C1GADV(71100,O,P,0)
            IF N
                if S
                    WRITE !
@@ -3669,23 +3667,23 @@ PSPK       SET N=^ADV(O,P,0)
                    WRITE !,^(I)
  +1        KILL I,N
            QUIT 
-DROPF      SET ^ADVG(G,O,"F")=L
+DROPF      SET ^C1GADV(71100.1,G,O,"F")=L
            GOTO DR1
 DROP       FOR Z=2:1:HOLDNG+1
                IF $PIECE(TOTING,"/",Z)=O
                    SET TOTING=$PIECE(TOTING,"/",1,Z-1)_"/"_$PIECE(TOTING,"/",Z+1,99)
                    SET HOLDNG=HOLDNG-1
                    QUIT 
- +1        SET ^ADVG(G,O,"L")=L
+ +1        SET ^C1GADV(71100.1,G,O,"L")=L
 DR1        IF L>0
-               SET ^("O")="/"_O_^ADVG(G,L,"O")
+               SET ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
  +1        QUIT 
 CARRY      if TOTING[("/"_O_"/")
                QUIT 
-           SET ^ADVG(G,O,"L")=-1
+           SET ^C1GADV(71100.1,G,O,"L")=-1
            SET HOLDNG=HOLDNG+1
            SET TOTING="/"_O_TOTING
-CARRYF     SET Y=^ADVG(G,L,"O")
+CARRYF     SET Y=^C1GADV(71100.1,G,L,"O")
            FOR Z=2:1:$LENGTH(Y,"/")-1
                IF $PIECE(Y,"/",Z)=O
                    SET ^("O")=$PIECE(Y,"/",1,Z-1)_"/"_$PIECE(Y,"/",Z+1,99)
@@ -3693,62 +3691,62 @@ CARRYF     SET Y=^ADVG(G,L,"O")
  +1        KILL Y,Z
            QUIT 
 MOVEF      SET MOL=L
-           SET L=^ADVG(G,O,"F")
+           SET L=^C1GADV(71100.1,G,O,"F")
            if L>0
                DO CARRYF
            SET L=MOL
            DO DROPF
            QUIT 
 MOVE       SET MOL=L
-           SET L=^ADVG(G,O,"L")
+           SET L=^C1GADV(71100.1,G,O,"L")
            if L>0
                DO CARRY
            SET L=MOL
            DO DROP
            QUIT 
-HERE       SET L=^ADVG(G,O,"L")
+HERE       SET L=^C1GADV(71100.1,G,O,"L")
            IF L<0!(L=LP)
  +1        KILL L
            QUIT 
-JUGGLE     SET L=^ADVG(G,O,"L")
+JUGGLE     SET L=^C1GADV(71100.1,G,O,"L")
            IF L>0
-               SET X=^ADVG(G,L,"O")
+               SET X=^C1GADV(71100.1,G,L,"O")
                SET K=$FIND(X,"/"_O_"/")
                IF K
                    SET ^("O")="/"_O_$EXTRACT(X,1,K-$LENGTH(O)-2)_$EXTRACT(X,K,255)
  +1        KILL K,L,X
 
-ADV9   2931     printed  Mar 25, 2016@18:33:25                                                                             Page 65
+C1GADV9   3204     printed  Mar 26, 2016@00:08:30                                                                          Page 65
 
            QUIT 
-LIQ        SET O=^ADVG(G,"BOTTL","P")
+LIQ        SET O=^C1GADV(71100.1,G,"BOTTL","P")
            if O<0
                SET O=-1-O
            SET O=$PIECE("WATER//OIL","/",O+1)
            QUIT 
 
 
-ADV9     * *  64 Lines,  2931 Bytes, Checksum: B12201319                                              Mar 25, 2016@18:33:25 page 66
+C1GADV9  * *  64 Lines,  3204 Bytes, Checksum: B13991189                                              Mar 26, 2016@00:08:30 page 66
               93 bytes in comments
-ADV9     ;ADVENTURE.  FLH, DJW/WV ; 29 DEC 82  8:52 AM
+C1GADV9  ;ADVENTURE.  FLH, DJW/WV ; 29 DEC 82  8:52 AM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;FLH ; 29 DEC 82  8:52 AM
          ; DJW/WV ;March 1, 2016
 HINT     D @("HINT"_J) E  Q:J=5  G HI1
-         S X=^ADV("h",J),P=$P(X,"/",2),Q=$P(X,"/",3),Y=0,N=54 D YES E  Q
+         S X=^C1GADV(71100,"h",J),P=$P(X,"/",2),Q=$P(X,"/",3),Y=0,N=54 D YES E  Q
          W:S ! W !,"I am prepared to give you a hint, but it will cost you ",P," points."
          S Q=175,Y=$P(X,"/",4) D YES S HINTED(J)=$T I  I LIMIT>30 S LIMIT=30*P+LIMIT
 HI1      S HINTLC(J)=0 Q
-HINT4    I ^ADVG(G,"GRATE","P")=0 S O="KEYS" D HERE I '$T
+HINT4    I ^C1GADV(71100.1,G,"GRATE","P")=0 S O="KEYS" D HERE I '$T
          Q
 HINT5    I OBJ="BIRD" S O=OBJ D HERE I  I TOTING["/ROD/"
          Q
 HINT6    S O="BIRD" D HERE I '$T S O="SNAKE" D HERE
          Q
-HINT7    S I=HOLDNG>1 F L=LP,LP1,LP2 Q:'I  I L>0 S I=^ADVG(G,L,"O")="/"
+HINT7    S I=HOLDNG>1 F L=LP,LP1,LP2 Q:'I  I L>0 S I=^C1GADV(71100.1,G,L,"O")="/"
          I I
          K I Q
-HINT8    I ^ADVG(G,"EMERA","P")=-1,^ADVG(G,"PLATI","P")=-1
+HINT8    I ^C1GADV(71100.1,G,"EMERA","P")=-1,^C1GADV(71100.1,G,"PLATI","P")=-1
          Q
 HINT9    I 1
          Q
@@ -3756,52 +3754,54 @@ TRS1     I "/EMERA/"'[TOTING S M=117 D SPK
          E  S LNEW=199-LP
          Q
 TRS2     S O="EMERA",L=LP,RET="TR1" D DROP Q
-TRS3     S O="TROLL" I ^ADVG(G,O,"P")=1 S ^("P")=0,P=1 D PSPK S L=117 D MOVE S L=122 D MOVEF S O="TROLL2",L=0 D MOVE,MOVEF S O="CHAS
-          M" D JUGGLE Q
+TRS3     S O="TROLL" I ^C1GADV(71100.1,G,O,"P")=1 S ^("P")=0,P=1 D PSPK S L=117 D MOVE S L=122 D MOVEF S O="TROLL2",L=0 D MOVE,MOVEF
+           S O="CHASM" D JUGGLE Q
          S LNEW=239-LP S:^("P")=0 ^("P")=1 Q:TOTING'["/BEAR/"
-         S ^ADVG(G,"CHASM","P")=1,^ADVG(G,"TROLL","P")=2,O="BEAR",L=LNEW,M=162 D DROP,SPK S ^ADVG(G,O,"F")=-1,^("P")=3
-         S:^ADVG(G,"SPICE","P")<0 TALLY2=TALLY2+1 S LP2=LNEW,RET="DEAD^ADV8" Q
-TRB      S L3=$S($E(^ADV(LP1,"c")):LP2,1:LP1),LP2=LP1,LP1=LP I L3=LP S M=91 D SPK
-         E  S MOV="A" F Z=0:0 S MOV=$O(^ADV(LP,MOV)) Q:MOV]"ZZ"  F J=1:1:^(MOV,0) S Y=^(J) I $P(Y,"\",2)="TR2" S L=$P(Y,"\",3),LL(L)
-          ="" I L=L3 S LNEW=L3 G TRB1
-         E  S L="" F Z=0:0 S L=$O(LL(L)) Q:L=""  I $D(^ADV(L,"FORCED",1)),$P(^(1),"\",3)=L3 S LNEW=L3 Q
+         S ^C1GADV(71100.1,G,"CHASM","P")=1,^C1GADV(71100.1,G,"TROLL","P")=2,O="BEAR",L=LNEW,M=162 D DROP,SPK S ^C1GADV(71100.1,G,O,
+          "F")=-1,^("P")=3
+         S:^C1GADV(71100.1,G,"SPICE","P")<0 TALLY2=TALLY2+1 S LP2=LNEW,RET="DEAD^C1GADV8" Q
+TRB      S L3=$S($E(^C1GADV(71100,LP1,"c")):LP2,1:LP1),LP2=LP1,LP1=LP I L3=LP S M=91 D SPK
+         E  S MOV="A" F Z=0:0 S MOV=$O(^C1GADV(71100,LP,MOV)) Q:MOV]"ZZ"  F J=1:1:^(MOV,0) S Y=^(J) I $P(Y,"\",2)="TR2" S L=$P(Y,"\"
+          ,3),LL(L)="" I L=L3 S LNEW=L3 G TRB1
+         E  S L="" F Z=0:0 S L=$O(LL(L)) Q:L=""  I $D(^C1GADV(71100,L,"FORCED",1)),$P(^(1),"\",3)=L3 S LNEW=L3 Q
          E  S M=140 D SPK
 TRB1     K L3,LL,MOV Q
 TRC      S M=$S(LP<8:57,1:58) D SPK Q
 TRL      I DETAIL<3 S M=15 D SPK
-         S DETAIL=DETAIL+1,WZDARK=0,^ADVG(G,LP,"A")=0 Q
+         S DETAIL=DETAIL+1,WZDARK=0,^C1GADV(71100.1,G,LP,"A")=0 Q
 TRN      Q
 YES      S M=Q D SPK,KBD I SAVE?1"Y".1"ES" S M=Y D:M SPK
          E  I SAVE'?1"N".1"O" W "   Please answer the question." G YES
          E  S M=N D:M SPK
          K M Q
-KBD      W:S ! R !,W:600 G:'$T TIMO^ADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E(SA
-          VE,I+1,99)
+KBD      W:S ! R !,W:600 G:'$T TIMO^C1GADV S SAVE=W F I=1:1 Q:SAVE?.CNPU  I $E(SAVE,I)?1L S SAVE=$E(SAVE,1,I-1)_$C($A(SAVE,I)-32)_$E
+          (SAVE,I+1,99)
          K I Q
-SPK      W:S ! F I=1:1:^ADV("t",M,0) W !,^(I)
+SPK      W:S ! F I=1:1:^C1GADV(71100,"t",M,0) W !,^(I)
          K I Q
-PSPK     S N=^ADV(O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
+PSPK     S N=^C1GADV(71100,O,P,0) I N W:S ! F I=.1:.1:N W !,^(I)
          K I,N Q
-DROPF    S ^ADVG(G,O,"F")=L G DR1
+DROPF    S ^C1GADV(71100.1,G,O,"F")=L G DR1
 DROP     F Z=2:1:HOLDNG+1 I $P(TOTING,"/",Z)=O S TOTING=$P(TOTING,"/",1,Z-1)_"/"_$P(TOTING,"/",Z+1,99),HOLDNG=HOLDNG-1 Q
-         S ^ADVG(G,O,"L")=L
-DR1      I L>0 S ^("O")="/"_O_^ADVG(G,L,"O")
+         S ^C1GADV(71100.1,G,O,"L")=L
+DR1      I L>0 S ^("O")="/"_O_^C1GADV(71100.1,G,L,"O")
          Q
-CARRY    Q:TOTING[("/"_O_"/")  S ^ADVG(G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
 
 
-ADV9     * *  64 Lines,  2931 Bytes, Checksum: B12201319                                              Mar 25, 2016@18:33:25 page 67
-CARRYF   S Y=^ADVG(G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
+C1GADV9  * *  64 Lines,  3204 Bytes, Checksum: B13991189                                              Mar 26, 2016@00:08:30 page 67
+CARRY    Q:TOTING[("/"_O_"/")  S ^C1GADV(71100.1,G,O,"L")=-1,HOLDNG=HOLDNG+1,TOTING="/"_O_TOTING
+CARRYF   S Y=^C1GADV(71100.1,G,L,"O") F Z=2:1:$L(Y,"/")-1 I $P(Y,"/",Z)=O S ^("O")=$P(Y,"/",1,Z-1)_"/"_$P(Y,"/",Z+1,99) Q
          K Y,Z Q
-MOVEF    S MOL=L,L=^ADVG(G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
-MOVE     S MOL=L,L=^ADVG(G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
-HERE     S L=^ADVG(G,O,"L") I L<0!(L=LP)
+MOVEF    S MOL=L,L=^C1GADV(71100.1,G,O,"F") D:L>0 CARRYF S L=MOL D DROPF Q
+MOVE     S MOL=L,L=^C1GADV(71100.1,G,O,"L") D:L>0 CARRY S L=MOL D DROP Q
+HERE     S L=^C1GADV(71100.1,G,O,"L") I L<0!(L=LP)
          K L Q
-JUGGLE   S L=^ADVG(G,O,"L") I L>0 S X=^ADVG(G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X,K,255)
+JUGGLE   S L=^C1GADV(71100.1,G,O,"L") I L>0 S X=^C1GADV(71100.1,G,L,"O"),K=$F(X,"/"_O_"/") I K S ^("O")="/"_O_$E(X,1,K-$L(O)-2)_$E(X
+          ,K,255)
          K K,L,X Q
-LIQ      S O=^ADVG(G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
+LIQ      S O=^C1GADV(71100.1,G,"BOTTL","P") S:O<0 O=-1-O S O=$P("WATER//OIL","/",O+1) Q
 
-*****   INDEX OF ADV9   *****
+*****   INDEX OF C1GADV9   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -3843,16 +3843,14 @@ Local Variables      Line Occurrences   ( >> not killed explicitly)
    Z            TRB+1*,TRB+2*,DROP*,CARRYF*,CARRYF+1!
 
 Global Variables  ( * Changed  ! Killed)
-   ^ADV(               TRB,TRB+1,TRB+2,PSPK
-   ^ADV("h"            HINT+1
-   ^ADV("t"            SPK
-   ^ADVG(              HINT4,HINT7,HINT8,TRS3,TRS3+2*,TRS3+3,TRL+1*,DROPF*,DROP+1*,DR1,CARRY*,CARRYF,MOVEF,MOVE,HERE,JUGGLE,LIQ
+   ^C1GADV(71100       HINT+1,TRB,TRB+1,TRB+2,SPK,PSPK
+   ^C1GADV(71100.1     HINT4,HINT7,HINT8,TRS3,TRS3+2*,TRS3+3,TRL+1*,DROPF*,DROP+1*,DR1,CARRY*,CARRYF,MOVEF,MOVE,HERE,JUGGLE,LIQ
 
 Naked Globals
    ^(           TRB+1,SPK,PSPK
 
 
-*****   INDEX OF ADV9   *****                                                                         Mar 25, 2016@18:33:25 page 68
+*****   INDEX OF C1GADV9   *****                                                                      Mar 26, 2016@00:08:30 page 68
 
 Naked Globals
    ^("O"        DR1*,CARRYF*,JUGGLE*
@@ -3881,13 +3879,13 @@ Label References
    YES          HINT+1,HINT+3,YES+1
 
 External References
-   TIMO^ADV            KBD
+   TIMO^C1GADV         KBD
 
 *****   END   *****
 
-ADVDOC   3453     printed  Mar 25, 2016@18:33:25                                                                           Page 69
+C1GADVDC   3590     printed  Mar 26, 2016@00:08:30                                                                         Page 69
 
-ADVDOC    ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
+C1GADVDC  ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
  +1       ;;1.0;C1GAMES;****;March 1, 2016
  +2       ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
  +3       ; DJW/WV ;March 1, 2016
@@ -3899,66 +3897,71 @@ I         ; Adventure is the original computer game that has inspired dozens of
  +4       ; Kent Blackett and Bob Supnick of Digital Equipment Corp. rewrote
  +5       ; it in Fortran IV-Plus and then in Fortran IV for the PDP-11.
  +6       ; Fred Hiltz of InterSystems Corp. translated it into ANSI Standard
- +7       ; MUMPS--this program.
- +8       ;
-II        ; Any number can play simultaneously:  "D ^ADV" to get started.  Each
+ +7       ; MUMPS--this program. Adapted to be VistA and VA FileMan compatible
+ +8       ; by David Whitten
+ +9       ;
+II        ; Any number can play simultaneously:  "D ^C1GADV" to get started.  Each
  +1       ; player gives a name to his/her game, which can be suspended with a
  +2       ; SUSPEND command at any time and later resumed.  Saved games more than
  +3       ; ten days old are deleted automatically.
  +4       ;
-III       ; This program is written to run in InterSystems Corporation's M/11
- +1       ; implementation of 1983 ANSI Standard MUMPS.  There are ten routines:
- +2       ; AD, ADDOC, and AD2-AD9.  They require 40K bytes of disk storage.
- +3       ; One global, ^ADV, contains the geography, text, etc.--it requires
- +4       ; 84K bytes.  The second global, ^ADVG, holds the variables associated
- +5       ; with each game in progress or suspended.  It requires 6K bytes per
- +6       ; game.  Adventure should run in a partition of at least 6K bytes.
- +7       ;
-IV        ; Adventure is supplied on a magnetic tape containing a file of
- +1       ; routines followed by a file of the global ^ADV.  Both files are
- +2       ; written with 1024-byte physical records in the DOS format.  To
- +3       ; install the game in M/11, mount the tape, sign in to the UCI in
- +4       ; which the game will run, and D ^%RI.  Give tape parameters:
- +5       ;     ("D3":0:1024)  if the tape is marked 800 bpi, or
- +6       ;     ("D4":0:1024)  if the tape is marked 1600 bpi.
- +7       ; Tell %RI to load all the routines.  The tape does not contain
- +8       ; comments for ^COMMENT.  When %RI has finished, leave the tape in
- +9       ; position and D ^%GI.  Give the same tape parameters.
- +10      ;
-V         ; After ^ADV is in place, you may optionally D ^%PROTECT and follow
- +1       ; its instructions to allow read-only access to ^ADV from all UCI's,
- +2       ; thus protecting it from change or deletion.  This completes the
- +3       ; installation of Adventure.
- +4       ;
+III       ; This program was originally written to run in InterSystems Corporation's
+ +1       ; M/11 implementation of 1983 ANSI Standard MUMPS. 
+ +2       ; There are ten routines: C1GADV, C1GADVDC, and C1GADV2-C1GADV9. 
+ +3       ; One global root, ^C1GADV(71100, contains the geography, text, etc.
+ +4       ; The second global root, ^C1GADV(71100.1, holds the variables
+ +5       ; associated with each game in progress or suspended.  
+ +6       ;
+IV        ; Adventure wzs originally supplied on a magnetic tape containing 
+ +1       ; a file of routines followed by a file of the global ^C1GADV. 
+ +2       ; Now, you can use the program D ^%RI. to load all the routines.  
+ +3       ; from the file adventure.rou When %RI has finished, you can use can
+ +4       ; load the globals with D ^%GI. with filename adventure.glo
+ +5       ; eventually it will be two KIDS files to transport both
+ +6       ;
+V         ; After ^C1GADV is in place, you may optionally use a utility like
+ +1       ; D ^%PROTECT or whatever tool your vendor supplies and follow
+ +2       ; its instructions to allow read-only access to ^C1GADV from all UCI's,
+ +3       ; thus protecting it from change or deletion.  This completes the
+ +4       ; installation of Adventure.
+ +5       ;
 VI        ; Adventure may easily be ported to other systems that support 1983
  +1       ; ANSI Standard MUMPS.  The only non-standard features are confined
- +2       ; to the routine ADV:  $ZS is the size of the partition in kilobytes.
+ +2       ; to the routine C1GADV:  $ZS is the size of the partition in kilobytes.
  +3       ; $ZE governs trapping of errors and keyboard breaks.  Its code may be
- +4       ; removed without detriment to the game.  The utility routine %ET is
+ +4       ; removed without detriment to the game.  The utility routine %ZTER is
  +5       ; used to log the local variables following an error.
  +6       ;
-VII       ; For maintenance of Adventure please write, not telephone,
- +1       ;          Frederick L. Hiltz, Ph. D.
- +2       ;          Systems Development Engineer
- +3       ;          InterSystems Corporation
- +4       ;          210 Commercial Street, Third Floor
- +5       ;          Boston, MA  02109
- +6       ;
- +7       ; Maintenance will be provided only for the unaltered program, and only
- +8       ; when a printout of the error logged by %ET is included (use the %ER
- +9       ; utility).  On a time-available basis, I will return either a patch
- +10      ; or a new release of the program.
- +11      ;
+VII       ; For maintenance of Adventure please contact:
+ +1       ; 
+ +2       ;          David Whitten, MCS
+ +3       ;          Chief Technical Officer
+ +4       ;          WorldVistA
+ +5       ;          PO Box 269
+ +6       ;          Butner, NC 27509
+ +7       ;          Telephone:  713-870-3834
+ +8       ;          twitter:    davewhitten
+ +9       ;          repository: http://github.com/whitten/m-adventure/
+ +10      ;
+ +11      ; Maintenance will be provided only for the unaltered program, and only
+ +12      ; when a printout of the error logged is included (use the ^XTER
+ +13      ; utility).  On a time-available basis, I will return either a patch
+ +14      ; or a new release of the program.
+ +15      ;
 VIII      ; some changes were made by DLH @ PRX in 1989
  +1       ; unknown details
  +2       ;
 IX        ; changes by David Whitten @ WorldVistA in 2016 
  +1       ; to comply with VA SACC & FileMan Compatibility
+ +2       ; 1st step was to remove any error XINDEX complained about
+ +3       ; 2nd step was to move everything to the namespace C1GADV
+ +4       ;            also move the global refs from ^ADV to ^C1GADV(71100,
+ +5       ;            and  move the global refs from ^ADVG to ^C1GADV(71100.1,
 
 
-ADVDOC   * *  67 Lines,  3453 Bytes, Checksum: B68180                                                 Mar 25, 2016@18:33:25 page 70
-              3194 bytes in comments
-ADVDOC   ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
+C1GADVDC * *  72 Lines,  3590 Bytes, Checksum: B68580                                                 Mar 26, 2016@00:08:30 page 70
+              3314 bytes in comments
+C1GADVDC ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
          ;;1.0;C1GAMES;****;March 1, 2016
          ;ADVENTURE.  FLH ; 25 JAN 83  10:32 AM
          ; DJW/WV ;March 1, 2016
@@ -3970,56 +3973,57 @@ I        ; Adventure is the original computer game that has inspired dozens of
          ; Kent Blackett and Bob Supnick of Digital Equipment Corp. rewrote
          ; it in Fortran IV-Plus and then in Fortran IV for the PDP-11.
          ; Fred Hiltz of InterSystems Corp. translated it into ANSI Standard
-         ; MUMPS--this program.
+         ; MUMPS--this program. Adapted to be VistA and VA FileMan compatible
+         ; by David Whitten
          ;
-II       ; Any number can play simultaneously:  "D ^ADV" to get started.  Each
+II       ; Any number can play simultaneously:  "D ^C1GADV" to get started.  Each
          ; player gives a name to his/her game, which can be suspended with a
          ; SUSPEND command at any time and later resumed.  Saved games more than
          ; ten days old are deleted automatically.
          ;
-III      ; This program is written to run in InterSystems Corporation's M/11
-         ; implementation of 1983 ANSI Standard MUMPS.  There are ten routines:
-         ; AD, ADDOC, and AD2-AD9.  They require 40K bytes of disk storage.
-         ; One global, ^ADV, contains the geography, text, etc.--it requires
-         ; 84K bytes.  The second global, ^ADVG, holds the variables associated
-         ; with each game in progress or suspended.  It requires 6K bytes per
-         ; game.  Adventure should run in a partition of at least 6K bytes.
+III      ; This program was originally written to run in InterSystems Corporation's
+         ; M/11 implementation of 1983 ANSI Standard MUMPS. 
+         ; There are ten routines: C1GADV, C1GADVDC, and C1GADV2-C1GADV9. 
+         ; One global root, ^C1GADV(71100, contains the geography, text, etc.
+         ; The second global root, ^C1GADV(71100.1, holds the variables
+         ; associated with each game in progress or suspended.  
          ;
-IV       ; Adventure is supplied on a magnetic tape containing a file of
-         ; routines followed by a file of the global ^ADV.  Both files are
-         ; written with 1024-byte physical records in the DOS format.  To
-         ; install the game in M/11, mount the tape, sign in to the UCI in
-         ; which the game will run, and D ^%RI.  Give tape parameters:
-         ;     ("D3":0:1024)  if the tape is marked 800 bpi, or
-         ;     ("D4":0:1024)  if the tape is marked 1600 bpi.
-         ; Tell %RI to load all the routines.  The tape does not contain
-         ; comments for ^COMMENT.  When %RI has finished, leave the tape in
-         ; position and D ^%GI.  Give the same tape parameters.
+IV       ; Adventure wzs originally supplied on a magnetic tape containing 
+         ; a file of routines followed by a file of the global ^C1GADV. 
+         ; Now, you can use the program D ^%RI. to load all the routines.  
+         ; from the file adventure.rou When %RI has finished, you can use can
+         ; load the globals with D ^%GI. with filename adventure.glo
+         ; eventually it will be two KIDS files to transport both
          ;
-V        ; After ^ADV is in place, you may optionally D ^%PROTECT and follow
-         ; its instructions to allow read-only access to ^ADV from all UCI's,
+V        ; After ^C1GADV is in place, you may optionally use a utility like
+         ; D ^%PROTECT or whatever tool your vendor supplies and follow
+         ; its instructions to allow read-only access to ^C1GADV from all UCI's,
          ; thus protecting it from change or deletion.  This completes the
          ; installation of Adventure.
          ;
 VI       ; Adventure may easily be ported to other systems that support 1983
          ; ANSI Standard MUMPS.  The only non-standard features are confined
-         ; to the routine ADV:  $ZS is the size of the partition in kilobytes.
+         ; to the routine C1GADV:  $ZS is the size of the partition in kilobytes.
          ; $ZE governs trapping of errors and keyboard breaks.  Its code may be
-         ; removed without detriment to the game.  The utility routine %ET is
+         ; removed without detriment to the game.  The utility routine %ZTER is
          ; used to log the local variables following an error.
          ;
-VII      ; For maintenance of Adventure please write, not telephone,
-         ;          Frederick L. Hiltz, Ph. D.
-         ;          Systems Development Engineer
-         ;          InterSystems Corporation
-         ;          210 Commercial Street, Third Floor
-         ;          Boston, MA  02109
+VII      ; For maintenance of Adventure please contact:
+         ; 
+         ;          David Whitten, MCS
+         ;          Chief Technical Officer
+         ;          WorldVistA
+         ;          PO Box 269
+         ;          Butner, NC 27509
+         ;          Telephone:  713-870-3834
+         ;          twitter:    davewhitten
+         ;          repository: http://github.com/whitten/m-adventure/
          ;
-         ; Maintenance will be provided only for the unaltered program, and only
 
 
-ADVDOC   * *  67 Lines,  3453 Bytes, Checksum: B68180                                                 Mar 25, 2016@18:33:25 page 71
-         ; when a printout of the error logged by %ET is included (use the %ER
+C1GADVDC * *  72 Lines,  3590 Bytes, Checksum: B68580                                                 Mar 26, 2016@00:08:30 page 71
+         ; Maintenance will be provided only for the unaltered program, and only
+         ; when a printout of the error logged is included (use the ^XTER
          ; utility).  On a time-available basis, I will return either a patch
          ; or a new release of the program.
          ;
@@ -4028,8 +4032,12 @@ VIII     ; some changes were made by DLH @ PRX in 1989
          ;
 IX       ; changes by David Whitten @ WorldVistA in 2016 
          ; to comply with VA SACC & FileMan Compatibility
+         ; 1st step was to remove any error XINDEX complained about
+         ; 2nd step was to move everything to the namespace C1GADV
+         ;            also move the global refs from ^ADV to ^C1GADV(71100,
+         ;            and  move the global refs from ^ADVG to ^C1GADV(71100.1,
 
-*****   INDEX OF ADVDOC   *****
+*****   INDEX OF C1GADVDC   *****
 
 
 Local Variables      Line Occurrences   ( >> not killed explicitly)
@@ -4054,178 +4062,174 @@ External References
 *****   END   *****
 
 
-*****   Cross Reference of all Routines   *****                                                       Mar 25, 2016@18:33:25 page 72
+*****   Cross Reference of all Routines   *****                                                       Mar 26, 2016@00:08:30 page 72
 
 Local Variables    Routines   ( >> not killed explicitly)
                               ( * Changed  ! Killed  ~ Newed)
->> ABB          ADV2,ADV6*
->> ATTACK       ADV2*
->> BONUS        ADV8*
->> CLK1         ADV3*,ADV8*
->> CLK2         ADV2*,ADV3*,ADV7*
->> CLOSED       ADV2,ADV3,ADV4,ADV5,ADV6,ADV8*
->> CLOSNG       ADV2,ADV4,ADV7,ADV8*
->> CONDLP       ADV2*,ADV3,ADV5,ADV6
-   D            ADV*!
->> DARK         ADV2*,ADV3,ADV6*
->> DETAIL       ADV6*,ADV9*
->> DFLAG        ADV2*,ADV3,ADV5,ADV6*,ADV7
->> DKILL        ADV4*
->> DSEEN(       ADV2*,ADV4*,ADV8*
->> DSEEN(6      ADV2*
->> DW           ADV2*,ADV3*,ADV4*,ADV5*,ADV7*,ADV8*
-   F            ADV!,ADV2*,ADV7*
-   F(           ADV*
->> FOOBAR       ADV3*,ADV6*
->> G            ADV*,ADV2,ADV3,ADV4,ADV5,ADV6,ADV7,ADV8,ADV9
->> GAME         ADV*
->> GAVEUP       ADV*,ADV3,ADV5*,ADV6*,ADV8*
->> HINTED(      ADV3,ADV8,ADV9*
->> HINTED(2     ADV6*
->> HINTED(3     ADV*
->> HINTH(       ADV3
->> HINTLC(      ADV3*,ADV9*
->> HOLDNG       ADV2*,ADV3,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
-   I            ADV*!,ADV2*!,ADV3*!,ADV4*!,ADV5*!,ADV6*!,ADV7*,ADV8*!,ADV9*!
-   IN           ADV!
-   IN(          ADV*
->> J            ADV2*,ADV3*,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
-   K            ADV2*,ADV4*!,ADV9*!
->> KNFL         ADV2*,ADV3*
-   L            ADV*,ADV2*!,ADV3*!,ADV4*!,ADV5*!,ADV6*!,ADV7*!,ADV8*!,ADV9*!
-   L3           ADV9*!
->> LD(          ADV2*,ADV3,ADV4*,ADV5,ADV7,ADV8*
->> LD(6         ADV2*
->> LD1(         ADV2*
->> LD1(6        ADV2*
->> LIMIT        ADV*,ADV2*,ADV3*,ADV6,ADV8*,ADV9*
->> LIT          ADV2,ADV3,ADV6*,ADV8*
-   LL           ADV2!,ADV9!
-   LL(          ADV2*,ADV9*
->> LMWARN       ADV8*
->> LNEW         ADV2*,ADV3*,ADV4*,ADV5*,ADV8*,ADV9*
->> LP           ADV2*,ADV3,ADV4,ADV5*,ADV6,ADV7,ADV8*,ADV9
->> LP1          ADV3*,ADV8*,ADV9*
->> LP2          ADV2*,ADV3*,ADV8*,ADV9*
-   M            ADV*!,ADV2*,ADV3*,ADV4*,ADV5*!,ADV6*!,ADV7*,ADV8*!,ADV9*!
->> MOL          ADV2*,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
-   MOV          ADV3*,ADV9*!
->> MOX          ADV3*
->> MXSCOR       ADV6,ADV8*
-   N            ADV*!,ADV2*!,ADV3*!,ADV4*!,ADV5*!,ADV6*!,ADV8*,ADV9*!
->> NAME         ADV*
+>> ABB          C1GADV2,C1GADV6*
+>> ATTACK       C1GADV2*
+>> BONUS        C1GADV8*
+>> CLK1         C1GADV3*,C1GADV8*
+>> CLK2         C1GADV2*,C1GADV3*,C1GADV7*
+>> CLOSED       C1GADV2,C1GADV3,C1GADV4,C1GADV5,C1GADV6,C1GADV8*
+>> CLOSNG       C1GADV2,C1GADV4,C1GADV7,C1GADV8*
+>> CONDLP       C1GADV2*,C1GADV3,C1GADV5,C1GADV6
+   D            C1GADV*!
+>> DARK         C1GADV2*,C1GADV3,C1GADV6*
+>> DETAIL       C1GADV6*,C1GADV9*
+>> DFLAG        C1GADV2*,C1GADV3,C1GADV5,C1GADV6*,C1GADV7
+>> DKILL        C1GADV4*
+>> DSEEN(       C1GADV2*,C1GADV4*,C1GADV8*
+>> DSEEN(6      C1GADV2*
+>> DW           C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV7*,C1GADV8*
+   F            C1GADV!,C1GADV2*,C1GADV7*
+   F(           C1GADV*
+>> FOOBAR       C1GADV3*,C1GADV6*
+>> G            C1GADV*,C1GADV2,C1GADV3,C1GADV4,C1GADV5,C1GADV6,C1GADV7,C1GADV8,C1GADV9
+>> GAME         C1GADV*
+>> GAVEUP       C1GADV*,C1GADV3,C1GADV5*,C1GADV6*,C1GADV8*
+>> HINTED(      C1GADV3,C1GADV8,C1GADV9*
+>> HINTED(2     C1GADV6*
+>> HINTED(3     C1GADV*
+>> HINTH(       C1GADV3
+>> HINTLC(      C1GADV3*,C1GADV9*
+>> HOLDNG       C1GADV2*,C1GADV3,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+   I            C1GADV*!,C1GADV2*!,C1GADV3*!,C1GADV4*!,C1GADV5*!,C1GADV6*!,C1GADV7*,C1GADV8*!,C1GADV9*!
+   IN           C1GADV!
+   IN(          C1GADV*
+>> J            C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+   K            C1GADV2*,C1GADV4*!,C1GADV9*!
+>> KNFL         C1GADV2*,C1GADV3*
+   L            C1GADV*,C1GADV2*!,C1GADV3*!,C1GADV4*!,C1GADV5*!,C1GADV6*!,C1GADV7*!,C1GADV8*!,C1GADV9*!
+   L3           C1GADV9*!
+>> LD(          C1GADV2*,C1GADV3,C1GADV4*,C1GADV5,C1GADV7,C1GADV8*
+>> LD(6         C1GADV2*
+>> LD1(         C1GADV2*
+>> LD1(6        C1GADV2*
+>> LIMIT        C1GADV*,C1GADV2*,C1GADV3*,C1GADV6,C1GADV8*,C1GADV9*
+>> LIT          C1GADV2,C1GADV3,C1GADV6*,C1GADV8*
+   LL           C1GADV2!,C1GADV9!
+   LL(          C1GADV2*,C1GADV9*
+>> LMWARN       C1GADV8*
+>> LNEW         C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV8*,C1GADV9*
+>> LP           C1GADV2*,C1GADV3,C1GADV4,C1GADV5*,C1GADV6,C1GADV7,C1GADV8*,C1GADV9
+>> LP1          C1GADV3*,C1GADV8*,C1GADV9*
+>> LP2          C1GADV2*,C1GADV3*,C1GADV8*,C1GADV9*
+   M            C1GADV*!,C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*!,C1GADV6*!,C1GADV7*,C1GADV8*!,C1GADV9*!
+>> MOL          C1GADV2*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+   MOV          C1GADV3*,C1GADV9*!
+>> MOX          C1GADV3*
+>> MXSCOR       C1GADV6,C1GADV8*
+   N            C1GADV*!,C1GADV2*!,C1GADV3*!,C1GADV4*!,C1GADV5*!,C1GADV6*!,C1GADV8*,C1GADV9*!
+>> NAME         C1GADV*
 
 
-*****   Cross Reference of all Routines   *****                                                       Mar 25, 2016@18:33:25 page 73
+*****   Cross Reference of all Routines   *****                                                       Mar 26, 2016@00:08:30 page 73
 
 Local Variables    Routines   ( >> not killed explicitly)
                               ( * Changed  ! Killed  ~ Newed)
->> ND           ADV2*
->> NUMDIE       ADV8*
->> O            ADV2*,ADV3*,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
->> OBJ          ADV3*,ADV4*,ADV5*,ADV6*,ADV7*,ADV9
-   OUT          ADV!
-   OUT(         ADV*
->> P            ADV2*,ADV3*,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
->> PANIC        ADV2*,ADV7*
->> Q            ADV*,ADV5*,ADV6*,ADV8*,ADV9*
->> RET          ADV3*,ADV4*,ADV5*,ADV6*,ADV9*
->> S            ADV*,ADV2,ADV3,ADV4,ADV5,ADV6*,ADV8,ADV9
-   SAVE         ADV*!,ADV3*!,ADV5*!,ADV6*,ADV8*,ADV9*
-   SAVE(        ADV*
->> SAVED        ADV,ADV6*
->> SCORE        ADV6,ADV8*
->> STICK        ADV2*
-   T            ADV!
-   T(           ADV*
->> TALLY        ADV2*,ADV3
->> TALLY2       ADV2,ADV4*,ADV5*,ADV6*,ADV9*
->> TOTING       ADV2*,ADV3,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
->> TR           ADV2,ADV4,ADV8
->> TURNS        ADV3*,ADV8
->> U1           ADV*,ADV3*,ADV4*,ADV5*,ADV6
->> U2           ADV*,ADV3*,ADV4,ADV5*
->> VBX          ADV3*
->> VERB         ADV3*,ADV5*,ADV7
->> W            ADV*,ADV3*,ADV5*,ADV6*,ADV8*,ADV9*
->> W1           ADV*,ADV3*,ADV4*,ADV5*
->> W2           ADV*,ADV3*,ADV4,ADV5*
->> WD1          ADV2*,ADV3*,ADV4*,ADV5
->> WD1X         ADV2*,ADV3*,ADV4*
->> WD2          ADV3*,ADV4*
->> WD2X         ADV3*,ADV4
->> WZDARK       ADV2,ADV3*,ADV6,ADV9*
-   X            ADV*!,ADV2*,ADV4*!,ADV5*,ADV9*!
->> XID          ADV
->> XID("USER"   ADV
-   Y            ADV*,ADV2*!,ADV3*,ADV4*!,ADV5*!,ADV6*!,ADV7*!,ADV8*!,ADV9*!
-   Z            ADV*,ADV2*!,ADV4*!,ADV5*!,ADV6*!,ADV7*!,ADV8*!,ADV9*!
+>> ND           C1GADV2*
+>> NUMDIE       C1GADV8*
+>> O            C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+>> OBJ          C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV9
+   OUT          C1GADV!
+   OUT(         C1GADV*
+>> P            C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+>> PANIC        C1GADV2*,C1GADV7*
+>> Q            C1GADV*,C1GADV5*,C1GADV6*,C1GADV8*,C1GADV9*
+>> RET          C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV9*
+>> S            C1GADV*,C1GADV2,C1GADV3,C1GADV4,C1GADV5,C1GADV6*,C1GADV8,C1GADV9
+   SAVE         C1GADV*!,C1GADV3*!,C1GADV5*!,C1GADV6*,C1GADV8*,C1GADV9*
+   SAVE(        C1GADV*
+>> SAVED        C1GADV,C1GADV6*
+>> SCORE        C1GADV6,C1GADV8*
+>> STICK        C1GADV2*
+   T            C1GADV!
+   T(           C1GADV*
+>> TALLY        C1GADV2*,C1GADV3
+>> TALLY2       C1GADV2,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV9*
+>> TOTING       C1GADV2*,C1GADV3,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+>> TR           C1GADV2,C1GADV4,C1GADV8
+>> TURNS        C1GADV3*,C1GADV8
+>> U1           C1GADV*,C1GADV3*,C1GADV4*,C1GADV5*,C1GADV6
+>> U2           C1GADV*,C1GADV3*,C1GADV4,C1GADV5*
+>> VBX          C1GADV3*
+>> VERB         C1GADV3*,C1GADV5*,C1GADV7
+>> W            C1GADV*,C1GADV3*,C1GADV5*,C1GADV6*,C1GADV8*,C1GADV9*
+>> W1           C1GADV*,C1GADV3*,C1GADV4*,C1GADV5*
+>> W2           C1GADV*,C1GADV3*,C1GADV4,C1GADV5*
+>> WD1          C1GADV2*,C1GADV3*,C1GADV4*,C1GADV5
+>> WD1X         C1GADV2*,C1GADV3*,C1GADV4*
+>> WD2          C1GADV3*,C1GADV4*
+>> WD2X         C1GADV3*,C1GADV4
+>> WZDARK       C1GADV2,C1GADV3*,C1GADV6,C1GADV9*
+   X            C1GADV*!,C1GADV2*,C1GADV4*!,C1GADV5*,C1GADV9*!
+>> XID          C1GADV
+>> XID("USER"   C1GADV
+   Y            C1GADV*,C1GADV2*!,C1GADV3*,C1GADV4*!,C1GADV5*!,C1GADV6*!,C1GADV7*!,C1GADV8*!,C1GADV9*!
+   Z            C1GADV*,C1GADV2*!,C1GADV4*!,C1GADV5*!,C1GADV6*!,C1GADV7*!,C1GADV8*!,C1GADV9*!
 
 Global Variables
-   ^%ZOSF("BRK"        ADV
-   ^%ZOSF("NBRK"       ADV
-   ^%ZOSF("TRAP"       ADV
-   ^ADV(               ADV2,ADV3,ADV4,ADV5,ADV6,ADV9
-   ^ADV("ON"           ADV3
-   ^ADV("h"            ADV8,ADV9
-   ^ADV("s"            ADV8
-   ^ADV("t"            ADV,ADV2,ADV3,ADV4,ADV5,ADV6,ADV8,ADV9
-   ^ADVG(              ADV*!,ADV2*,ADV3,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
+   ^%ZOSF("BRK"        C1GADV
+   ^%ZOSF("NBRK"       C1GADV
+   ^%ZOSF("TRAP"       C1GADV
+   ^C1GADV(71100       C1GADV,C1GADV2,C1GADV3,C1GADV4,C1GADV5,C1GADV6,C1GADV8,C1GADV9
+   ^C1GADV(71100.1     C1GADV*!,C1GADV2*,C1GADV3,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
 
 Naked Globals
-   ^(           ADV*!,ADV2,ADV3,ADV4,ADV5,ADV6,ADV8,ADV9
-   ^("A"        ADV2*
-   ^("F"        ADV2,ADV3,ADV4*,ADV5,ADV6*,ADV7*,ADV8*
+   ^(           C1GADV*!,C1GADV2,C1GADV3,C1GADV4,C1GADV5,C1GADV6,C1GADV8,C1GADV9
+   ^("A"        C1GADV2*
+   ^("F"        C1GADV2,C1GADV3,C1GADV4*,C1GADV5,C1GADV6*,C1GADV7*,C1GADV8*
+   ^("L"        C1GADV8
+   ^("O"        C1GADV*,C1GADV2*,C1GADV4*,C1GADV5*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+   ^("P"        C1GADV2*,C1GADV3*,C1GADV4*,C1GADV6*,C1GADV7*,C1GADV8*,C1GADV9*
+   ^(0          C1GADV3
 
 
-*****   Cross Reference of all Routines   *****                                                       Mar 25, 2016@18:33:25 page 74
+*****   Cross Reference of all Routines   *****                                                       Mar 26, 2016@00:08:30 page 74
 
 Naked Globals
-   ^("L"        ADV8
-   ^("O"        ADV*,ADV2*,ADV4*,ADV5*,ADV6*,ADV7*,ADV8*,ADV9*
-   ^("P"        ADV2*,ADV3*,ADV4*,ADV6*,ADV7*,ADV8*,ADV9*
-   ^(0          ADV3
-   ^(1          ADV9
+   ^(1          C1GADV9
 
 Marked Items
-   $T(SC2+I     ADV8
+   $T(SC2+I     C1GADV8
 
 Routine             Invokes:
-   ADV          %ZTER,TIMO^ADV,ADV2,XUSCLEAN
-   ADV2         TRAVEL^ADV3,TURN^ADV3,DEAD^ADV8
-   ADV3         TIMO^ADV,NEWLP^ADV2,CLOSED^ADV8,CLOSEUP^ADV8,LAMP^ADV8,SCORE^ADV8,HINT^ADV9
-   ADV4         AVD^ADV4,AVA^ADV5,AVK3^ADV6
-   ADV5         TIMO^ADV,RUCKUS^ADV4
-   ADV6         PUTGAM^ADV,TIMO^ADV,AVDV^ADV4,AV0^ADV5,SC1^ADV8
-   ADV7         AV0^ADV5,AVF^ADV6
-   ADV8         ENDGAM^ADV,TIMO^ADV,NEWLP^ADV2,TROLLX^ADV4
-   ADV9         TIMO^ADV
+   C1GADV       %ZTER,TIMO^C1GADV,C1GADV2,XUSCLEAN
+   C1GADV2      TRAVEL^C1GADV3,TURN^C1GADV3,DEAD^C1GADV8
+   C1GADV3      TIMO^C1GADV,NEWLP^C1GADV2,CLOSED^C1GADV8,CLOSEUP^C1GADV8,LAMP^C1GADV8,SCORE^C1GADV8,HINT^C1GADV9
+   C1GADV4      AVD^C1GADV4,AVA^C1GADV5,AVK3^C1GADV6
+   C1GADV5      TIMO^C1GADV,RUCKUS^C1GADV4
+   C1GADV6      PUTGAM^C1GADV,TIMO^C1GADV,AVDV^C1GADV4,AV0^C1GADV5,SC1^C1GADV8
+   C1GADV7      AV0^C1GADV5,AVF^C1GADV6
+   C1GADV8      ENDGAM^C1GADV,TIMO^C1GADV,NEWLP^C1GADV2,TROLLX^C1GADV4
+   C1GADV9      TIMO^C1GADV
 
 Routine             is Invoked by:
-   ^%ZTER              ADV
-   ENDGAM^ADV          ADV8
-   PUTGAM^ADV          ADV6
-   TIMO^ADV            ADV,ADV3,ADV5,ADV6,ADV8,ADV9
-   ^ADV2               ADV
-   NEWLP^ADV2          ADV3,ADV8
-   TRAVEL^ADV3         ADV2
-   TURN^ADV3           ADV2
-   AVD^ADV4            ADV4
-   AVDV^ADV4           ADV6
-   RUCKUS^ADV4         ADV5
-   TROLLX^ADV4         ADV8
-   AV0^ADV5            ADV6,ADV7
-   AVA^ADV5            ADV4
-   AVF^ADV6            ADV7
-   AVK3^ADV6           ADV4
-   CLOSED^ADV8         ADV3
-   CLOSEUP^ADV8        ADV3
-   DEAD^ADV8           ADV2
-   LAMP^ADV8           ADV3
-   SC1^ADV8            ADV6
-   SCORE^ADV8          ADV3
-   HINT^ADV9           ADV3
-   ^XUSCLEAN           ADV
+   ^%ZTER              C1GADV
+   ENDGAM^C1GADV       C1GADV8
+   PUTGAM^C1GADV       C1GADV6
+   TIMO^C1GADV         C1GADV,C1GADV3,C1GADV5,C1GADV6,C1GADV8,C1GADV9
+   ^C1GADV2            C1GADV
+   NEWLP^C1GADV2       C1GADV3,C1GADV8
+   TRAVEL^C1GADV3      C1GADV2
+   TURN^C1GADV3        C1GADV2
+   AVD^C1GADV4         C1GADV4
+   AVDV^C1GADV4        C1GADV6
+   RUCKUS^C1GADV4      C1GADV5
+   TROLLX^C1GADV4      C1GADV8
+   AV0^C1GADV5         C1GADV6,C1GADV7
+   AVA^C1GADV5         C1GADV4
+   AVF^C1GADV6         C1GADV7
+   AVK3^C1GADV6        C1GADV4
+   CLOSED^C1GADV8      C1GADV3
+   CLOSEUP^C1GADV8     C1GADV3
+   DEAD^C1GADV8        C1GADV2
+   LAMP^C1GADV8        C1GADV3
+   SC1^C1GADV8         C1GADV6
+   SCORE^C1GADV8       C1GADV3
+   HINT^C1GADV9        C1GADV3
+   ^XUSCLEAN           C1GADV
 
 *****   END   *****
 
