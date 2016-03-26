@@ -1,4 +1,4 @@
-XINDX2	;ISC/REL,GRK,RWF - PROCESS "GRB" ;4/2/08  16:35
+XINDX2	;ISC/REL,GRK,RWF,DJW/VW,VEN/SMH - PROCESS "GRB" ;4/2/08  16:35
 	;;7.3;TOOLKIT;**20,27,48,110,121**;Apr 25, 1995;Build 7
 	; Per VHA Directive 2004-038, this routine should not be modified.
 %	S LINE=GRB,(CM,COM)="" F I=0:0 S STR=$P(LINE,$C(9),1),LINE=$P(LINE,$C(9),2,999),NOA=0 D:STR]"" ARGG Q:LINE']""
@@ -65,7 +65,7 @@ TEXT	S Y=$$ASM^XINDX3(LV+1,LI(LV+1)+1,$C(10)) D ST("MK","$T("_$S($E(Y)'="+":Y,1:
 	D FLUSH(LV+1) Q
 	;special variables
 SPV	;
-	I "^$D^$EC^$ES^$ET^$I^$K^$P^$Q^$ST^$SY^"[("^"_X_"^") D ST("MK",X)
+	I "^$D^$EC^$ES^$ET^$I^$K^$P^$Q^$R^$ST^$SY^$X^$Y"[("^"_X_"^") D ST("MK",X)
 	Q
 	;
 EXT	;Extrinsic functions
