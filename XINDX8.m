@@ -1,12 +1,12 @@
 XINDX8 ;ISC/GRK - STRUCTURED INDEX ;01/04/2000  14:29
- ;;7.3;TOOLKIT;**20,27,61**;Apr 25, 1995
+ ;;7.3;TOOLKIT;**20,27,61,DJW**;Apr 25, 1995
  S Q="""",(DDOT,LO)=0,PG=+$G(PG) D HDR
  F LC=1:1 Q:'$D(^UTILITY($J,1,RTN,0,LC))  S LIN=^(LC,0),ML=0,IDT=10 D CD
  K AGR,EOC,IDT,JJ,LO,ML,OLD,SAV,TY
  Q
 CD S LAB=$P(LIN," ",1),LIN=$P(LIN," ",2,999),LO=$S(LAB="":LO+1,1:0)
- I INP(5)["N" S:OPT("NUM") OPT("NUM")=OPT("NUM")+1 W:OPT("NUM") $J(OPT("NUM"),3)_"| "
- W $S('LO:LAB,1:" +"_LO)_" "
+ I INP(5)["L" S:OPT("NUM") OPT("NUM")=OPT("NUM")+1 W:OPT("NUM") $J(OPT("NUM"),3)_"| "
+ W $S('LO:LAB,INP(5)'["N":" +"_LO,1:"")_" "
  G:LIN'[";" EE S STR=1,L=";",ARG=LIN D LOOP I CH'=";" G EE
  W ?10,$E(LIN,I,999),! Q:I<2  S LIN=$E(LIN,1,I-2)
 EE I LIN="" Q
